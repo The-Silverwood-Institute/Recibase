@@ -1,14 +1,24 @@
 import java.io.File
 
-import org.specs2._
 import Extractor.ingestRecipe
+import org.specs2._
 
 class CSONIngestionSpec extends mutable.Specification {
   "CSON => Recipe ingestion specification where" >> {
-    "A Recipe must have a name" >> {
-      val filePath = new File(getClass.getResource("/lentil-lasagne.cson").getFile)
+    "a Recipe must have a name" >> {
+      Fixtures.getRecipe.name must_== "Lentil Lasagne"
+    }
 
-      ingestRecipe(filePath) must_== Recipe("Lentil Lasagne")
+    "a Recipe must have ingredients" >> {
+      Fixtures.getRecipe.ingredients must contain(Ingredient("Lasagne Sheets", "100g"))
+      Fixtures.getRecipe.ingredients must contain(Ingredient("Lentils", "200g"))
     }
   }
+}
+
+object Fixtures {
+  private val filePath = new File(getClass.getResource("/lentil-lasagne.cson").getFile)
+  private val recipe = ingestRecipe(filePath)
+
+  def getRecipe: Recipe = recipe
 }

@@ -1,1 +1,11 @@
 name: "Lentil Lasagne"
+ingredients: [
+    {
+        name: "Lasagne Sheets",
+        quantity: "100g"
+    },
+    {
+        name: "Lentils",
+        quantity: "200g"
+    }
+]
