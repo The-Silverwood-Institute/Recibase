@@ -1,6 +1,6 @@
 language: scala
 before_script:
   - cd estherj
-  - pip install -r requirements.txt
+  - pip install --user -r requirements.txt
   - python tests.py
   - cd ../
