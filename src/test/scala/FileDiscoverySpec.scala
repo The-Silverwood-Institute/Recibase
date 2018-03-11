@@ -6,8 +6,9 @@ class FileDiscoverySpec extends mutable.Specification {
   "Recipe files discovery spec where" >> {
     "An empty folder returns no filepaths" >> {
       val emptyDirectory = DirectoryHelper.getFile("/emptyDirectory")
+      val placeholder    = DirectoryHelper.getFile("/emptyDirectory/.gitkeep")
 
-      emptyDirectory.createNewFile()
+      placeholder.delete()
 
       Discoverer.discoverRecipes(emptyDirectory) must beEmpty
     }
