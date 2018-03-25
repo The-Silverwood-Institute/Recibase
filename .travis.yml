@@ -1,16 +1,16 @@
 language: scala
 before_script:
-  - cd estherj
-  - pip install --user -r requirements.txt
-  - python tests.py
-  - cd ../
+- cd estherj
+- pip install --user -r requirements.txt
+- python tests.py
+- cd ../
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION test
-  - sbt ++$TRAVIS_SCALA_VERSION "run recipes frontend/recipes.db"
+- sbt ++$TRAVIS_SCALA_VERSION test
+- sbt ++$TRAVIS_SCALA_VERSION "run recipes frontend/recipes.db"
 before_deploy: cd frontend
 deploy:
   provider: heroku
   skip_cleanup: true
   app: recibase
   api_key:
-    secure: t1W4zFHW4+TtTDpGxJllKZhmDvWwA8We/qZPQM7THm0q5MkQaTZhbBJB+Cb2hywSxRVQqvf5YTTsKTToKMkIwTme56qVNoBNk/oRws9OigSMcGQop0pVSJjulFW0e0eEGfpOCWL24OCv85tJII0VlA7RT4665P5zFDd1d6pGxscWGdydgKJSXZeVEcuq4CHXQ8Vlp6S5hwzTvdlEVBv3bSu5sukzFImlrVXG/qZP920yVhznczYacvgjKWwkdTjZgQVLrZc/2nDvxa4L7rQiUGk+pJKmxeygEx6pSVaqVu5LF3zsiDSviNhtZXpaOwvo3OHf2XoaoGPrPK6HXcHaiOTfQoFO95fm4MaSpGgfHaxUbk8n4OoihdpX3f9k34AiQx64D07S5VVm4GQ0sTBkNDGtR8xeV8HPz9Gy0QOF7fe9p8F/NupZJLdluubFeIa3Hl2KPoHBmR5HjFHAcQMsV7S/YEAfeoGCL+ykg1C4D6zNY0hg9pdE75UcojR27ByuKUsXGNLEdqHix0zd2wKzUunYlaqpietGB5F8MRph5CwDnL28uS6u+UVcbP4W6bokO6NoUCvjoK6QzktovtX1jMED+b+A+nYkqfy6q0snrxQ5BjvTaxKhf5AW7fjjPKO+RoMDA1Pzk57oF+uEvzHT9lbH9Dat02h8TfQwr1lPMnc=
+    secure: okYRxwhpBd0L4+QKg/FgoVqavwWX3jKkLabIJdW39hguqtjStN+h8ft4mtzkjYvslfcBgaLq5d10ggtmMnp/u+O/uNubzsmVb9qJdKKl68hxrgF+mxArXEBb/Iif3lejLpyS1cutTPgK6fAtKQ5a+KisJX8mH6nUzWqq0I3It544GQCXRUQJ/quixem+U9f6QjaoQVcZhCy2E09key2tsZRgyUMl8WlTUJTs+wcPm/whIAulVBfwTblQku/eURBXAJb3EfkhrE5ENuH2qgCbUa32Hb4GHDsMPr3PruY47LLn8nuT0qwt4SgCjSgfmU3VsFTMYIrfS6n1wflqFv/i3cLZLFar3NKhy86KZzXaOAcezEcGkgReGLeRZM9w0WMvzIgtWNDncNoTQ3jQPq58ArH5/Bge4AOzz6qpVwyldWfgWvzUfS6vynFPlF41jVUUd6GoZ/yZVT2Mnvk8sfSKdzcyZ7NQmR/W42xLpuwjNdFoKR9D3U4H8SSDH7JXTxZinSnvwRZZgKxeUfw0uhEPosZx73uCZwpzKOai07LgvnB7oTc+GFzVK9mhi/B3TaS4FCglMxUiJd0+sOdzafeuURAH7a+CBJ0YFFZYt4aapIo3FIFMAMo1AuuQYBxRPNDZyOoIBPq/bu4Q2EBvbqGiXKRnEB20CH9Ohfc2UfA+PTg=
