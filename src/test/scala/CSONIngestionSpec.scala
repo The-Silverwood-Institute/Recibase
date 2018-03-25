@@ -9,9 +9,21 @@ class CSONIngestionSpec extends mutable.Specification {
       Fixtures.recipe.name must_== "Lentil Lasagne"
     }
 
+    "a Recipe must have a URL" >> {
+      Fixtures.recipe.url must_== "lentil-lasagne"
+    }
+
     "a Recipe must have ingredients" >> {
-      Fixtures.recipe.ingredients must contain(Ingredient("Lasagne Sheets", "100g"))
-      Fixtures.recipe.ingredients must contain(Ingredient("Lentils", "200g"))
+      Fixtures.recipe.ingredients.length must_== 2
+      Fixtures.recipe.ingredients must contain("100g Lasagne Sheets")
+      Fixtures.recipe.ingredients must contain("200g Lentils")
+    }
+
+    "a recipe must have a method" >> {
+      Fixtures.recipe.method.length must_== 3
+      Fixtures.recipe.method must contain("Cook the lentils")
+      Fixtures.recipe.method must contain("Spread the lentils between lasagne sheets")
+      Fixtures.recipe.method must contain("Cook in the oven at 200C")
     }
   }
 }

@@ -1,11 +1,11 @@
 name: "Lentil Lasagne"
+url: "lentil-lasagne"
 ingredients: [
-    {
-        name: "Lasagne Sheets",
-        quantity: "100g"
-    },
-    {
-        name: "Lentils",
-        quantity: "200g"
-    }
+    "100g Lasagne Sheets"
+    "200g Lentils"
+]
+method: [
+    "Cook the lentils"
+    "Spread the lentils between lasagne sheets"
+    "Cook in the oven at 200C"
 ]
