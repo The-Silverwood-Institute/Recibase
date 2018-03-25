@@ -4,3 +4,7 @@ before_script:
   - pip install --user -r requirements.txt
   - python tests.py
   - cd ../
+script:
+  sbt ++$TRAVIS_SCALA_VERSION test
+  sbt ++$TRAVIS_SCALA_VERSION run recipes frontend/recipes.db
+  

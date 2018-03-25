@@ -1,3 +1,9 @@
 [submodule "estherj"]
 	path = estherj
 	url = https://github.com/kittsville/EstherJ
+[submodule "recipes"]
+	path = recipes
+	url = https://github.com/The-Silverwood-Institute/Recipes.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/The-Silverwood-Institute/Frontend.git
