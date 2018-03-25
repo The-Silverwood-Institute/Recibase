@@ -4,7 +4,7 @@ import Extractor.ingestRecipe
 import org.specs2._
 
 class CSONIngestionSpec extends mutable.Specification {
-  "CSON => Recipe ingestion specification where" >> {
+  "CSON to Recipe object ingestion specification where" >> {
     "a Recipe must have a name" >> {
       Fixtures.recipe.name must_== "Lentil Lasagne"
     }

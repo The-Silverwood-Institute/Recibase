@@ -9,6 +9,7 @@ case class Ingredient(name: String, quantity: String)
 case class Recipe(name: String, ingredients: List[Ingredient])
 
 object Extractor {
+  // Tells Spray how to map JSON to Scala objects
   implicit val ingredientFormat: JsonFormat[Ingredient] = jsonFormat2(Ingredient)
   implicit val recipeFormat: RootJsonFormat[Recipe] = jsonFormat2(Recipe)
 
