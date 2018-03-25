@@ -5,7 +5,7 @@ object Main extends App {
     printUsage()
     System.exit(1)
   }
-
+  println(s"Ingesting recipes from:\n${args(0)}")
   val recipesDirectory = new File(args(0))
   val databasePath = args(1)
 
@@ -19,6 +19,7 @@ object Main extends App {
   }
 
   val databaseLoader: Loader = new Loader(databasePath)
+  println(s"Saving recipe to database at:\n$databasePath")
   databaseLoader.addRecipes(recipes)
 
   def printUsage(): Unit = {
