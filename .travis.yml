@@ -6,4 +6,4 @@ before_script:
   - cd ../
 script:
   - sbt ++$TRAVIS_SCALA_VERSION test
-  - sbt ++$TRAVIS_SCALA_VERSION run recipes frontend/recipes.db
+  - sbt ++$TRAVIS_SCALA_VERSION "run recipes frontend/recipes.db"
