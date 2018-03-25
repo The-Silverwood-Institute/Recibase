@@ -7,3 +7,10 @@ before_script:
 script:
   - sbt ++$TRAVIS_SCALA_VERSION test
   - sbt ++$TRAVIS_SCALA_VERSION "run recipes frontend/recipes.db"
+before_deploy: cd frontend
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app: recibase
+  api_key:
+    secure: t1W4zFHW4+TtTDpGxJllKZhmDvWwA8We/qZPQM7THm0q5MkQaTZhbBJB+Cb2hywSxRVQqvf5YTTsKTToKMkIwTme56qVNoBNk/oRws9OigSMcGQop0pVSJjulFW0e0eEGfpOCWL24OCv85tJII0VlA7RT4665P5zFDd1d6pGxscWGdydgKJSXZeVEcuq4CHXQ8Vlp6S5hwzTvdlEVBv3bSu5sukzFImlrVXG/qZP920yVhznczYacvgjKWwkdTjZgQVLrZc/2nDvxa4L7rQiUGk+pJKmxeygEx6pSVaqVu5LF3zsiDSviNhtZXpaOwvo3OHf2XoaoGPrPK6HXcHaiOTfQoFO95fm4MaSpGgfHaxUbk8n4OoihdpX3f9k34AiQx64D07S5VVm4GQ0sTBkNDGtR8xeV8HPz9Gy0QOF7fe9p8F/NupZJLdluubFeIa3Hl2KPoHBmR5HjFHAcQMsV7S/YEAfeoGCL+ykg1C4D6zNY0hg9pdE75UcojR27ByuKUsXGNLEdqHix0zd2wKzUunYlaqpietGB5F8MRph5CwDnL28uS6u+UVcbP4W6bokO6NoUCvjoK6QzktovtX1jMED+b+A+nYkqfy6q0snrxQ5BjvTaxKhf5AW7fjjPKO+RoMDA1Pzk57oF+uEvzHT9lbH9Dat02h8TfQwr1lPMnc=
