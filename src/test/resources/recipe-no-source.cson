@@ -1,6 +1,5 @@
-name: "Lentil Lasagne"
-url: "lentil-lasagne"
-source: "https://example.com/recipes/lentil-lasagne"
+name: "Sauceless Lasagne"
+url: "sauceless-lasagne"
 ingredients: [
     "100g Lasagne Sheets"
     "200g Lentils"

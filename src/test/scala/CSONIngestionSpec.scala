@@ -13,6 +13,14 @@ class CSONIngestionSpec extends mutable.Specification {
       Fixtures.recipe.url must_== "lentil-lasagne"
     }
 
+    "a Recipe can have a source" >> {
+      Fixtures.recipe.source must beSome("https://example.com/recipes/lentil-lasagne")
+    }
+
+    "a Recipe need not have a source" >> {
+      Fixtures.noSourceRecipe.source must beNone
+    }
+
     "a Recipe must have ingredients" >> {
       Fixtures.recipe.ingredients.length must_== 2
       Fixtures.recipe.ingredients must contain("100g Lasagne Sheets")
@@ -29,6 +37,7 @@ class CSONIngestionSpec extends mutable.Specification {
 }
 
 object Fixtures {
-  private val filePath = new File(getClass.getResource("/lentil-lasagne.cson").getFile)
-  val recipe: Recipe = ingestRecipe(filePath)
+  val recipe: Recipe = ingestRecipe(getFilePath("/lentil-lasagne.cson"))
+  val noSourceRecipe: Recipe = ingestRecipe(getFilePath("/recipe-no-source.cson"))
+  def getFilePath(path: String): File = new File(getClass.getResource(path).getFile)
 }
