@@ -24,7 +24,7 @@ object Extractor {
     val exitCode = Seq("python", "estherj/estherj.py", filePath.getAbsolutePath) ! ProcessLogger(stdout append _, stderr append "\n" + _)
 
     if (exitCode != 0) {
-      throw InvalidCSONException(s"Failed to ingest '${filePath.getName}' with Python stack trace:" + stderr)
+      throw InvalidCSONException(s"Failed to convert '${filePath.getName}' to JSON with Python stack trace:" + stderr)
     }
 
     val json = stdout.toString
@@ -33,7 +33,6 @@ object Extractor {
   }
 }
 
-final case class InvalidCSONException(
-                                       private val message: String = "",
-                                       private val cause: Throwable = None.orNull)
+final case class InvalidCSONException(private val message: String = "", private val cause: Throwable = None.orNull)
+  extends Exception(message, cause)
   extends Exception(message, cause)
