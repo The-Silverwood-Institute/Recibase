@@ -2,6 +2,7 @@ import java.io.File
 
 import Extractor.ingestRecipe
 import org.specs2._
+import spray.json.DeserializationException
 
 class CSONIngestionSpec extends mutable.Specification {
   "CSON to Recipe object ingestion specification where" >> {
@@ -48,6 +49,12 @@ class CSONIngestionSpec extends mutable.Specification {
       "with invalid CSON must raise an InvalidCSONException" >> {
         ingestRecipe(Fixtures.getFilePath("/illegal-cson.cson")) must throwAn[InvalidCSONException].like{
           case e => e.getMessage must startWith("Failed to ingest 'illegal-cson.cson' with Python stack trace:")
+        }
+      }
+
+      "with invalid Recipe JSON must raise an DeserializationException" >> {
+        ingestRecipe(Fixtures.getFilePath("/missing-url-recipe.cson")) must throwAn[DeserializationException].like{
+          case e => e.getMessage must contain("Object is missing required member 'url'")
         }
       }
     }
