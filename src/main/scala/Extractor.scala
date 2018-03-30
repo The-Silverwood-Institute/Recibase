@@ -6,11 +6,11 @@ import spray.json._
 import scala.sys.process._
 
 case class Recipe(
-                   name: String,
-                   url: String,
-                   source: Option[String],
-                   ingredients: List[String],
-                   method: List[String]
+                  name: String,
+                  url: String,
+                  source: Option[String],
+                  ingredients: List[String],
+                  method: List[String]
                  )
 
 object Extractor {
