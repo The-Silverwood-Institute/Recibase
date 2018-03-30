@@ -62,7 +62,7 @@ class CSONIngestionSpec extends mutable.Specification {
 }
 
 object Fixtures {
-  val recipe: Recipe = ingestRecipe(getFilePath("/lentil-lasagne.cson"))
-  val noOptionalsRecipe: Recipe = ingestRecipe(getFilePath("/no-optionals-recipe.cson"))
+  lazy val recipe: Recipe = ingestRecipe(getFilePath("/lentil-lasagne.cson"))
+  lazy val noOptionalsRecipe: Recipe = ingestRecipe(getFilePath("/no-optionals-recipe.cson"))
   def getFilePath(path: String): File = new File(getClass.getResource(path).getFile)
 }
