@@ -52,9 +52,9 @@ class CSONIngestionSpec extends mutable.Specification {
         }
       }
 
-      "with invalid Recipe JSON must raise an DeserializationException" >> {
-        ingestRecipe(Fixtures.getFilePath("/missing-url-recipe.cson")) must throwAn[DeserializationException].like{
-          case e => e.getMessage must contain("Object is missing required member 'url'")
+      "with invalid Recipe JSON must raise an InvalidRecipeException" >> {
+        ingestRecipe(Fixtures.getFilePath("/missing-url-recipe.cson")) must throwAn[InvalidRecipeException].like{
+          case e => e.getMessage must contain("Failed to convert 'missing-url-recipe.cson' to a Recipe with stack trace:")
         }
       }
     }

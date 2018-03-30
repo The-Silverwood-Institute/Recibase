@@ -30,10 +30,18 @@ object Extractor {
 
     val json = stdout.toString
 
-    json.toString.parseJson.convertTo[Recipe]
+    try {
+      json.toString.parseJson.convertTo[Recipe]
+    } catch {
+      case e: DeserializationException => {
+        val message = s"Failed to convert '${filePath.getName}' to a Recipe with stack trace:\n" +  e.msg
+        throw InvalidRecipeException(message)
+      }
+    }
   }
 }
 
 final case class InvalidCSONException(private val message: String = "", private val cause: Throwable = None.orNull)
   extends Exception(message, cause)
+final case class InvalidRecipeException(private val message: String = "", private val cause: Throwable = None.orNull)
   extends Exception(message, cause)
