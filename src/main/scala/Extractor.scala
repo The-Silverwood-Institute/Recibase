@@ -24,7 +24,8 @@ object Extractor {
     val exitCode = Seq("python", "estherj/estherj.py", filePath.getAbsolutePath) ! ProcessLogger(stdout append _, stderr append "\n" + _)
 
     if (exitCode != 0) {
-      throw InvalidCSONException(s"Failed to convert '${filePath.getName}' to JSON with Python stack trace:" + stderr)
+      val message = s"Failed to convert '${filePath.getName}' to JSON with Python stack trace:\n" + stderr + "\n"
+      throw InvalidCSONException(message)
     }
 
     val json = stdout.toString
