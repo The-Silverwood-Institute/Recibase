@@ -19,8 +19,21 @@ object Extractor {
   implicit val recipeFormat: RootJsonFormat[Recipe] = jsonFormat6(Recipe)
 
   def ingestRecipe(filePath: File): Recipe = {
-    val json = Seq("python", "estherj/estherj.py", filePath.getAbsolutePath).!!
+    val stdout = new StringBuilder
+    val stderr = new StringBuilder
+    val exitCode = Seq("python", "estherj/estherj.py", filePath.getAbsolutePath) ! ProcessLogger(stdout append _, stderr append "\n" + _)
 
-    json.parseJson.convertTo[Recipe]
+    if (exitCode != 0) {
+      throw InvalidCSONException(s"Failed to ingest '${filePath.getName}' with Python stack trace:" + stderr)
+    }
+
+    val json = stdout.toString
+
+    json.toString.parseJson.convertTo[Recipe]
   }
 }
+
+final case class InvalidCSONException(
+                                       private val message: String = "",
+                                       private val cause: Throwable = None.orNull)
+  extends Exception(message, cause)

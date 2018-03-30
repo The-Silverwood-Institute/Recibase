@@ -43,6 +43,14 @@ class CSONIngestionSpec extends mutable.Specification {
         Fixtures.recipe.method must contain("Cook in the oven at 200C")
       }
     }
+
+    "an invalid Recipe" >> {
+      "with invalid CSON must raise an InvalidCSONException" >> {
+        ingestRecipe(Fixtures.getFilePath("/illegal-cson.cson")) must throwAn[InvalidCSONException].like{
+          case e => e.getMessage must startWith("Failed to ingest 'illegal-cson.cson' with Python stack trace:")
+        }
+      }
+    }
   }
 }
 
