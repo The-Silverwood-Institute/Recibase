@@ -5,21 +5,27 @@ object Main extends App {
     printUsage()
     System.exit(1)
   }
-  println(s"Ingesting recipes from:\n${args(0)}")
-  val recipesDirectory = new File(args(0))
+
   val databasePath = args(1)
+  val recipesDirectoryPath = args(0)
 
-  val recipes: Seq[Recipe] = Discoverer.discoverRecipes(recipesDirectory).map(Extractor.ingestRecipe)
+  println(s"Searching for recipes in:\n$recipesDirectoryPath")
+  val recipesDirectory = new File(recipesDirectoryPath)
+  val recipeFiles: Seq[File] = Discoverer.discoverRecipes(recipesDirectory)
 
-  if (recipes.isEmpty) {
+  if (recipeFiles.isEmpty) {
     println("No recipes found")
     System.exit(2)
   } else {
-    println(s"Ingested ${recipes.length} recipes")
+    println(s"Found ${recipeFiles.length} recipes:")
+    recipeFiles.foreach(file => println("    " + file.getName))
   }
 
+  println("Ingesting recipes...")
+  val recipes: Seq[Recipe] = recipeFiles.map(Extractor.ingestRecipe)
+
+  println(s"Saving recipes to database at:\n$databasePath")
   val databaseLoader: Loader = new Loader(databasePath)
-  println(s"Saving recipe to database at:\n$databasePath")
   databaseLoader.addRecipes(recipes)
 
   def printUsage(): Unit = {
