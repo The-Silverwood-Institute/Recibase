@@ -31,10 +31,41 @@ class CSONIngestionSpec extends mutable.Specification {
         Fixtures.noOptionalsRecipe.notes must beNone
       }
 
-      "must have ingredients" >> {
-        Fixtures.recipe.ingredients.length must_== 2
-        Fixtures.recipe.ingredients must contain("100g Lasagne Sheets")
-        Fixtures.recipe.ingredients must contain("200g Lentils")
+      "must have an ingredient" >> {
+        "with a name" >> {
+          Fixtures.recipe.ingredients must contain(
+            Ingredient(
+              name = "Pepper"
+            )
+          )
+        }
+
+        "with a quantity" >> {
+          Fixtures.recipe.ingredients must contain(
+            Ingredient(
+              name = "Onions",
+              quantity = Some("5")
+            )
+          )
+        }
+
+        "with preparation instructions" >> {
+          Fixtures.recipe.ingredients must contain(
+            Ingredient(
+              name = "Prepped Mozzarella",
+              prep = Some("chopped into cubes")
+            )
+          )
+        }
+
+        "with notes" >> {
+          Fixtures.recipe.ingredients must contain(
+            Ingredient(
+              name = "Goat's Cheese",
+              notes = Some("don't buy half fat")
+            )
+          )
+        }
       }
 
       "must have a method" >> {

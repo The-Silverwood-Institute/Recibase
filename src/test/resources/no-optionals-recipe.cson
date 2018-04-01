@@ -1,8 +1,11 @@
 name: "Sauceless Lasagne"
 url: "sauceless-lasagne"
 ingredients: [
-    "100g Lasagne Sheets"
-    "200g Lentils"
+    name: "Lasagne Sheets"
+    quantity: "100g"
+,
+    name: "Lentils"
+    quantity: "200g"
 ]
 method: [
     "Cook the lentils"

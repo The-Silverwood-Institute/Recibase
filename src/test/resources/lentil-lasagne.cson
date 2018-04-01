@@ -3,8 +3,16 @@ url: "lentil-lasagne"
 notes: "Consider serving with cherry tomatoes."
 source: "https://example.com/recipes/lentil-lasagne"
 ingredients: [
-    "100g Lasagne Sheets"
-    "200g Lentils"
+    name: "Pepper"
+,
+    name: "Onions"
+    quantity: "5"
+,
+    name: "Prepped Mozzarella"
+    prep: "chopped into cubes"
+,
+    name: "Goat's Cheese"
+    notes: "don't buy half fat"
 ]
 method: [
     "Cook the lentils"
