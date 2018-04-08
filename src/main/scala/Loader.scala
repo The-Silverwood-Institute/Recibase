@@ -29,12 +29,8 @@ class Loader(databasePath: String) {
       recipe.name,
       recipe.notes.getOrElse(""),
       recipe.ingredients.map(ingredientToString).mkString("\n"),
-      recipe.method.reduce(joinWithNewline)
+      recipe.method.mkString("\n")
     )
-  }
-
-  private def joinWithNewline(left: String, right: String): String = {
-    left + "\n" + right
   }
 
   private def ingredientToString(ingredient: Ingredient): String = {
