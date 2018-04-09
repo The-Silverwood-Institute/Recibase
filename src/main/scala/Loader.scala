@@ -36,10 +36,10 @@ class Loader(databasePath: String) {
   }
 
   private def ingredientToString(ingredient: Ingredient): String = {
-    val quantity  = ingredient.quantity.fold("")(quantity => quantity + " ")
-    val prep      = ingredient.prep.fold("")(prep => ", " + prep)
+    val quantity = ingredient.quantity.fold("")(quantity => ": " + quantity)
+    val prep = ingredient.prep.fold("")(prep => ", " + prep)
     val notes     = ingredient.notes.fold("")(notes => " (" + notes + ")")
 
-    quantity + ingredient.name + prep + notes
+    ingredient.name + quantity + prep + notes
   }
 }
