@@ -2,6 +2,7 @@ name: "Lentil Lasagne"
 url: "lentil-lasagne"
 notes: "Consider serving with cherry tomatoes."
 source: "https://example.com/recipes/lentil-lasagne"
+description: "A lasagne made with lentils."
 ingredients: [
     name: "Pepper"
 ,
