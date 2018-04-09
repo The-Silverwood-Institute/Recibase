@@ -23,6 +23,14 @@ class CSONIngestionSpec extends mutable.Specification {
         Fixtures.noOptionalsRecipe.source must beNone
       }
 
+      "can have a description" >> {
+        Fixtures.recipe.description must beSome("A lasagne made with lentils.")
+      }
+
+      "need not have a description" >> {
+        Fixtures.noOptionalsRecipe.description must beNone
+      }
+
       "can have notes" >> {
         Fixtures.recipe.notes must beSome("Consider serving with cherry tomatoes.")
       }
