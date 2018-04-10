@@ -15,7 +15,7 @@ case class Ingredient(
 case class Recipe(
                   name: String,
                   url: String,
-                  source: Option[String],
+                  // source: Option[String],
                   description: Option[String],
                   notes: Option[String],
                   ingredients: List[Ingredient],
@@ -25,7 +25,7 @@ case class Recipe(
 object Extractor {
   // Tells Spray how to map JSON to Scala objects
   implicit val ingredientFormat: JsonFormat[Ingredient] = jsonFormat4(Ingredient)
-  implicit val recipeFormat: RootJsonFormat[Recipe] = jsonFormat7(Recipe)
+  implicit val recipeFormat: RootJsonFormat[Recipe] = jsonFormat6(Recipe)
 
   def ingestRecipe(filePath: File): Recipe = {
     val stdout = new StringBuilder
