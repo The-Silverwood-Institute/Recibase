@@ -15,14 +15,6 @@ class CSONIngestionSpec extends mutable.Specification {
         Fixtures.recipe.url must_== "lentil-lasagne"
       }
 
-      "can have a source" >> {
-        Fixtures.recipe.source must beSome("https://example.com/recipes/lentil-lasagne")
-      }
-
-      "need not have a source" >> {
-        Fixtures.noOptionalsRecipe.source must beNone
-      }
-
       "can have a description" >> {
         Fixtures.recipe.description must beSome("A lasagne made with lentils.")
       }
