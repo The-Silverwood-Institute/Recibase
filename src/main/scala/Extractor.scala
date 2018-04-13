@@ -15,7 +15,6 @@ case class Ingredient(
 case class Recipe(
                   name: String,
                   url: String,
-                  // source: Option[String],
                   description: Option[String],
                   notes: Option[String],
                   ingredients: List[Ingredient],
