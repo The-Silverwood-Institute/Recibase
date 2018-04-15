@@ -27,6 +27,7 @@ object Main extends App {
   println(s"Saving recipes to database at:\n$databasePath")
   val databaseLoader: Loader = new Loader(databasePath)
   databaseLoader.addRecipes(recipes)
+  println("Recipes saved to db")
 
   def printUsage(): Unit = {
     println(

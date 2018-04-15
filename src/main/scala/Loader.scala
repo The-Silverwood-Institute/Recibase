@@ -1,9 +1,13 @@
 // Use H2Driver to connect to an H2 database
 import slick.jdbc.SQLiteProfile.api._
 
+import scala.concurrent._
+import ExecutionContext.Implicits.global
+import scala.concurrent.duration.Duration
+
 class Loader(databasePath: String) {
-  val databaseURL = s"jdbc:sqlite:$databasePath"
-  val db = Database.forURL(databaseURL, driver = "org.sqlite.JDBC")
+  private val databaseURL = s"jdbc:sqlite:$databasePath"
+  private val db = Database.forURL(databaseURL, driver = "org.sqlite.JDBC")
 
   class Recipes(tag: Tag) extends Table[(String, String, String, String, String, String)](tag, "Recipes") {
     def url = column[String]("url", O.PrimaryKey) // This is the primary key column
@@ -14,17 +18,20 @@ class Loader(databasePath: String) {
     def method = column[String]("method")
     def * = (url, name, description, notes, ingredients, method)
   }
-  val recipes = TableQuery[Recipes]
+
+  private val recipes = TableQuery[Recipes]
 
   def addRecipes(inRecipes: Seq[Recipe]): Unit = {
     val dbOperations = DBIO.seq(recipes.schema.create) andThen DBIO.sequence(inRecipes.map(addRecipe))
 
-    try {
-      db.run(dbOperations)
-    } finally db.close
+    val action = db.run(dbOperations.transactionally)
+
+    Await.result(action, Duration(3, "seconds"))
+
+    db.close()
   }
 
-  def addRecipe(recipe: Recipe): DBIO[Int] = {
+  private def addRecipe(recipe: Recipe): DBIO[Int] = {
     recipes += (
       recipe.url,
       recipe.name,
