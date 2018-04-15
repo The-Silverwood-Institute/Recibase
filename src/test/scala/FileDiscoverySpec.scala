@@ -36,6 +36,12 @@ class FileDiscoverySpec extends mutable.Specification {
 
       Discoverer.discoverRecipes(nestedDirectories).length must_== 3
     }
+
+    "Folders named '_drafts' are ignored" >> {
+      val draftsDirectory = DirectoryHelper.getFile("/draftsDirectory")
+
+      Discoverer.discoverRecipes(draftsDirectory).length must_== 0
+    }
   }
 }
 

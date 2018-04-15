@@ -2,8 +2,12 @@ import java.io.File
 
 object Discoverer {
   def discoverRecipes(directoryPath: File): Seq[File] = {
-    val files = directoryPath.listFiles.toList
+    val directoryListing = directoryPath.listFiles.toList
 
-    files.filter(_.getName.endsWith(".cson")) ++ files.filter(_.isDirectory).flatMap(discoverRecipes)
+    directoryListing.filter(recipeFileFilter) ++ directoryListing.filter(recipeDirectoryFilter).flatMap(discoverRecipes)
   }
+
+  private def recipeFileFilter(file: File): Boolean = file.getName.endsWith(".cson")
+
+  private def recipeDirectoryFilter(file: File): Boolean = file.isDirectory && file.getName != "_drafts"
 }
