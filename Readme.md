@@ -24,5 +24,27 @@ Recibase is a long term project which will grow depending on what features are u
 8. ???
 9. Profit
 
+## Requirements
+
+- SBT
+- Python 2.7
+- Java 8
+
+## Installation
+
+*Note: Recibase uses [git submodules][git-submodules] (yes, I know)*
+
+1. Clone Recibase
+2. Open a command prompt inside the cloned repo
+3. Run `git submodule update --init --recursive` to download Recibase's dependent GitHub projects
+4. Navigate to the `/estherj`
+5. Run `pip install -r requirements.txt`
+
+## Contributing/Questions
+
+If you have any questions or want to help out feel free to [open an issue][new-issue].
+
 [recipes]: https://github.com/The-Silverwood-Institute/Recipes
 [frontend]: https://github.com/The-Silverwood-Institute/Frontend
+[git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+[new-issue]: https://github.com/The-Silverwood-Institute/Recibase/issues/new
