@@ -11,14 +11,15 @@ class Loader(databaseFile: File) {
   private val databaseURL = s"jdbc:sqlite:$databasePath"
   private val db = Database.forURL(databaseURL, driver = "org.sqlite.JDBC")
 
-  class Recipes(tag: Tag) extends Table[(String, String, String, String, String, String)](tag, "Recipes") {
+  class Recipes(tag: Tag) extends Table[(String, String, String, String, String, String, String)](tag, "Recipes") {
     def url = column[String]("url", O.PrimaryKey) // This is the primary key column
     def name = column[String]("name")
     def description = column[String]("description")
+    def tagline = column[String]("tagline")
     def notes = column[String]("notes")
     def ingredients = column[String]("ingredients")
     def method = column[String]("method")
-    def * = (url, name, description, notes, ingredients, method)
+    def * = (url, name, description, tagline, notes, ingredients, method)
   }
 
   private val recipes = TableQuery[Recipes]
@@ -38,6 +39,7 @@ class Loader(databaseFile: File) {
       recipe.url,
       recipe.name,
       recipe.description.getOrElse(""),
+      recipe.tagline.getOrElse(""),
       recipe.notes.getOrElse(""),
       recipe.ingredients.map(ingredientToString).mkString("\n"),
       recipe.method.mkString("\n")

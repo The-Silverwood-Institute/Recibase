@@ -23,6 +23,10 @@ class CSONIngestionSpec extends mutable.Specification {
         Fixtures.noOptionalsRecipe.description must beNone
       }
 
+      "can have a tagline" >> {
+        Fixtures.recipe.tagline must beSome("Does two days!")
+      }
+
       "can have notes" >> {
         Fixtures.recipe.notes must beSome("Consider serving with cherry tomatoes.")
       }
