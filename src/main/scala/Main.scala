@@ -6,15 +6,18 @@ object Main extends App {
     System.exit(1)
   }
 
-  val databasePath = args(1)
+  val databaseDirectoryPath = args(1)
   val recipesDirectoryPath = args(0)
   val overwriteDatabase = args.length == 3 && args(2) == "--overwrite-db"
 
-  if (!databasePath.endsWith(".db")) {
-    println("Invalid database name. Databases expected to end with '.db'")
+
+  if (!new File(databaseDirectoryPath).isDirectory) {
+    println(s"Given database directory $databaseDirectoryPath does not exist")
     printUsage()
     System.exit(3)
   }
+
+  val databaseFile = new File(databaseDirectoryPath, "recipes.db")
 
   println(s"Searching for recipes in:\n$recipesDirectoryPath")
   val recipesDirectory = new File(recipesDirectoryPath)
@@ -31,13 +34,8 @@ object Main extends App {
   println("Ingesting recipes...")
   val recipes: Seq[Recipe] = recipeFiles.map(Extractor.ingestRecipe)
 
-  println(s"Saving recipes to database at:\n$databasePath")
-  if (!databasePath.endsWith(".db")) {
-    println("Invalid database name. Databases expected to end with '.db'")
-    System.exit(3)
-  }
+  println(s"Saving recipes to database at:\n${databaseFile.getAbsolutePath}")
 
-  val databaseFile = new File(databasePath)
   if (databaseFile.exists()) {
     if (overwriteDatabase) {
       println("Deleting existing database")
@@ -47,7 +45,7 @@ object Main extends App {
       System.exit(4)
     }
   }
-  val databaseLoader: Loader = new Loader(databasePath)
+  val databaseLoader: Loader = new Loader(databaseFile)
   databaseLoader.addRecipes(recipes)
   println("Recipes saved to db")
 
@@ -60,7 +58,7 @@ object Main extends App {
         | --------
         | Arguments:
         |  recipeDirectory   Location of recipes, as CSON files
-        |  databaseOutput    Path to where recipe database will be created
+        |  databaseOutput    Path to directory where recipe database will be created
         |  [--overwrite-db]  Delete the database, if it already exists
       """.stripMargin)
   }

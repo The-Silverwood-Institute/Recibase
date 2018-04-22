@@ -1,11 +1,13 @@
 // Use H2Driver to connect to an H2 database
+import java.io.File
 import slick.jdbc.SQLiteProfile.api._
 
 import scala.concurrent._
 import ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
 
-class Loader(databasePath: String) {
+class Loader(databaseFile: File) {
+  private val databasePath = databaseFile.getAbsolutePath
   private val databaseURL = s"jdbc:sqlite:$databasePath"
   private val db = Database.forURL(databaseURL, driver = "org.sqlite.JDBC")
 
