@@ -17,27 +17,43 @@ class Loader(databaseFile: File) {
   import y._
 
   sql"""CREATE TABLE recipes(
-    url VARCHAR NOT NULL UNIQUE,
+    url VARCHAR NOT NULL PRIMARY KEY,
     name VARCHAR NOT NULL,
     description VARCHAR,
     tagline VARCHAR,
     notes VARCHAR,
-    ingredients VARCHAR NOT NULL,
     method VARCHAR NOT NULL
+  )""".update.quick.unsafeRunSync()
+
+  sql"""CREATE TABLE ingredients(
+    recipeUrl VARCHAR NOT NULL,
+    name VARCHAR NOT NULL,
+    quantity VARCHAR,
+    prep VARCHAR,
+    notes VARCHAR,
+    FOREIGN KEY(recipeUrl) REFERENCES artist(url)
   )""".update.quick.unsafeRunSync()
 
   def addRecipes(recipes: Seq[Recipe]): Unit = {
     recipes.foreach(recipe => {
-      val ingredients = recipe.ingredients.map(ingredientToString).mkString("\n")
       val method = recipe.method.mkString("\n")
       val notes = recipe.notes.mkString("\n")
 
       sql"""insert into recipes
-           (url, name, description, tagline, notes, ingredients, method)
+           (url, name, description, tagline, notes, method)
            values
-           (${recipe.url}, ${recipe.name}, ${recipe.description}, ${recipe.tagline}, $notes, $ingredients, $method)""".update.quick.unsafeRunSync()
+           (${recipe.url}, ${recipe.name}, ${recipe.description}, ${recipe.tagline}, $notes, $method)""".update.quick.unsafeRunSync()
+
+      recipe.ingredients.foreach(ingredient => addIngredient(ingredient, recipe.url))
     })
   }
+
+  def addIngredient(ingredient: Ingredient, recipeUrl: String): Unit =
+    sql"""insert into ingredients
+         (recipeUrl, name, quantity, prep, notes)
+         values
+         ($recipeUrl, ${ingredient.name}, ${ingredient.quantity}, ${ingredient.prep}, ${ingredient.notes})
+      """.update.quick.unsafeRunSync()
 
   private def ingredientToString(ingredient: Ingredient): String = {
     val quantity = ingredient.quantity.fold("")(quantity => ": " + quantity)
