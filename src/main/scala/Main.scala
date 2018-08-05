@@ -45,7 +45,9 @@ object Main extends App {
       System.exit(4)
     }
   }
+  println("Connecting to database and creating schema")
   val databaseLoader: Loader = new Loader(databaseFile)
+  println("Adding recipes...")
   databaseLoader.addRecipes(recipes)
   println("Recipes saved to db")
 
