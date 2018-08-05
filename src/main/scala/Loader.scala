@@ -1,49 +1,42 @@
 // Use H2Driver to connect to an H2 database
 import java.io.File
-import slick.jdbc.SQLiteProfile.api._
-
-import scala.concurrent._
-import ExecutionContext.Implicits.global
-import scala.concurrent.duration.Duration
+import doobie._
+import doobie.implicits._
+import cats.effect.IO
 
 class Loader(databaseFile: File) {
   private val databasePath = databaseFile.getAbsolutePath
   private val databaseURL = s"jdbc:sqlite:$databasePath"
-  private val db = Database.forURL(databaseURL, driver = "org.sqlite.JDBC")
+  private val driver = "org.sqlite.JDBC"
 
-  class Recipes(tag: Tag) extends Table[(String, String, String, String, String, String, String)](tag, "Recipes") {
-    def url = column[String]("url", O.PrimaryKey) // This is the primary key column
-    def name = column[String]("name")
-    def description = column[String]("description")
-    def tagline = column[String]("tagline")
-    def notes = column[String]("notes")
-    def ingredients = column[String]("ingredients")
-    def method = column[String]("method")
-    def * = (url, name, description, tagline, notes, ingredients, method)
-  }
+  private val xa = Transactor.fromDriverManager[IO](
+    driver, databaseURL
+  )
 
-  private val recipes = TableQuery[Recipes]
+  val y = xa.yolo
+  import y._
 
-  def addRecipes(inRecipes: Seq[Recipe]): Unit = {
-    val dbOperations = DBIO.seq(recipes.schema.create) andThen DBIO.sequence(inRecipes.map(addRecipe))
+  sql"""CREATE TABLE recipes(
+    url VARCHAR NOT NULL UNIQUE,
+    name VARCHAR NOT NULL,
+    description VARCHAR,
+    tagline VARCHAR,
+    notes VARCHAR,
+    ingredients VARCHAR NOT NULL,
+    method VARCHAR NOT NULL
+  )""".update.quick.unsafeRunSync()
 
-    val action = db.run(dbOperations.transactionally)
+  def addRecipes(recipes: Seq[Recipe]): Unit = {
+    recipes.foreach(recipe => {
+      val ingredients = recipe.ingredients.map(ingredientToString).mkString("\n")
+      val method = recipe.method.mkString("\n")
+      val notes = recipe.notes.mkString("\n")
 
-    Await.result(action, Duration(3, "seconds"))
-
-    db.close()
-  }
-
-  private def addRecipe(recipe: Recipe): DBIO[Int] = {
-    recipes += (
-      recipe.url,
-      recipe.name,
-      recipe.description.getOrElse(""),
-      recipe.tagline.getOrElse(""),
-      recipe.notes.getOrElse(""),
-      recipe.ingredients.map(ingredientToString).mkString("\n"),
-      recipe.method.mkString("\n")
-    )
+      sql"""insert into recipes
+           (url, name, description, tagline, notes, ingredients, method)
+           values
+           (${recipe.url}, ${recipe.name}, ${recipe.description}, ${recipe.tagline}, $notes, $ingredients, $method)""".update.quick.unsafeRunSync()
+    })
   }
 
   private def ingredientToString(ingredient: Ingredient): String = {
