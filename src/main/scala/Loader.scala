@@ -31,7 +31,7 @@ class Loader(databaseFile: File) {
     quantity VARCHAR,
     prep VARCHAR,
     notes VARCHAR,
-    FOREIGN KEY(recipeUrl) REFERENCES artist(url)
+    FOREIGN KEY(recipeUrl) REFERENCES recipes(url)
   )""".update.quick.unsafeRunSync()
 
   def addRecipes(recipes: Seq[Recipe]): Unit = {
