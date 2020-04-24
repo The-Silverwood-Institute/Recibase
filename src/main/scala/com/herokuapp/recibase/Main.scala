@@ -13,7 +13,6 @@ object Main extends App {
   val databaseDirectoryPath = args(0)
   val overwriteDatabase = args.length == 2 && args(1) == "--overwrite-db"
 
-
   if (!new File(databaseDirectoryPath).isDirectory) {
     println(s"Given database directory $databaseDirectoryPath does not exist")
     printUsage()
@@ -64,7 +63,9 @@ object Main extends App {
       println("Deleting existing database")
       databaseFile.delete()
     } else {
-      println("Database already exists. Use flag '--overwrite-db' to overwrite.")
+      println(
+        "Database already exists. Use flag '--overwrite-db' to overwrite."
+      )
       System.exit(4)
     }
   }
@@ -84,6 +85,7 @@ object Main extends App {
         | Arguments:
         |  databaseOutput    Path to directory where recipe database will be created
         |  [--overwrite-db]  Delete the database, if it already exists
-      """.stripMargin)
+      """.stripMargin
+    )
   }
 }

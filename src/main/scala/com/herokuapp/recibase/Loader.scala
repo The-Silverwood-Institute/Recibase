@@ -13,7 +13,8 @@ class Loader(databaseFile: File) {
   private val driver = "org.sqlite.JDBC"
 
   private val xa = Transactor.fromDriverManager[IO](
-    driver, databaseURL
+    driver,
+    databaseURL
   )
 
   val y = xa.yolo
@@ -45,9 +46,12 @@ class Loader(databaseFile: File) {
       sql"""insert into recipes
            (url, name, description, tagline, notes, method)
            values
-           (${recipe.url}, ${recipe.name}, ${recipe.description}, ${recipe.tagline}, $notes, $method)""".update.quick.unsafeRunSync()
+           (${recipe.url}, ${recipe.name}, ${recipe.description}, ${recipe.tagline}, $notes, $method)""".update.quick
+        .unsafeRunSync()
 
-      recipe.ingredients.foreach(ingredient => addIngredient(ingredient, recipe.url))
+      recipe.ingredients.foreach(ingredient =>
+        addIngredient(ingredient, recipe.url)
+      )
     })
   }
 
