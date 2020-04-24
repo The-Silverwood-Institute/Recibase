@@ -9,6 +9,7 @@ object LambAubergineDaube
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Aubergine", "350g"),
         Ingredient("Onions", "2"),

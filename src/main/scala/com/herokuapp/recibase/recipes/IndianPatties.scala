@@ -6,6 +6,7 @@ object IndianPatties
     extends Recipe(
       "Indian Patties",
       "indian-patties",
+      None,
       Some(
         "Vegetarian burger patties made with red lentils, spinach, mint and spices."
       ),

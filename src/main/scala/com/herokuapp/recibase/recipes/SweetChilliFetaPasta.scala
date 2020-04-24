@@ -8,6 +8,7 @@ object SweetChilliFetaPasta
       "sweet-chilli-feta-pasta",
       None,
       None,
+      None,
       Some(
         """Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.
 There are basically no quantities. Add what seems right."""

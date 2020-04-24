@@ -8,6 +8,7 @@ object BroccoliSalmonQuiche
       "broccoli-salmon-quiche",
       None,
       None,
+      None,
       Some(
         "Consider using the remaining broccoli stalks and stilton in a broccoli and stilton soup."
       ),

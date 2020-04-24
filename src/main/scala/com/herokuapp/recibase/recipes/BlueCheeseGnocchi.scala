@@ -6,6 +6,7 @@ object BlueCheeseGnocchi
     extends Recipe(
       "Blue Cheese Gnocchi",
       "blue-cheese-gnocchi",
+      None,
       Some(
         "Gnocchi with creme fraiche and spinach topped with grilled blue stilton."
       ),

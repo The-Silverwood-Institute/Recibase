@@ -9,6 +9,7 @@ object SmokyFishSweetPotatoCurry
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Onion", Some("1"), Some("diced")),
         Ingredient("Garlic", Some("1 clove"), Some("finely chopped")),

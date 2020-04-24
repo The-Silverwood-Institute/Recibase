@@ -9,6 +9,7 @@ object RussianMushroomJulienne
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Mushrooms", Some("250g"), Some("thinly sliced")),
         Ingredient("Onion", None, Some("thinly sliced")),

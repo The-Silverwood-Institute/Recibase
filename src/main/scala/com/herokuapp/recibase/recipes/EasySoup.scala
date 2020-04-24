@@ -9,6 +9,7 @@ object EasySoup
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Butter", "Knob"),
         Ingredient("Onion", "1"),

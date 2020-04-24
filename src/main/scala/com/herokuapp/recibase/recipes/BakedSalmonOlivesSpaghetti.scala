@@ -6,6 +6,7 @@ object BakedSalmonOlivesSpaghetti
     extends Recipe(
       "Baked Salmon with Olives and Spaghetti",
       "salmon-olive-spaghetti",
+      None,
       Some("Baked salmon served on a bed of spaghetti, onions and olives."),
       None,
       Some("Cover the baking tray in foil for easier cleaning later."),

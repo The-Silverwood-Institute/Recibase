@@ -9,6 +9,7 @@ object BeetrootRisotto
       None,
       None,
       None,
+      None,
       List(
         Ingredient(
           "Beetroot",

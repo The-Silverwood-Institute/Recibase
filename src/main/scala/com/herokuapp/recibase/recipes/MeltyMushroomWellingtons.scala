@@ -8,6 +8,7 @@ object MeltyMushroomWellingtons
       "melty-mushroom-wellingtons",
       None,
       None,
+      None,
       Some(
         """Take the pastry out of the fridge ten minutes before use.
 Makes two large pies."""

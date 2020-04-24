@@ -9,6 +9,7 @@ object CourgetteSpinachPasties
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Courgettes", "2"),
         Ingredient("Soft Goats Cheese", "2"),

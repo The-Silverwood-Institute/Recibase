@@ -8,6 +8,7 @@ object SpicySmokedPaprikaChorizo
       "spicy-smoked-paprika-chorizo",
       None,
       None,
+      None,
       Some(
         """If your chorio is very spicy you might not need any chilli flakes. Similarly if you use chilli oil.
 This dish tastes best if you leave it to cool then reheat it.

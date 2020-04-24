@@ -6,6 +6,7 @@ object ScrambledEggs
     extends Recipe(
       "Scrambled Eggs",
       "scrambled-eggs",
+      None,
       Some("Soft, buttery scrambled eggs."),
       None,
       Some(

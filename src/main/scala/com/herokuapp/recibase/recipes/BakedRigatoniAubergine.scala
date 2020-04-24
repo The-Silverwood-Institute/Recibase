@@ -8,6 +8,7 @@ object BakedRigatoniAubergine
       "baked-rigatoni-aubergine",
       None,
       None,
+      None,
       Some("Traditional parmesan is not vegetarian"),
       List(
         Ingredient("Onion", Some("1"), Some("chopped")),

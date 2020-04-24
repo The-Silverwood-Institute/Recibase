@@ -6,6 +6,7 @@ object Dahl
     extends Recipe(
       "Dahl",
       "dahl",
+      None,
       Some("An Indian dish of lentils infused with spices."),
       None,
       Some(

@@ -9,6 +9,7 @@ object ChilliConCarne
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Oil"),
         Ingredient("Salt"),

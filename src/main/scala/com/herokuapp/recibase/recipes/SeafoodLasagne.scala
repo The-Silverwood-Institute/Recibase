@@ -9,6 +9,7 @@ object SeafoodLasagne
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Semi-skimmed milk", "1L"),
         Ingredient(

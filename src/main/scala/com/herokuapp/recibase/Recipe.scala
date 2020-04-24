@@ -10,6 +10,7 @@ case class Ingredient(
 case class Recipe(
     name: String,
     url: String,
+    source: Option[String],
     description: Option[String],
     tagline: Option[String],
     notes: Option[String],

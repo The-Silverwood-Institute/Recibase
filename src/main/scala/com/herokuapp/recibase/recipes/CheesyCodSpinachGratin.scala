@@ -9,6 +9,7 @@ object CheesyCodSpinachGratin
       None,
       None,
       None,
+      None,
       List(
         Ingredient("Cod", "2 110g fillets"),
         Ingredient("Stock cube", "1"),

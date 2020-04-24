@@ -6,6 +6,7 @@ object Kashtouri
     extends Recipe(
       "Kashtouri",
       "kashtouri",
+      None,
       Some(
         "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
       ),

@@ -8,6 +8,7 @@ object RoastedVegetableLasagne
       "roasted-vegetable-lasagne",
       None,
       None,
+      None,
       Some(
         """This takes a while to make so leave lots of time.
 
