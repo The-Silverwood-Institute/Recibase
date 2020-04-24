@@ -34,15 +34,15 @@ You could try serving this dish over grilled aubergines."""
           Some("torn"),
           Some("frozen would also work")
         ),
-        Ingredient("Tinned Tomatoes", Some("3")),
-        Ingredient("Tomato Paste", Some("4 Inches")),
+        Ingredient("Tinned Tomatoes", "3"),
+        Ingredient("Tomato Paste", "4 Inches"),
         Ingredient(
           "Red Wine",
           Some("10-20CL"),
           None,
           Some("something in the \u00a35-10 range")
         ),
-        Ingredient("Smoked Paprika", Some("Several teaspoons")),
+        Ingredient("Smoked Paprika", "Several teaspoons"),
         Ingredient("Olive Oil"),
         Ingredient("Chilli Flakes"),
         Ingredient(
@@ -51,7 +51,7 @@ You could try serving this dish over grilled aubergines."""
           None,
           Some("anything but that Rowse shit")
         ),
-        Ingredient("Dried Oregano", Some("1 tbsp")),
+        Ingredient("Dried Oregano", "1 tbsp"),
         Ingredient(
           "Stick of Cinnamon",
           Some("1"),

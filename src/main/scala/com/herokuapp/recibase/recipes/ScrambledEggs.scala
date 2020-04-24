@@ -17,7 +17,7 @@ Spring onions - lightly fry a sliced spring onion in the butter. Also works with
       ),
       List(
         Ingredient("Butter", None, None, Some("Use a decent amount")),
-        Ingredient("Eggs", Some("2")),
+        Ingredient("Eggs", "2"),
         Ingredient("Milk"),
         Ingredient("Salt"),
         Ingredient("Black pepper")

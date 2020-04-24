@@ -19,10 +19,10 @@ object BroccoliSalmonQuiche
           Some("Save the stalks for a soup")
         ),
         Ingredient("Smoked Salmon", Some("120g"), Some("Cut into 2cm pieces")),
-        Ingredient("Stilton", Some("50g")),
-        Ingredient("Shortcrust Pastry Sheet", Some("230g")),
-        Ingredient("Eggs", Some("3")),
-        Ingredient("Mascarpone Cheese", Some("2 tbsp")),
+        Ingredient("Stilton", "50g"),
+        Ingredient("Shortcrust Pastry Sheet", "230g"),
+        Ingredient("Eggs", "3"),
+        Ingredient("Mascarpone Cheese", "2 tbsp"),
         Ingredient("Pepper")
       ),
       List(

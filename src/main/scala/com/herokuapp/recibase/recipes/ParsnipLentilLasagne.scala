@@ -12,21 +12,21 @@ object ParsnipLentilLasagne
       List(
         Ingredient("Lasagne sheets", Some("200g"), None, Some("12 sheets")),
         Ingredient("Soft Goats cheese", Some("150g"), None, Some("or ricotta")),
-        Ingredient("Feta", Some("200g")),
+        Ingredient("Feta", "200g"),
         Ingredient(
           "Milk",
           Some("100ml"),
           None,
           Some("Full fat or semi-skimmed")
         ),
-        Ingredient("Parsnips", Some("400g")),
+        Ingredient("Parsnips", "400g"),
         Ingredient("Red Onion", Some("1 large"), Some("thinly sliced")),
-        Ingredient("Red lentils", Some("100g")),
+        Ingredient("Red lentils", "100g"),
         Ingredient("Red peppers", Some("2 large"), Some("diced")),
         Ingredient("Carrot", Some("1 large"), Some("thinly sliced")),
         Ingredient("Celery Sticks", Some("2"), Some("thinly sliced")),
-        Ingredient("Vegetable Stock", Some("300ml")),
-        Ingredient("Passata", Some("250ml")),
+        Ingredient("Vegetable Stock", "300ml"),
+        Ingredient("Passata", "250ml"),
         Ingredient(
           "Kidney Beans",
           Some("2 400g tins"),

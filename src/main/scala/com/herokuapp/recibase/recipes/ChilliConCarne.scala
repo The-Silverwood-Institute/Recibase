@@ -13,8 +13,8 @@ object ChilliConCarne
         Ingredient("Oil"),
         Ingredient("Salt"),
         Ingredient("Pepper"),
-        Ingredient("Chilli Powder", Some("1 tsp")),
-        Ingredient("Crushed or whole dried chillies", Some("1 tsp")),
+        Ingredient("Chilli Powder", "1 tsp"),
+        Ingredient("Crushed or whole dried chillies", "1 tsp"),
         Ingredient("Paprika"),
         Ingredient("Tomato Puree"),
         Ingredient("Tinned tomatoes"),
@@ -23,11 +23,11 @@ object ChilliConCarne
         Ingredient("Beef stock cube or Bovril"),
         Ingredient("Rice"),
         Ingredient("Olive Oil"),
-        Ingredient("Onion", Some("1")),
-        Ingredient("Garlic Clove", Some("1")),
+        Ingredient("Onion", "1"),
+        Ingredient("Garlic Clove", "1"),
         Ingredient("Tinned Kidney Beans"),
         Ingredient("Honey", Some("1 tbsp"), None, Some("Optional")),
-        Ingredient("Mince", Some("500g"))
+        Ingredient("Mince", "500g")
       ),
       List(
         "Slice onions, crush garlic then brown in 2 tsp olive oil.",

@@ -21,9 +21,9 @@ Makes two large pies."""
         Ingredient("Spinach", None, Some("torn up")),
         Ingredient("Stilton", Some("250g"), Some("finely chopped")),
         Ingredient("Garlic", None, Some("finely chopped")),
-        Ingredient("Butter", Some("knob")),
+        Ingredient("Butter", "knob"),
         Ingredient("Black pepper"),
-        Ingredient("Puff pastry", Some("1 sheet"))
+        Ingredient("Puff pastry", "1 sheet")
       ),
       List(
         "Preheat the oven at 200C.",

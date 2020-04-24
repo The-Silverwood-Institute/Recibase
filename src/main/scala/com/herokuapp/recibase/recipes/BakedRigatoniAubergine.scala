@@ -17,7 +17,7 @@ object BakedRigatoniAubergine
           Some("finely chopped or crushed")
         ),
         Ingredient("Red wine"),
-        Ingredient("Chopped tomatoes", Some("2 400g tins")),
+        Ingredient("Chopped tomatoes", "2 400g tins"),
         Ingredient(
           "Sun-dried tomatoes",
           Some("5"),
@@ -36,7 +36,7 @@ object BakedRigatoniAubergine
           None,
           Some("Or penne or other chunky pasta tube")
         ),
-        Ingredient("Breadcrumbs", Some("30g")),
+        Ingredient("Breadcrumbs", "30g"),
         Ingredient(
           "Parmesan",
           Some("30g"),

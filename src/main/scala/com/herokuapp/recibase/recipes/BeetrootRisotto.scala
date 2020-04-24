@@ -16,10 +16,10 @@ object BeetrootRisotto
           Some("peeled and cut into 1-2cm pieces"),
           Some("Quantity is approximate")
         ),
-        Ingredient("Arborio rice", Some("1 cup")),
-        Ingredient("White wine", Some("A decent slosh")),
+        Ingredient("Arborio rice", "1 cup"),
+        Ingredient("White wine", "A decent slosh"),
         Ingredient("Thyme"),
-        Ingredient("Stock cube", Some("1")),
+        Ingredient("Stock cube", "1"),
         Ingredient(
           "Water",
           Some("700ml"),

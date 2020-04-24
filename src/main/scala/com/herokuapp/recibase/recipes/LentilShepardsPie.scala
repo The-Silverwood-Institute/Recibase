@@ -18,18 +18,18 @@ object LentilShepardsPie
         Ingredient("Green Lentils", Some("500g"), None, Some("Dried")),
         Ingredient("Butter"),
         Ingredient("Bay Leaf", Some("2"), None, Some("Optional")),
-        Ingredient("Thyme", Some("1 tbsp")),
+        Ingredient("Thyme", "1 tbsp"),
         Ingredient("Red wine", Some("100ml"), None, Some("Optional")),
-        Ingredient("Stock cube", Some("1")),
-        Ingredient("Tomato purée", Some("3 tbsp")),
+        Ingredient("Stock cube", "1"),
+        Ingredient("Tomato purée", "3 tbsp"),
         Ingredient(
           "King Edwards Potatoes",
           Some("2kg"),
           None,
           Some("Other floury potatoes will do")
         ),
-        Ingredient("Butter", Some("85g")),
-        Ingredient("Milk", Some("100ml")),
+        Ingredient("Butter", "85g"),
+        Ingredient("Milk", "100ml"),
         Ingredient("Cheddar", Some("50g"), Some("Grated"))
       ),
       List(

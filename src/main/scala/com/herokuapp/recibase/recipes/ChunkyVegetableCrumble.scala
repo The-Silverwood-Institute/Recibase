@@ -39,8 +39,8 @@ Honey can be added with the carrots for extra sweetness."""
           None,
           Some("Use less for a thicker dish (preferred)")
         ),
-        Ingredient("Worcestershire sauce", Some("generous dash")),
-        Ingredient("Tomato purée", Some("1 tbsp")),
+        Ingredient("Worcestershire sauce", "generous dash"),
+        Ingredient("Tomato purée", "1 tbsp"),
         Ingredient(
           "Bay leaves",
           Some("2"),
@@ -55,7 +55,7 @@ Honey can be added with the carrots for extra sweetness."""
         Ingredient("Thyme", Some("1-2 tsp"), None, Some("Optional")),
         Ingredient("Salt"),
         Ingredient("Pepper"),
-        Ingredient("Flour", Some("85g")),
+        Ingredient("Flour", "85g"),
         Ingredient(
           "Butter",
           Some("30g"),
@@ -68,7 +68,7 @@ Honey can be added with the carrots for extra sweetness."""
           Some("coarsely grated"),
           Some("Always use more")
         ),
-        Ingredient("Sunflower seeds", Some("30g"))
+        Ingredient("Sunflower seeds", "30g")
       ),
       List(
         "Preheat oven to 190 C (375 F, gas mark 5).",

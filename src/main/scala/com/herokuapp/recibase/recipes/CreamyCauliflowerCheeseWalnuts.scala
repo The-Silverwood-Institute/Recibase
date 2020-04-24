@@ -17,7 +17,7 @@ object CreamyCauliflowerCheeseWalnuts
           None,
           Some("or Cream Cheese")
         ),
-        Ingredient("Dijon Mustard", Some("1 tsp")),
+        Ingredient("Dijon Mustard", "1 tsp"),
         Ingredient("Blue Cheese", Some("125g"), Some("crumbled")),
         Ingredient("Walnuts", Some("25g"), Some("roughly chopped")),
         Ingredient("Cheddar Cheese", Some("50g"), Some("grated")),

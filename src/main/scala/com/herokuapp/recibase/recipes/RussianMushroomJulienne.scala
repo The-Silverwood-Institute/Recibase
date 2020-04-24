@@ -13,8 +13,8 @@ object RussianMushroomJulienne
         Ingredient("Mushrooms", Some("250g"), Some("thinly sliced")),
         Ingredient("Onion", None, Some("thinly sliced")),
         Ingredient("White wine"),
-        Ingredient("Sour cream", Some("150ml")),
-        Ingredient("Double cream", Some("120ml")),
+        Ingredient("Sour cream", "150ml"),
+        Ingredient("Double cream", "120ml"),
         Ingredient("Mozzarella cheese", Some("240g"), Some("roughly chopped")),
         Ingredient("Butter")
       ),

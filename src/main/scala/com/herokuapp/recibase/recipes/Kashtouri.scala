@@ -12,8 +12,8 @@ object Kashtouri
       None,
       None,
       List(
-        Ingredient("Risotto rice", Some("150g")),
-        Ingredient("Macaroni", Some("150g")),
+        Ingredient("Risotto rice", "150g"),
+        Ingredient("Macaroni", "150g"),
         Ingredient(
           "Red lentils",
           Some("150g"),
@@ -22,9 +22,9 @@ object Kashtouri
         ),
         Ingredient("Onion", Some("1"), Some("finely chopped")),
         Ingredient("Garlic", None, Some("finely chopped or crushed")),
-        Ingredient("Chopped tomatoes", Some("1 400g tin")),
+        Ingredient("Chopped tomatoes", "1 400g tin"),
         Ingredient("Cayenne pepper", Some("1-2 tsp")),
-        Ingredient("Ground coriander", Some("1 tsp")),
+        Ingredient("Ground coriander", "1 tsp"),
         Ingredient("Lemon juice"),
         Ingredient("Salt"),
         Ingredient("Black pepper")

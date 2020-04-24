@@ -14,7 +14,7 @@ For frying the paneer, the goal is something like a very shallow shallow fry, wi
       ),
       List(
         Ingredient("Paneer", Some("1 block"), Some("cut into 2-3 cm cubes")),
-        Ingredient("Ground turmeric", Some("2 tsp")),
+        Ingredient("Ground turmeric", "2 tsp"),
         Ingredient("Chilli powder", Some("1/2 tsp")),
         Ingredient("Onion", Some("1"), Some("diced, but not too finely")),
         Ingredient(

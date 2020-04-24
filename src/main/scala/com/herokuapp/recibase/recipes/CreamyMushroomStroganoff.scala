@@ -13,13 +13,13 @@ object CreamyMushroomStroganoff
 Pots of dried forest mushrooms also work. Try softening the mushrooms in the stock."""
       ),
       List(
-        Ingredient("Butter", Some("50g")),
+        Ingredient("Butter", "50g"),
         Ingredient("Large Onion", Some("1"), Some("sliced")),
         Ingredient("Brown Mushrooms", Some("250g"), Some("sliced")),
-        Ingredient("Shiitake or Porchini Mushrooms", Some("Some")),
-        Ingredient("Vegetable or Mushroom stock cube", Some("1")),
-        Ingredient("Soured Cream", Some("350ml")),
-        Ingredient("Plain Flour", Some("3 tbsp")),
+        Ingredient("Shiitake or Porchini Mushrooms", "Some"),
+        Ingredient("Vegetable or Mushroom stock cube", "1"),
+        Ingredient("Soured Cream", "350ml"),
+        Ingredient("Plain Flour", "3 tbsp"),
         Ingredient("Salt"),
         Ingredient("Black Pepper")
       ),

@@ -14,24 +14,24 @@ object RoastedVegetableLasagne
 Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."""
       ),
       List(
-        Ingredient("Red Peppers", Some("3")),
-        Ingredient("Aubergines", Some("2")),
+        Ingredient("Red Peppers", "3"),
+        Ingredient("Aubergines", "2"),
         Ingredient("Onions", Some("2"), Some("diced")),
-        Ingredient("Garlic Cloves", Some("2")),
+        Ingredient("Garlic Cloves", "2"),
         Ingredient("Carrot", Some("1"), Some("roughly chopped")),
-        Ingredient("Tomato Puree", Some("2 tbsp")),
+        Ingredient("Tomato Puree", "2 tbsp"),
         Ingredient("Red or White Wine"),
-        Ingredient("Chopped Tomatoes", Some("3 tins")),
+        Ingredient("Chopped Tomatoes", "3 tins"),
         Ingredient(
           "Dried mixed herbs",
           Some("handful"),
           None,
           Some("Italian herb blends or just plain oregano works")
         ),
-        Ingredient("Butter", Some("knob")),
+        Ingredient("Butter", "knob"),
         Ingredient("Flour"),
         Ingredient("Milk"),
-        Ingredient("Fresh Lasagne sheets", Some("300g")),
+        Ingredient("Fresh Lasagne sheets", "300g"),
         Ingredient(
           "Mozzarella",
           Some("125g"),

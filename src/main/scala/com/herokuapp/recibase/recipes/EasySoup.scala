@@ -10,12 +10,12 @@ object EasySoup
       None,
       None,
       List(
-        Ingredient("Butter", Some("Knob")),
-        Ingredient("Onion", Some("1")),
-        Ingredient("Red Pepper", Some("1")),
-        Ingredient("Apple", Some("1")),
-        Ingredient("Carrot", Some("1")),
-        Ingredient("Water", Some("600ml")),
+        Ingredient("Butter", "Knob"),
+        Ingredient("Onion", "1"),
+        Ingredient("Red Pepper", "1"),
+        Ingredient("Apple", "1"),
+        Ingredient("Carrot", "1"),
+        Ingredient("Water", "600ml"),
         Ingredient("Stock Cube"),
         Ingredient("Mixed Herbs"),
         Ingredient("Extra vegetables", None, None, Some("Optional"))

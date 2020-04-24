@@ -10,12 +10,12 @@ object CheesyCodSpinachGratin
       None,
       None,
       List(
-        Ingredient("Cod", Some("2 110g fillets")),
-        Ingredient("Stock cube", Some("1")),
+        Ingredient("Cod", "2 110g fillets"),
+        Ingredient("Stock cube", "1"),
         Ingredient("Spinach", Some("80g"), Some("torn or chopped")),
-        Ingredient("Panko breadcrumbs", Some("30g")),
+        Ingredient("Panko breadcrumbs", "30g"),
         Ingredient("Cheddar", Some("40g"), Some("grated")),
-        Ingredient("Soft cheese", Some("50g")),
+        Ingredient("Soft cheese", "50g"),
         Ingredient("Water", Some("150ml"), Some("boiling"))
       ),
       List(

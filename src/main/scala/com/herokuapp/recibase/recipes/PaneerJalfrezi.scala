@@ -25,10 +25,10 @@ object PaneerJalfrezi
           Some("finely chopped or crushed")
         ),
         Ingredient("Tomatoes", Some("2"), Some("chopped")),
-        Ingredient("Curry powder", Some("1 tbsp")),
-        Ingredient("Tomato purée", Some("32g")),
-        Ingredient("Brown sugar", Some("2 tsp")),
-        Ingredient("Stock cube", Some("1"))
+        Ingredient("Curry powder", "1 tbsp"),
+        Ingredient("Tomato purée", "32g"),
+        Ingredient("Brown sugar", "2 tsp"),
+        Ingredient("Stock cube", "1")
       ),
       List(
         "Fry the paneer until brown, turning to achieve an even colouring then set aside.",

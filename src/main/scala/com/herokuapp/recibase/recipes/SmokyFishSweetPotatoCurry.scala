@@ -37,9 +37,9 @@ object SmokyFishSweetPotatoCurry
           Some("finely chopped or grated"),
           Some("Use ground ginger for speed")
         ),
-        Ingredient("Stock cube", Some("1")),
-        Ingredient("Ground coriander", Some("1 tsp")),
-        Ingredient("Ground turmeric", Some("1 tsp")),
+        Ingredient("Stock cube", "1"),
+        Ingredient("Ground coriander", "1 tsp"),
+        Ingredient("Ground turmeric", "1 tsp"),
         Ingredient(
           "Sweet potato",
           Some("200g"),

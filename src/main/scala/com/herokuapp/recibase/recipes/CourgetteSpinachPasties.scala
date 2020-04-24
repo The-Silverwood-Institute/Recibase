@@ -10,10 +10,10 @@ object CourgetteSpinachPasties
       None,
       None,
       List(
-        Ingredient("Courgettes", Some("2")),
-        Ingredient("Soft Goats Cheese", Some("2")),
+        Ingredient("Courgettes", "2"),
+        Ingredient("Soft Goats Cheese", "2"),
         Ingredient("Spinach", Some("3 handfulls"), Some("roughly chopped")),
-        Ingredient("All Butter Puff Pastry", Some("320g")),
+        Ingredient("All Butter Puff Pastry", "320g"),
         Ingredient("Flour", None, None, Some("to thicken mixture")),
         Ingredient("Nutmeg"),
         Ingredient("Salt"),

@@ -16,3 +16,8 @@ case class Recipe(
     ingredients: List[Ingredient],
     method: List[String]
 )
+
+object Ingredient {
+  def apply(name: String, quantity: String): Ingredient =
+    new Ingredient(name, Some(quantity))
+}

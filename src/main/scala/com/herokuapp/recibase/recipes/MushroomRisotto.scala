@@ -17,18 +17,18 @@ object MushroomRisotto
           None,
           Some("Porcini, shiitake, wild, etc")
         ),
-        Ingredient("Arborio rice", Some("1 cup")),
-        Ingredient("White wine", Some("A decent slosh")),
+        Ingredient("Arborio rice", "1 cup"),
+        Ingredient("White wine", "A decent slosh"),
         Ingredient("Black pepper"),
-        Ingredient("Stock cube", Some("1")),
+        Ingredient("Stock cube", "1"),
         Ingredient(
           "Water",
           Some("700ml"),
           Some("boiling"),
           Some("Might need to add more")
         ),
-        Ingredient("Stilton", Some("100g")),
-        Ingredient("Butter", Some("knob"))
+        Ingredient("Stilton", "100g"),
+        Ingredient("Butter", "knob")
       ),
       List(
         "Dissolve the stock cube in the boiling water and add the dried mushrooms, wine and black pepper.",

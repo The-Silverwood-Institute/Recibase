@@ -14,10 +14,10 @@ object BlueCheeseGnocchi
         "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
       ),
       List(
-        Ingredient("Gnocchi", Some("500g")),
+        Ingredient("Gnocchi", "500g"),
         Ingredient("Parmesan", Some("~70g"), Some("grated")),
-        Ingredient("Creme Fraiche", Some("150ml")),
-        Ingredient("Spinach", Some("200g")),
+        Ingredient("Creme Fraiche", "150ml"),
+        Ingredient("Spinach", "200g"),
         Ingredient("Stilton", Some("200g"), Some("diced/crumbled")),
         Ingredient("Pimento Stuffed olives", None, None, Some("Optional")),
         Ingredient("Cherry Tomatoes", None, None, Some("Optional")),

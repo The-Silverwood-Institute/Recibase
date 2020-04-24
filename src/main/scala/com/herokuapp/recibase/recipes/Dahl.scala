@@ -12,7 +12,7 @@ object Dahl
         "Roasted nuts can also be added. Cook them until brown with a little oil in the small pan before adding the butter, cumin and onion."
       ),
       List(
-        Ingredient("Red lentils", Some("350g")),
+        Ingredient("Red lentils", "350g"),
         Ingredient(
           "Water",
           Some("800ml"),
@@ -40,8 +40,8 @@ object Dahl
           Some("Use at least 1 tsp")
         ),
         Ingredient("Salt"),
-        Ingredient("Butter", Some("25g approx")),
-        Ingredient("Ground cumin", Some("1 tsp")),
+        Ingredient("Butter", "25g approx"),
+        Ingredient("Ground cumin", "1 tsp"),
         Ingredient("Onion", Some("1"), Some("diced"))
       ),
       List(

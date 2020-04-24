@@ -16,7 +16,7 @@ Don't waste time finely chopping the ingredients as they're blended anyway.
 Can take a long time."""
       ),
       List(
-        Ingredient("Red lentils", Some("225g")),
+        Ingredient("Red lentils", "225g"),
         Ingredient("Whole cloves", Some("1-2")),
         Ingredient(
           "Coriander seeds",
@@ -25,7 +25,7 @@ Can take a long time."""
           Some("Or ground coriander")
         ),
         Ingredient("Cumin seeds", Some("1-2 tsp")),
-        Ingredient("Black peppercorns", Some("1 tsp")),
+        Ingredient("Black peppercorns", "1 tsp"),
         Ingredient("Garlic", Some("2-3 cloves"), Some("chopped or crushed")),
         Ingredient(
           "Ginger",
@@ -33,7 +33,7 @@ Can take a long time."""
           Some("peeled and chopped/grated")
         ),
         Ingredient("Onion", Some("1"), Some("diced")),
-        Ingredient("Spinach", Some("225g")),
+        Ingredient("Spinach", "225g"),
         Ingredient("Coriander leaves"),
         Ingredient("Mint leaves"),
         Ingredient(
@@ -42,7 +42,7 @@ Can take a long time."""
           Some("chopped, seeds removed if desired")
         ),
         Ingredient("Ground cinnamon"),
-        Ingredient("Egg", Some("1")),
+        Ingredient("Egg", "1"),
         Ingredient("Salt")
       ),
       List(

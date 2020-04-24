@@ -10,19 +10,19 @@ object SeafoodLasagne
       None,
       None,
       List(
-        Ingredient("Semi-skimmed milk", Some("1L")),
+        Ingredient("Semi-skimmed milk", "1L"),
         Ingredient(
           "Mixed seafood",
           Some("400g"),
           None,
           Some("you can buy a pie mix or pick and mix your own")
         ),
-        Ingredient("Garlic clove", Some("1")),
-        Ingredient("Plain flour", Some("50g")),
-        Ingredient("English mustard", Some("1 tsp")),
-        Ingredient("Fresh lasagne sheets", Some("400g")),
-        Ingredient("Tarragon", Some("2 tbsp")),
-        Ingredient("Baby spinach", Some("large handful")),
+        Ingredient("Garlic clove", "1"),
+        Ingredient("Plain flour", "50g"),
+        Ingredient("English mustard", "1 tsp"),
+        Ingredient("Fresh lasagne sheets", "400g"),
+        Ingredient("Tarragon", "2 tbsp"),
+        Ingredient("Baby spinach", "large handful"),
         Ingredient("Cheddar", Some("150g"), Some("Grated")),
         Ingredient("Parmesan", Some("75g"), Some("Grated")),
         Ingredient("Butter")

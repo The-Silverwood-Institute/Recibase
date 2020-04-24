@@ -19,10 +19,10 @@ object MushroomQuiche
         ),
         Ingredient("Red onion", Some("1"), Some("sliced")),
         Ingredient("Parmesan", None, Some("Grated")),
-        Ingredient("Mascarpone", Some("2 tbsp")),
-        Ingredient("Eggs", Some("2")),
+        Ingredient("Mascarpone", "2 tbsp"),
+        Ingredient("Eggs", "2"),
         Ingredient("Black pepper"),
-        Ingredient("Shortcrust pastry sheet", Some("230g"))
+        Ingredient("Shortcrust pastry sheet", "230g")
       ),
       List(
         "Place the dried mushrooms in a small amount of boiling water to rehydrate.",
