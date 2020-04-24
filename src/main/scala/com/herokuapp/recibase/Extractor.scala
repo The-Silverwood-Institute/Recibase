@@ -1,3 +1,5 @@
+package com.herokuapp.recibase
+
 import java.io.File
 
 import spray.json.DefaultJsonProtocol._

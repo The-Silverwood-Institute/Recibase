@@ -1,8 +1,11 @@
+package com.herokuapp.recibase
+
 // Use H2Driver to connect to an H2 database
 import java.io.File
+
+import cats.effect.IO
 import doobie._
 import doobie.implicits._
-import cats.effect.IO
 
 class Loader(databaseFile: File) {
   private val databasePath = databaseFile.getAbsolutePath

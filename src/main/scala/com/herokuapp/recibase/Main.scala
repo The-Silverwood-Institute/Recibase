@@ -1,14 +1,17 @@
+package com.herokuapp.recibase
+
 import java.io.File
 
+import com.herokuapp.recibase.recipes._
+
 object Main extends App {
-  if (args.length != 2 && args.length != 3) {
+  if (args.length != 1 && args.length != 2) {
     printUsage()
     System.exit(1)
   }
 
-  val databaseDirectoryPath = args(1)
-  val recipesDirectoryPath = args(0)
-  val overwriteDatabase = args.length == 3 && args(2) == "--overwrite-db"
+  val databaseDirectoryPath = args(0)
+  val overwriteDatabase = args.length == 2 && args(1) == "--overwrite-db"
 
 
   if (!new File(databaseDirectoryPath).isDirectory) {
@@ -19,20 +22,40 @@ object Main extends App {
 
   val databaseFile = new File(databaseDirectoryPath, "recipes.db")
 
-  println(s"Searching for recipes in:\n$recipesDirectoryPath")
-  val recipesDirectory = new File(recipesDirectoryPath)
-  val recipeFiles: Seq[File] = Discoverer.discoverRecipes(recipesDirectory)
-
-  if (recipeFiles.isEmpty) {
-    println("No recipes found")
-    System.exit(2)
-  } else {
-    println(s"Found ${recipeFiles.length} recipes:")
-    recipeFiles.foreach(file => println("    " + file.getName))
-  }
-
-  println("Ingesting recipes...")
-  val recipes: Seq[Recipe] = recipeFiles.map(Extractor.ingestRecipe)
+  val recipes = List(
+    BakedRigatoniAubergine,
+    BakedSalmonOlivesSpaghetti,
+    BeetrootRisotto,
+    BlueCheeseGnocchi,
+    BroccoliSalmonQuiche,
+    CheesyCodSpinachGratin,
+    ChilliConCarne,
+    ChunkyVegetableCrumble,
+    CourgetteSpinachPasties,
+    CreamyCauliflowerCheeseWalnuts,
+    CreamyMushroomStroganoff,
+    Dahl,
+    EasySoup,
+    IndianPatties,
+    Kashtouri,
+    LemonFetaPasta,
+    LentilShepardsPie,
+    MeltyMushroomWellingtons,
+    MushroomQuiche,
+    MushroomRisotto,
+    PaneerJalfrezi,
+    ParsnipGingerSoup,
+    ParsnipLentilLasagne,
+    RoastedVegetableLasagne,
+    RussianMushroomJulienne,
+    SaagPaneer,
+    ScrambledEggs,
+    SeafoodLasagne,
+    SmokyFishSweetPotatoCurry,
+    SpicySmokedPaprikaChorizo,
+    SweetChilliFetaPasta,
+    VegetablePrimavera
+  )
 
   println(s"Saving recipes to database at:\n${databaseFile.getAbsolutePath}")
 
@@ -59,7 +82,6 @@ object Main extends App {
         | Recipe ingestion service
         | --------
         | Arguments:
-        |  recipeDirectory   Location of recipes, as CSON files
         |  databaseOutput    Path to directory where recipe database will be created
         |  [--overwrite-db]  Delete the database, if it already exists
       """.stripMargin)
