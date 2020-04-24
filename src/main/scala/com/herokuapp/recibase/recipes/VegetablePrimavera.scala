@@ -6,7 +6,7 @@ object VegetablePrimavera
     extends Recipe(
       "Vegetable Primavera",
       "vegetable-primavera",
-      None,
+      Some("Vegetarian Cookery Bible (2012: Reader's Digest)"),
       None,
       None,
       Some(

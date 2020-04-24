@@ -6,7 +6,7 @@ object Kashtouri
     extends Recipe(
       "Kashtouri",
       "kashtouri",
-      None,
+      Some("Vegetarian Cookery Bible (2012: Reader's Digest)"),
       Some(
         "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
       ),

@@ -6,7 +6,7 @@ object LambAubergineDaube
     extends Recipe(
       "Lamb and Aubergine Daube",
       "lamb-aubergine-daube",
-      None,
+      Some("The Times - Dinner Tonight"),
       None,
       None,
       None,

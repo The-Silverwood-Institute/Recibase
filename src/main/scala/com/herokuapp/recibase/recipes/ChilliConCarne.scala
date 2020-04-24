@@ -6,7 +6,7 @@ object ChilliConCarne
     extends Recipe(
       "Chilli con Carne",
       "chilli-con-carne",
-      None,
+      Some("Kit's Dad"),
       None,
       None,
       None,

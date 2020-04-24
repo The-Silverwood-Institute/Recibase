@@ -6,7 +6,7 @@ object CreamyCauliflowerCheeseWalnuts
     extends Recipe(
       "Creamy cauliflower cheese with walnuts",
       "creamy-cauliflower-cheese",
-      None,
+      Some("https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"),
       None,
       None,
       None,

@@ -6,7 +6,7 @@ object RussianMushroomJulienne
     extends Recipe(
       "Russian Mushroom Julienne",
       "russian-mushroom-julienne",
-      None,
+      Some("https://livelaughrowe.com/russian-dish-mushroom-julienne/"),
       None,
       None,
       None,

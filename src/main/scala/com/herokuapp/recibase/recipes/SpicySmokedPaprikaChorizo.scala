@@ -6,7 +6,7 @@ object SpicySmokedPaprikaChorizo
     extends Recipe(
       "Spicy Smoked Paprika Chorizo",
       "spicy-smoked-paprika-chorizo",
-      None,
+      Some("Kit's Dad"),
       None,
       None,
       Some(

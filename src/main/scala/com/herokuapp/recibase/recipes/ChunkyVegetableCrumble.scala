@@ -6,7 +6,7 @@ object ChunkyVegetableCrumble
     extends Recipe(
       "Chunky Vegetable Crumble",
       "vegetable-crumble",
-      None,
+      Some("Vegetarian Cookery Bible (2012: Reader's Digest)"),
       None,
       None,
       Some(

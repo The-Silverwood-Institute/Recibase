@@ -6,7 +6,7 @@ object BakedRigatoniAubergine
     extends Recipe(
       "Baked Rigatoni with Aubergine",
       "baked-rigatoni-aubergine",
-      None,
+      Some("Vegetarian Cookery Bible (2012: Reader's Digest)"),
       None,
       None,
       Some("Traditional parmesan is not vegetarian"),

@@ -6,7 +6,7 @@ object IndianPatties
     extends Recipe(
       "Indian Patties",
       "indian-patties",
-      None,
+      Some("Vegetarian Cookery Bible (2012: Reader's Digest)"),
       Some(
         "Vegetarian burger patties made with red lentils, spinach, mint and spices."
       ),

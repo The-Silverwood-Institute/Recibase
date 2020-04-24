@@ -6,7 +6,9 @@ object CreamyMushroomStroganoff
     extends Recipe(
       "Creamy mushroom stroganoff",
       "mushroom-stroganoff",
-      None,
+      Some(
+        "http://allrecipes.co.uk/recipe/6460/creamy-mushroom-stroganoff.aspx"
+      ),
       None,
       None,
       Some(

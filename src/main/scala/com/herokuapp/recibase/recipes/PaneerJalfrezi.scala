@@ -6,7 +6,7 @@ object PaneerJalfrezi
     extends Recipe(
       "Paneer Jalfrezi",
       "paneer-jalfrezi",
-      None,
+      Some("Gousto"),
       None,
       None,
       None,

@@ -6,7 +6,9 @@ object RoastedVegetableLasagne
     extends Recipe(
       "Roasted Vegetable Lasagne",
       "roasted-vegetable-lasagne",
-      None,
+      Some(
+        "https://www.bbcgoodfood.com/recipes/10603/roasted-vegetable-lasagne"
+      ),
       None,
       None,
       Some(
