@@ -1,5 +1,8 @@
 package com.herokuapp.recibase
 
+import io.circe.generic.JsonCodec
+
+@JsonCodec
 case class Ingredient(
     name: String,
     quantity: Option[String] = None,
@@ -7,6 +10,7 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
+@JsonCodec
 case class Recipe(
     name: String,
     url: String,
