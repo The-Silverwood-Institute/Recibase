@@ -1,1 +1,1 @@
-web: target/universal/scripts/bin/recibase
+web: target/universal/stage/bin/recibase
