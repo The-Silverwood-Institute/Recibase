@@ -3,13 +3,18 @@ package com.herokuapp.recibase
 import cats.Applicative
 import cats.implicits._
 import com.herokuapp.recibase.recipes._
+import scala.language.implicitConversions
 
 trait RecipeController[F[_]] {
   def recipe(recipeUrl: String): F[Option[Recipe]]
-  def recipes(): F[Seq[MenuEntry]]
+  def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]]
 }
 
 object RecipeController {
+  implicit class RecipeList(recipes: Seq[Recipe]) {
+    def toMenu: Seq[MenuEntry] = recipes.map(recipe => MenuEntry(recipe.name, recipe.url))
+  }
+
   private val recipes: Seq[Recipe] = List(
     BakedRigatoniAubergine.recipe,
     BakedSalmonOlivesSpaghetti.recipe,
@@ -49,8 +54,13 @@ object RecipeController {
 
   val routing: Map[String, Recipe] =
     recipes.map(recipe => recipe.url -> recipe).toMap
-  val list: Seq[MenuEntry] =
-    recipes.map(recipe => MenuEntry(recipe.name, recipe.url))
+
+  def listRecipes(withIngredient: Option[String]): Seq[MenuEntry] = {
+    withIngredient match {
+      case None => recipes.toMenu
+      case Some(ingredient) => recipes.filter(recipe => recipe.ingredients.exists(_.name == ingredient)).toMenu
+    }
+  }
 
   implicit def apply[F[_]](implicit
       ev: RecipeController[F]
@@ -60,6 +70,6 @@ object RecipeController {
     new RecipeController[F] {
       def recipe(recipeUrl: String): F[Option[Recipe]] =
         routing.get(recipeUrl).pure[F]
-      def recipes(): F[Seq[MenuEntry]] = list.pure[F]
+      def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]] = listRecipes(withIngredient).pure[F]
     }
 }

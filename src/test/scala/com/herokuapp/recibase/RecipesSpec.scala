@@ -19,6 +19,20 @@ class RecipesSpec extends org.specs2.mutable.Specification {
       }
     }
 
+    "filtered list" >> {
+      "returns 200" >> {
+        filteredRecipesQuery.status must beEqualTo(Status.Ok)
+      }
+
+      "returns a link to an ingredient containing thyme" >> {
+        filteredRecipesQuery.as[String].unsafeRunSync() must contain("beetroot-risotto")
+      }
+
+      "doesn't return a link to a recipe without thyme" >> {
+        filteredRecipesQuery.as[String].unsafeRunSync() must not contain("baked-rigatoni-aubergine")
+      }
+    }
+
     "single recipe" >> {
       "if recipe doesn't exist" >> {
         lazy val request = recipeQuery("i-do-not-exist")
@@ -53,6 +67,12 @@ class RecipesSpec extends org.specs2.mutable.Specification {
 
   private lazy val recipesQuery: Response[IO] = {
     val getRecipes = Request[IO](Method.GET, uri"/recipes/")
+    val recipeController = RecipeController.impl[IO]
+    RecibaseRoutes.recipeRoutes(recipeController).orNotFound(getRecipes).unsafeRunSync()
+  }
+
+  private lazy val filteredRecipesQuery: Response[IO] = {
+    val getRecipes = Request[IO](Method.GET, uri"/recipes/?withIngredient=Thyme")
     val recipeController = RecipeController.impl[IO]
     RecibaseRoutes.recipeRoutes(recipeController).orNotFound(getRecipes).unsafeRunSync()
   }
