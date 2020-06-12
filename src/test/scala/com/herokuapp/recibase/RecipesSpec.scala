@@ -1,7 +1,11 @@
 package com.herokuapp.recibase
 
 import cats.effect.IO
+import com.herokuapp.recibase.recipes.VegetablePrimavera
+import io.circe.Json
+import io.circe.syntax._
 import org.http4s._
+import org.http4s.circe._
 import org.http4s.implicits._
 
 class RecipesSpec extends org.specs2.mutable.Specification {
@@ -25,6 +29,18 @@ class RecipesSpec extends org.specs2.mutable.Specification {
 
         "returns a useful error message" >> {
           request.as[String].unsafeRunSync() must beEqualTo("Recipe not found")
+        }
+      }
+
+      "if a recipe exists" >> {
+        lazy val request = recipeQuery("vegetable-primavera")
+
+        "returns 200" >> {
+          request.status must beEqualTo(Status.Ok)
+        }
+
+        "returns the Recipe as JSON" >> {
+          request.as[Json].unsafeRunSync() must beEqualTo(VegetablePrimavera.recipe.asJson)
         }
       }
     }
