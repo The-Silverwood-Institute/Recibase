@@ -72,7 +72,7 @@ class RecipesSpec extends org.specs2.mutable.Specification {
   }
 
   private lazy val filteredRecipesQuery: Response[IO] = {
-    val getRecipes = Request[IO](Method.GET, uri"/recipes/?withIngredient=Thyme")
+    val getRecipes = Request[IO](Method.GET, uri"/recipes/?hasIngredient=Thyme")
     val recipeController = RecipeController.impl[IO]
     RecibaseRoutes.recipeRoutes(recipeController).orNotFound(getRecipes).unsafeRunSync()
   }

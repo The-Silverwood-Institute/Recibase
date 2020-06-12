@@ -55,10 +55,10 @@ object RecipeController {
   val routing: Map[String, Recipe] =
     recipes.map(recipe => recipe.url -> recipe).toMap
 
-  def listRecipes(withIngredient: Option[String]): Seq[MenuEntry] = {
-    withIngredient match {
+  def listRecipes(hasIngredient: Option[String]): Seq[MenuEntry] = {
+    hasIngredient match {
       case None => recipes.toMenu
-      case Some(ingredient) => recipes.filter(recipe => recipe.ingredients.exists(_.name == ingredient)).toMenu
+      case Some(ingredient) => recipes.filter(recipe => recipe.hasIngredient(ingredient)).toMenu
     }
   }
 

@@ -20,7 +20,11 @@ case class Recipe(
     notes: Option[String],
     ingredients: List[Ingredient],
     method: List[String]
-)
+) {
+  def hasIngredient(ingredient: String): Boolean = {
+    ingredients.exists(_.name == ingredient)
+  }
+}
 
 object Ingredient {
   def apply(name: String, quantity: String): Ingredient =

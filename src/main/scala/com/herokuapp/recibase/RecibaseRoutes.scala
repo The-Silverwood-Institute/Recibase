@@ -8,7 +8,7 @@ import io.circe.syntax._
 import org.http4s.circe._
 import org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher
 
-object OptionalIngredientQueryParamMatcher extends OptionalQueryParamDecoderMatcher[String]("withIngredient")
+object OptionalIngredientQueryParamMatcher extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
 
 object RecibaseRoutes {
   def recipeRoutes[F[_]: Sync](H: RecipeController[F]): HttpRoutes[F] = {
