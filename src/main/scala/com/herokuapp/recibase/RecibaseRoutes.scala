@@ -20,7 +20,7 @@ object RecibaseRoutes {
       case GET -> Root / "recipes" / recipeUrl =>
         for {
           maybeRecipe <- H.recipe(recipeUrl)
-          resp <- maybeRecipe.fold(NotFound())(recipe => Ok(recipe.asJson))
+          resp <- maybeRecipe.fold(NotFound("Recipe not found"))(recipe => Ok(recipe.asJson))
         } yield resp
     }
   }
