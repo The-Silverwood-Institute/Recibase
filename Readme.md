@@ -7,7 +7,7 @@ Recibase is a recipe ingestion and navigation service, designed to ease the choo
 Recibase works like so:
 
 1. Write [Scala files][recipes] containing your recipes
-2. Recibase reads in the recipes and adds them to a local database
+2. Recibase spins up [an recipe API][recipe-api]
 3. [The frontend][frontend] lets you browse recipes by name, ingredient and more
 
 ## Roadmap
@@ -27,22 +27,24 @@ Recibase is a long term project which will grow depending on what features are u
 ## Requirements
 
 - SBT
-- Python 2.7
 - Java 8
 
-## Installation
-
-*Note: Recibase uses [git submodules][git-submodules] (yes, I know)*
+## Usage
 
 1. Clone Recibase
 2. Open a command prompt inside the cloned repo
-3. Run `git submodule update --init --recursive` to download Recibase's dependent GitHub projects
+3. `sbt run`
+4. Wait until the program says `started at http://[::]:8081/`
+5. Visit `localhost:8081/recipes/`
+
+If you want to use the web interface you'll need to set up the [frontend][frontend] too
 
 ## Contributing/Questions
 
-If you have any questions or want to help out feel free to [open an issue][new-issue].
+If you have any questions or want to help out feel free to [open an issue][new-issue]
 
 [recipes]: https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes
+[recipe-api]: http://recibase-api.herokuapp.com/recipes/
 [frontend]: https://github.com/The-Silverwood-Institute/Frontend
 [git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [new-issue]: https://github.com/The-Silverwood-Institute/Recibase/issues/new
