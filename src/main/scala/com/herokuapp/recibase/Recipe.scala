@@ -22,7 +22,8 @@ case class Recipe(
     method: List[String]
 ) {
   def hasIngredient(ingredient: String): Boolean = {
-    ingredients.exists(_.name == ingredient)
+    val normalisedName = ingredient.toLowerCase()
+    ingredients.exists(_.name.toLowerCase.contains(normalisedName))
   }
 }
 
