@@ -24,13 +24,26 @@ case class Recipe(
     method: List[String]
 ) {
   def hasIngredient(ingredient: String): Boolean = {
-    val normalisedName = ingredient.toLowerCase.unpluralise
-    ingredients.exists(_.name.toLowerCase.contains(normalisedName))
+    val normalisedIngredient = ingredient.toLowerCase.unpluralise
+
+    if (normalisedIngredient.startsWith("!")) {
+      val filteredIngredient = normalisedIngredient.stripPrefix("!")
+      !ingredients.exists(_.name.toLowerCase.contains(filteredIngredient))
+    } else {
+      ingredients.exists(_.name.toLowerCase.contains(normalisedIngredient))
+    }
   }
 
   def hasTag(tag: String): Boolean = {
-    val normalisedName = tag.toLowerCase.unpluralise
-    tags.exists(_.toLowerCase.contains(normalisedName))
+    val normalisedTag = tag.toLowerCase.unpluralise
+
+    if (normalisedTag.startsWith("!")) {
+      val filteredTag = normalisedTag.stripPrefix("!")
+      !tags.exists(_.toLowerCase.contains(filteredTag))
+    } else {
+      tags.exists(_.toLowerCase.contains(normalisedTag))
+    }
+
   }
 }
 
