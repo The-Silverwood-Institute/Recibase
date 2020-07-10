@@ -6,11 +6,6 @@ object ParsnipGingerSoup {
   val recipe = Recipe(
     "Parsnip and Ginger Soup",
     "parsnip-and-ginger-soup",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Parnsips", Some("450g"), Some("Diced")),
       Ingredient("Onion", Some("1"), Some("Diced")),

@@ -6,11 +6,6 @@ object CourgetteSpinachPasties {
   val recipe = Recipe(
     "Courgette and spinach pasties",
     "courgette-spinach-pasties",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Courgettes", "2"),
       Ingredient("Soft Goats Cheese", "2"),

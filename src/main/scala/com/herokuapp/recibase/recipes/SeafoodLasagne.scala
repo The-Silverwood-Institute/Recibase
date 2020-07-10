@@ -6,11 +6,6 @@ object SeafoodLasagne {
   val recipe = Recipe(
     "Seafood Lasagne",
     "seafood-lasagne",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Semi-skimmed milk", "1L"),
       Ingredient(

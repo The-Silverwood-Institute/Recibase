@@ -6,11 +6,6 @@ object EasySoup {
   val recipe = Recipe(
     "Easy Soup",
     "easy-soup",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Butter", "Knob"),
       Ingredient("Onion", "1"),

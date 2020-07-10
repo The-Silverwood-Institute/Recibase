@@ -6,11 +6,6 @@ object LemonFetaPasta {
   val recipe = Recipe(
     "Lemon Feta Pasta",
     "lemon-feta-pasta",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Pine nuts"),
       Ingredient("Cashew nuts"),

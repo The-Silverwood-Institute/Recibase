@@ -6,11 +6,6 @@ object BeetrootRisotto {
   val recipe = Recipe(
     "Beetroot Risotto",
     "beetroot-risotto",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient(
         "Beetroot",

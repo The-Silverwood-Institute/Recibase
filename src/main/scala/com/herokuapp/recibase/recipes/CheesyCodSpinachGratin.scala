@@ -6,11 +6,6 @@ object CheesyCodSpinachGratin {
   val recipe = Recipe(
     "Cheesy Cod and Spinach Gratin",
     "cheesy-cod",
-    None,
-    None,
-    None,
-    None,
-    List.empty,
     List(
       Ingredient("Cod", "2 110g fillets"),
       Ingredient("Stock cube", "1"),
