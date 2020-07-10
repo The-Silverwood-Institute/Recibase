@@ -27,11 +27,11 @@ object BakedSalmonOlivesSpaghetti {
       Ingredient("Cherry tomatoes", None, Some("halved"), Some("Optional"))
     ),
     List(
-      "Preheat the oven at 200/220 C.",
+      "Preheat the oven at 160 C.",
       "Cook the spaghetti in a saucepan.",
       "Meanwhile, rub the salmon fillets with the olive oil, lemon juice and the chopped capers. Sprinkle with salt.",
-      "Place in the oven and bake for approximately 4-6 minutes per half-inch of thickness or until cooked through.",
-      "Drain the spaghetti and set aisde.",
+      "Place in the oven and bake for 10-15 minutes or until cooked through. If you are unsure, check the thickest part of the salmon with a fork.",
+      "Drain the spaghetti and set aside.",
       "In the same pan, heat a small amount of oil and cook the onions, leaving them softened but still crisp. Add the olives, tomatoes, thyme and lemon juice and warm.",
       "Add the spaghetti and toss. Keep warm.",
       "Serve the salmon fillets on top of the spaghetti mixture."
