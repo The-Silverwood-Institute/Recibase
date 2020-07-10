@@ -19,6 +19,7 @@ case class Recipe(
     description: Option[String],
     tagline: Option[String],
     notes: Option[String],
+    tags: List[String] = List.empty,
     ingredients: List[Ingredient],
     method: List[String]
 ) {

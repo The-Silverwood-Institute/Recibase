@@ -10,6 +10,7 @@ object CourgetteSpinachPasties {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Courgettes", "2"),
       Ingredient("Soft Goats Cheese", "2"),

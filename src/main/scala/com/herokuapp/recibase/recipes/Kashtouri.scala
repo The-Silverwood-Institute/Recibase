@@ -12,6 +12,7 @@ object Kashtouri {
     ),
     None,
     None,
+    List.empty,
     List(
       Ingredient("Risotto rice", "150g"),
       Ingredient("Macaroni", "150g"),

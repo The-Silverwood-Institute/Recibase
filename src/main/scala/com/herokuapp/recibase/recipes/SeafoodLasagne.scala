@@ -10,6 +10,7 @@ object SeafoodLasagne {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Semi-skimmed milk", "1L"),
       Ingredient(

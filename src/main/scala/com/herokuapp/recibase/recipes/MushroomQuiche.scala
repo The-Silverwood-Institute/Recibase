@@ -10,6 +10,7 @@ object MushroomQuiche {
     None,
     None,
     Some("Take the pastry out of the fridge 40 mins before use!"),
+    List.empty,
     List(
       Ingredient("Chestnut mushrooms", Some("250g"), Some("sliced")),
       Ingredient(

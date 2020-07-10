@@ -10,6 +10,7 @@ object ParsnipLentilLasagne {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Lasagne sheets", Some("200g"), None, Some("12 sheets")),
       Ingredient("Soft Goats cheese", Some("150g"), None, Some("or ricotta")),

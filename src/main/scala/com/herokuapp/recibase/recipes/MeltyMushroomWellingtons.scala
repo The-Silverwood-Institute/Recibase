@@ -13,6 +13,7 @@ object MeltyMushroomWellingtons {
       """Take the pastry out of the fridge ten minutes before use.
 Makes two large pies."""
     ),
+    List.empty,
     List(
       Ingredient(
         "Chestnut mushrooms",

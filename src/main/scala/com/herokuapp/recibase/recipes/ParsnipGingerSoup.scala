@@ -10,6 +10,7 @@ object ParsnipGingerSoup {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Parnsips", Some("450g"), Some("Diced")),
       Ingredient("Onion", Some("1"), Some("Diced")),

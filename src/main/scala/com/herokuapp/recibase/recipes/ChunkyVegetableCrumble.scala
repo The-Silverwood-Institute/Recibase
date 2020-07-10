@@ -13,6 +13,7 @@ object ChunkyVegetableCrumble {
       """Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.
 Honey can be added with the carrots for extra sweetness."""
     ),
+    List.empty,
     List(
       Ingredient("Onion", Some("1"), Some("sliced")),
       Ingredient(

@@ -10,6 +10,7 @@ object ChilliConCarne {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Oil"),
       Ingredient("Salt"),

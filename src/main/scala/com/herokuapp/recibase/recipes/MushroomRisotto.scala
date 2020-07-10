@@ -10,6 +10,7 @@ object MushroomRisotto {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Chestnut mushrooms", Some("250g"), Some("sliced")),
       Ingredient(

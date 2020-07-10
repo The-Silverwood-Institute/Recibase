@@ -16,6 +16,7 @@ object RoastedVegetableLasagne {
 
 Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."""
     ),
+    List.empty,
     List(
       Ingredient("Red Peppers", "3"),
       Ingredient("Aubergines", "2"),

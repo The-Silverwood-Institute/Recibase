@@ -15,6 +15,7 @@ object CreamyMushroomStroganoff {
       """You can substitute Shiitake or Porchini mushrooms for their dried equivalents.
 Pots of dried forest mushrooms also work. Try softening the mushrooms in the stock."""
     ),
+    List.empty,
     List(
       Ingredient("Butter", "50g"),
       Ingredient("Large Onion", Some("1"), Some("sliced")),

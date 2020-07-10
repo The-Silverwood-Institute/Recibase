@@ -12,6 +12,7 @@ object CreamyCauliflowerCheeseWalnuts {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Cauliflower", Some("1"), Some("cut into 1cm pieces")),
       Ingredient(

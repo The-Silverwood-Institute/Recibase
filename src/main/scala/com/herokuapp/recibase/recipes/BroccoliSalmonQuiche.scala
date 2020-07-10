@@ -12,6 +12,7 @@ object BroccoliSalmonQuiche {
     Some(
       "Consider using the remaining broccoli stalks and stilton in a broccoli and stilton soup."
     ),
+    List.empty,
     List(
       Ingredient(
         "Broccoli Florets",

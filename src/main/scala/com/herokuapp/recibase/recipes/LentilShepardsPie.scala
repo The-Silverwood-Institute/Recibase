@@ -10,6 +10,7 @@ object LentilShepardsPie {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Onions", Some("1"), Some("Diced")),
       Ingredient("Carrots", Some("4"), Some("Diced")),

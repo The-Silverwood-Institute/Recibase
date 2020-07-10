@@ -16,6 +16,7 @@ object IndianPatties {
 Don't waste time finely chopping the ingredients as they're blended anyway.
 Can take a long time."""
     ),
+    List.empty,
     List(
       Ingredient("Red lentils", "225g"),
       Ingredient("Whole cloves", Some("1-2")),

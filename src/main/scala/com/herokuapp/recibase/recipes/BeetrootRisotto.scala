@@ -10,6 +10,7 @@ object BeetrootRisotto {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient(
         "Beetroot",

@@ -10,6 +10,7 @@ object EasySoup {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Butter", "Knob"),
       Ingredient("Onion", "1"),

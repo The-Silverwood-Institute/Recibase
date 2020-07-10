@@ -12,6 +12,7 @@ object Dahl {
     Some(
       "Roasted nuts can also be added. Cook them until brown with a little oil in the small pan before adding the butter, cumin and onion."
     ),
+    List.empty,
     List(
       Ingredient("Red lentils", "350g"),
       Ingredient(

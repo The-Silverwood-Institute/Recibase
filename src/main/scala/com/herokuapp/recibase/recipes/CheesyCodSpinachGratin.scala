@@ -10,6 +10,7 @@ object CheesyCodSpinachGratin {
     None,
     None,
     None,
+    List.empty,
     List(
       Ingredient("Cod", "2 110g fillets"),
       Ingredient("Stock cube", "1"),

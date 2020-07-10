@@ -10,6 +10,7 @@ object BakedSalmonOlivesSpaghetti {
     Some("Baked salmon served on a bed of spaghetti, onions and olives."),
     None,
     Some("Cover the baking tray in foil for easier cleaning later."),
+    List.empty,
     List(
       Ingredient(
         "Salmon fillets",

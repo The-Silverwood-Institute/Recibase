@@ -16,6 +16,7 @@ Sriracha - mix in a dash of sriracha for a spicier dish. Can be combined with th
 Stilton - crumble and melt blue stilton into the butter.
 Spring onions - lightly fry a sliced spring onion in the butter. Also works with garlic."""
     ),
+    List.empty,
     List(
       Ingredient("Butter", None, None, Some("Use a decent amount")),
       Ingredient("Eggs", "2"),
