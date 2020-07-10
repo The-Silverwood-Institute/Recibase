@@ -30,11 +30,10 @@ object RecibaseServer {
 
       port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
-      exitCode <-
-        BlazeServerBuilder[F](global)
-          .bindHttp(port, "0.0.0.0")
-          .withHttpApp(finalHttpApp)
-          .serve
+      exitCode <- BlazeServerBuilder[F](global)
+        .bindHttp(port, "0.0.0.0")
+        .withHttpApp(finalHttpApp)
+        .serve
     } yield exitCode
   }.drain
 }
