@@ -27,6 +27,11 @@ case class Recipe(
     val normalisedName = ingredient.toLowerCase.unpluralise
     ingredients.exists(_.name.toLowerCase.contains(normalisedName))
   }
+
+  def hasTag(tag: String): Boolean = {
+    val normalisedName = tag.toLowerCase.unpluralise
+    tags.exists(_.toLowerCase.contains(normalisedName))
+  }
 }
 
 object Ingredient {

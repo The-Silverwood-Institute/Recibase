@@ -7,7 +7,7 @@ import scala.language.implicitConversions
 
 trait RecipeController[F[_]] {
   def recipe(recipeUrl: String): F[Option[Recipe]]
-  def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]]
+  def recipes(withIngredient: Option[String], withTag: Option[String]): F[Seq[MenuEntry]]
 }
 
 object RecipeController {
@@ -56,12 +56,10 @@ object RecipeController {
   val routing: Map[String, Recipe] =
     recipes.map(recipe => recipe.url -> recipe).toMap
 
-  def listRecipes(hasIngredient: Option[String]): Seq[MenuEntry] = {
-    hasIngredient match {
-      case None => recipes.toMenu
-      case Some(ingredient) =>
-        recipes.filter(recipe => recipe.hasIngredient(ingredient)).toMenu
-    }
+  def listRecipes(hasIngredient: Option[String], hasTag: Option[String]): Seq[MenuEntry] = {
+    val filteredRecipes = hasIngredient.fold(recipes)(ingredient => recipes.filter(recipe => recipe.hasIngredient(ingredient)))
+
+    hasTag.fold(filteredRecipes)(tag => filteredRecipes.filter(recipe => recipe.hasTag(tag))).toMenu
   }
 
   implicit def apply[F[_]](implicit
@@ -72,7 +70,7 @@ object RecipeController {
     new RecipeController[F] {
       def recipe(recipeUrl: String): F[Option[Recipe]] =
         routing.get(recipeUrl).pure[F]
-      def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]] =
-        listRecipes(withIngredient).pure[F]
+      def recipes(withIngredient: Option[String], withTag: Option[String]): F[Seq[MenuEntry]] =
+        listRecipes(withIngredient, withTag).pure[F]
     }
 }

@@ -11,6 +11,9 @@ import org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher
 object OptionalIngredientQueryParamMatcher
     extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
 
+object OptionalTagQueryParamMatcher
+  extends OptionalQueryParamDecoderMatcher[String]("hasTag")
+
 object RecibaseRoutes {
   def recipeRoutes[F[_]: Sync](H: RecipeController[F]): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F] {}
@@ -18,9 +21,9 @@ object RecibaseRoutes {
     HttpRoutes.of[F] {
       case GET -> Root / "recipes" / "" :? OptionalIngredientQueryParamMatcher(
             maybeIngredient
-          ) =>
+          ) +& OptionalTagQueryParamMatcher(maybeTag) =>
         for {
-          recipeMenu <- H.recipes(maybeIngredient)
+          recipeMenu <- H.recipes(maybeIngredient, maybeTag)
           resp <- Ok(recipeMenu.asJson)
         } yield resp
       case GET -> Root / "recipes" / recipeUrl =>
