@@ -12,7 +12,7 @@ object OptionalIngredientQueryParamMatcher
     extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
 
 object OptionalTagQueryParamMatcher
-  extends OptionalQueryParamDecoderMatcher[String]("hasTag")
+    extends OptionalQueryParamDecoderMatcher[String]("hasTag")
 
 object RecibaseRoutes {
   def recipeRoutes[F[_]: Sync](H: RecipeController[F]): HttpRoutes[F] = {

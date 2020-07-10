@@ -48,8 +48,23 @@ case class Recipe(
 }
 
 object Recipe {
-  def apply(name: String, url: String, ingredients: List[Ingredient], method: List[String]): Recipe =
-    new Recipe(name, url, None, None, None, None, List.empty, ingredients, method)
+  def apply(
+      name: String,
+      url: String,
+      ingredients: List[Ingredient],
+      method: List[String]
+  ): Recipe =
+    new Recipe(
+      name,
+      url,
+      None,
+      None,
+      None,
+      None,
+      List.empty,
+      ingredients,
+      method
+    )
 }
 
 object Ingredient {
