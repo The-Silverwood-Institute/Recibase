@@ -1,6 +1,7 @@
 package com.herokuapp.recibase
 
 import io.circe.generic.JsonCodec
+import StringUtils._
 
 @JsonCodec
 case class Ingredient(
@@ -22,7 +23,7 @@ case class Recipe(
     method: List[String]
 ) {
   def hasIngredient(ingredient: String): Boolean = {
-    val normalisedName = ingredient.toLowerCase()
+    val normalisedName = ingredient.toLowerCase.unpluralise
     ingredients.exists(_.name.toLowerCase.contains(normalisedName))
   }
 }
