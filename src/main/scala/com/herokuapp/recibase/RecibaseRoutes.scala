@@ -30,6 +30,8 @@ object RecibaseRoutes {
             Ok(recipe.asJson)
           )
         } yield resp
+      case GET -> Root / "manifest" =>
+        Ok(Manifest(sys.env.getOrElse("SOURCE_VERSION", "latest")).asJson)
     }
   }
 }
