@@ -31,7 +31,7 @@ object RecibaseRoutes {
           )
         } yield resp
       case GET -> Root / "manifest" =>
-        Ok(Manifest(sys.env.getOrElse("SOURCE_VERSION", "latest")).asJson)
+        Ok(Manifest(sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")).asJson)
     }
   }
 }
