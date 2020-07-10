@@ -16,14 +16,14 @@ object RecibaseServer {
       C: ContextShift[F]
   ): Stream[F, Nothing] = {
     for {
-      client <- BlazeClientBuilder[F](global).stream
-      helloWorldAlg = RecipeController.impl[F]
+      _ <- BlazeClientBuilder[F](global).stream
+      recibaseAlg = RecipeController.impl[F]
 
       // Combine Service Routes into an HttpApp.
       // Can also be done via a Router if you
       // want to extract a segments not checked
       // in the underlying routes.
-      httpApp = CORS(RecibaseRoutes.recipeRoutes[F](helloWorldAlg).orNotFound)
+      httpApp = CORS(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
 
       // With Middlewares in place
       finalHttpApp = Logger.httpApp(true, true)(httpApp)
