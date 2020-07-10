@@ -8,14 +8,17 @@ import io.circe.syntax._
 import org.http4s.circe._
 import org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher
 
-object OptionalIngredientQueryParamMatcher extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
+object OptionalIngredientQueryParamMatcher
+    extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
 
 object RecibaseRoutes {
   def recipeRoutes[F[_]: Sync](H: RecipeController[F]): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F] {}
     import dsl._
     HttpRoutes.of[F] {
-      case GET -> Root / "recipes" / "" :? OptionalIngredientQueryParamMatcher(maybeIngredient) =>
+      case GET -> Root / "recipes" / "" :? OptionalIngredientQueryParamMatcher(
+            maybeIngredient
+          ) =>
         for {
           recipeMenu <- H.recipes(maybeIngredient)
           resp <- Ok(recipeMenu.asJson)
@@ -23,7 +26,9 @@ object RecibaseRoutes {
       case GET -> Root / "recipes" / recipeUrl =>
         for {
           maybeRecipe <- H.recipe(recipeUrl)
-          resp <- maybeRecipe.fold(NotFound("Recipe not found"))(recipe => Ok(recipe.asJson))
+          resp <- maybeRecipe.fold(NotFound("Recipe not found"))(recipe =>
+            Ok(recipe.asJson)
+          )
         } yield resp
     }
   }

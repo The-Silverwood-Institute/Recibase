@@ -12,7 +12,8 @@ trait RecipeController[F[_]] {
 
 object RecipeController {
   implicit class RecipeList(recipes: Seq[Recipe]) {
-    def toMenu: Seq[MenuEntry] = recipes.map(recipe => MenuEntry(recipe.name, recipe.url))
+    def toMenu: Seq[MenuEntry] =
+      recipes.map(recipe => MenuEntry(recipe.name, recipe.url))
   }
 
   private val recipes: Seq[Recipe] = List(
@@ -58,7 +59,8 @@ object RecipeController {
   def listRecipes(hasIngredient: Option[String]): Seq[MenuEntry] = {
     hasIngredient match {
       case None => recipes.toMenu
-      case Some(ingredient) => recipes.filter(recipe => recipe.hasIngredient(ingredient)).toMenu
+      case Some(ingredient) =>
+        recipes.filter(recipe => recipe.hasIngredient(ingredient)).toMenu
     }
   }
 
@@ -70,6 +72,7 @@ object RecipeController {
     new RecipeController[F] {
       def recipe(recipeUrl: String): F[Option[Recipe]] =
         routing.get(recipeUrl).pure[F]
-      def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]] = listRecipes(withIngredient).pure[F]
+      def recipes(withIngredient: Option[String]): F[Seq[MenuEntry]] =
+        listRecipes(withIngredient).pure[F]
     }
 }
