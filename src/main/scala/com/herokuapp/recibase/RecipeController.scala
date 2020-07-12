@@ -51,6 +51,7 @@ object RecipeController {
     SaagPaneer.recipe,
     ScrambledEggs.recipe,
     SeafoodLasagne.recipe,
+    SmokyChickpeaStew.recipe,
     SmokyFishSweetPotatoCurry.recipe,
     SpicySmokedPaprikaChorizo.recipe,
     SweetChilliFetaPasta.recipe,
