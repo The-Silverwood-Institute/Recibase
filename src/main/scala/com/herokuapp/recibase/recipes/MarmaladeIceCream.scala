@@ -10,7 +10,7 @@ object MarmaladeIceCream {
     Some("A simple yet decadent ice cream recipe, no churn needed."),
     Some("Don't eat too much at once..."),
     Some(
-      "You can substitute marmalade for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals in the ice cream. It's also lovely plain."
+      "You can substitute marmalade for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain."
     ),
     List("pudding"),
     List(
