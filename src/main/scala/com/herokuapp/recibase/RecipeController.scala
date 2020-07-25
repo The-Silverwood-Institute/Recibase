@@ -40,6 +40,7 @@ object RecipeController {
     LemonFetaPasta.recipe,
     LentilShepardsPie.recipe,
     MarmaladeIceCream.recipe,
+    Mead.recipe,
     MeltyMushroomWellingtons.recipe,
     MushroomQuiche.recipe,
     MushroomRisotto.recipe,
