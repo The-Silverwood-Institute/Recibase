@@ -11,6 +11,7 @@ object BakedSalmonOlivesSpaghetti {
     None,
     Some("Cover the baking tray in foil for easier cleaning later."),
     List.empty,
+    None,
     List(
       Ingredient(
         "Salmon fillets",

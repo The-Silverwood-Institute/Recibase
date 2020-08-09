@@ -11,6 +11,7 @@ object ChilliConCarne {
     None,
     None,
     List("spicy"),
+    None,
     List(
       Ingredient("Oil"),
       Ingredient("Salt"),

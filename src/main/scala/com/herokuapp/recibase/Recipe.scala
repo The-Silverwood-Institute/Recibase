@@ -20,6 +20,7 @@ case class Recipe(
     tagline: Option[String],
     notes: Option[String],
     tags: List[String] = List.empty,
+    image: Option[Image],
     ingredients: List[Ingredient],
     method: List[String]
 ) {
@@ -62,6 +63,7 @@ object Recipe {
       None,
       None,
       List.empty,
+      None,
       ingredients,
       method
     )

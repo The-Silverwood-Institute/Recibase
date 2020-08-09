@@ -11,6 +11,7 @@ object BakedRigatoniAubergine {
     None,
     Some("Traditional parmesan is not vegetarian"),
     List.empty,
+    None,
     List(
       Ingredient("Onion", Some("1"), Some("chopped")),
       Ingredient(

@@ -15,6 +15,7 @@ object VegetablePrimavera {
     Many types or tortellini or ravioli work for this dish."""
     ),
     List.empty,
+    None,
     List(
       Ingredient(
         "Baby vegetables",

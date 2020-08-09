@@ -15,6 +15,7 @@ This dish tastes best if you leave it to cool then reheat it.
 You could try serving this dish over grilled aubergines."""
     ),
     List.empty,
+    None,
     List(
       Ingredient(
         "Spanish Chorizo",

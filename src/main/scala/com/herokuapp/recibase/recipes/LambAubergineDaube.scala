@@ -11,6 +11,7 @@ object LambAubergineDaube {
     None,
     None,
     List.empty,
+    None,
     List(
       Ingredient("Aubergine", "350g"),
       Ingredient("Onions", "2"),

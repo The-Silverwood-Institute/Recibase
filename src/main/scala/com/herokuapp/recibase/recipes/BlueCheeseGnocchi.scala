@@ -15,6 +15,7 @@ object BlueCheeseGnocchi {
       "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
     ),
     List.empty,
+    None,
     List(
       Ingredient("Gnocchi", "500g"),
       Ingredient("Parmesan", Some("~70g"), Some("grated")),

@@ -15,6 +15,7 @@ object Mead {
         |I'd recommend doubling or tripling the quantities to make this worth the effort.""".stripMargin
     ),
     List.empty,
+    None,
     List(
       Ingredient(
         "Honey",

@@ -14,6 +14,7 @@ object MeltyMushroomWellingtons {
 Makes two large pies."""
     ),
     List.empty,
+    None,
     List(
       Ingredient(
         "Chestnut mushrooms",

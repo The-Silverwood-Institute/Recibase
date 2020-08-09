@@ -14,6 +14,7 @@ object ChunkyVegetableCrumble {
 Honey can be added with the carrots for extra sweetness."""
     ),
     List.empty,
+    None,
     List(
       Ingredient("Onion", Some("1"), Some("sliced")),
       Ingredient(

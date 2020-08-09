@@ -11,6 +11,7 @@ object SmokyChickpeaStew {
     None,
     None,
     List.empty,
+    None,
     List(
       Ingredient("Sweet Potatoes", Some("620g"), Some("chopped in 1cm cubes")),
       Ingredient("Garlic Cloves", Some("4"), Some("finely chopped or crushed")),

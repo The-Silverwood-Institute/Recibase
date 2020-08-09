@@ -15,6 +15,7 @@ object CourgetteBroccoliPasta {
           |You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.""".stripMargin
     ),
     List.empty,
+    None,
     List(
       Ingredient("Courgette", Some("1"), Some("roughly chopped")),
       Ingredient("Tenderstem broccoli", Some("120g"), Some("halved")),

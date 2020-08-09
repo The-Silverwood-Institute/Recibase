@@ -14,6 +14,7 @@ object SweetChilliFetaPasta {
 There are basically no quantities. Add what seems right."""
     ),
     List.empty,
+    None,
     List(
       Ingredient("Pine nuts"),
       Ingredient("Cashew nuts"),

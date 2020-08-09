@@ -11,6 +11,7 @@ object RussianMushroomJulienne {
     None,
     None,
     List.empty,
+    None,
     List(
       Ingredient("Mushrooms", Some("250g"), Some("thinly sliced")),
       Ingredient("Onion", None, Some("thinly sliced")),
