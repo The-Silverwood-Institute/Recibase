@@ -8,6 +8,7 @@ import org.http4s.headers.Location
 import org.http4s.server.middleware.CORS.DefaultCORSConfig
 import org.http4s.server.middleware.CORSConfig
 import org.http4s._
+import org.http4s.headers.Host
 
 object RedirectHeroku {
   def createRedirect[G[_]](request: Request[G]): Response[G] =
@@ -31,8 +32,8 @@ object RedirectHeroku {
       config: CORSConfig = DefaultCORSConfig
   )(implicit F: Applicative[F]): Http[F, G] =
     Kleisli { req =>
-      req.uri.host match {
-        case Some(Uri.RegName(host)) if host == "recibase-api.herokuapp.com" =>
+      req.headers.get(Host) match {
+        case Some(Host("recibase-api.herokuapp.com", None)) =>
           createRedirect(req).pure[F]
         case _ => http(req)
       }
