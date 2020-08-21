@@ -10,6 +10,8 @@ Recibase works like so:
 2. Recibase spins up [an recipe API][recipe-api]
 3. [The frontend][frontend] lets you browse recipes by name, ingredient and more
 
+There is also a separate [GitHub pages site](https://github.com/The-Silverwood-Institute/Recipe-Images/) to host images of the cooked recipes.
+
 ## Roadmap
 
 Recibase is a long term project which will grow depending on what features are useful or interesting to develop. The current plan is:
