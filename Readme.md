@@ -16,8 +16,8 @@ There is also a separate [GitHub pages site](https://github.com/The-Silverwood-I
 
 Recibase is a long term project which will grow depending on what features are useful or interesting to develop. The current plan is:
 
-1. Standardise ingredients schema
-2. Add a bunch of recipes
+1. ~~Standardise ingredients schema~~
+2. ~~Add a bunch of recipes~~
 3. Add any small but useful features to improve frontend
 4. Improve ingestion debugging capabilities (churn/reporting/etc.)
 5. Continue to develop schema
