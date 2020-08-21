@@ -13,7 +13,7 @@ object MarmaladeIceCream {
       "You can substitute marmalade for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain."
     ),
     List("pudding"),
-    Some(Image("https://r.sci1.uk/ice-cream.jpg")),
+    Some(Image("https://i.reciba.se/ice-cream.jpg")),
     List(
       Ingredient("Mascarpone", "230g"),
       Ingredient("Eggs", "2"),
