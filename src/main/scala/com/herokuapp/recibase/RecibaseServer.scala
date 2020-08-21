@@ -23,7 +23,9 @@ object RecibaseServer {
       // Can also be done via a Router if you
       // want to extract a segments not checked
       // in the underlying routes.
-      httpApp = CORS(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
+      httpApp = RedirectHeroku(
+        CORS(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
+      )
 
       // With Middlewares in place
       finalHttpApp = Logger.httpApp(true, true)(httpApp)
