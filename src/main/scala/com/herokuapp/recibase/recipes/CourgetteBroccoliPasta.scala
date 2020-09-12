@@ -12,7 +12,9 @@ object CourgetteBroccoliPasta {
     Some(
       """If tagliatelle is unavailable try spaghetti.
           |
-          |You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.""".stripMargin
+          |You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.
+          |
+          |Try adding a tablespoon of creme fraiche or soured cream, for a richer sauce.""".stripMargin
     ),
     List.empty,
     None,
