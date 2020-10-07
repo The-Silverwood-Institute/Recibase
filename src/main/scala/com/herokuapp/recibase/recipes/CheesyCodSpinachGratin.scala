@@ -16,6 +16,7 @@ object CheesyCodSpinachGratin {
       Ingredient("Water", Some("150ml"), Some("boiling"))
     ),
     List(
+      "Heat the oven to 200C.",
       "Dissolve the stock cube and soft cheese in the boiling water.",
       "Place the spinach in an ovenproof dish and pour over the cheesy stock.",
       "Place the cod fillets on top of the spinach.",
