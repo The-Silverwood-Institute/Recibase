@@ -16,7 +16,7 @@ object ParsnipLentilLasagne {
         None,
         Some("Full fat or semi-skimmed")
       ),
-      Ingredient("Parsnips", "400g"),
+      Ingredient("Parsnips", Some("400g"), Some("sliced into sticks")),
       Ingredient("Red Onion", Some("1 large"), Some("thinly sliced")),
       Ingredient("Red lentils", "100g"),
       Ingredient("Red peppers", Some("2 large"), Some("diced")),
@@ -35,11 +35,12 @@ object ParsnipLentilLasagne {
       Ingredient("Nutmeg", None, Some("grated"), Some("Optional"))
     ),
     List(
+      "Preheat the oven the 190C/gas mark 5.",
       "Heat the oil in a large saucepan.",
       "Add the onion and soften for about 10 minutes.",
       "Add the lentils, red peppers, carrot, vegetable stock, bay leaf and pasatta.",
       "Bring the mixture to the boil, then reduce the heat and simmer for 25 minutes or until the lentils/vegetables are soft.",
-      "Preheat the oven the 190C/gas mark 5.",
+      "Oil and season the parsnips then roast in the oven for about 25 minutes.",
       "Remove the bay leaf and partially puree with a hand blender.",
       "Season with salt/pepper to taste then mix in the beans.",
       "Spoon 1/4 of the sauce over the bottom of a large greaseproof dish then cover with lasagne sheets.",
