@@ -1,0 +1,11 @@
+language: scala
+scala:
+  - 2.13.3
+script:
+  - sbt scalafmtCheckAll
+  - sbt ++$TRAVIS_SCALA_VERSION test
+deploy:
+  provider: heroku
+  app: recibase-api
+  api_key:
+    secure: E6XYDYMtArQYLBO1EcVbKyO0XjqfVVmbSKnCke4b08iq1fjkVFp9+YkcrizaPMlhcGJhObPg/yiJr3PwlMSWZQo+YoJmLD3wvNqXFrOY7xEw+JGlzt9bKOOEPyPtT8KT5Qq6GnTLe2oHd03WMHufzhle8JXbMP91LeMCLF74tVGpXhmCNlOGLZUIvWK2NCtrIF6r2+58mX7gCQwH+ac7JpUhSUm/ySh79G1kywHXVs0GyY9cZQbSTPbTZ4rqx+KwmsJwru/8qWcDCRNoYgEkxzv/V0ijDdgYf/0gspTWl7CXO0TyqS880yBw36jLgQFeKdx+bKNALU+FSftSfcU+thX+SWoWvata28Hq2eujiZUqjK6S9Da9DBXmOqUJfL41bBN0iH/R74Vfu/A6V+e732hh6Hn8jQ2huFhYAhReQEZ63s+U26yKFtwQYkB9v0nmdgllZzMxTXD0OusDhEpoAEDVI9vOJ22Hz5WDJseC6/h3oZ9xeh6q0wbvYksK/lCFHGLe08tpQQ7TfzQvPwyFWdJI+h6ISKRTcDnXLCaJMo6GeFOaWcVjYPn+4KfIazptbPQY3d8EjyW3pVuVfeJcKiCuN+I5McjpHovSS5iWiP/UuzO8quc97cIFpbLvrDxu6Gx9H82LazwTQMAKQdIAzh2sETY9PAJt0KrVyb4EptQ=
