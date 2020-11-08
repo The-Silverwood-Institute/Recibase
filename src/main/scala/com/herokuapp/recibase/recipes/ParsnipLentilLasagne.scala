@@ -21,7 +21,6 @@ object ParsnipLentilLasagne {
       Ingredient("Red lentils", "100g"),
       Ingredient("Red peppers", Some("2 large"), Some("diced")),
       Ingredient("Carrot", Some("1 large"), Some("thinly sliced")),
-      Ingredient("Celery Sticks", Some("2"), Some("thinly sliced")),
       Ingredient("Vegetable Stock", "300ml"),
       Ingredient("Passata", "250ml"),
       Ingredient(
@@ -38,7 +37,7 @@ object ParsnipLentilLasagne {
     List(
       "Heat the oil in a large saucepan.",
       "Add the onion and soften for about 10 minutes.",
-      "Add the lentils, red peppers, carrot, celery, vegetable stock, bay leaf and pasatta.",
+      "Add the lentils, red peppers, carrot, vegetable stock, bay leaf and pasatta.",
       "Bring the mixture to the boil, then reduce the heat and simmer for 25 minutes or until the lentils/vegetables are soft.",
       "Preheat the oven the 190C/gas mark 5.",
       "Remove the bay leaf and partially puree with a hand blender.",
