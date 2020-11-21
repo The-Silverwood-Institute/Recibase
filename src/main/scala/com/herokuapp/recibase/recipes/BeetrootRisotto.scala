@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object BeetrootRisotto {
   val recipe = Recipe(
-    "Beetroot Risotto",
+    "Roast Beetroot Risotto",
     "beetroot-risotto",
     List(
       Ingredient(
