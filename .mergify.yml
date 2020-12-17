@@ -2,7 +2,7 @@ pull_request_rules:
   - name: Merge passing scala-steward PRs
     conditions:
       - author=scala-steward
-      - check-success~=travis-ci
+      - check-success=Travis CI - Pull Request
     actions:
       review:
         type: APPROVE
