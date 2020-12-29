@@ -30,6 +30,7 @@ object RecipeController {
     ChunkyVegetableCrumble.recipe,
     CourgetteBroccoliPasta.recipe,
     CourgetteSpinachPasties.recipe,
+    CranberryRelish.recipe,
     CreamyCauliflowerCheeseWalnuts.recipe,
     CreamyMushroomStroganoff.recipe,
     Dahl.recipe,
