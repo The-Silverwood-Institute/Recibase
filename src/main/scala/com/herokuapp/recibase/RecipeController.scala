@@ -34,7 +34,7 @@ object RecipeController {
     CreamyCauliflowerCheeseWalnuts.recipe,
     CreamyMushroomStroganoff.recipe,
     Dahl.recipe,
-    EasySoup.recipe,
+    RedPepperSoup.recipe,
     IndianPatties.recipe,
     Kashtouri.recipe,
     LambAubergineDaube.recipe,

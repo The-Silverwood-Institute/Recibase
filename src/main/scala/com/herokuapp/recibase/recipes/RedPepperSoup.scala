@@ -2,10 +2,10 @@ package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.{Ingredient, Recipe}
 
-object EasySoup {
+object RedPepperSoup {
   val recipe = Recipe(
-    "Easy Soup",
-    "easy-soup",
+    "Red Pepper & Apple Soup",
+    "red-pepper-soup",
     List(
       Ingredient("Butter", "Knob"),
       Ingredient("Onion", "1"),
