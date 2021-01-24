@@ -24,6 +24,7 @@ object RecipeController {
     BakedSalmonOlivesSpaghetti.recipe,
     BeetrootRisotto.recipe,
     BlueCheeseGnocchi.recipe,
+    ButternutChilli.recipe,
     BroccoliSalmonQuiche.recipe,
     CheesyCodSpinachGratin.recipe,
     ChilliConCarne.recipe,
