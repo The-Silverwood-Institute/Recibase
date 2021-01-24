@@ -49,6 +49,7 @@ object RecipeController {
     PaneerJalfrezi.recipe,
     ParsnipGingerSoup.recipe,
     ParsnipLentilLasagne.recipe,
+    PeanutButterBiscuits.recipe,
     RoastedVegetableLasagne.recipe,
     RussianMushroomJulienne.recipe,
     SaagPaneer.recipe,
