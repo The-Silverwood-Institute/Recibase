@@ -1,11 +1,17 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe}
 
 object BeetrootRisotto {
   val recipe = Recipe(
     "Roast Beetroot Risotto",
     "beetroot-risotto",
+    None,
+    None,
+    None,
+    None,
+    List.empty,
+    Some(Image("https://i.reciba.se/beetroot-risotto.jpg")),
     List(
       Ingredient(
         "Beetroot",
