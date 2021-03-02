@@ -33,11 +33,11 @@ object RedirectHeroku {
       config: CORSConfig = DefaultCORSConfig
   )(implicit F: Applicative[F]): Http[F, G] =
     Kleisli { req =>
-      req.headers.get(CIString("Host")) match {
+      req.headers.get(CIString("host")) match {
         case Some(NonEmptyList(header, _))
             if header == Header.Raw(
-              CIString("recibase-api.herokuapp.com"),
-              ""
+              CIString("host"),
+              "recibase-api.herokuapp.com"
             ) =>
           createRedirect(req).pure[F]
         case _ => http(req)
