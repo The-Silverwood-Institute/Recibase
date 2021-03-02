@@ -1,6 +1,6 @@
 package com.herokuapp.recibase
 
-import cats.effect.{ConcurrentEffect, ContextShift, Timer}
+import cats.effect.Async
 import fs2.Stream
 import org.http4s.client.blaze.BlazeClientBuilder
 import org.http4s.implicits._
@@ -11,10 +11,7 @@ import scala.concurrent.ExecutionContext.global
 
 object RecibaseServer {
 
-  def stream[F[_]: ConcurrentEffect](implicit
-      T: Timer[F],
-      C: ContextShift[F]
-  ): Stream[F, Nothing] = {
+  def stream[F[_]: Async]: Stream[F, Nothing] = {
     for {
       _ <- BlazeClientBuilder[F](global).stream
       recibaseAlg = RecipeController.impl[F]
