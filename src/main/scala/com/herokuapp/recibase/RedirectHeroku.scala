@@ -1,20 +1,21 @@
 package com.herokuapp.recibase
 
 import cats.Applicative
-import cats.data.Kleisli
+import cats.data.{Kleisli, NonEmptyList}
 import cats.implicits._
 import org.http4s.Uri.{Authority, RegName, Scheme}
 import org.http4s.headers.Location
 import org.http4s.server.middleware.CORS.DefaultCORSConfig
 import org.http4s.server.middleware.CORSConfig
+import org.http4s.v2.{Header, Headers}
 import org.http4s._
-import org.http4s.headers.Host
+import org.typelevel.ci.CIString
 
 object RedirectHeroku {
   def createRedirect[G[_]](request: Request[G]): Response[G] =
     Response(
       status = Status.MovedPermanently,
-      headers = Headers.of(
+      headers = Headers(
         Location(
           Uri(
             Some(Scheme.https),
@@ -32,8 +33,12 @@ object RedirectHeroku {
       config: CORSConfig = DefaultCORSConfig
   )(implicit F: Applicative[F]): Http[F, G] =
     Kleisli { req =>
-      req.headers.get(Host) match {
-        case Some(Host("recibase-api.herokuapp.com", None)) =>
+      req.headers.get(CIString("Host")) match {
+        case Some(NonEmptyList(header, _))
+            if header == Header.Raw(
+              CIString("recibase-api.herokuapp.com"),
+              ""
+            ) =>
           createRedirect(req).pure[F]
         case _ => http(req)
       }
