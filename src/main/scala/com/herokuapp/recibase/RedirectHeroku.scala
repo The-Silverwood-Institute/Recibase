@@ -7,7 +7,7 @@ import org.http4s.Uri.{Authority, RegName, Scheme}
 import org.http4s.headers.Location
 import org.http4s.server.middleware.CORS.DefaultCORSConfig
 import org.http4s.server.middleware.CORSConfig
-import org.http4s.v2.{Header, Headers}
+import org.http4s.{Header, Headers}
 import org.http4s._
 import org.typelevel.ci.CIString
 
