@@ -1,6 +1,6 @@
 language: scala
 scala:
-  - 2.13.3
+  - 2.13.5
 script:
   - sbt scalafmtCheckAll
   - sbt ++$TRAVIS_SCALA_VERSION test
