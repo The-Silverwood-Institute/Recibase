@@ -78,6 +78,7 @@ object RecipeController {
         filteredRecipes.filter(recipe => recipe.hasTag(tag))
       )
       .toMenu
+      .sortBy(_.name)
   }
 
   implicit def apply[F[_]](implicit
