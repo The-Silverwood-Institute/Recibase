@@ -2,9 +2,9 @@ package com.herokuapp.recibase
 
 import cats.effect.Async
 import fs2.Stream
-import org.http4s.client.blaze.BlazeClientBuilder
+import org.http4s.blaze.client.BlazeClientBuilder
+import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.implicits._
-import org.http4s.server.blaze.BlazeServerBuilder
 import org.http4s.server.middleware.{CORS, Logger}
 
 import scala.concurrent.ExecutionContext.global
