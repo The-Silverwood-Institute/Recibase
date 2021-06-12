@@ -10,10 +10,12 @@ object MarmaladeIceCream {
     Some("A simple yet decadent ice cream recipe, no churn needed."),
     Some("Don't eat too much at once..."),
     Some(
-      "You can substitute marmalade for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain."
+      """You can substitute marmalade for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
+        |
+        |I tend to double up this recipe to make enough for a few days.""".stripMargin
     ),
     List("pudding"),
-    Some(Image("https://i.reciba.se/ice-cream.jpg")),
+    Some(Image("https://i.reciba.se/wasabi-ice-cream.jpg")),
     List(
       Ingredient("Mascarpone", "230g"),
       Ingredient("Eggs", "2"),

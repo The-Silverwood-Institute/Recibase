@@ -59,7 +59,8 @@ object RecipeController {
     SmokyFishSweetPotatoCurry.recipe,
     SpicySmokedPaprikaChorizo.recipe,
     SweetChilliFetaPasta.recipe,
-    VegetablePrimavera.recipe
+    VegetablePrimavera.recipe,
+    Wasabi.recipe
   )
 
   val routing: Map[String, Recipe] =
