@@ -15,7 +15,7 @@ object Wasabi {
         |I tend to double up this recipe to make enough for a few days.""".stripMargin
     ),
     List("pudding"),
-    Some(Image("https://i.reciba.se/ice-cream.jpg")),
+    Some(Image("https://i.reciba.se/wasabi-ice-cream.jpg")),
     List(
       Ingredient("Mascarpone", "230g"),
       Ingredient("Eggs", "2"),
