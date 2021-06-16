@@ -32,7 +32,7 @@ object Wasabi {
       "Carefully separate the egg yolks using your hands or spoons. Put aside the egg whites for another recipe.",
       "Whisk the egg yolks and sugar in a bowl, with an electric mixer, until thick and light in colour.",
       "Add the mascarpone cheese and food colouring, then continue whisking.",
-      "Add the wasabi, one teaspon at a time. Whisk thoroughly and taste each time. You may need more or less, depending on preference.",
+      "Add the wasabi, one teaspon at a time. Whisk thoroughly and taste each time. This makes for a hot flavour, so you may only need 1.",
       "Decant into a freezer suitable dish and freeze for at least 6 hours."
     )
   )
