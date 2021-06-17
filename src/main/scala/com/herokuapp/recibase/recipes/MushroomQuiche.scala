@@ -35,8 +35,7 @@ object MushroomQuiche {
       "Add the mushroom mixture and dried mushrooms to the mixing bowl, including the water used to rehydrate the mushrooms if desired.",
       "Place the pastry in a 9 inch flan dish, rerolling it if necessary.",
       "Pour the mixture into the dish and top with the grated parmesan.",
-      "Bake in the oven at 200C/gas 6 for 20 minutes.",
-      ""
+      "Bake in the oven at 200C/gas 6 for 20 minutes."
     )
   )
 }
