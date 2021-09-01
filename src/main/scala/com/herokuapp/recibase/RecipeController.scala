@@ -59,6 +59,7 @@ object RecipeController {
     SmokyFishSweetPotatoCurry.recipe,
     SpicySmokedPaprikaChorizo.recipe,
     SweetChilliFetaPasta.recipe,
+    ToadInTheHole.recipe,
     VegetablePrimavera.recipe,
     Wasabi.recipe
   )
