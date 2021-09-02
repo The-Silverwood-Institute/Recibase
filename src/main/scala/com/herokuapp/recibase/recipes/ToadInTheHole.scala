@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe}
 
 object ToadInTheHole {
   val recipe = Recipe(
@@ -13,7 +13,7 @@ object ToadInTheHole {
       "If you're using vegetarian sausages don't fully cook them beforehand, otherwise they get too dry."
     ),
     List.empty,
-    None,
+    Some(Image("https://i.reciba.se/toad-in-the-hole.jpg")),
     List(
       Ingredient("Sausages", "6"),
       Ingredient("Flour", "150g"),
