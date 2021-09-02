@@ -29,7 +29,7 @@ object ToadInTheHole {
       "Add the salt, eggs, water and milk.",
       "Whisk the ingredients for a few minutes.",
       "Brush a 20cm by 26cm by 4cm baking tray with oil.",
-      "Warm the baking tray in the oven for 4 minutes"
+      "Warm the baking tray in the oven for 4 minutes",
       "Evenly pour half the batter into the baking tray.",
       "Place the sausages in the batter.",
       "Pour the remainder of the batter over the sausages.",
