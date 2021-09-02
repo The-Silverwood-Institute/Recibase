@@ -5,8 +5,6 @@ import cats.data.{Kleisli, NonEmptyList}
 import cats.implicits._
 import org.http4s.Uri.{Authority, RegName, Scheme}
 import org.http4s.headers.Location
-import org.http4s.server.middleware.CORSConfig
-import org.http4s.{Header, Headers}
 import org.http4s._
 import org.typelevel.ci.CIString
 
@@ -28,8 +26,7 @@ object RedirectHeroku {
     )
 
   def apply[F[_], G[_]](
-      http: Http[F, G],
-      config: CORSConfig = CORSConfig.default
+      http: Http[F, G]
   )(implicit F: Applicative[F]): Http[F, G] =
     Kleisli { req =>
       req.headers.get(CIString("host")) match {

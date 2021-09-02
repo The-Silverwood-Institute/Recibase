@@ -21,7 +21,9 @@ object RecibaseServer {
       // want to extract a segments not checked
       // in the underlying routes.
       httpApp = RedirectHeroku(
-        CORS(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
+        CORS.policy.withAllowOriginAll
+          .withAllowCredentials(false)
+          .apply(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
       )
 
       // With Middlewares in place
