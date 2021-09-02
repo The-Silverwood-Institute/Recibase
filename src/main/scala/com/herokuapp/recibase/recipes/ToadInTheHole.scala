@@ -9,7 +9,9 @@ object ToadInTheHole {
     Some("Jeremy"),
     None,
     None,
-    Some("If you're using vegetarian sausages don't fully cook them beforehand, otherwise they get too dry."),
+    Some(
+      "If you're using vegetarian sausages don't fully cook them beforehand, otherwise they get too dry."
+    ),
     List.empty,
     None,
     List(
