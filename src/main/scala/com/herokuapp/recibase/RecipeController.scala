@@ -41,6 +41,7 @@ object RecipeController {
     LambAubergineDaube.recipe,
     LemonFetaPasta.recipe,
     LentilShepardsPie.recipe,
+    NewYorkBagel.recipe,
     MarmaladeIceCream.recipe,
     Mead.recipe,
     MeltyMushroomWellingtons.recipe,
