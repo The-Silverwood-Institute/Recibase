@@ -14,6 +14,7 @@ object IndianPatties {
     Some(
       """Work well served with sweet chilli sauce and/or mayonnaise.
 Don't waste time finely chopping the ingredients as they're blended anyway.
+If you don't have a blender you can chop the garlic, chilli and ginger finely then cook the onion at the same time.
 Can take a long time."""
     ),
     List.empty,
