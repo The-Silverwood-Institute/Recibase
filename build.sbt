@@ -1,7 +1,7 @@
 val Http4sVersion = "1.0.0-M27"
 val CirceVersion = "0.14.1"
 val Specs2Version = "4.13.1"
-val LogbackVersion = "1.2.7"
+val LogbackVersion = "1.2.8"
 
 lazy val root = (project in file("."))
   .settings(
