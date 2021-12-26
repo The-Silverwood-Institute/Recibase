@@ -29,6 +29,7 @@ object RecipeController {
     CheesyCodSpinachGratin.recipe,
     ChilliConCarne.recipe,
     ChunkyVegetableCrumble.recipe,
+    CoconutLimeDahl.recipe,
     CourgetteBroccoliPasta.recipe,
     CourgetteSpinachPasties.recipe,
     CranberryRelish.recipe,
