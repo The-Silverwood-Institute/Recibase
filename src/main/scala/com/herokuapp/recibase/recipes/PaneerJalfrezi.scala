@@ -27,7 +27,7 @@ object PaneerJalfrezi {
         Some("2-3 cloves"),
         Some("finely chopped or crushed")
       ),
-      Ingredient("Tomatoes", Some("2"), Some("chopped")),
+      Ingredient("Salad Tomatoes", Some("2"), Some("chopped")),
       Ingredient("Curry powder", "1 tbsp"),
       Ingredient("Tomato purée", "32g"),
       Ingredient("Brown sugar", "2 tsp"),
