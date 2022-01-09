@@ -7,7 +7,7 @@ object Wasabi {
     "Wasabi Ice Cream",
     "wasabi-ice-cream",
     Some("Kit"),
-    Some("A simple yet decadent hot ice cream recipe, no churn needed."),
+    Some("A simple yet decadent spicy ice cream recipe, no churn needed."),
     None,
     Some(
       """You can substitute wasabi for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
