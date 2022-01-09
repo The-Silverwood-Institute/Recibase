@@ -26,6 +26,7 @@ object RecipeController {
     BlueCheeseGnocchi.recipe,
     ButternutChilli.recipe,
     BroccoliSalmonQuiche.recipe,
+    Brownies.recipe,
     CheesyCodSpinachGratin.recipe,
     ChilliConCarne.recipe,
     ChunkyVegetableCrumble.recipe,
