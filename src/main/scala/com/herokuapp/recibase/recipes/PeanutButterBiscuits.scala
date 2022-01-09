@@ -10,7 +10,7 @@ object PeanutButterBiscuits {
     None,
     None,
     None,
-    List("Baking"),
+    List("baking"),
     Some(Image("https://i.reciba.se/peanut-butter-biscuits.jpg")),
     List(
       Ingredient("Crunchy peanut butter", "250g"),
