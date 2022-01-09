@@ -18,7 +18,7 @@ object Brownies {
         |
         |You can use gluten free flour and the taste is indistinguishable. I'll try making it vegan soon using egg substitute and Vitalite.""".stripMargin
     ),
-    List.empty,
+    List("pudding", "baking"),
     Some(Image("https://i.reciba.se/brownies.jpg")),
     List(
       Ingredient("Unsalted Butter", "300g"),
