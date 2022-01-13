@@ -6,6 +6,7 @@ pull_request_rules:
     actions:
       review:
         type: APPROVE
-      merge:
-        strict: smart
+      queue:
+        method: merge
+        name: default
       delete_head_branch: {}
