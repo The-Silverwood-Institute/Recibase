@@ -1,3 +1,8 @@
+queue_rules:
+  - name: default
+    conditions:
+      - check-success=Travis CI - Pull Request
+
 pull_request_rules:
   - name: Merge passing scala-steward PRs
     conditions:
