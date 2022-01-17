@@ -45,8 +45,8 @@ object ParsnipLentilLasagne {
       "Season with salt/pepper to taste then mix in the beans.",
       "Spoon 1/4 of the sauce over the bottom of a large greaseproof dish then cover with lasagne sheets.",
       "Add two more layers like so: spread half the sauce on top of the lasagne sheets, arrange half the roast parsnips in the sauce then finally cover with lasagne sheets.",
-      "Put the ricotta cheese in a bowl and stir in the milk until smooth. If the ricotta is too firm/cold try giving the mixture a second or two in the microwave. Season with pepper.",
-      "Spoon the ricotta mixture over the dish then scatter with crumbled goats cheese and nutmeg.",
+      "Put the goats cheese in a bowl and stir in the milk until smooth. If the mixture is too firm/cold give it a second or two in the microwave. Season with pepper.",
+      "Spoon the goats cheese mixture over the dish then scatter with crumbled feta and nutmeg.",
       "Bake for 40 minutes or until bubbly and golden.",
       "Take out of the oven and leave to stand for 5 minutes before serving."
     )
