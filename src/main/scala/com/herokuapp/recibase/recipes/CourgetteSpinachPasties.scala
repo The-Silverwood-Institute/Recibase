@@ -8,7 +8,7 @@ object CourgetteSpinachPasties {
     "courgette-spinach-pasties",
     List(
       Ingredient("Courgettes", "2"),
-      Ingredient("Soft Goats Cheese", "1"),
+      Ingredient("Soft Goats Cheese", "125g"),
       Ingredient("Spinach", Some("3 handfulls"), Some("roughly chopped")),
       Ingredient("All Butter Puff Pastry", "320g"),
       Ingredient("Flour", None, None, Some("to thicken mixture")),
