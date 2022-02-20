@@ -16,6 +16,7 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-dsl" % Http4sVersion,
       "io.circe" %% "circe-generic" % CirceVersion,
       "org.specs2" %% "specs2-core" % Specs2Version % "test",
+      "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
       "ch.qos.logback" % "logback-classic" % LogbackVersion
     ),
     addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),

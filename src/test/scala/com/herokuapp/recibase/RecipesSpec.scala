@@ -1,16 +1,12 @@
 package com.herokuapp.recibase
 
 import cats.effect.IO
-import com.herokuapp.recibase.recipes.VegetablePrimavera
-import io.circe.Json
-import io.circe.syntax._
-import org.http4s._
-import org.http4s.circe._
-import org.http4s.implicits._
-
 import cats.effect.unsafe.implicits.global
+import org.http4s._
+import org.http4s.implicits._
+import org.specs2.matcher.JsonMatchers
 
-class RecipesSpec extends org.specs2.mutable.Specification {
+class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
   "list" >> {
     "return 200" >> {
       recipesQuery.status must beEqualTo(Status.Ok)
@@ -62,8 +58,8 @@ class RecipesSpec extends org.specs2.mutable.Specification {
       }
 
       "returns the Recipe as JSON" >> {
-        request.as[Json].unsafeRunSync() must beEqualTo(
-          VegetablePrimavera.recipe.asJson
+        request.as[String].unsafeRunSync() must /(
+          "name" -> "Vegetable Primavera"
         )
       }
     }
