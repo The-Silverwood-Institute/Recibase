@@ -2,6 +2,7 @@ package com.herokuapp.recibase
 
 import io.circe.generic.JsonCodec
 import StringUtils._
+import io.circe.Encoder
 
 @JsonCodec
 case class Ingredient(
@@ -11,19 +12,18 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
-@JsonCodec
-case class Recipe(
-    name: String,
-    url: String,
-    source: Option[String],
-    description: Option[String],
-    tagline: Option[String],
-    notes: Option[String],
-    tags: List[String] = List.empty,
-    image: Option[Image],
-    ingredients: List[Ingredient],
-    method: List[String]
-) {
+trait Recipe {
+  def name: String
+  def url: String
+  def source: Option[String] = None
+  def description: Option[String] = None
+  def tagline: Option[String] = None
+  def notes: Option[String] = None
+  def tags: List[String] = List.empty
+  def image: Option[Image] = None
+  def ingredients: List[Ingredient]
+  def method: List[String]
+
   def hasIngredient(ingredient: String): Boolean = {
     val normalisedIngredient = ingredient.toLowerCase.unpluralise
 
@@ -49,23 +49,31 @@ case class Recipe(
 }
 
 object Recipe {
-  def apply(
-      name: String,
-      url: String,
-      ingredients: List[Ingredient],
-      method: List[String]
-  ): Recipe =
-    new Recipe(
-      name,
-      url,
-      None,
-      None,
-      None,
-      None,
-      List.empty,
-      None,
-      ingredients,
-      method
+  implicit val encodeUser: Encoder[Recipe] =
+    Encoder.forProduct10(
+      "name",
+      "url",
+      "source",
+      "description",
+      "tagline",
+      "notes",
+      "tags",
+      "image",
+      "ingredients",
+      "method"
+    )(r =>
+      (
+        r.name,
+        r.url,
+        r.source,
+        r.description,
+        r.tagline,
+        r.notes,
+        r.tags,
+        r.image,
+        r.ingredients,
+        r.method
+      )
     )
 }
 

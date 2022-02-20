@@ -2,18 +2,16 @@ package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.{Ingredient, Recipe}
 
-object BroccoliSalmonQuiche {
-  val recipe = Recipe(
-    "Broccoli & Salmon Quiche",
-    "broccoli-salmon-quiche",
-    None,
-    None,
-    None,
+object BroccoliSalmonQuiche extends Recipe {
+  val name = "Broccoli & Salmon Quiche"
+  val url = "broccoli-salmon-quiche"
+
+  override val notes: Option[String] =
     Some(
       "Consider using the remaining broccoli stalks and stilton in a broccoli and stilton soup."
-    ),
-    List.empty,
-    None,
+    )
+
+  val ingredients =
     List(
       Ingredient(
         "Broccoli Florets",
@@ -21,13 +19,14 @@ object BroccoliSalmonQuiche {
         Some("Cut to 1-3cm pieces"),
         Some("Save the stalks for a soup")
       ),
-      Ingredient("Smoked Salmon", Some("120g"), Some("Cut into 2cm pieces")),
+      Ingredient("Smoked Salmon", "120g", "Cut into 2cm pieces"),
       Ingredient("Stilton", "50g"),
       Ingredient("Shortcrust Pastry Sheet", "230g"),
       Ingredient("Eggs", "3"),
       Ingredient("Mascarpone Cheese", "2 tbsp"),
       Ingredient("Pepper")
-    ),
+    )
+  val method =
     List(
       "Add the mascarpone cheese to a mixing bowl. It may need a few seconds in the microwave to warm up.",
       "Beat in the two eggs.",
@@ -37,5 +36,4 @@ object BroccoliSalmonQuiche {
       "Pour the mixture into the pastry dish, spreading it evenly.",
       "Bake in the oven at 200C/gas 6 for 20 minutes"
     )
-  )
 }

@@ -2,18 +2,15 @@ package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.{Ingredient, Recipe}
 
-object CreamyCauliflowerCheeseWalnuts {
-  val recipe = Recipe(
-    "Creamy cauliflower cheese with walnuts",
-    "creamy-cauliflower-cheese",
-    Some(
-      "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
-    ),
-    None,
-    None,
-    None,
-    List.empty,
-    None,
+object CreamyCauliflowerCheeseWalnuts extends Recipe {
+  val name = "Creamy cauliflower cheese with walnuts"
+  val url = "creamy-cauliflower-cheese"
+
+  override val source: Option[String] = Some(
+    "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
+  )
+
+  val ingredients =
     List(
       Ingredient("Cauliflower", Some("1"), Some("cut into 1cm pieces")),
       Ingredient(
@@ -28,12 +25,11 @@ object CreamyCauliflowerCheeseWalnuts {
       Ingredient("Cheddar Cheese", Some("50g"), Some("grated")),
       Ingredient("Salt"),
       Ingredient("Black pepper")
-    ),
-    List(
-      "Steam the cauliflower until tender, drain, then place in a grill-suitable dish",
-      "Mix the cream cheese and mustard with the cauliflower, then stir in the blue cheese. Season with a little salt if necessary and plenty of pepper.",
-      "Scatter the walnuts on top, then cover with the cheddar (this helps to prevent the walnuts from burning).",
-      "Place under a preheated hot grill for 10-15 minutes, or until the top is golden brown and the inside hot and bubbling."
     )
+  val method = List(
+    "Steam the cauliflower until tender, drain, then place in a grill-suitable dish",
+    "Mix the cream cheese and mustard with the cauliflower, then stir in the blue cheese. Season with a little salt if necessary and plenty of pepper.",
+    "Scatter the walnuts on top, then cover with the cheddar (this helps to prevent the walnuts from burning).",
+    "Place under a preheated hot grill for 10-15 minutes, or until the top is golden brown and the inside hot and bubbling."
   )
 }
