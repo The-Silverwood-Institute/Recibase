@@ -3,7 +3,7 @@ package com.herokuapp.recibase.recipes
 import com.herokuapp.recibase.{Image, Ingredient, Recipe}
 
 object WasabiIceCream extends Recipe {
-  val name = "WasabiIceCream Ice Cream"
+  val name = "Wasabi Ice Cream"
   val url = "wasabi-ice-cream"
 
   override val source: Option[String] = Some("Kit")
@@ -24,7 +24,7 @@ object WasabiIceCream extends Recipe {
     Ingredient("Mascarpone", "230g"),
     Ingredient("Eggs", "2"),
     Ingredient("Icing Sugar", "60g"),
-    Ingredient("WasabiIceCream paste", "2 tsp"),
+    Ingredient("Wasabi paste", "2 tsp"),
     Ingredient(
       "Green food colouring",
       Some("1/2 tsp"),

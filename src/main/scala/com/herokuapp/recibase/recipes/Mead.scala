@@ -9,7 +9,7 @@ object Mead extends Recipe {
   override val source: Option[String] = Some(
     "https://www.diynatural.com/homemade-mead-honey-mead-recipe/"
   )
-  override val description: Option[String] = Some("A medieval classic")
+  override val tagline: Option[String] = Some("A medieval classic")
   override val notes: Option[String] = Some(
     """This recipe requires a large pan, 2 ~1L flip top bottles, funnel, airlock and rubber bung.Sterilise all equipment before use to avoid comtaminating your mead.
         |
