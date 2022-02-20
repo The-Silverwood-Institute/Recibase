@@ -72,4 +72,7 @@ object Recipe {
 object Ingredient {
   def apply(name: String, quantity: String): Ingredient =
     new Ingredient(name, Some(quantity))
+
+  def apply(name: String, quantity: String, prep: String): Ingredient =
+    new Ingredient(name, Some(quantity), Some(prep))
 }
