@@ -49,7 +49,7 @@ trait Recipe {
 }
 
 object Recipe {
-  implicit val encodeUser: Encoder[Recipe] =
+  implicit val encodeRecipe: Encoder[Recipe] =
     Encoder.forProduct10(
       "name",
       "url",
