@@ -19,7 +19,7 @@ trait Recipe {
   def description: Option[String] = None
   def tagline: Option[String] = None
   def notes: Option[String] = None
-  def tags: List[String] = List.empty
+  def tags: Set[Tag] = Set.empty
   def image: Option[Image] = None
   def ingredients: List[Ingredient]
   def method: List[String]
@@ -33,18 +33,6 @@ trait Recipe {
     } else {
       ingredients.exists(_.name.toLowerCase.contains(normalisedIngredient))
     }
-  }
-
-  def hasTag(tag: String): Boolean = {
-    val normalisedTag = tag.toLowerCase.unpluralise
-
-    if (normalisedTag.startsWith("!")) {
-      val filteredTag = normalisedTag.stripPrefix("!")
-      !tags.exists(_.toLowerCase.contains(filteredTag))
-    } else {
-      tags.exists(_.toLowerCase.contains(normalisedTag))
-    }
-
   }
 }
 

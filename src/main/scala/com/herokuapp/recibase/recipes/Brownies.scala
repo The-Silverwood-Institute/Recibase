@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Image, Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object Brownies extends Recipe {
   val name = "Brownies"
@@ -17,7 +17,7 @@ object Brownies extends Recipe {
         |
         |You can use gluten free flour and the taste is indistinguishable. I'll try making it vegan soon using egg substitute and Vitalite.""".stripMargin
   )
-  override val tags = List("pudding", "baking")
+  override val tags = Set(Tag.Pudding, Tag.Baking)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/brownies.jpg")
   )

@@ -2,6 +2,7 @@ val Http4sVersion = "1.0.0-M31"
 val CirceVersion = "0.14.1"
 val Specs2Version = "4.14.0"
 val LogbackVersion = "1.2.10"
+val EnumeratumVersion = "1.7.0"
 
 lazy val root = (project in file("."))
   .settings(
@@ -15,6 +16,8 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-circe" % Http4sVersion,
       "org.http4s" %% "http4s-dsl" % Http4sVersion,
       "io.circe" %% "circe-generic" % CirceVersion,
+      "com.beachape" %% "enumeratum" % EnumeratumVersion,
+      "com.beachape" %% "enumeratum-circe" % EnumeratumVersion,
       "org.specs2" %% "specs2-core" % Specs2Version % "test",
       "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
       "ch.qos.logback" % "logback-classic" % LogbackVersion

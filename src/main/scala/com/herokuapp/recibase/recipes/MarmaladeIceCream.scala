@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Image, Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object MarmaladeIceCream extends Recipe {
   val name = "Mascarpone Ice Cream"
@@ -16,7 +16,7 @@ object MarmaladeIceCream extends Recipe {
         |
         |I tend to double up this recipe to make enough for a few days.""".stripMargin
   )
-  override val tags = List("pudding")
+  override val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/ice-cream.jpg")
   )

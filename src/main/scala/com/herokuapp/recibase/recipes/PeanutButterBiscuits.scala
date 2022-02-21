@@ -1,13 +1,13 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Image, Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
   val url = "peanut-butter-biscuits"
 
   override val source: Option[String] = Some("Alex's Mum")
-  override val tags = List("baking")
+  override val tags = Set(Tag.Baking)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/peanut-butter-biscuits.jpg")
   )
