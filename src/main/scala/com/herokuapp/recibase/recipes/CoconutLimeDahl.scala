@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object CoconutLimeDahl extends Recipe {
   val name = "Coconut Lime Dahl"
-  val url = "coconut-lime-dahl"
+  val permalink = "coconut-lime-dahl"
 
   override val source: Option[String] = Some(
     "https://greedypanda.co.uk/2021/05/coconut-lime-dal/"

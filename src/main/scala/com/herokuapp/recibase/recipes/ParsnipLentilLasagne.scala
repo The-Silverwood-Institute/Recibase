@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object ParsnipLentilLasagne extends Recipe {
   val name = "Parsnip and Lentil Lasagne"
-  val url = "parsnip-and-lentil-lasagne"
+  val permalink = "parsnip-and-lentil-lasagne"
 
   val ingredients = List(
     Ingredient("Lasagne sheets", Some("200g"), None, Some("12 sheets")),

@@ -5,7 +5,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 object CheesyCodSpinachGratin extends Recipe {
   val name =
     "Cheesy Cod and Spinach Gratin"
-  val url = "cheesy-cod"
+  val permalink = "cheesy-cod"
 
   val ingredients = List(
     Ingredient("Cod", "2 110g fillets"),

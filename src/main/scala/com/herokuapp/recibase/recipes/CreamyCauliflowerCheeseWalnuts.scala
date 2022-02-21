@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object CreamyCauliflowerCheeseWalnuts extends Recipe {
   val name = "Creamy cauliflower cheese with walnuts"
-  val url = "creamy-cauliflower-cheese"
+  val permalink = "creamy-cauliflower-cheese"
 
   override val source: Option[String] = Some(
     "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"

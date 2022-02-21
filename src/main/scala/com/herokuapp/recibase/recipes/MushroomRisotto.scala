@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object MushroomRisotto extends Recipe {
   val name = "Mushroom Risotto"
-  val url = "mushroom-risotto"
+  val permalink = "mushroom-risotto"
 
   val ingredients = List(
     Ingredient("Chestnut mushrooms", Some("250g"), Some("sliced")),

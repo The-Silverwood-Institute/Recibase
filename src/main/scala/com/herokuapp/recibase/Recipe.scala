@@ -14,7 +14,7 @@ case class Ingredient(
 
 trait Recipe {
   def name: String
-  def url: String
+  def permalink: String
   def source: Option[String] = None
   def description: Option[String] = None
   def tagline: Option[String] = None
@@ -40,7 +40,7 @@ object Recipe {
   implicit val encodeRecipe: Encoder[Recipe] =
     Encoder.forProduct10(
       "name",
-      "url",
+      "permalink",
       "source",
       "description",
       "tagline",
@@ -52,7 +52,7 @@ object Recipe {
     )(r =>
       (
         r.name,
-        r.url,
+        r.permalink,
         r.source,
         r.description,
         r.tagline,

@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object MeltyMushroomWellingtons extends Recipe {
   val name = "Melty Mushroom Wellingtons"
-  val url = "melty-mushroom-wellingtons"
+  val permalink = "melty-mushroom-wellingtons"
 
   override val notes: Option[String] = Some(
     """Take the pastry out of the fridge ten minutes before use.

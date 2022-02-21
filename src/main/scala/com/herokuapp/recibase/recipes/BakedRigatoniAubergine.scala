@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
-  val url = "baked-rigatoni-aubergine"
+  val permalink = "baked-rigatoni-aubergine"
 
   override val source: Option[String] = Some(
     "Vegetarian Cookery Bible (2012: Reader's Digest)"

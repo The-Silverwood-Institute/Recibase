@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object RoastedVegetableLasagne extends Recipe {
   val name = "Roasted Vegetable Lasagne"
-  val url = "roasted-vegetable-lasagne"
+  val permalink = "roasted-vegetable-lasagne"
   override val source: Option[String] = Some(
     "https://www.bbcgoodfood.com/recipes/10603/roasted-vegetable-lasagne"
   )

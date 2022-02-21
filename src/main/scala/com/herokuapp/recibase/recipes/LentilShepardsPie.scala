@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object LentilShepardsPie extends Recipe {
   val name = "Veggie Shepherd's Pie"
-  val url = "veggie-shepherds-pie"
+  val permalink = "veggie-shepherds-pie"
 
   val ingredients = List(
     Ingredient("Onions", Some("1"), Some("Diced")),

@@ -5,7 +5,7 @@ import com.herokuapp.recibase.{Image, Ingredient, Recipe}
 object BeetrootRisotto extends Recipe {
   val name =
     "Roast Beetroot Risotto"
-  val url = "beetroot-risotto"
+  val permalink = "beetroot-risotto"
 
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/beetroot-risotto.jpg")

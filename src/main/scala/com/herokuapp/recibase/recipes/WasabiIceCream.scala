@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object WasabiIceCream extends Recipe {
   val name = "Wasabi Ice Cream"
-  val url = "wasabi-ice-cream"
+  val permalink = "wasabi-ice-cream"
 
   override val source: Option[String] = Some("Kit")
   override val description: Option[String] = Some(

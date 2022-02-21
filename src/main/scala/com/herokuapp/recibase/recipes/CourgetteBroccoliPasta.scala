@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object CourgetteBroccoliPasta extends Recipe {
   val name = "Courgette & Broccoli Pasta"
-  val url = "courgette-broccoli-pasta"
+  val permalink = "courgette-broccoli-pasta"
 
   override val source: Option[String] = Some("Gousto")
   override val notes: Option[String] =

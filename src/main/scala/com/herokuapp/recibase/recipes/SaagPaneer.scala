@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SaagPaneer extends Recipe {
   val name = "Saag Paneer"
-  val url = "saag-paneer"
+  val permalink = "saag-paneer"
 
   override val notes: Option[String] = Some(
     """All quantities are very approximate. Some ingredients are probably also missing as I really just make this up as I go...

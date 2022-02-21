@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object NewYorkBagel extends Recipe {
   val name = "New York Bagels"
-  val url = "new-york-bagels"
+  val permalink = "new-york-bagels"
 
   override val source: Option[String] = Some(
     "https://www.thevegspace.co.uk/recipe-four-fabulously-filling-bagel-toppings/"

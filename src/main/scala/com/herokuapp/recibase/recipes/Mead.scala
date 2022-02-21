@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object Mead extends Recipe {
   val name = "Mead"
-  val url = "mead"
+  val permalink = "mead"
 
   override val source: Option[String] = Some(
     "https://www.diynatural.com/homemade-mead-honey-mead-recipe/"

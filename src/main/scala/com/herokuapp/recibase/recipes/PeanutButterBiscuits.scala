@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
-  val url = "peanut-butter-biscuits"
+  val permalink = "peanut-butter-biscuits"
 
   override val source: Option[String] = Some("Alex's Mum")
   override val tags = Set(Tag.Baking)

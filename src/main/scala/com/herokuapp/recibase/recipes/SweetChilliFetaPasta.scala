@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
-  val url = "sweet-chilli-feta-pasta"
+  val permalink = "sweet-chilli-feta-pasta"
 
   override val notes: Option[String] = Some(
     """Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.

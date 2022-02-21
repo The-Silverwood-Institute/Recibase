@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Image, Ingredient, Recipe}
 
 object ToadInTheHole extends Recipe {
   val name = "Toad in the Hole"
-  val url = "toad-in-the-hole"
+  val permalink = "toad-in-the-hole"
 
   override val source: Option[String] = Some("Jeremy")
   override val notes: Option[String] = Some(

@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object RussianMushroomJulienne extends Recipe {
   val name = "Russian Mushroom Julienne"
-  val url = "russian-mushroom-julienne"
+  val permalink = "russian-mushroom-julienne"
 
   override val source: Option[String] = Some(
     "https://livelaughrowe.com/russian-dish-mushroom-julienne/"

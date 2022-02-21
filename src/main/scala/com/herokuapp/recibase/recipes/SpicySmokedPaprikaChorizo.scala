@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SpicySmokedPaprikaChorizo extends Recipe {
   val name = "Spicy Smoked Paprika Chorizo"
-  val url = "spicy-smoked-paprika-chorizo"
+  val permalink = "spicy-smoked-paprika-chorizo"
 
   override val source: Option[String] = Some("Kit's Dad")
   override val notes: Option[String] = Some(

@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SeafoodLasagne extends Recipe {
   val name = "Seafood Lasagne"
-  val url = "seafood-lasagne"
+  val permalink = "seafood-lasagne"
 
   val ingredients = List(
     Ingredient("Semi-skimmed milk", "1L"),

@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object RedPepperSoup extends Recipe {
   val name = "Red Pepper & Apple Soup"
-  val url = "red-pepper-soup"
+  val permalink = "red-pepper-soup"
   val ingredients = List(
     Ingredient("Butter", "Knob"),
     Ingredient("Onion", "1"),

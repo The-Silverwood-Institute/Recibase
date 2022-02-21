@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SmokyFishSweetPotatoCurry extends Recipe {
   val name = "Smoky fish and sweet potato curry"
-  val url = "smoky-fish-curry"
+  val permalink = "smoky-fish-curry"
 
   val ingredients = List(
     Ingredient("Onion", "1", "diced"),

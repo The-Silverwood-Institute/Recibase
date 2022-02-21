@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object ScrambledEggs extends Recipe {
   val name = "Scrambled Eggs"
-  val url = "scrambled-eggs"
+  val permalink = "scrambled-eggs"
 
   override val description: Option[String] = Some(
     "Soft, buttery scrambled eggs."

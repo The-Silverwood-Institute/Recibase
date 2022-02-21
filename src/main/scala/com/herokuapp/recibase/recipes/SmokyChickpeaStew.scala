@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object SmokyChickpeaStew extends Recipe {
   val name = "Smoky Sweet potato and chickpea stew"
-  val url = "smoky-sweet-potato-chickpea-stew"
+  val permalink = "smoky-sweet-potato-chickpea-stew"
 
   override val source: Option[String] = Some(
     "https://www.budgetbytes.com/smoky-potato-chickpea-stew/"

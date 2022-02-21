@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object BakedSalmonOlivesSpaghetti extends Recipe {
   val name = "Baked Salmon with Olives and Spaghetti"
-  val url = "salmon-olive-spaghetti"
+  val permalink = "salmon-olive-spaghetti"
 
   override val description: Option[String] =
     Some("Baked salmon served on a bed of spaghetti, onions and olives.")

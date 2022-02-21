@@ -4,7 +4,7 @@ import com.herokuapp.recibase.{Ingredient, Recipe}
 
 object PaneerJalfrezi extends Recipe {
   val name = "Paneer Jalfrezi"
-  val url = "paneer-jalfrezi"
+  val permalink = "paneer-jalfrezi"
 
   override val source: Option[String] = Some("Gousto")
 
