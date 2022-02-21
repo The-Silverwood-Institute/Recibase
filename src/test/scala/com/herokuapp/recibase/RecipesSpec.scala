@@ -14,7 +14,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
 
     "return a link to each recipe" >> {
       recipesQuery.as[String].unsafeRunSync() must contain(
-        "{\"name\":\"Vegetable Primavera\",\"url\":\"vegetable-primavera\"}"
+        "{\"name\":\"Vegetable Primavera\",\"permalink\":\"vegetable-primavera\"}"
       )
     }
   }
