@@ -2,7 +2,7 @@ package com.herokuapp.recibase
 
 import cats.Applicative
 import cats.implicits._
-import com.herokuapp.recibase.recipes._
+
 import scala.language.implicitConversions
 
 trait RecipeController[F[_]] {
@@ -18,63 +18,14 @@ object RecipeController {
       recipes.map(recipe => MenuEntry(recipe.name, recipe.permalink))
   }
 
-  private val recipes: Seq[Recipe] = List(
-    BakedRigatoniAubergine,
-    BakedSalmonOlivesSpaghetti,
-    BeetrootRisotto,
-    BlueCheeseGnocchi,
-    ButternutChilli,
-    BroccoliSalmonQuiche,
-    Brownies,
-    CheesyCodSpinachGratin,
-    ChilliConCarne,
-    ChunkyVegetableCrumble,
-    CoconutLimeDahl,
-    CourgetteBroccoliPasta,
-    CourgetteSpinachPasties,
-    CranberryRelish,
-    CreamyCauliflowerCheeseWalnuts,
-    CreamyMushroomStroganoff,
-    Dahl,
-    RedPepperSoup,
-    IndianPatties,
-    Kashtouri,
-    LambAubergineDaube,
-    LemonFetaPasta,
-    LentilShepardsPie,
-    NewYorkBagel,
-    MarmaladeIceCream,
-    Mead,
-    MeltyMushroomWellingtons,
-    MushroomQuiche,
-    MushroomRisotto,
-    PaneerJalfrezi,
-    ParsnipGingerSoup,
-    ParsnipLentilLasagne,
-    PeanutButterBiscuits,
-    RoastBeetrootDahl,
-    RoastedVegetableLasagne,
-    RussianMushroomJulienne,
-    SaagPaneer,
-    ScrambledEggs,
-    SeafoodLasagne,
-    SmokyChickpeaStew,
-    SmokyFishSweetPotatoCurry,
-    SpicySmokedPaprikaChorizo,
-    SweetChilliFetaPasta,
-    ToadInTheHole,
-    VegetablePrimavera,
-    WasabiIceCream
-  )
-
   val routing: Map[String, Recipe] =
-    recipes.map(recipe => recipe.permalink -> recipe).toMap
+    Recipe.recipes.map(recipe => recipe.permalink -> recipe).toMap
 
   def listRecipes(
       hasIngredient: Option[String]
   ): Seq[MenuEntry] = {
-    val filteredRecipes = hasIngredient.fold(recipes)(ingredient =>
-      recipes.filter(recipe => recipe.hasIngredient(ingredient))
+    val filteredRecipes = hasIngredient.fold(Recipe.recipes)(ingredient =>
+      Recipe.recipes.filter(recipe => recipe.hasIngredient(ingredient))
     )
 
     filteredRecipes.toMenu

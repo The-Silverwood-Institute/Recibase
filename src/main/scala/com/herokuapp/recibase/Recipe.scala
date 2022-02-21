@@ -1,8 +1,9 @@
 package com.herokuapp.recibase
 
-import io.circe.generic.JsonCodec
-import StringUtils._
+import com.herokuapp.recibase.StringUtils._
+import com.herokuapp.recibase.recipes._
 import io.circe.Encoder
+import io.circe.generic.JsonCodec
 
 @JsonCodec
 case class Ingredient(
@@ -12,8 +13,7 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
-trait Recipe {
-  def name: String
+trait Recipe extends Meal {
   def permalink: String
   def source: Option[String] = None
   def description: Option[String] = None
@@ -37,6 +37,55 @@ trait Recipe {
 }
 
 object Recipe {
+  val recipes: Seq[Recipe] = List(
+    BakedRigatoniAubergine,
+    BakedSalmonOlivesSpaghetti,
+    BeetrootRisotto,
+    BlueCheeseGnocchi,
+    ButternutChilli,
+    BroccoliSalmonQuiche,
+    Brownies,
+    CheesyCodSpinachGratin,
+    ChilliConCarne,
+    ChunkyVegetableCrumble,
+    CoconutLimeDahl,
+    CourgetteBroccoliPasta,
+    CourgetteSpinachPasties,
+    CranberryRelish,
+    CreamyCauliflowerCheeseWalnuts,
+    CreamyMushroomStroganoff,
+    Dahl,
+    RedPepperSoup,
+    IndianPatties,
+    Kashtouri,
+    LambAubergineDaube,
+    LemonFetaPasta,
+    LentilShepardsPie,
+    NewYorkBagel,
+    MarmaladeIceCream,
+    Mead,
+    MeltyMushroomWellingtons,
+    MushroomQuiche,
+    MushroomRisotto,
+    PaneerJalfrezi,
+    ParsnipGingerSoup,
+    ParsnipLentilLasagne,
+    PeanutButterBiscuits,
+    RoastBeetrootDahl,
+    RoastedVegetableLasagne,
+    RussianMushroomJulienne,
+    SaagPaneer,
+    ScrambledEggs,
+    SeafoodLasagne,
+    SmokyChickpeaStew,
+    SmokyFishSweetPotatoCurry,
+    SpicySmokedPaprikaChorizo,
+    SweetChilliFetaPasta,
+    ToadInTheHole,
+    VegetablePrimavera,
+    WasabiIceCream
+  )
+
   implicit val encodeRecipe: Encoder[Recipe] =
     Encoder.forProduct10(
       "name",
