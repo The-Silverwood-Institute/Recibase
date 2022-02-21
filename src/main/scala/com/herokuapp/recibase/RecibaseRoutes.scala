@@ -12,7 +12,10 @@ object OptionalIngredientQueryParamMatcher
     extends OptionalQueryParamDecoderMatcher[String]("hasIngredient")
 
 object RecibaseRoutes {
-  def recipeRoutes[F[_]: Sync](H: RecipeController[F]): HttpRoutes[F] = {
+  def routes[F[_]: Sync](
+      H: RecipeController[F],
+      J: MealsController[F]
+  ): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F] {}
     import dsl._
     HttpRoutes.of[F] {
@@ -30,6 +33,8 @@ object RecibaseRoutes {
             Ok(recipe.asJson)
           )
         } yield resp
+      case GET -> Root / "meals" / "" =>
+        Ok(J.meals.map(_.asJson))
       case GET -> Root / "manifest" =>
         Ok(Manifest(sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")).asJson)
     }

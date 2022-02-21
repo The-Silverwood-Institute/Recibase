@@ -12,7 +12,8 @@ object RecibaseServer {
   def stream[F[_]: Async]: Stream[F, Nothing] = {
     for {
       _ <- BlazeClientBuilder[F].stream
-      recibaseAlg = RecipeController.impl[F]
+      recipesAlg = RecipeController.impl[F]
+      mealsAlg = MealsController.impl[F]
 
       // Combine Service Routes into an HttpApp.
       // Can also be done via a Router if you
@@ -21,7 +22,7 @@ object RecibaseServer {
       httpApp = RedirectHeroku(
         CORS.policy.withAllowOriginAll
           .withAllowCredentials(false)
-          .apply(RecibaseRoutes.recipeRoutes[F](recibaseAlg).orNotFound)
+          .apply(RecibaseRoutes.routes[F](recipesAlg, mealsAlg).orNotFound)
       )
 
       // With Middlewares in place

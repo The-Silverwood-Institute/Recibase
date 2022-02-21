@@ -1,5 +1,7 @@
 package com.herokuapp.recibase
 
+import io.circe.generic.JsonCodec
+
 trait Meal {
   def name: String
   def tags: Set[Tag]
@@ -271,6 +273,7 @@ object Meal {
   )
 }
 
+@JsonCodec
 case class MealStub(
     name: String,
     tags: Set[Tag],

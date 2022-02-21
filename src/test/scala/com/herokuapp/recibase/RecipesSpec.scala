@@ -1,6 +1,6 @@
 package com.herokuapp.recibase
 
-import cats.effect.IO
+import cats.effect.{IO, MonadCancel}
 import cats.effect.unsafe.implicits.global
 import org.http4s._
 import org.http4s.implicits._
@@ -68,28 +68,30 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
   private def recipeQuery(url: String): Response[IO] = {
     val getRecipe =
       Request[IO](Method.GET, Uri.unsafeFromString(s"/recipes/$url"))
-    val recipeController = RecipeController.impl[IO]
     RecibaseRoutes
-      .recipeRoutes(recipeController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
       .orNotFound(getRecipe)
       .unsafeRunSync()
   }
 
   private lazy val recipesQuery: Response[IO] = {
     val getRecipes = Request[IO](Method.GET, uri"/recipes/")
-    val recipeController = RecipeController.impl[IO]
     RecibaseRoutes
-      .recipeRoutes(recipeController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
       .orNotFound(getRecipes)
       .unsafeRunSync()
   }
 
   private lazy val filteredRecipesQuery: Response[IO] = {
     val getRecipes = Request[IO](Method.GET, uri"/recipes/?hasIngredient=Thyme")
-    val recipeController = RecipeController.impl[IO]
     RecibaseRoutes
-      .recipeRoutes(recipeController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
       .orNotFound(getRecipes)
       .unsafeRunSync()
   }
+}
+
+object RecipesSpec {
+  val recipeController: RecipeController[IO] = RecipeController.impl[IO]
+  val mealController: MealsController[IO] = MealsController.impl[IO]
 }
