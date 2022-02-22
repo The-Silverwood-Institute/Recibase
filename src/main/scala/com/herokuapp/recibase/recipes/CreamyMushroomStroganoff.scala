@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object CreamyMushroomStroganoff extends Recipe {
   val name = "Creamy mushroom stroganoff"
@@ -13,6 +13,7 @@ object CreamyMushroomStroganoff extends Recipe {
     """You can substitute Shiitake or Porchini mushrooms for their dried equivalents.
 Pots of dried forest mushrooms also work. Try softening the mushrooms in the stock."""
   )
+  override val tags = Set(Tag.Vegetarian, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Butter", "50g"),

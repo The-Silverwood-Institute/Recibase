@@ -1,10 +1,13 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object SeafoodLasagne extends Recipe {
   val name = "Seafood Lasagne"
   val permalink = "seafood-lasagne"
+
+  override val tags =
+    Set(Tag.Pescatarian, Tag.Slow, Tag.Stodge, Tag.ColdWeather)
 
   val ingredients = List(
     Ingredient("Semi-skimmed milk", "1L"),

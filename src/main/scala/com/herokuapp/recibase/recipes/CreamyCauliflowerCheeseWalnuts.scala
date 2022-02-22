@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object CreamyCauliflowerCheeseWalnuts extends Recipe {
   val name = "Creamy cauliflower cheese with walnuts"
@@ -9,6 +9,7 @@ object CreamyCauliflowerCheeseWalnuts extends Recipe {
   override val source: Option[String] = Some(
     "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
   )
+  override val tags = Set(Tag.Vegetarian, Tag.Quick)
 
   val ingredients =
     List(

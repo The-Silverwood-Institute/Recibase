@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object MushroomQuiche extends Recipe {
   val name = "Mushroom Quiche"
@@ -9,6 +9,7 @@ object MushroomQuiche extends Recipe {
   override val notes: Option[String] = Some(
     "Take the pastry out of the fridge 40 mins before use!"
   )
+  override val tags = Set(Tag.Stodge, Tag.Slow, Tag.Vegetarian)
 
   val ingredients = List(
     Ingredient("Chestnut mushrooms", "250g", "sliced"),

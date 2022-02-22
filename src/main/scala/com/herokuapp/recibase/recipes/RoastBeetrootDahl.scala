@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object RoastBeetrootDahl extends Recipe {
   val name = "Roast Beetroot Dahl"
@@ -12,6 +12,7 @@ object RoastBeetrootDahl extends Recipe {
         |
         |We use a modified version of <a href="https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/">this</a> Sri Lankan Curry power recipe. Will write down our version some time.""".stripMargin
   )
+  override val tags = Set(Tag.Vegan, Tag.Spicy)
 
   val ingredients = List(
     Ingredient("Beetroot", "500g", "cut into 2cm chunks"),

@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object VegetablePrimavera extends Recipe {
   val name = "Vegetable Primavera"
@@ -14,6 +14,7 @@ object VegetablePrimavera extends Recipe {
     Most combinations of small or baby vegetables work, as does e.g. tenderstem broccoli. Carrot sticks are a suitable replacement for baby carrots, too. Use whatever you have or can get. Aim for 3-4 types. Suggestions include: baby sweetcorn, green beans, baby carrots, mange tout.
     Many types or tortellini or ravioli work for this dish."""
   )
+  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather)
 
   val ingredients = List(
     Ingredient(

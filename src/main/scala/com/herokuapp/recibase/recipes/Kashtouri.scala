@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object Kashtouri extends Recipe {
   val name = "Kashtouri"
@@ -12,6 +12,7 @@ object Kashtouri extends Recipe {
   override val description: Option[String] = Some(
     "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
   )
+  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather)
 
   val ingredients = List(
     Ingredient("Risotto rice", "150g"),

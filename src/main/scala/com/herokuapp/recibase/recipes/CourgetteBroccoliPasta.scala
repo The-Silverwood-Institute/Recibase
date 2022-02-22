@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object CourgetteBroccoliPasta extends Recipe {
   val name = "Courgette & Broccoli Pasta"
@@ -15,6 +15,7 @@ object CourgetteBroccoliPasta extends Recipe {
           |
           |Try adding a tablespoon of creme fraiche or soured cream, for a richer sauce.""".stripMargin
     )
+  override val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather)
 
   val ingredients = List(
     Ingredient("Courgette", Some("1"), Some("roughly chopped")),

@@ -1,10 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object ParsnipGingerSoup extends Recipe {
   val name = "Parsnip and Ginger Soup"
   val permalink = "parsnip-and-ginger-soup"
+
+  override val tags = Set(Tag.Soup, Tag.VeganIsh)
 
   val ingredients = List(
     Ingredient("Parnsips", "450g", "Diced"),

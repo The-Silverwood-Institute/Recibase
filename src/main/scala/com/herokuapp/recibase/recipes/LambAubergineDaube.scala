@@ -1,12 +1,13 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object LambAubergineDaube extends Recipe {
   val name = "Lamb and Aubergine Daube"
   val permalink = "lamb-aubergine-daube"
 
   override val source: Option[String] = Some("The Times - Dinner Tonight")
+  override val tags = Set(Tag.Spicy)
 
   val ingredients = List(
     Ingredient("Aubergine", "350g"),

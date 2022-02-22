@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
@@ -12,6 +12,7 @@ object BakedRigatoniAubergine extends Recipe {
   override val notes: Option[String] = Some(
     "Traditional parmesan is not vegetarian"
   )
+  override val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Onion", "1", "chopped"),

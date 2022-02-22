@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object Dahl extends Recipe {
   val name = "Dahl"
@@ -12,10 +12,10 @@ object Dahl extends Recipe {
   override val description: Option[String] = Some(
     "An Indian dish of lentils infused with spices."
   )
-
   override val notes: Option[String] = Some(
     "Roasted nuts can also be added. Cook them until brown with a little oil in the small pan before adding the butter, cumin and onion."
   )
+  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.Spicy)
 
   val ingredients = List(
     Ingredient("Red lentils", "350g"),

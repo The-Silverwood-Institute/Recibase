@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object ScrambledEggs extends Recipe {
   val name = "Scrambled Eggs"
@@ -16,6 +16,7 @@ object ScrambledEggs extends Recipe {
       |Stilton - crumble and melt blue stilton into the butter.
       |Spring onions - lightly fry a sliced spring onion in the butter. Also works with garlic.""".stripMargin
   )
+  override val tags = Set(Tag.Lunch)
 
   val ingredients = List(
     Ingredient("Butter", None, None, Some("Use a decent amount")),

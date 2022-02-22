@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Image, Ingredient, Recipe}
+import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
 
 object ToadInTheHole extends Recipe {
   val name = "Toad in the Hole"
@@ -13,6 +13,7 @@ object ToadInTheHole extends Recipe {
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/toad-in-the-hole.jpg")
   )
+  override val tags = Set(Tag.Vegetarian)
 
   val ingredients = List(
     Ingredient("Sausages", "6"),

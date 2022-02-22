@@ -1,12 +1,13 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object ButternutChilli extends Recipe {
   val name = "Butternut Chilli"
   val permalink = "butternut-chilli"
 
   override val source: Option[String] = Some("Harry")
+  override val tags = Set(Tag.Vegetarian, Tag.Spicy)
 
   val ingredients = List(
     Ingredient("Onion", "1", "Chopped"),

@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
@@ -10,6 +10,7 @@ object SweetChilliFetaPasta extends Recipe {
     """Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.
 There are basically no quantities. Add what seems right."""
   )
+  override val tags = Set(Tag.Quick, Tag.Vegetarian)
 
   val ingredients = List(
     Ingredient("Pine nuts"),

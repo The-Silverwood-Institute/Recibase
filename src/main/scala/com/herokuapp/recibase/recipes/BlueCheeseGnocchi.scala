@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object BlueCheeseGnocchi extends Recipe {
   val name =
@@ -15,6 +15,8 @@ object BlueCheeseGnocchi extends Recipe {
   override val notes: Option[String] = Some(
     "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
   )
+  override val tags =
+    Set(Tag.Stodge, Tag.Quick, Tag.VegetarianIsh, Tag.ColdWeather)
 
   val ingredients = List(
     Ingredient("Gnocchi", "500g"),

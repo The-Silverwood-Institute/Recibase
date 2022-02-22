@@ -10,7 +10,7 @@ object CranberryRelish extends Recipe {
   override val notes: Option[String] = Some(
     "This is best made in advance, to give the flavours time to mix"
   )
-  override val tags = Set(Tag.Christmas)
+  override val tags = Set(Tag.Christmas, Tag.NonMeal)
 
   val ingredients = List(
     Ingredient("Red onions", Some("2"), Some("thinly sliced")),

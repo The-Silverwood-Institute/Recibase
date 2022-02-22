@@ -1,10 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object SmokyFishSweetPotatoCurry extends Recipe {
   val name = "Smoky fish and sweet potato curry"
   val permalink = "smoky-fish-curry"
+
+  override val tags = Set(Tag.Pescatarian, Tag.Spicy)
 
   val ingredients = List(
     Ingredient("Onion", "1", "diced"),

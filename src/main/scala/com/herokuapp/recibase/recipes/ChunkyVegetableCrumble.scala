@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object ChunkyVegetableCrumble extends Recipe {
   val name = "Chunky Vegetable Crumble"
@@ -14,6 +14,7 @@ object ChunkyVegetableCrumble extends Recipe {
       """Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.
 Honey can be added with the carrots for extra sweetness."""
     )
+  override val tags = Set(Tag.VegetarianIsh, Tag.Slow, Tag.Effort, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Onion", "1", "sliced"),

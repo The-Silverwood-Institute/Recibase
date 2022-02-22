@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Ingredient, Recipe}
+import com.herokuapp.recibase.{Ingredient, Recipe, Tag}
 
 object Mead extends Recipe {
   val name = "Mead"
@@ -15,6 +15,7 @@ object Mead extends Recipe {
         |
         |I'd recommend doubling or tripling the quantities to make this worth the effort.""".stripMargin
   )
+  override val tags = Set(Tag.NonMeal)
 
   val ingredients = List(
     Ingredient(
