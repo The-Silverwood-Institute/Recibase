@@ -1,6 +1,9 @@
 package com.herokuapp.recibase
 
-import io.circe.generic.JsonCodec
+import io.circe.Encoder
+import io.circe.generic.extras.Configuration
+import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
+import io.circe.generic.semiauto.deriveEncoder
 
 trait Meal {
   def name: String
@@ -195,13 +198,27 @@ object Meal {
   )
 }
 
-@JsonCodec
 case class MealStub(
     name: String,
     tags: Set[Tag],
-    url: Option[String] = None
+    source: Option[Source] = None
 ) extends Meal
 
 object MealStub {
-  def apply(recipe: Recipe): MealStub = MealStub(recipe.name, recipe.tags)
+  def apply(recipe: Recipe): MealStub =
+    MealStub(recipe.name, recipe.tags, Some(Recibase(recipe.permalink)))
+
+  implicit val stubEncoder: Encoder[MealStub] = deriveEncoder[MealStub]
+}
+
+sealed trait Source
+final case class Online(url: String) extends Source
+final case class Recibase(permalink: String) extends Source
+
+object Source {
+  implicit val genDevConfig: Configuration =
+    Configuration.default.withSnakeCaseConstructorNames.withDiscriminator(
+      "type"
+    )
+  implicit val sourceEncoder: Encoder[Source] = deriveConfiguredEncoder[Source]
 }
