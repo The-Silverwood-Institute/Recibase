@@ -52,6 +52,7 @@ object Meal {
       Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather)
     ),
     MealStub("Fishcakes", Set(Tag.Pescatarian)),
+    MealStub("Full Scottish Breakfast", Set(Tag.VegetarianIsh, Tag.Effort, Tag.Quick, Tag.Stodge)),
     MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
     MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan)),
     MealStub(
@@ -147,6 +148,7 @@ object Meal {
       Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
     ),
     MealStub("Roasted Vegetable Tart", Set(Tag.Vegetarian, Tag.HotWeather)),
+    MealStub("Sausages and Mash", Set(Tag.Vegetarian, Tag.Quick, Tag.Scales)),
     MealStub(
       "Seitan Tagine",
       Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales)
