@@ -12,6 +12,6 @@ object MealsController {
   def impl[F[_]: Applicative]: MealsController[F] =
     new MealsController[F] {
       override def meals: F[Set[MealStub]] = Meal.meals.pure[F]
-      override def mealNames: F[String] = Meal.meals.map(_.name).mkString("\n").pure[F]
+      override def mealNames: F[String] = Meal.meals.map(_.name).toSeq.sorted.mkString("\n").pure[F]
     }
 }
