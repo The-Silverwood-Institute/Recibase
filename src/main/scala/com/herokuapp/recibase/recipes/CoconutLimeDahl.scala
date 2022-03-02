@@ -17,7 +17,7 @@ object CoconutLimeDahl extends Recipe {
         |
         |The garlic will have a stronger flavour than normal, because it is boiled rather than cooked. Consider adjusting quantity.""".stripMargin
     )
-  override val tags = Set(Tag.Vegan)
+  override val tags = Set(Tag.Vegan, Tag.Spicy, Tag.LowEffort, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Lentils", "450g"),

@@ -7,7 +7,7 @@ object PaneerJalfrezi extends Recipe {
   val permalink = "paneer-jalfrezi"
 
   override val source: Option[String] = Some("Gousto")
-  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy)
+  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy, Tag.LowEffort)
 
   val ingredients = List(
     Ingredient("Onion", "1", "sliced"),

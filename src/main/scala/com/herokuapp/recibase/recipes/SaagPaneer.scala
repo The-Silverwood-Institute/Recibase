@@ -10,7 +10,8 @@ object SaagPaneer extends Recipe {
     """All quantities are very approximate. Some ingredients are probably also missing as I really just make this up as I go...
 For frying the paneer, the goal is something like a very shallow shallow fry, with more oil than would be used for pan frying but less than most shallow frying. A sautee pan is ideal for this."""
   )
-  override val tags = Set(Tag.Vegetarian, Tag.HotWeather)
+  override val tags =
+    Set(Tag.Vegetarian, Tag.HotWeather, Tag.Spicy, Tag.LowEffort)
 
   val ingredients = List(
     Ingredient("Paneer", Some("1 block"), Some("cut into 2-3 cm cubes")),

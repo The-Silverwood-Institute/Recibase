@@ -16,7 +16,13 @@ object BlueCheeseGnocchi extends Recipe {
     "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
   )
   override val tags =
-    Set(Tag.Stodge, Tag.Quick, Tag.VegetarianIsh, Tag.ColdWeather)
+    Set(
+      Tag.Stodge,
+      Tag.Quick,
+      Tag.VegetarianIsh,
+      Tag.ColdWeather,
+      Tag.LowEffort
+    )
 
   val ingredients = List(
     Ingredient("Gnocchi", "500g"),

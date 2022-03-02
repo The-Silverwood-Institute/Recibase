@@ -6,7 +6,7 @@ object CheesyCodSpinachGratin extends Recipe {
   val name =
     "Cheesy Cod and Spinach Gratin"
   val permalink = "cheesy-cod"
-  override val tags = Set(Tag.Pescatarian, Tag.Vegetarian)
+  override val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 
   val ingredients = List(
     Ingredient("Cod", "2 110g fillets"),

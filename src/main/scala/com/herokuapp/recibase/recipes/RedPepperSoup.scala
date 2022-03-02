@@ -6,7 +6,7 @@ object RedPepperSoup extends Recipe {
   val name = "Red Pepper & Apple Soup"
   val permalink = "red-pepper-soup"
 
-  override val tags = Set(Tag.Soup, Tag.Scales, Tag.VeganIsh)
+  override val tags = Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.LowEffort)
 
   val ingredients = List(
     Ingredient("Butter", "Knob"),

@@ -13,7 +13,7 @@ object ToadInTheHole extends Recipe {
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/toad-in-the-hole.jpg")
   )
-  override val tags = Set(Tag.Vegetarian)
+  override val tags = Set(Tag.Vegetarian, Tag.LowEffort)
 
   val ingredients = List(
     Ingredient("Sausages", "6"),

@@ -22,7 +22,10 @@ object Meal {
       "Avocado and coconut soup",
       Set(Tag.Vegan, Tag.Soup, Tag.Scales, Tag.Freezes)
     ),
-    MealStub("Baked potatoes", Set(Tag.Slow, Tag.Vegetarian, Tag.ColdWeather)),
+    MealStub(
+      "Baked potatoes",
+      Set(Tag.Slow, Tag.Vegetarian, Tag.ColdWeather, Tag.LowEffort)
+    ),
     MealStub("Beyond Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
     MealStub(
       "Broccoli and Stilton soup",
@@ -33,7 +36,8 @@ object Meal {
         Tag.Freezes,
         Tag.BetterNextDay,
         Tag.Slow,
-        Tag.ColdWeather
+        Tag.ColdWeather,
+        Tag.LowEffort
       )
     ),
     MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
@@ -45,11 +49,14 @@ object Meal {
     MealStub("Cheese scones", Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)),
     MealStub("Coconut & egg curry", Set(Tag.Vegetarian)),
     MealStub("Cod in tomato sauce", Set(Tag.Pescatarian)),
-    MealStub("Cod with Lentils", Set(Tag.Quick, Tag.Pescatarian)),
+    MealStub(
+      "Cod with Lentils",
+      Set(Tag.Quick, Tag.Pescatarian, Tag.LowEffort)
+    ),
     MealStub("Egg & Mozzarella Toasts", Set(Tag.Vegetarian, Tag.Quick)),
     MealStub(
       "Fettucine with Dolcelatte and Spinach",
-      Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather)
+      Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather, Tag.LowEffort)
     ),
     MealStub("Fishcakes", Set(Tag.Pescatarian)),
     MealStub(
@@ -57,7 +64,7 @@ object Meal {
       Set(Tag.VegetarianIsh, Tag.HighEffort, Tag.Quick, Tag.Stodge)
     ),
     MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
-    MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan)),
+    MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan, Tag.LowEffort)),
     MealStub(
       "Haggis",
       Set(
@@ -111,11 +118,17 @@ object Meal {
     ),
     MealStub(
       "Pasta & Pesto",
-      Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales, Tag.HotWeather)
+      Set(
+        Tag.VegetarianIsh,
+        Tag.Quick,
+        Tag.Scales,
+        Tag.HotWeather,
+        Tag.LowEffort
+      )
     ),
     MealStub(
       "Penne with Walnut sauce",
-      Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather)
+      Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
     ),
     MealStub(
       "Pepper and goats cheese tart",
@@ -138,7 +151,7 @@ object Meal {
     ),
     MealStub(
       "Ricotta spinach pitas",
-      Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather)
+      Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
     ),
     MealStub("Roast Nut Omelette", Set(Tag.Quick, Tag.Vegetarian)),
     MealStub(
@@ -154,7 +167,10 @@ object Meal {
       Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
     ),
     MealStub("Roasted Vegetable Tart", Set(Tag.Vegetarian, Tag.HotWeather)),
-    MealStub("Sausages and Mash", Set(Tag.Vegetarian, Tag.Quick, Tag.Scales)),
+    MealStub(
+      "Sausages and Mash",
+      Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.LowEffort)
+    ),
     MealStub(
       "Seitan Tagine",
       Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales)
@@ -169,7 +185,7 @@ object Meal {
     ),
     MealStub(
       "Spicy Broccoli & Cauliflower",
-      Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.HotWeather)
+      Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
     ),
     MealStub(
       "Spicy butternut and coconut soup",
@@ -182,7 +198,13 @@ object Meal {
     ),
     MealStub(
       "Sweetcorn and spinach polenta",
-      Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales, Tag.HotWeather)
+      Set(
+        Tag.VegetarianIsh,
+        Tag.Quick,
+        Tag.Scales,
+        Tag.HotWeather,
+        Tag.LowEffort
+      )
     ),
     MealStub("Tofu Katsu Curry", Set(Tag.Vegan)),
     MealStub(
@@ -191,7 +213,7 @@ object Meal {
     ),
     MealStub(
       "Tomato sauce",
-      Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay)
+      Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort)
     ),
     MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
     MealStub("Tuna in tomato sauce", Set(Tag.Pescatarian)),
@@ -201,7 +223,7 @@ object Meal {
     ),
     MealStub(
       "Venetian Style Pasta",
-      Set(Tag.Quick, Tag.Vegan, Tag.Scales, Tag.HotWeather)
+      Set(Tag.Quick, Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
     )
   )
 }

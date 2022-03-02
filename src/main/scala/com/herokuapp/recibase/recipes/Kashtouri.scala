@@ -12,7 +12,7 @@ object Kashtouri extends Recipe {
   override val description: Option[String] = Some(
     "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
   )
-  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather)
+  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
 
   val ingredients = List(
     Ingredient("Risotto rice", "150g"),

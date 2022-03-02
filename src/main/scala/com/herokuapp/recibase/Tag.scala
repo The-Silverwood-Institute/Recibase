@@ -33,6 +33,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object Quick extends Tag("Quick")
   case object Scales extends Tag("Scales")
   case object HighEffort extends Tag("High Effort")
+  case object LowEffort extends Tag("Low Effort")
 
   // Good to know
   case object Freezes extends Tag("Freezes")

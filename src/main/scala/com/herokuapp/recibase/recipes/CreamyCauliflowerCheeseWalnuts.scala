@@ -9,7 +9,7 @@ object CreamyCauliflowerCheeseWalnuts extends Recipe {
   override val source: Option[String] = Some(
     "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Quick)
+  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort)
 
   val ingredients =
     List(

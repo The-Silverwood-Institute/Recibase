@@ -6,7 +6,7 @@ object LemonFetaPasta extends Recipe {
   val name = "Lemon Feta Pasta"
   val permalink = "lemon-feta-pasta"
 
-  override val tags = Set(Tag.Quick, Tag.Vegetarian)
+  override val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.LowEffort, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Pine nuts"),

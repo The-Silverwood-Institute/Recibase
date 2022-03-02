@@ -16,7 +16,7 @@ object ScrambledEggs extends Recipe {
       |Stilton - crumble and melt blue stilton into the butter.
       |Spring onions - lightly fry a sliced spring onion in the butter. Also works with garlic.""".stripMargin
   )
-  override val tags = Set(Tag.Lunch)
+  override val tags = Set(Tag.Lunch, Tag.Vegetarian, Tag.LowEffort, Tag.Quick)
 
   val ingredients = List(
     Ingredient("Butter", None, None, Some("Use a decent amount")),
