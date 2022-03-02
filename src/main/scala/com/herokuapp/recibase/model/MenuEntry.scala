@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.model
 
 import io.circe.generic.JsonCodec
 

@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.model
 
 import com.herokuapp.recibase.StringUtils._
 import com.herokuapp.recibase.recipes._

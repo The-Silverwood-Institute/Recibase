@@ -2,6 +2,7 @@ package com.herokuapp.recibase
 
 import cats.effect.{IO, MonadCancel}
 import cats.effect.unsafe.implicits.global
+import com.herokuapp.recibase.server.{MealsController, RecibaseRoutes, RecipeController}
 import org.http4s._
 import org.http4s.implicits._
 import org.specs2.matcher.JsonMatchers

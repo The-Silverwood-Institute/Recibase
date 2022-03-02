@@ -1,7 +1,8 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.server
 
 import cats.Applicative
 import cats.implicits._
+import com.herokuapp.recibase.model.{MenuEntry, Recipe}
 
 import scala.language.implicitConversions
 

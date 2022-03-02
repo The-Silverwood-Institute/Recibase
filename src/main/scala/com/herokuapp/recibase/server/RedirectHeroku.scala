@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.server
 
 import cats.Applicative
 import cats.data.{Kleisli, NonEmptyList}

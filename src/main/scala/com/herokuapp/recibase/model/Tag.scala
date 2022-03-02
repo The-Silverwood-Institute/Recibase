@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.model
 
 import enumeratum.{CirceEnum, Enum, EnumEntry}
 

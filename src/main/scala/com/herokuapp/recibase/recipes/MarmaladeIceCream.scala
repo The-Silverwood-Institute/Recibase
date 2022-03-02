@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.{Image, Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
 
 object MarmaladeIceCream extends Recipe {
   val name = "Mascarpone Ice Cream"

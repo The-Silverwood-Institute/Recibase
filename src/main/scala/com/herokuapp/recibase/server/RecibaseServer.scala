@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.server
 
 import cats.effect.Async
 import fs2.Stream

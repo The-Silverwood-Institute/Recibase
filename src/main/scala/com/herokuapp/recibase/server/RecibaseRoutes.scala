@@ -1,11 +1,12 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.server
 
 import cats.effect.Sync
 import cats.implicits._
-import org.http4s.HttpRoutes
-import org.http4s.dsl.Http4sDsl
+import com.herokuapp.recibase.model.Manifest
 import io.circe.syntax._
+import org.http4s.HttpRoutes
 import org.http4s.circe._
+import org.http4s.dsl.Http4sDsl
 import org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher
 
 object OptionalIngredientQueryParamMatcher
