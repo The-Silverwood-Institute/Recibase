@@ -36,7 +36,7 @@ object RecibaseRoutes {
       case GET -> Root / "meals" / "" =>
         Ok(J.meals.map(_.asJson))
       case GET -> Root / "meals" / "raw" =>
-        Ok(J.mealNames.map(_.asJson))
+        Ok(J.mealNames)
       case GET -> Root / "manifest" =>
         Ok(Manifest(sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")).asJson)
     }
