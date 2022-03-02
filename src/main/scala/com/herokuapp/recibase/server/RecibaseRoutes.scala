@@ -15,7 +15,8 @@ object OptionalIngredientQueryParamMatcher
 object RecibaseRoutes {
   def routes[F[_]: Sync](
       H: RecipeController[F],
-      J: MealsController[F]
+      J: MealsController[F],
+      M: MetaController[F]
   ): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F] {}
     import dsl._
@@ -39,7 +40,7 @@ object RecibaseRoutes {
       case GET -> Root / "meals" / "raw" =>
         Ok(J.mealNames)
       case GET -> Root / "manifest" =>
-        Ok(Manifest(sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")).asJson)
+        Ok(M.manifest.map(_.asJson))
     }
   }
 }

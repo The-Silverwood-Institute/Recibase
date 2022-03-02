@@ -2,7 +2,7 @@ package com.herokuapp.recibase
 
 import cats.effect.{IO, MonadCancel}
 import cats.effect.unsafe.implicits.global
-import com.herokuapp.recibase.server.{MealsController, RecibaseRoutes, RecipeController}
+import com.herokuapp.recibase.server.{MealsController, MetaController, RecibaseRoutes, RecipeController}
 import org.http4s._
 import org.http4s.implicits._
 import org.specs2.matcher.JsonMatchers
@@ -70,7 +70,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     val getRecipe =
       Request[IO](Method.GET, Uri.unsafeFromString(s"/recipes/$url"))
     RecibaseRoutes
-      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController, RecipesSpec.metaController)
       .orNotFound(getRecipe)
       .unsafeRunSync()
   }
@@ -78,7 +78,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
   private lazy val recipesQuery: Response[IO] = {
     val getRecipes = Request[IO](Method.GET, uri"/recipes/")
     RecibaseRoutes
-      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController, RecipesSpec.metaController)
       .orNotFound(getRecipes)
       .unsafeRunSync()
   }
@@ -86,7 +86,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
   private lazy val filteredRecipesQuery: Response[IO] = {
     val getRecipes = Request[IO](Method.GET, uri"/recipes/?hasIngredient=Thyme")
     RecibaseRoutes
-      .routes(RecipesSpec.recipeController, RecipesSpec.mealController)
+      .routes(RecipesSpec.recipeController, RecipesSpec.mealController, RecipesSpec.metaController)
       .orNotFound(getRecipes)
       .unsafeRunSync()
   }
@@ -95,4 +95,5 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
 object RecipesSpec {
   val recipeController: RecipeController[IO] = RecipeController.impl[IO]
   val mealController: MealsController[IO] = MealsController.impl[IO]
+  val metaController: MetaController[IO] = MetaController.impl[IO]
 }
