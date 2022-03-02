@@ -14,7 +14,8 @@ object ChunkyVegetableCrumble extends Recipe {
       """Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.
 Honey can be added with the carrots for extra sweetness."""
     )
-  override val tags = Set(Tag.VegetarianIsh, Tag.Slow, Tag.Effort, Tag.Scales)
+  override val tags =
+    Set(Tag.VegetarianIsh, Tag.Slow, Tag.HighEffort, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Onion", "1", "sliced"),

@@ -14,7 +14,7 @@ object RoastedVegetableLasagne extends Recipe {
 
 Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."""
     )
-  override val tags = Set(Tag.Slow, Tag.Effort, Tag.Vegetarian, Tag.Scales)
+  override val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Vegetarian, Tag.Scales)
 
   val ingredients = List(
     Ingredient("Red Peppers", "3"),

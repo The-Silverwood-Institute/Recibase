@@ -26,7 +26,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object Quick extends Tag("Quick")
   case object VegetarianIsh extends Tag("Vegetarian-ish")
   case object HotWeather extends Tag("Hot Weather")
-  case object Effort extends Tag("Effort")
+  case object HighEffort extends Tag("High Effort")
   case object Pescatarian extends Tag("Pescatarian")
   case object NonMeal extends Tag("Not a Meal")
 }

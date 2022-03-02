@@ -7,7 +7,7 @@ object LentilShepardsPie extends Recipe {
   val permalink = "veggie-shepherds-pie"
 
   override val tags =
-    Set(Tag.Vegetarian, Tag.Slow, Tag.Effort, Tag.Scales, Tag.ColdWeather)
+    Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.ColdWeather)
 
   val ingredients = List(
     Ingredient("Onions", Some("1"), Some("Diced")),
