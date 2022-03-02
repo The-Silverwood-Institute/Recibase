@@ -10,7 +10,7 @@ Recibase works like so:
 2. Recibase spins up [an recipe API][recipe-api]
 3. [The frontend][frontend] lets you browse recipes by name, ingredient and more
 
-There is also a separate [GitHub pages site](https://github.com/The-Silverwood-Institute/Recipe-Images/) to host images of the cooked recipes.
+There is also a separate [GitHub pages site][recipe-images] to host images of the cooked recipes and a [Meal Chooser][meal-chooser] for filtering a complete list of everything we cook.
 
 ## Roadmap
 
@@ -46,7 +46,8 @@ If you want to use the web interface you'll need to set up the [frontend][fronte
 If you have any questions or want to help out feel free to [open an issue][new-issue]
 
 [recipes]: https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes
-[recipe-api]: http://recibase-api.herokuapp.com/recipes/
+[recipe-api]: https://api.reciba.se/
 [frontend]: https://github.com/The-Silverwood-Institute/Frontend
-[git-submodules]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 [new-issue]: https://github.com/The-Silverwood-Institute/Recibase/issues/new
+[recipe-images]: https://github.com/The-Silverwood-Institute/Recipe-Images/
+[meal-chooser]: https://c.reciba.se/
