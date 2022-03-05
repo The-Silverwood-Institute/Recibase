@@ -14,7 +14,8 @@ case class Ingredient(
 )
 
 trait Recipe extends Meal with Product {
-  private val recipeDir = "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes"
+  private val recipeDir =
+    "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes"
 
   def permalink: String
   def edit: String = s"$recipeDir/${this.productPrefix}.scala"

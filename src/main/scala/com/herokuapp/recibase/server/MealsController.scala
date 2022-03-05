@@ -90,6 +90,10 @@ object MealsController {
         "Harira Soup",
         Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes, Tag.ColdWeather)
       ),
+      MealStub(
+        "Jamaican Squash and Coconut Stew",
+        Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes)
+      ),
       MealStub("Kedgeree", Set(Tag.Pescatarian, Tag.Scales)),
       MealStub(
         "Kidney Bean & Vegetable gratin",
