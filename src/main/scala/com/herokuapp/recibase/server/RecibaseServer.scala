@@ -23,7 +23,9 @@ object RecibaseServer {
       httpApp = RedirectHeroku(
         CORS.policy.withAllowOriginAll
           .withAllowCredentials(false)
-          .apply(RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg).orNotFound)
+          .apply(
+            RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg).orNotFound
+          )
       )
 
       // With Middlewares in place

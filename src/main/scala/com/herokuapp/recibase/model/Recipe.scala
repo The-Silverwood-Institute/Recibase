@@ -13,8 +13,11 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
-trait Recipe extends Meal {
+trait Recipe extends Meal with Product {
+  private val recipeDir = "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes"
+
   def permalink: String
+  def edit: String = s"$recipeDir/${this.productPrefix}.scala"
   def source: Option[String] = None
   def description: Option[String] = None
   def tagline: Option[String] = None
@@ -87,9 +90,10 @@ object Recipe {
   )
 
   implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct10(
+    Encoder.forProduct11(
       "name",
       "permalink",
+      "edit",
       "source",
       "description",
       "tagline",
@@ -102,6 +106,7 @@ object Recipe {
       (
         r.name,
         r.permalink,
+        r.edit,
         r.source,
         r.description,
         r.tagline,

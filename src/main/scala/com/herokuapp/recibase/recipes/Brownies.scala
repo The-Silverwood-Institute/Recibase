@@ -2,7 +2,7 @@ package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
 
-object Brownies extends Recipe {
+case object Brownies extends Recipe {
   val name = "Brownies"
   val permalink = "brownies"
 

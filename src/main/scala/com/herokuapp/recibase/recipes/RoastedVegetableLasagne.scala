@@ -2,7 +2,7 @@ package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
 
-object RoastedVegetableLasagne extends Recipe {
+case object RoastedVegetableLasagne extends Recipe {
   val name = "Roasted Vegetable Lasagne"
   val permalink = "roasted-vegetable-lasagne"
   override val source: Option[String] = Some(

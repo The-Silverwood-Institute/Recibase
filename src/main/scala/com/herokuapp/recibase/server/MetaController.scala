@@ -10,9 +10,11 @@ trait MetaController[F[_]] {
 }
 
 object MetaController {
-  def impl[F[_] : Applicative]: MetaController[F] =
+  def impl[F[_]: Applicative]: MetaController[F] =
     new MetaController[F] {
-      override def manifest: F[Manifest] = Manifest(sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")).pure[F]
+      override def manifest: F[Manifest] = Manifest(
+        sys.env.getOrElse("HEROKU_SLUG_COMMIT", "latest")
+      ).pure[F]
       override def docs: F[Map[String, String]] = Map(
         "docs" -> "/",
         "recipes_list" -> "/recipes/?hasIngredient={ingredient_name}",
