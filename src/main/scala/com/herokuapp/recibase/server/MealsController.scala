@@ -152,6 +152,10 @@ object MealsController {
         Set(Tag.Vegetarian, Tag.Slow, Tag.Stodge, Tag.HotWeather)
       ),
       MealStub(
+        "Pies",
+        Set(Tag.LowEffort, Tag.Vegetarian, Tag.Stodge)
+      ),
+      MealStub(
         "Pizza",
         Set(Tag.HighEffort, Tag.Slow, Tag.Vegetarian, Tag.Stodge)
       ),
