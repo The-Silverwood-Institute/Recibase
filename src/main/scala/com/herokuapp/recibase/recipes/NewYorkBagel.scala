@@ -36,7 +36,7 @@ case object NewYorkBagel extends Recipe {
   val method = List(
     "Halve and lightly toast the bagels.",
     "Slice the beetroot, pickles and cheese.",
-    "Layer the bottom half of each bagel with pastrami, pickels, beetroot and then cheese. Make sure the cheese covers everything so it doesn't burn.",
+    "Layer the bottom half of each bagel with mayo, pastrami, pickles, beetroot and then cheese. Make sure the cheese covers everything so it doesn't burn.",
     "Grill the bottom halves of the bagels until the cheese is bubbly.",
     "Optionally spread the top half of each bagel with mayo.",
     "Combine the top and bottom halves of the bagels and serve."
