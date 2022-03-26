@@ -113,6 +113,10 @@ object MealsController {
         "Mozzarella and spinach pancakes",
         Set(Tag.HighEffort, Tag.Vegetarian)
       ),
+      MealStub(
+        "Mozzarella Burgers",
+        Set(Tag.Vegetarian, Tag.LowEffort, Tag.Stodge)
+      ),
       MealStub("Mushroom Lasagne", Set(Tag.Vegetarian, Tag.Slow, Tag.Stodge)),
       MealStub(
         "Mushroom Soup",
