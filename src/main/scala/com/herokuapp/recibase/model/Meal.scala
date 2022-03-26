@@ -20,6 +20,9 @@ object MealStub {
   def apply(recipe: Recipe): MealStub =
     MealStub(recipe.name, recipe.tags, Some(Recibase(recipe.permalink)))
 
+  def apply(name: String, tags: Set[Tag], source: Source): MealStub =
+    MealStub(name, tags, Some(source))
+
   implicit val stubEncoder: Encoder[MealStub] = deriveEncoder[MealStub]
 }
 

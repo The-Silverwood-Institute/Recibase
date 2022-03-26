@@ -2,7 +2,14 @@ package com.herokuapp.recibase.server
 
 import cats.Applicative
 import cats.implicits._
-import com.herokuapp.recibase.model.{Meal, MealStub, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Meal,
+  MealStub,
+  Online,
+  Recipe,
+  Source,
+  Tag
+}
 
 trait MealsController[F[_]] {
   def meals: F[Set[MealStub]]
@@ -33,6 +40,13 @@ object MealsController {
         "Baked potatoes",
         Set(Tag.Slow, Tag.Vegetarian, Tag.ColdWeather, Tag.LowEffort)
       ),
+      MealStub(
+        "Bean and Broccoli Pasta",
+        Set(Tag.VeganIsh, Tag.Scales),
+        Online(
+          "https://www.themediterraneandish.com/mediterranean-broccoli-pasta-bean/"
+        )
+      ),
       MealStub("Beyond Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
       MealStub(
         "Broccoli and Stilton soup",
@@ -55,9 +69,16 @@ object MealsController {
       MealStub("Cheese and olive tarts", Set(Tag.Vegetarian)),
       MealStub(
         "Cheese scones",
-        Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)
+        Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge),
+        Online(
+          "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"
+        )
       ),
-      MealStub("Coconut & egg curry", Set(Tag.Vegetarian)),
+      MealStub(
+        "Coconut & egg curry",
+        Set(Tag.Vegetarian),
+        Online("https://www.bbc.co.uk/food/recipes/whole_eggs_in_coconut_23624")
+      ),
       MealStub("Cod in tomato sauce", Set(Tag.Pescatarian)),
       MealStub(
         "Cod with Lentils",
@@ -88,7 +109,10 @@ object MealsController {
       ),
       MealStub(
         "Harira Soup",
-        Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes, Tag.ColdWeather)
+        Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes, Tag.ColdWeather),
+        Online(
+          "https://www.onegreenplanet.org/vegan-recipe/harira-soup-with-hummus-pitas/"
+        )
       ),
       MealStub(
         "Jamaican Squash and Coconut Stew",
@@ -193,12 +217,20 @@ object MealsController {
       ),
       MealStub("Roasted Vegetable Tart", Set(Tag.Vegetarian, Tag.HotWeather)),
       MealStub(
+        "Sausage and Bean Casserole",
+        Set(Tag.VegetarianIsh, Tag.Scales, Tag.Slow, Tag.ColdWeather),
+        Online("https://www.bbcgoodfood.com/recipes/sausage-bean-casserole")
+      ),
+      MealStub(
         "Sausages and Mash",
         Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.LowEffort)
       ),
       MealStub(
         "Seitan Tagine",
-        Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales)
+        Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales),
+        Online(
+          "https://www.onegreenplanet.org/vegan-recipe/seitan-tagine-with-apricots-and-dates/"
+        )
       ),
       MealStub(
         "Spanakopita (Spinach/feta pastry)",
@@ -206,7 +238,10 @@ object MealsController {
       ),
       MealStub(
         "Spiced Parsnip & Apple Soup",
-        Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.Spicy, Tag.Freezes)
+        Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.Spicy, Tag.Freezes),
+        Online(
+          "https://www.bbcgoodfood.com/recipes/curried-lentil-parsnip-apple-soup"
+        )
       ),
       MealStub(
         "Spicy Broccoli & Cauliflower",
@@ -220,7 +255,8 @@ object MealsController {
       ),
       MealStub(
         "Spicy butternut and coconut soup",
-        Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes)
+        Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes),
+        Online("https://www.bbc.co.uk/food/recipes/pumpkin_soup_45815")
       ),
       MealStub("Stir fry", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
@@ -254,7 +290,8 @@ object MealsController {
       ),
       MealStub(
         "Venetian Style Pasta",
-        Set(Tag.Quick, Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
+        Set(Tag.Quick, Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort),
+        Online("https://www.bbcgoodfood.com/recipes/12135/venetianstyle-pasta")
       )
     )
 }
