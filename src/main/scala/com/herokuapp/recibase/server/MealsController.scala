@@ -3,6 +3,7 @@ package com.herokuapp.recibase.server
 import cats.Applicative
 import cats.implicits._
 import com.herokuapp.recibase.model.{
+  GoogleDrive,
   Meal,
   MealStub,
   Online,
@@ -127,7 +128,8 @@ object MealsController {
       MealStub("Lentil & Vegetable Pilaf", Set(Tag.Vegan, Tag.Scales)),
       MealStub(
         "Macaroni",
-        Set(Tag.Scales, Tag.Vegetarian, Tag.ColdWeather, Tag.Stodge)
+        Set(Tag.Scales, Tag.Vegetarian, Tag.ColdWeather, Tag.Stodge),
+        GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
       ),
       MealStub(
         "Mexican Polenta Pie",
@@ -155,11 +157,17 @@ object MealsController {
       ),
       MealStub(
         "Mushroom and parsnip rösti pie",
-        Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort)
+        Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort),
+        GoogleDrive("1-YvovgTwMtwqYvuEBAz3gb2shqaTRtY69i5zJjNsbd8")
       ),
       MealStub(
         "N Bean Chilli",
         Set(Tag.Vegan, Tag.Freezes, Tag.BetterNextDay, Tag.Slow, Tag.Scales)
+      ),
+      MealStub(
+        "Nutty Sweet Potato and Spinach Pie",
+        Set(Tag.Vegetarian, Tag.HighEffort, Tag.ColdWeather),
+        GoogleDrive("1dM9T4Bu7Hj3fbLplX3NYKnCFqvuNrFC4tgWhhgWYTUE")
       ),
       MealStub(
         "Pasta & Pesto",
@@ -234,7 +242,8 @@ object MealsController {
       ),
       MealStub(
         "Spanakopita (Spinach/feta pastry)",
-        Set(Tag.Vegetarian, Tag.Slow)
+        Set(Tag.Vegetarian, Tag.Slow),
+        GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
       ),
       MealStub(
         "Spiced Parsnip & Apple Soup",

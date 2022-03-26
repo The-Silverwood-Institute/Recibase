@@ -29,6 +29,7 @@ object MealStub {
 sealed trait Source
 final case class Online(url: String) extends Source
 final case class Recibase(permalink: String) extends Source
+final case class GoogleDrive(id: String) extends Source
 
 object Source {
   implicit val genDevConfig: Configuration =
