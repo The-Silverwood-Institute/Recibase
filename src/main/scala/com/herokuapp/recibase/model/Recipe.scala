@@ -57,6 +57,7 @@ object Recipe {
     CourgetteSpinachPasties,
     CranberryRelish,
     CreamyCauliflowerCheeseWalnuts,
+    CreamySpinachLentilStew,
     CreamyMushroomStroganoff,
     Dahl,
     RedPepperSoup,
