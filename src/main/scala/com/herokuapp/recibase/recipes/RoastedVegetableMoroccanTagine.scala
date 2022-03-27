@@ -1,11 +1,9 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
 
 case object RoastedVegetableMoroccanTagine extends Recipe {
   override val name: String = "Roasted Vegetable Moroccan Tagine"
-  override val permalink: Permalink =
-    Permalink.fromRawString("roasted-vegetable-moroccan-tagine")
 
   override val source: Option[String] = Some(
     "https://www.onegreenplanet.org/vegan-recipe/delicious-roasted-veggie-moroccan-tagine/"

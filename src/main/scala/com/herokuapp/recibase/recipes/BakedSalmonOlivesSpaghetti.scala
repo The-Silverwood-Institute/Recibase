@@ -5,7 +5,7 @@ import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
 case object BakedSalmonOlivesSpaghetti extends Recipe {
   val name = "Baked Salmon with Olives and Spaghetti"
   override val permalink: Permalink =
-    Permalink.fromRawString("salmon-olive-spaghetti")
+    Permalink("salmon-olive-spaghetti")
 
   override val description: Option[String] =
     Some("Baked salmon served on a bed of spaghetti, onions and olives.")
