@@ -36,6 +36,12 @@ class PermalinkSpec extends org.specs2.mutable.Specification {
       Permalink.fromRawString("foo-bar").value should_== "foo-bar"
     }
 
+    "remove any duplicate dashes left after other text transforms" >> {
+      Permalink.fromRawString("foo--bar").value should_== "foo-bar"
+    }.pendingUntilFixed(
+      "It's a Sunday night and I can't be bothered to implement this"
+    )
+
     "remove adjectives from input" >> {
       Permalink
         .fromRawString("creamy foo and bar with")
