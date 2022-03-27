@@ -77,6 +77,7 @@ object Recipe {
     ParsnipLentilLasagne,
     PeanutButterBiscuits,
     RoastBeetrootDahl,
+    RoastedVegetableMoroccanTagine,
     RoastedVegetableLasagne,
     RussianMushroomJulienne,
     SaagPaneer,
