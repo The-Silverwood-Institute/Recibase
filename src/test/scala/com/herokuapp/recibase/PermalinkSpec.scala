@@ -28,8 +28,8 @@ class PermalinkSpec extends org.specs2.mutable.Specification {
       Permalink.fromRawString("foo $ bar").value should_== "foo-bar"
     }
 
-    "remove the word 'and' from input" >> {
-      Permalink.fromRawString("and bar").value should_== "bar"
+    "remove stop words from input" >> {
+      Permalink.fromRawString("and bar with").value should_== "bar"
     }
   }
 }

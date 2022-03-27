@@ -13,7 +13,8 @@ object Permalink {
     // "foo and  bar!"
     val latinOnly = lowerNoAccents.replaceAll("[^a-z ]", "")
     // "foo and  bar"
-    val noAndWord = latinOnly.split(' ').filterNot(_ == "and").mkString(" ")
+    val noAndWord =
+      latinOnly.split(' ').filterNot(StopWords.words.contains).mkString(" ")
     // "foo  bar"
     val noWhiteSpaceBlocks = StringUtils.normalizeSpace(noAndWord)
     // "foo bar"
