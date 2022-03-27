@@ -3,8 +3,8 @@ package com.herokuapp.recibase.recipes
 import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
 
 case object RoastedVegetableMoroccanTagine extends Recipe {
-  override def name: String = "Roasted Vegetable Moroccan Tagine"
-  override def permalink: Permalink =
+  override val name: String = "Roasted Vegetable Moroccan Tagine"
+  override val permalink: Permalink =
     Permalink.fromRawString("roasted-vegetable-moroccan-tagine")
 
   override val source: Option[String] = Some(
@@ -12,7 +12,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
   )
   override val tags = Set(Tag.Vegan, Tag.Scales, Tag.Slow)
 
-  override def ingredients: List[Ingredient] = List(
+  override val ingredients: List[Ingredient] = List(
     Ingredient("Aubergine", "1", "cut into 2cm chunks"),
     Ingredient("Carrots", "2", "cut into quarters"),
     Ingredient("Pepper", "1", "cut into quarters"),
@@ -44,7 +44,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
     Ingredient("Salt")
   )
 
-  override def method: List[String] = List(
+  override val method: List[String] = List(
     "Preheat the oven to 200 C (400 F, gas mark 6).",
     "Spread the aubergine, carrots, pepper and sweet potato across a large roasting tin. Drizzle with oil and sprinkle with salt and rosemary.",
     "Roast the vegetables for 20m or until lightly browned. Set aside once they're ready.",
