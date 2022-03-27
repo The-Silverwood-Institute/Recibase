@@ -1,7 +1,11 @@
 package com.herokuapp.recibase.model
 
 object StopWords {
-  val words = Set(
+  private val adjectives = Set(
+    "creamy"
+  )
+
+  private val stopWords = Set(
     "a",
     "about",
     "above",
@@ -319,4 +323,6 @@ object StopWords {
     "yourself",
     "yourselves"
   )
+
+  val words: Set[String] = stopWords ++ adjectives
 }

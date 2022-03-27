@@ -31,5 +31,11 @@ class PermalinkSpec extends org.specs2.mutable.Specification {
     "remove stop words from input" >> {
       Permalink.fromRawString("and bar with").value should_== "bar"
     }
+
+    "remove adjectives from input" >> {
+      Permalink
+        .fromRawString("creamy foo and bar with")
+        .value should_== "foo-bar"
+    }
   }
 }
