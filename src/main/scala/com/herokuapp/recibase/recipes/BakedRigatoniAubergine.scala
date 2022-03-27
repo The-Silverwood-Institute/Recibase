@@ -1,10 +1,10 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
 
 case object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
-  val permalink = "baked-rigatoni-aubergine"
+  override val permalink: Permalink = Permalink.fromRawString("baked-rigatoni-aubergine")
 
   override val source: Option[String] = Some(
     "Vegetarian Cookery Bible (2012: Reader's Digest)"

@@ -1,11 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Image, Ingredient, Permalink, Recipe, Tag}
 
 case object BeetrootRisotto extends Recipe {
   val name =
     "Roast Beetroot Risotto"
-  val permalink = "beetroot-risotto"
+  override val permalink: Permalink =
+    Permalink.fromRawString("beetroot-risotto")
 
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/beetroot-risotto.jpg")

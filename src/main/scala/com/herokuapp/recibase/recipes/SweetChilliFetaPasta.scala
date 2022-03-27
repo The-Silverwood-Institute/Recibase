@@ -1,10 +1,11 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
 
 case object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
-  val permalink = "sweet-chilli-feta-pasta"
+  override val permalink: Permalink =
+    Permalink.fromRawString("sweet-chilli-feta-pasta")
 
   override val notes: Option[String] = Some(
     """Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.

@@ -1,10 +1,11 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
 
 case object ParsnipGingerSoup extends Recipe {
   val name = "Parsnip and Ginger Soup"
-  val permalink = "parsnip-and-ginger-soup"
+  override val permalink: Permalink =
+    Permalink.fromRawString("parsnip-and-ginger-soup")
 
   override val tags = Set(Tag.Soup, Tag.VeganIsh, Tag.LowEffort)
 

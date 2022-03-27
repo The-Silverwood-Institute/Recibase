@@ -1,10 +1,11 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Image, Ingredient, Permalink, Recipe, Tag}
 
 case object ToadInTheHole extends Recipe {
   val name = "Toad in the Hole"
-  val permalink = "toad-in-the-hole"
+  override val permalink: Permalink =
+    Permalink.fromRawString("toad-in-the-hole")
 
   override val source: Option[String] = Some("Jeremy")
   override val notes: Option[String] = Some(

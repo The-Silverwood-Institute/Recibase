@@ -16,11 +16,11 @@ trait RecipeController[F[_]] {
 object RecipeController {
   implicit class RecipeList(recipes: Seq[Recipe]) {
     def toMenu: Seq[MenuEntry] =
-      recipes.map(recipe => MenuEntry(recipe.name, recipe.permalink))
+      recipes.map(recipe => MenuEntry(recipe.name, recipe.permalink.value))
   }
 
   val routing: Map[String, Recipe] =
-    Recipe.recipes.map(recipe => recipe.permalink -> recipe).toMap
+    Recipe.recipes.map(recipe => recipe.permalink.value -> recipe).toMap
 
   def listRecipes(
       hasIngredient: Option[String]
