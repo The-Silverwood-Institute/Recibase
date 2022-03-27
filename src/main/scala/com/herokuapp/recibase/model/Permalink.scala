@@ -11,7 +11,7 @@ object Permalink {
     // "fôô and  bär!"
     val lowerNoAccents = StringUtils.stripAccents(lowered)
     // "foo and  bar!"
-    val latinOnly = lowerNoAccents.replaceAll("[^a-z ]", "")
+    val latinOnly = lowerNoAccents.replaceAll("[^a-z -]", "")
     // "foo and  bar"
     val noAndWord =
       latinOnly.split(' ').filterNot(StopWords.words.contains).mkString(" ")
