@@ -76,6 +76,7 @@ object Recipe {
     ParsnipGingerSoup,
     ParsnipLentilLasagne,
     PeanutButterBiscuits,
+    PistachioIceCream,
     RoastBeetrootDahl,
     RoastedVegetableMoroccanTagine,
     RoastedVegetableLasagne,
