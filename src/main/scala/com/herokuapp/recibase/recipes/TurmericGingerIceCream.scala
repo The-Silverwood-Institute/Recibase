@@ -12,7 +12,9 @@ case object TurmericGingerIceCream extends Recipe {
     "A rich, spicy and earthy ice cream. No churn needed."
   )
   override val notes: Option[String] = Some(
-    "The spice mix isn't set in stone. Taste test the mixture before freezing and adjust according to preference."
+    """The spice mix isn't set in stone. Taste test the mixture before freezing and adjust according to preference.
+      |
+      |You can use up the egg whites by making <a href="https://www.bbcgoodfood.com/recipes/easy-chocolate-mousse" rel="nofollow">chocolate mousse</a>.""".stripMargin
   )
   override val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

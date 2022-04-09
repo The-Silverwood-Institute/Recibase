@@ -12,7 +12,9 @@ case object WasabiIceCream extends Recipe {
   override val notes: Option[String] = Some(
     """You can substitute wasabi for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
         |
-        |I tend to double up this recipe to make enough for a few days.""".stripMargin
+        |I tend to double up this recipe to make enough for a few days.
+        |
+        |You can use up the egg whites by making <a href="https://www.bbcgoodfood.com/recipes/easy-chocolate-mousse" rel="nofollow">chocolate mousse</a>.""".stripMargin
   )
   override val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
