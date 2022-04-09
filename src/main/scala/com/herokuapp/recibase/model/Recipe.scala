@@ -89,6 +89,7 @@ object Recipe {
     SpicySmokedPaprikaChorizo,
     SweetChilliFetaPasta,
     ToadInTheHole,
+    TurmericGingerIceCream,
     VegetablePrimavera,
     WasabiIceCream
   )
