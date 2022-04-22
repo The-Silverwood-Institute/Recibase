@@ -19,13 +19,14 @@ case object PaneerJalfrezi extends Recipe {
     Ingredient("Curry powder", "1 tbsp"),
     Ingredient("Tomato purée", "32g"),
     Ingredient("Brown sugar", "2 tsp"),
-    Ingredient("Stock cube", "1")
+    Ingredient("Stock cube", "1"),
+    Ingredient("Water", "300ml")
   )
   val method = List(
     "Fry the paneer until brown, turning to achieve an even colouring then set aside.",
     "Soften the onion in the pan with the sugar and a pich of salt until brown and starting to caramelise.",
     "Add the sliced pepper and cook for 5-8 mins.",
-    "Disolve the stock cube in 300ml water.",
+    "Disolve the stock cube in water.",
     "Add the garlic, tomatoes, tomato purée, ginger, chilli flakes, curry poweder, stock and paneer to the pan and stir.",
     "Cook for 5-10 mins on a medium heat until thickened."
   )
