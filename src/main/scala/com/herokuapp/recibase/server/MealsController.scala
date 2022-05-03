@@ -63,6 +63,7 @@ object MealsController {
         )
       ),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
+      MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),
       MealStub(
         "Carrot & Coriander Burgers",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort)
