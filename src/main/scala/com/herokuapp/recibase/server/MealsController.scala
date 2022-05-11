@@ -127,7 +127,11 @@ object MealsController {
         "Jamaican Squash and Coconut Stew",
         Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes)
       ),
-      MealStub("Kedgeree", Set(Tag.Pescatarian, Tag.Scales)),
+      MealStub(
+        "Kedgeree",
+        Set(Tag.Pescatarian, Tag.Scales),
+        Online("https://www.bbcgoodfood.com/recipes/smoked-haddock-kedgeree")
+      ),
       MealStub(
         "Kidney Bean & Vegetable gratin",
         Set(Tag.VegetarianIsh, Tag.Scales)
