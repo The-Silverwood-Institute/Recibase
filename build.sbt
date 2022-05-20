@@ -1,5 +1,5 @@
 val Http4sVersion = "1.0.0-M32"
-val CirceVersion = "0.14.1"
+val CirceVersion = "0.14.2"
 val Specs2Version = "4.15.0"
 val LogbackVersion = "1.2.11"
 val EnumeratumVersion = "1.7.0"
