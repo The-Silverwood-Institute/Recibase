@@ -8,6 +8,8 @@ import io.circe.generic.semiauto.deriveEncoder
 trait Meal {
   def name: String
   def tags: Set[Tag]
+
+  def isDinner: Boolean = tags.intersect(Tag.nonDinnerTags).isEmpty
 }
 
 case class MealStub(

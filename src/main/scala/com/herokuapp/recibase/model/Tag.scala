@@ -7,6 +7,13 @@ sealed abstract class Tag(override val entryName: String) extends EnumEntry
 object Tag extends Enum[Tag] with CirceEnum[Tag] {
   val values: IndexedSeq[Tag] = findValues
 
+  val nonDinnerTags: Set[Tag] = Set(
+    Pudding,
+    Lunch,
+    Baking,
+    NonMeal
+  )
+
   // Meal types
   case object Christmas extends Tag("Christmas")
   case object Pudding extends Tag("Pudding")

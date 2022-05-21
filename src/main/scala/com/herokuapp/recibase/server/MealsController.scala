@@ -22,7 +22,13 @@ object MealsController {
     new MealsController[F] {
       override def meals: F[Set[MealStub]] = mealStubs.pure[F]
       override def mealNames: F[String] =
-        mealStubs.map(_.name).toSeq.sorted.mkString("\n").pure[F]
+        mealStubs
+          .filter(_.isDinner)
+          .map(_.name)
+          .toSeq
+          .sorted
+          .mkString("\n")
+          .pure[F]
     }
 
   val mealStubs: Set[MealStub] =
