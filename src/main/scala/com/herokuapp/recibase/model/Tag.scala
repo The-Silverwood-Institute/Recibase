@@ -33,7 +33,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object ColdWeather extends Tag("Cold Weather")
   case object HotWeather extends Tag("Hot Weather")
   case object Stodge extends Tag("Stodge")
-  case object Spicy extends Tag("Spicy")
+  case object Spicy extends Tag("Spicy") // As in hot not aromatic
 
   // Making
   case object Slow extends Tag("Slow")
