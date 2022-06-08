@@ -48,6 +48,13 @@ object MealsController {
         Set(Tag.Slow, Tag.Vegetarian, Tag.ColdWeather, Tag.LowEffort)
       ),
       MealStub(
+        "Banana Curry",
+        Set(Tag.Slow, Tag.Vegan, Tag.Scales, Tag.Freezes),
+        Online(
+          "https://www.theendlessmeal.com/banana-curry/"
+        )
+      ),
+      MealStub(
         "Bean and Broccoli Pasta",
         Set(Tag.VeganIsh, Tag.Scales),
         Online(
