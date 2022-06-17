@@ -108,6 +108,10 @@ object MealsController {
       ),
       MealStub("Egg & Mozzarella Toasts", Set(Tag.Vegetarian, Tag.Quick)),
       MealStub(
+        "Fish Pie",
+        Set(Tag.Pescatarian, Tag.Scales, Tag.ColdWeather, Tag.Slow)
+      ),
+      MealStub(
         "Fettucine with Dolcelatte and Spinach",
         Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather, Tag.LowEffort)
       ),
