@@ -21,7 +21,7 @@ case object NewYorkBagel extends Recipe {
       "Cooked Beetroot",
       Some("180g"),
       None,
-      Some("with chilli, if available")
+      Some("ideally pre-grated sweet & smoky")
     ),
     Ingredient("Pickles"),
     Ingredient(
