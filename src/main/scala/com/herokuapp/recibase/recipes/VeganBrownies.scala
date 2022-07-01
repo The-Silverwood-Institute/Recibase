@@ -15,7 +15,7 @@ case object VeganBrownies extends Recipe {
   override val notes: Option[String] = Some(
     """This recipe is all about the chocolate, so use high quality 70%+ dark cooking chocolate. I use Willie's Cacao Chocolate Drops but other vegan cooking chocolates are available. Always check the ingredients as some contain milk.
         |
-        |If your vegan butter is unsalted then use a full teaspoon of salt. I reduced the quantity to 1/2 tsp because Vitalite is salty. The vegan version uses way less butter, but is still failing keep its fluffy texture, so I might reduce the vitalite further.
+        |If your vegan butter is unsalted then use a full teaspoon of salt. I reduced the salt quantity to 1/2 tsp because Vitalite is quite salty. The vegan version uses way less butter, but is still failing keep its fluffy texture, so I might reduce the Vitalite further.
         |
         |I've successfully made a gluten free (but non-vegan) version using potato flour and the taste is indistinguishable. The vegan gf versions failed to set, but that was using a much older version of the recipe. I'll try again with gf flour once I've perfected the vegan recipe.
         |
