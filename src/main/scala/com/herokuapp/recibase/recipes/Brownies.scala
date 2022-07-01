@@ -34,9 +34,9 @@ case object Brownies extends Recipe {
     "Line a 34cm x 25cm x 6cm roasting tin with grease proof baking paper",
     "Pre-heat the oven to 180 C (350 F, gas mark 4)",
     "Melt the butter and chocolate together in a heat-proof bowl suspended over a saucepan of barely simmering water.",
-    "Beat the eggs, sugar and vanilla extract together in a bowl until the mixture is thick and creamy and coats the back of a spoon.",
-    "Once the butter and chocolate have melted, remove from the heat and beat in the egg mixture.",
-    "Sift in the flour and salt and continue to beat until smooth.",
+    "Whisk the eggs, sugar and vanilla extract together in a bowl until the mixture is thick and creamy and coats the back of a spoon.",
+    "Once the butter and chocolate have melted, remove from the heat and gently fold in the egg mixture. Be careful not to go knock the air out of the egg mixture.",
+    "Sift in the flour and salt then gently fold in the flour until completely mixed.",
     "Pour into your lined tin, ensuring the mixture is evenly distributed. Bake in the oven for 20 - 25 minutes, or until the whole of the top has formed a little brown crust that has started to crack. This giant brownie should not wobble, but should remain a little gooey on the inside.",
     "Leave to cool for 20 minutes in the pan before lifting out and cutting into portions."
   )
