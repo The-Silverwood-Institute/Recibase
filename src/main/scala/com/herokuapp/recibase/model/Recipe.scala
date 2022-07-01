@@ -90,6 +90,7 @@ object Recipe {
     SweetChilliFetaPasta,
     ToadInTheHole,
     TurmericGingerIceCream,
+    VeganBrownies,
     VegetablePrimavera,
     WasabiIceCream
   )
