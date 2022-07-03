@@ -322,6 +322,7 @@ object MealsController {
       ),
       MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
       MealStub("Tuna in tomato sauce", Set(Tag.Pescatarian)),
+      MealStub("Tuna Pasta", Set(Tag.Pescatarian, Tag.Quick, Tag.LowEffort)),
       MealStub("Tuna steaks with salsa verde", Set(Tag.Pescatarian)),
       MealStub(
         "Vegetable Hot Pot",
