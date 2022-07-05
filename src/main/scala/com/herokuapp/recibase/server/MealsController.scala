@@ -142,7 +142,8 @@ object MealsController {
       ),
       MealStub(
         "Jamaican Squash and Coconut Stew",
-        Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes)
+        Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes),
+        GoogleDrive("11ETCwQVsJTkyfLG1cw--ptQI_sD4d1xv")
       ),
       MealStub(
         "Kedgeree",
