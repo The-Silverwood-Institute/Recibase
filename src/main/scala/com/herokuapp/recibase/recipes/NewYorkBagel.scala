@@ -16,7 +16,12 @@ case object NewYorkBagel extends Recipe {
 
   val ingredients = List(
     Ingredient("Bagels", "4"),
-    Ingredient("Squeaky Bean Deli Pastrami", "180g"),
+    Ingredient(
+      "Squeaky Bean Deli Pastrami",
+      Some("180g"),
+      None,
+      Some("2 packets")
+    ),
     Ingredient(
       "Cooked Beetroot",
       Some("180g"),
