@@ -253,10 +253,6 @@ object MealsController {
         Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales)
       ),
       MealStub(
-        "Roast vegetable Moroccan tagine",
-        Set(Tag.Vegan, Tag.Freezes, Tag.Scales)
-      ),
-      MealStub(
         "Roast vegetable risotto",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
       ),
