@@ -15,7 +15,7 @@ case object ButternutChilli extends Recipe {
     Ingredient("Red Wine", "150ml"),
     Ingredient("Vegetable stock cube", "1/4"),
     Ingredient("Black turtle beans", "400g tin"),
-    Ingredient("Sour Cream", "2 tbsp"),
+    Ingredient("Soured Cream", "2 tbsp"),
     Ingredient(
       "Piquillo peppers",
       Some("6"),
@@ -42,6 +42,6 @@ case object ButternutChilli extends Recipe {
     "Chop the peppers and add to the pan. Taste for salt, adding extra water if drying out.",
     "Cover and cook for a further 20 min until lemon is tender.",
     "Drain and rinse the beans. Add to the pot.",
-    "Reheat now, later or tomorrow. Serve with sour cream and chives."
+    "Reheat now, later or tomorrow. Serve with soured cream and chives."
   )
 }
