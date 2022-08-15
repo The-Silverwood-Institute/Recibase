@@ -120,7 +120,18 @@ object MealsController {
         "Full Scottish Breakfast",
         Set(Tag.VegetarianIsh, Tag.HighEffort, Tag.Quick, Tag.Stodge)
       ),
+      MealStub(
+        "Garlic Spaghetti",
+        Set(Tag.Vegan, Tag.Scales, Tag.Quick, Tag.HotWeather, Tag.LowEffort)
+      ),
       MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
+      MealStub(
+        "Goats cheese, leek and spinach pasta bake",
+        Set(Tag.Vegetarian, Tag.Scales, Tag.HotWeather),
+        Online(
+          "https://www.gousto.co.uk/cookbook/recipes/goats-cheese-leek-spinach-pasta-bake"
+        )
+      ),
       MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan, Tag.LowEffort)),
       MealStub(
         "Haggis",
@@ -162,8 +173,20 @@ object MealsController {
         GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
       ),
       MealStub(
+        "Mediterranean Vegetable Gnocchi",
+        Set(Tag.Vegetarian, Tag.Scales, Tag.Quick),
+        Online(
+          "https://www.gousto.co.uk/cookbook/vegetarian-recipes/mediterranean-veg-gnocchi-with-basil"
+        )
+      ),
+      MealStub(
         "Mexican Polenta Pie",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
+      ),
+      MealStub(
+        "Mild Paneer Curry",
+        Set(Tag.Vegetarian),
+        Online("https://www.gousto.co.uk/cookbook/recipes/mild-paneer-curry")
       ),
       MealStub(
         "Mozzarella and spinach pancakes",
@@ -247,6 +270,13 @@ object MealsController {
         "Ricotta spinach pitas",
         Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
       ),
+      MealStub(
+        "Roast Aubergine and Basil Risotto",
+        Set(Tag.Vegetarian),
+        Online(
+          "https://www.gousto.co.uk/cookbook/recipes/tomato-risotto-with-crispy-roast-aubergine"
+        )
+      ),
       MealStub("Roast Nut Omelette", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
         "Roast veg and chickpeas tomato sauce",
@@ -300,6 +330,13 @@ object MealsController {
         Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes),
         Online("https://www.bbc.co.uk/food/recipes/pumpkin_soup_45815")
       ),
+      MealStub(
+        "Spicy Chilli Paneer Noodles",
+        Set(Tag.Vegetarian, Tag.Scales, Tag.Quick, Tag.Spicy),
+        Online(
+          "https://www.gousto.co.uk/cookbook/vegetarian-recipes/10-min-spicy-chilli-paneer-noodles"
+        )
+      ),
       MealStub("Stir fry", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
         "Sweet Potato, Peanut Butter and Coconut Curry",
@@ -321,6 +358,10 @@ object MealsController {
         Set(Tag.Vegan, Tag.Quick, Tag.HotWeather)
       ),
       MealStub(
+        "Tomato & Mozzarella Salad",
+        Set(Tag.Vegetarian, Tag.Quick, Tag.HotWeather, Tag.LowEffort)
+      ),
+      MealStub(
         "Tomato sauce",
         Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort)
       ),
@@ -331,6 +372,13 @@ object MealsController {
       MealStub(
         "Vegetable Hot Pot",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.ColdWeather)
+      ),
+      MealStub(
+        "Vegetable Sambar",
+        Set(Tag.Vegetarian, Tag.Spicy, Tag.Scales),
+        Online(
+          "https://www.gousto.co.uk/cookbook/vegan-recipes/fragrant-vegetable-sambar-with-coconut-yoghurt"
+        )
       ),
       MealStub(
         "Venetian Style Pasta",
