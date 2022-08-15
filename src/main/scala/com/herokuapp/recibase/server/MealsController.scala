@@ -326,7 +326,7 @@ object MealsController {
         )
       ),
       MealStub(
-        "Spicy butternut and coconut soup",
+        "Spicy Butternut and Coconut Soup",
         Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes),
         Online("https://www.bbc.co.uk/food/recipes/pumpkin_soup_45815")
       ),
