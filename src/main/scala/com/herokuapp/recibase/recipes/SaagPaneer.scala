@@ -52,6 +52,6 @@ For frying the paneer, the goal is something like a very shallow shallow fry, wi
     "Add the spinach (in batches if necessary) and wilt.",
     "Add peas if used.",
     "Add the fried paneer to the pan and heat, stirring carefully so as not to break the paneer.",
-    "Serve with rice."
+    "Serve with rice or naan bread."
   )
 }
