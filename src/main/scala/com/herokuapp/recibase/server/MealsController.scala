@@ -381,6 +381,13 @@ object MealsController {
         )
       ),
       MealStub(
+        "Veggie Goulash",
+        Set(Tag.Vegetarian, Tag.Slow, Tag.Spicy, Tag.Scales, Tag.BetterNextDay, Tag.ColdWeather),
+        Online(
+          "https://www.gousto.co.uk/cookbook/recipes/veggie-goulash-potato-cakes-sour-cream"
+        )
+      ),
+      MealStub(
         "Venetian Style Pasta",
         Set(Tag.Quick, Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort),
         Online("https://www.bbcgoodfood.com/recipes/12135/venetianstyle-pasta")
