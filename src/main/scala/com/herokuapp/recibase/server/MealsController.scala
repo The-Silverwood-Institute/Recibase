@@ -154,7 +154,9 @@ object MealsController {
       MealStub(
         "Jamaican Squash and Coconut Stew",
         Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes, Tag.BetterNextDay),
-        GoogleDrive("11ETCwQVsJTkyfLG1cw--ptQI_sD4d1xv")
+        Online(
+          "https://www.gousto.co.uk/cookbook/vegan-recipes/jamaican-squash-coconut-stew"
+        )
       ),
       MealStub(
         "Kedgeree",
