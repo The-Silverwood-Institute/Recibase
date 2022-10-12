@@ -18,7 +18,7 @@ Makes two large pies."""
       Some("half sliced, half diced")
     ),
     Ingredient("Spinach", None, Some("torn up")),
-    Ingredient("Stilton", "250g", "finely chopped"),
+    Ingredient("Stilton", "220g", "finely chopped"),
     Ingredient("Garlic", None, Some("finely chopped")),
     Ingredient("Butter", "knob"),
     Ingredient("Black pepper"),
