@@ -90,13 +90,6 @@ object MealsController {
         )
       ),
       MealStub(
-        "Chipotle Burgers",
-        Set(Tag.Vegetarian, Tag.Spicy, Tag.Stodge, Tag.Quick),
-        Online(
-          "https://www.honestburgers.co.uk/food/burgers/bacon-plant/"
-        )
-      ),
-      MealStub(
         "Coconut & egg curry",
         Set(Tag.Vegetarian),
         Online("https://www.bbc.co.uk/food/recipes/whole_eggs_in_coconut_23624")
