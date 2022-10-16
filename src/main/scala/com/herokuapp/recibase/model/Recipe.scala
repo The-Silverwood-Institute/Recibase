@@ -4,6 +4,10 @@ import com.herokuapp.recibase.StringUtils._
 import com.herokuapp.recibase.recipes._
 import io.circe.Encoder
 import io.circe.generic.JsonCodec
+import org.reflections.Reflections
+
+import scala.reflect.classTag
+import scala.reflect.runtime.universe
 
 @JsonCodec
 case class Ingredient(
@@ -41,59 +45,19 @@ trait Recipe extends Meal with Product {
 }
 
 object Recipe {
-  val recipes: Seq[Recipe] = List(
-    BakedRigatoniAubergine,
-    BakedSalmonOlivesSpaghetti,
-    BeetrootRisotto,
-    BlueCheeseGnocchi,
-    ButternutChilli,
-    BroccoliSalmonQuiche,
-    Brownies,
-    CheesyCodSpinachGratin,
-    ChilliConCarne,
-    ChunkyVegetableCrumble,
-    CoconutLimeDahl,
-    CourgetteBroccoliPasta,
-    CourgetteSpinachPasties,
-    CranberryRelish,
-    CreamyCauliflowerCheeseWalnuts,
-    CreamySpinachLentilStew,
-    CreamyMushroomStroganoff,
-    Dahl,
-    RedPepperSoup,
-    IndianPatties,
-    Kashtouri,
-    LambAubergineDaube,
-    LemonFetaPasta,
-    LentilShepardsPie,
-    NewYorkBagel,
-    MarmaladeIceCream,
-    Mead,
-    MeltyMushroomWellingtons,
-    MushroomQuiche,
-    MushroomRisotto,
-    PaneerJalfrezi,
-    ParsnipGingerSoup,
-    ParsnipLentilLasagne,
-    PeanutButterBiscuits,
-    PistachioIceCream,
-    RoastBeetrootDahl,
-    RoastedVegetableMoroccanTagine,
-    RoastedVegetableLasagne,
-    RussianMushroomJulienne,
-    SaagPaneer,
-    ScrambledEggs,
-    SeafoodLasagne,
-    SmokyChickpeaStew,
-    SmokyFishSweetPotatoCurry,
-    SpicySmokedPaprikaChorizo,
-    SweetChilliFetaPasta,
-    ToadInTheHole,
-    TurmericGingerIceCream,
-    VeganBrownies,
-    VegetablePrimavera,
-    WasabiIceCream
-  )
+  import scala.jdk.CollectionConverters._
+
+  val recipes: Seq[Recipe] = new Reflections("com.herokuapp.recibase.recipes")
+    .getSubTypesOf(classTag[Recipe].runtimeClass)
+    .asScala
+    .map(cls => {
+      val mirror = universe.runtimeMirror(cls.getClassLoader)
+      val moduleSymbol = mirror.moduleSymbol(cls)
+      mirror.reflectModule(moduleSymbol).instance.asInstanceOf[Recipe]
+    })
+    .toSeq
+
+  println(recipes)
 
   implicit val encodeRecipe: Encoder[Recipe] =
     Encoder.forProduct11(
