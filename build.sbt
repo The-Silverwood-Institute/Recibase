@@ -1,6 +1,6 @@
 val Http4sVersion = "1.0.0-M36"
 val Specs2Version = "4.16.1"
-val LogbackVersion = "1.4.0"
+val LogbackVersion = "1.4.4"
 val EnumeratumVersion = "1.7.0"
 
 lazy val root = (project in file("."))
@@ -14,8 +14,8 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-blaze-client" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
       "org.http4s" %% "http4s-dsl" % Http4sVersion,
-      "io.circe" %% "circe-generic" % "0.14.2",
-      "io.circe" %% "circe-generic-extras" % "0.14.2",
+      "io.circe" %% "circe-generic" % "0.14.3",
+      "io.circe" %% "circe-generic-extras" % "0.14.3",
       "com.beachape" %% "enumeratum" % EnumeratumVersion,
       "com.beachape" %% "enumeratum-circe" % EnumeratumVersion,
       "org.apache.commons" % "commons-lang3" % "3.12.0",
