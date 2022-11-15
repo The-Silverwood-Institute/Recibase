@@ -119,7 +119,7 @@ object MealsController {
       ),
       MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
       MealStub(
-        "Goan-Style King Prawn Balchão Curry With Basmati Rice",
+        "Goan-Style King Prawn Balchão Curry",
         Set(
           Tag.Pescatarian,
           Tag.LowEffort,
