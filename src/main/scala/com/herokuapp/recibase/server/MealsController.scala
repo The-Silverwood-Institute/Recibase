@@ -119,6 +119,19 @@ object MealsController {
       ),
       MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
       MealStub(
+        "Goan-Style King Prawn Balchão Curry With Basmati Rice",
+        Set(
+          Tag.Pescatarian,
+          Tag.LowEffort,
+          Tag.Quick,
+          Tag.Spicy,
+          Tag.Scales
+        ),
+        Online(
+          "https://www.gousto.co.uk/cookbook/fish-recipes/goan-prawn-balchao-curry-with-basmati-rice"
+        )
+      ),
+      MealStub(
         "Goats cheese, leek and spinach pasta bake",
         Set(Tag.Vegetarian, Tag.Scales, Tag.HotWeather),
         Online(
