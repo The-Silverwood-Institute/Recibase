@@ -20,7 +20,7 @@ case object RoastBeetrootDahl extends Recipe {
     Ingredient("Lime", "1", "zested and juiced"),
     Ingredient("Garlic", "2 cloves", "chopped"),
     Ingredient("Flatbreads", Some("4"), None, Some("Optional")),
-    Ingredient("Sri Lankan Curry Powder"),
+    Ingredient("Sri Lankan Curry Powder", "a few tablespoons"),
     Ingredient("Stock cube", "1"),
     Ingredient("Coconut Milk", "1 400ml tin"),
     Ingredient("Red Lentils", "150g"),
