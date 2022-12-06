@@ -347,6 +347,19 @@ object MealsController {
       ),
       MealStub("Stir fry", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
+        "Sweet Potato & Smoked Paprika Soup",
+        Set(
+          Tag.Vegetarian,
+          Tag.ColdWeather,
+          Tag.Scales,
+          Tag.Spicy,
+          Tag.Freezes
+        ),
+        Online(
+          "https://www.italianfoodforever.com/2020/11/creamy-sweet-potato-soup/"
+        )
+      ),
+      MealStub(
         "Sweet Potato, Peanut Butter and Coconut Curry",
         Set(Tag.Vegetarian, Tag.HotWeather)
       ),
