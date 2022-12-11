@@ -181,6 +181,10 @@ object MealsController {
         GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
       ),
       MealStub(
+        "Vegetarian Meatballs",
+        Set(Tag.Scales, Tag.Vegetarian)
+      ),
+      MealStub(
         "Mediterranean Vegetable Gnocchi",
         Set(Tag.Vegetarian, Tag.Scales, Tag.Quick),
         Online(
