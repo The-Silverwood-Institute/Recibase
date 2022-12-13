@@ -14,7 +14,7 @@ case object LentilShepardsPie extends Recipe {
     Ingredient("Celery", Some("1 head"), Some("Chopped"), Some("Optional")),
     Ingredient("Garlic", Some("4 Cloves"), Some("Finely chopped")),
     Ingredient("Chestnut mushrooms", Some("200g"), Some("sliced")),
-    Ingredient("Green Lentils", Some("500g"), None, Some("Dried")),
+    Ingredient("Red Lentils", "230g"),
     Ingredient("Butter"),
     Ingredient("Bay Leaf", Some("2"), None, Some("Optional")),
     Ingredient("Thyme", "1 tbsp"),
@@ -23,7 +23,7 @@ case object LentilShepardsPie extends Recipe {
     Ingredient("Tomato purée", "3 tbsp"),
     Ingredient(
       "King Edwards Potatoes",
-      Some("2kg"),
+      Some("500g"),
       None,
       Some("Other floury potatoes will do")
     ),
