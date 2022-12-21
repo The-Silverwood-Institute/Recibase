@@ -272,13 +272,6 @@ object MealsController {
         )
       ),
       MealStub(
-        "Quesadillas",
-        Set(Tag.Quick, Tag.Vegetarian, Tag.Spicy, Tag.LowEffort),
-        Online(
-          "https://www.hellofresh.co.uk/recipes/cheesy-chipotle-bean-quesadillas-5feb6402f4480c042d622a2d"
-        )
-      ),
-      MealStub(
         "Ricotta spinach pitas",
         Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
       ),
