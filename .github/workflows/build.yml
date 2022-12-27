@@ -15,6 +15,6 @@ jobs:
     - name: Build
       run: sbt "Docker / publishLocal"
     - name: Docker Tag
-      run: docker tag recibase:latest ghcr.io/The-Silverwood-Institute/Recibase:latest
+      run: docker tag recibase:latest ghcr.io/the-silverwood-institute/recibase:latest
     - name: Docker Push
-      run: docker push ghcr.io/The-Silverwood-Institute/Recibase:latest
+      run: docker push ghcr.io/the-silverwood-institute/recibase:latest
