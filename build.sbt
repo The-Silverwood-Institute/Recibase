@@ -29,6 +29,11 @@ lazy val root = (project in file("."))
   )
 
 enablePlugins(JavaAppPackaging)
+enablePlugins(DockerPlugin)
+
+Docker / version  := "latest"
+dockerBaseImage := "eclipse-temurin:11"
+dockerExposedPorts := Seq(8081)
 
 scalacOptions ++= Seq(
   "-deprecation",
