@@ -12,6 +12,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: sbt
     - name: Build
       run: sbt "Docker / publishLocal"
     - name: Docker Tag
