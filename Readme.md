@@ -1,6 +1,6 @@
 # Recibase
 
-[![CircleCI Badge](https://circleci.com/gh/The-Silverwood-Institute/Recibase.svg?style=svg)](https://circleci.com/gh/The-Silverwood-Institute/Recibase)
+![Docker image build status](https://github.com/The-Silverwood-Institute/Recibase/actions/workflows/build.yml/badge.svg)
 
 Recibase is a recipe ingestion and navigation service, designed to ease the choosing of what to cook.
 
