@@ -28,4 +28,4 @@ jobs:
     - name: Docker Push
       run: docker push ghcr.io/the-silverwood-institute/recibase:latest
     - name: Trigger Render Deployment
-      run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}&ref=${{ GITHUB_SHA }}"
+      run: curl "${{ secrets.RENDER_DEPLOY_HOOK }}&ref=${{ github.sha }}"
