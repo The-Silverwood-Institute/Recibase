@@ -43,7 +43,7 @@ case object ChickenCurry extends Recipe {
     Ingredient("Turmeric")
   )
   val method = List(
-    "Heat a wok over a hot flame.",
+    "Heat the wok over a hot flame.",
     "Fry the onions. Add the chicken halfway through then throw in the garlic.",
     "Add the smoked paprika, cumin, nutmeg, cloves and turmeric. Primarily paprika and cumin. Cook the spices for a moment.",
     "Transfer to a large pan.",
