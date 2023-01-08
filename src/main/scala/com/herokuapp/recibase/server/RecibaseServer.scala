@@ -29,7 +29,7 @@ object RecibaseServer {
       )
 
       // With Middlewares in place
-      finalHttpApp = Logger.httpApp(true, true)(httpApp)
+      finalHttpApp = Logger.httpApp(false, false)(httpApp)
 
       port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
