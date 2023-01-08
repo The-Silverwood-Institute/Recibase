@@ -9,10 +9,7 @@ case object ChickenCurry extends Recipe {
   override val notes: Some[String] = Some(
     """
       |This is H's spice blend. Alternative spice profile by S:
-      |Lots of cumin, smoked paprika (sweet) and cinnamon.
-      |A medium amount of turmeric and nutmeg.
-      |A couple tsp cloves. No sugar. Only salt after cooking.
-      |
+      |Lots of cumin, smoked paprika (sweet) and cinnamon. A medium amount of turmeric and nutmeg. A couple tsp cloves. No sugar. Only salt after cooking.
       |I might re-jig the method to simplify but I want to make it a few more times.  
       |""".stripMargin
   )
