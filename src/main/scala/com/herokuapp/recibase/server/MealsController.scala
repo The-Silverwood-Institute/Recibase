@@ -12,6 +12,8 @@ import com.herokuapp.recibase.model.{
   Tag
 }
 
+import scala.collection.immutable
+
 trait MealsController[F[_]] {
   def meals: F[Set[MealStub]]
   def mealNames: F[String]
@@ -418,4 +420,14 @@ object MealsController {
         Online("https://www.bbcgoodfood.com/recipes/12135/venetianstyle-pasta")
       )
     )
+
+  private val duplicates =
+    mealStubs.toList.map(_.name).groupBy(derp => derp).flatMap {
+      case (key, occurrences) if occurrences.length > 1 => Some(key)
+      case _                                            => None
+    }
+
+  if (duplicates.nonEmpty) {
+    throw new Exception(s"Duplicate meal names: ${duplicates.mkString(", ")}")
+  }
 }
