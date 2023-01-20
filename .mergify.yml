@@ -1,7 +1,7 @@
 queue_rules:
   - name: default
     conditions:
-      - "check-success=Test / test (pull_request)"
+      - "check-success=test"
 
 pull_request_rules:
   - name: Merge passing scala-steward PRs
