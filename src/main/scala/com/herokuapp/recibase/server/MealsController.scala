@@ -77,6 +77,13 @@ object MealsController {
           Tag.LowEffort
         )
       ),
+      MealStub(
+        "Haddock Moqueca",
+        Set(Tag.Pescatarian, Tag.Spicy),
+        Online(
+          "https://www.gousto.co.uk/cookbook/fish-recipes/brazilian-haddock-moqueca-zesty-lime-rice"
+        )
+      ),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
       MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),
       MealStub(
@@ -196,6 +203,13 @@ object MealsController {
       MealStub(
         "Mexican Polenta Pie",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
+      ),
+      MealStub(
+        "Mexican Tofu with Refried Beans",
+        Set(Tag.Vegetarian, Tag.Spicy),
+        GoogleDrive(
+          "12RZq9w7CGKFZdxvGPUfMVhcjAXm1tdJI"
+        )
       ),
       MealStub(
         "Mild Paneer Curry",
