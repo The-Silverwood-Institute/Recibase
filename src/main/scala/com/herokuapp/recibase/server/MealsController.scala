@@ -386,7 +386,10 @@ object MealsController {
           Tag.LowEffort
         )
       ),
-      MealStub("Thai Green Curry", Set(Tag.Vegan, Tag.Slow, Tag.Scales, Tag.Spicy))
+      MealStub(
+        "Thai Green Curry",
+        Set(Tag.VeganIsh, Tag.Slow, Tag.Scales, Tag.Spicy)
+      ),
       MealStub("Tofu Katsu Curry", Set(Tag.Vegan)),
       MealStub(
         "Tofu and cashew nut stir fry",
