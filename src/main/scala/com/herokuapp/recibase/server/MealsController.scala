@@ -104,10 +104,6 @@ object MealsController {
         Online("https://www.bbc.co.uk/food/recipes/whole_eggs_in_coconut_23624")
       ),
       MealStub("Cod in tomato sauce", Set(Tag.Pescatarian)),
-      MealStub(
-        "Cod with Lentils",
-        Set(Tag.Quick, Tag.Pescatarian, Tag.LowEffort)
-      ),
       MealStub("Egg & Mozzarella Toasts", Set(Tag.Vegetarian, Tag.Quick)),
       MealStub(
         "Fish Pie",
