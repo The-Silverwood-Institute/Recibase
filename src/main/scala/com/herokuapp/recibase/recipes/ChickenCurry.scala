@@ -38,7 +38,8 @@ case object ChickenCurry extends Recipe {
     Ingredient("Cumin"),
     Ingredient("Cloves"),
     Ingredient("Nutmeg"),
-    Ingredient("Turmeric")
+    Ingredient("Turmeric"),
+    Ingredient("Naan Bread", None, None, Some("Optional"))
   )
   val method = List(
     "Heat the wok over a hot flame.",
