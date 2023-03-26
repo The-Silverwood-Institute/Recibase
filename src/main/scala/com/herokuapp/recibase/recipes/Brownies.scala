@@ -14,7 +14,7 @@ case object Brownies extends Recipe {
   override val notes: Option[String] = Some(
     """This recipe is all about the chocolate, so use high quality 70% dark cooking chocolate. I use Willie's Cacao Chocolate Drops or Menier Swiss Dark Chocolate.
         |
-        |You can use gluten free flour and the taste is indistinguishable. I'll try making it vegan soon using egg substitute and Vitalite.""".stripMargin
+        |You can use gluten free flour and the taste is indistinguishable. I've been working on a <a href="https://reciba.se/vegan-brownies">vegan version</a> using aquafaba.""".stripMargin
   )
   override val tags = Set(Tag.Pudding, Tag.Baking)
   override val image: Option[Image] = Some(

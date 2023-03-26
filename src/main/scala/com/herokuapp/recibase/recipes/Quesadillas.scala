@@ -42,7 +42,8 @@ case object Quesadillas extends Recipe {
     Ingredient("Pepper")
   )
   val method = List(
-    "Combine the beans, cheese, spring onions, sweetcorn, chipotle paste and tomato puree in a mixing bowl. Season with salt and pepper to taste. Add more chipotle paste, if desired.",
+    "Add the beans to a mixing bowl and mush with a fork",
+    "Add the cheese, spring onions, sweetcorn, chipotle paste and tomato puree to the mixing bowl. Season with salt and pepper to taste. Add more chipotle paste, if desired.",
     "Lay out the tortillas and split the mixture evenly across each.",
     "Spread the mixture across half of each tortilla, to make folding easier. Fold over each tortilla.",
     "Put a frying pan on a high heat with a small drizzle of oil.",
