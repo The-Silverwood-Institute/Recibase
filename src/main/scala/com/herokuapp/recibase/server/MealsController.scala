@@ -321,6 +321,13 @@ object MealsController {
         )
       ),
       MealStub(
+        "Shahi Paneer",
+        Set(Tag.Vegetarian, Tag.Spicy, Tag.Scales),
+        Online(
+          "https://www.indianhealthyrecipes.com/shahi-paneer-recipe/"
+        )
+      ),
+      MealStub(
         "Spanakopita (Spinach/feta pastry)",
         Set(Tag.Vegetarian, Tag.Slow),
         GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
