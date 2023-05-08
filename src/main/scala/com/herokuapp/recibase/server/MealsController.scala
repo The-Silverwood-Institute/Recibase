@@ -229,7 +229,8 @@ object MealsController {
           Tag.Scales,
           Tag.Freezes,
           Tag.ColdWeather
-        )
+        ),
+        GoogleDrive("1mxBjlql91Kxo6lHZL-LnmHmhGlRYThCk")
       ),
       MealStub(
         "Mushroom and parsnip rösti pie",
@@ -284,7 +285,8 @@ object MealsController {
       ),
       MealStub(
         "Ricotta spinach pitas",
-        Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
+        Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort),
+        GoogleDrive("1mwrdX7b3hk3AArjnDNWjbyMavuJ6JyI5")
       ),
       MealStub(
         "Roast Aubergine and Basil Risotto",
@@ -302,7 +304,11 @@ object MealsController {
         "Roast vegetable risotto",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
       ),
-      MealStub("Roasted Vegetable Tart", Set(Tag.Vegetarian, Tag.HotWeather)),
+      MealStub(
+        "Roasted Vegetable Tart",
+        Set(Tag.Vegetarian, Tag.HotWeather),
+        GoogleDrive("1nIIXKu72Kohy6UDK_PwiMYYSp7I3Wcou")
+      ),
       MealStub(
         "Sausage and Bean Casserole",
         Set(Tag.VegetarianIsh, Tag.Scales, Tag.Slow, Tag.ColdWeather),
@@ -395,7 +401,8 @@ object MealsController {
       MealStub("Tofu Katsu Curry", Set(Tag.Vegan)),
       MealStub(
         "Tofu and cashew nut stir fry",
-        Set(Tag.Vegan, Tag.Quick, Tag.HotWeather)
+        Set(Tag.Vegan, Tag.Quick, Tag.HotWeather),
+        GoogleDrive("1nNWYsSiKtMubmN3VeXgGpIX8_RniCOlp")
       ),
       MealStub(
         "Tomato & Mozzarella Salad",
@@ -406,7 +413,11 @@ object MealsController {
         Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort)
       ),
       MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
-      MealStub("Tuna in tomato sauce", Set(Tag.Pescatarian)),
+      MealStub(
+        "Tuna in tomato sauce",
+        Set(Tag.Pescatarian),
+        GoogleDrive("1nDEnSpUpKG2a3tIL4VklxJrzAVO5GFkX")
+      ),
       MealStub("Tuna Pasta", Set(Tag.Pescatarian, Tag.Quick, Tag.LowEffort)),
       MealStub("Tuna steaks with salsa verde", Set(Tag.Pescatarian)),
       MealStub(
