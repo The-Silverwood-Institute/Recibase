@@ -330,7 +330,7 @@ object MealsController {
       MealStub(
         "Spanakopita (Spinach/feta pastry)",
         Set(Tag.Vegetarian, Tag.Slow),
-        GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
+        GoogleDrive("1s9Thu2KZuMnAhn6eduQBjBcMdF735VYYeA4Z8jpms4I")
       ),
       MealStub(
         "Spiced Parsnip & Apple Soup",
