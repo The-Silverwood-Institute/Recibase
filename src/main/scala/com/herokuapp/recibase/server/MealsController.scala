@@ -39,7 +39,6 @@ object MealsController {
         "Aubergine & Halloumi Lasagne",
         Set(Tag.Slow, Tag.Vegetarian, Tag.Scales)
       ),
-      MealStub("Aubergine & Mozzarella Bake", Set(Tag.Vegetarian, Tag.Slow)),
       MealStub("Aubergine curry", Set(Tag.Vegan, Tag.Scales, Tag.Slow)),
       MealStub(
         "Avocado and coconut soup",
