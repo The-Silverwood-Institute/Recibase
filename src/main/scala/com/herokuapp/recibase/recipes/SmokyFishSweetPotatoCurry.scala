@@ -41,7 +41,8 @@ case object SmokyFishSweetPotatoCurry extends Recipe {
     Ingredient("Ground coriander", "1 tsp"),
     Ingredient("Ground turmeric", "1 tsp"),
     Ingredient("Sweet potato", "200g", "cut into bite-size pieces"),
-    Ingredient("Water", "350ml", "boiling")
+    Ingredient("Water", "350ml", "boiling"),
+    Ingredient("Naan Bread", None, None, Some("Optional"))
   )
   val method = List(
     "Soften the onion in a pan.",
