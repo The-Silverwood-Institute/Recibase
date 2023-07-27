@@ -310,6 +310,13 @@ object MealsController {
         GoogleDrive("1nIIXKu72Kohy6UDK_PwiMYYSp7I3Wcou")
       ),
       MealStub(
+        "Satay Sweet Potato Curry",
+        Set(Tag.Vegan, Tag.Scales, Tag.Spicy, Tag.Quick),
+        Online(
+          "https://www.bbc.co.uk/food/recipes/satay_sweet_potato_curry_59527"
+        )
+      ),
+      MealStub(
         "Sausage and Bean Casserole",
         Set(Tag.VegetarianIsh, Tag.Scales, Tag.Slow, Tag.ColdWeather),
         Online("https://www.bbcgoodfood.com/recipes/sausage-bean-casserole")
