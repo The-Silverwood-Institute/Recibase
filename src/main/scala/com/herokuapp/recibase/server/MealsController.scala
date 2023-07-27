@@ -189,6 +189,13 @@ object MealsController {
         Set(Tag.Scales, Tag.Vegetarian)
       ),
       MealStub(
+        "Mediterranean Fish Stew",
+        Set(Tag.Pescatarian),
+        Online(
+          "https://www.gousto.co.uk/cookbook/fish-recipes/mediterranean-fish-stew-sunny-aioli"
+        )
+      ),
+      MealStub(
         "Mediterranean Vegetable Gnocchi",
         Set(Tag.Vegetarian, Tag.Scales, Tag.Quick),
         Online(
