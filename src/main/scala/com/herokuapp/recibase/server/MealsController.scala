@@ -311,7 +311,7 @@ object MealsController {
       ),
       MealStub(
         "Satay Sweet Potato Curry",
-        Set(Tag.Vegan, Tag.Scales, Tag.Spicy, Tag.Quick),
+        Set(Tag.Vegan, Tag.Scales, Tag.Spicy, Tag.Quick, Tag.BetterNextDay),
         Online(
           "https://www.bbc.co.uk/food/recipes/satay_sweet_potato_curry_59527"
         )
