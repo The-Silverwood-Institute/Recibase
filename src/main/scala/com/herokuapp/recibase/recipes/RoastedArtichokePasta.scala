@@ -15,7 +15,7 @@ case object RoastedArtichokePasta extends Recipe {
       |
       |12 minutes for tomatoes and 27 for (Waitrose) artichokes at 200C in your oven. Can probably -2 to +5 on artichokes without much trouble.
       |
-      |Waiting for the pasta to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture.
+      |Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture.
       |""".stripMargin
   )
 
