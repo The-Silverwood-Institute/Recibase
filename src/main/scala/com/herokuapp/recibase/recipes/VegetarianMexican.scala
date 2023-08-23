@@ -19,14 +19,15 @@ case object VegetarianMexican extends Recipe {
     Ingredient("Garlic", None, Some("finely chopped")),
     Ingredient("Tortillas"),
     Ingredient("Cinnamon"),
-    Ingredient("Cumin")
+    Ingredient("Cumin"),
+    Ingredient("Salt")
   )
   val method = List(
     "Preheat the oven to 200 C (400 F, gas mark 6).",
     "Peel the squash and chop into 2cm chunks.",
     "Spread on a baking tray and mix with oil, cinnamon and cumin. Roast for 35 minutes.",
     "Defrost the sweetcorn then combine in a large bowl with the black beans and garlic.",
-    "Once roasted, add the squash to the bowl.",
+    "Once roasted, add the squash to the bowl. Taste and add salt or more spices.",
     "Serve with tortillas"
   )
 }
