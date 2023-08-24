@@ -2,7 +2,14 @@ package com.herokuapp.recibase.model
 
 import enumeratum.{CirceEnum, Enum, EnumEntry}
 
-sealed abstract class Tag(override val entryName: String) extends EnumEntry
+sealed abstract class Tag(override val entryName: String) extends EnumEntry {
+  val parentTag: Option[Tag] = None
+
+  def allParentTags: Set[Tag] = parentTag match {
+    case Some(parent) => parent.allParentTags + parent
+    case None         => Set.empty
+  }
+}
 
 object Tag extends Enum[Tag] with CirceEnum[Tag] {
   val values: IndexedSeq[Tag] = findValues
@@ -24,10 +31,18 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
 
   // Dietary
   case object Vegan extends Tag("Vegan")
-  case object VeganIsh extends Tag("Vegan-ish")
-  case object Vegetarian extends Tag("Vegetarian")
-  case object VegetarianIsh extends Tag("Vegetarian-ish")
-  case object Pescatarian extends Tag("Pescatarian")
+  case object VeganIsh extends Tag("Vegan-ish") {
+    override val parentTag: Option[Tag] = Some(Vegan)
+  }
+  case object Vegetarian extends Tag("Vegetarian") {
+    override val parentTag: Option[Tag] = Some(VeganIsh)
+  }
+  case object VegetarianIsh extends Tag("Vegetarian-ish") {
+    override val parentTag: Option[Tag] = Some(Vegetarian)
+  }
+  case object Pescatarian extends Tag("Pescatarian") {
+    override val parentTag: Option[Tag] = Some(VegetarianIsh)
+  }
 
   // Vibe
   case object ColdWeather extends Tag("Cold Weather")

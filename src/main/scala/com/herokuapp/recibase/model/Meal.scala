@@ -3,20 +3,21 @@ package com.herokuapp.recibase.model
 import io.circe.Encoder
 import io.circe.generic.extras.Configuration
 import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
-import io.circe.generic.semiauto.deriveEncoder
 
 trait Meal {
   def name: String
   def tags: Set[Tag]
 
   def isDinner: Boolean = tags.intersect(Tag.nonDinnerTags).isEmpty
+
+  protected def inheritedTags: Set[Tag] = tags.flatMap(_.allParentTags)
 }
 
 case class MealStub(
     name: String,
     tags: Set[Tag],
     source: Option[Source] = None
-) extends Meal
+) extends Meal {}
 
 object MealStub {
   def apply(recipe: Recipe): MealStub =
@@ -25,7 +26,20 @@ object MealStub {
   def apply(name: String, tags: Set[Tag], source: Source): MealStub =
     MealStub(name, tags, Some(source))
 
-  implicit val stubEncoder: Encoder[MealStub] = deriveEncoder[MealStub]
+  implicit val stubEncoder: Encoder[MealStub] =
+    Encoder.forProduct4(
+      "name",
+      "tags",
+      "inherited_tags",
+      "source"
+    ) { mealStub =>
+      (
+        mealStub.name,
+        mealStub.tags,
+        mealStub.inheritedTags,
+        mealStub.source
+      )
+    }
 }
 
 sealed trait Source
