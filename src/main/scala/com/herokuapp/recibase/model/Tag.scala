@@ -30,19 +30,19 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object Soup extends Tag("Soup")
 
   // Dietary
-  case object Vegan extends Tag("Vegan")
-  case object VeganIsh extends Tag("Vegan-ish") {
-    override val parentTag: Option[Tag] = Some(Vegan)
-  }
-  case object Vegetarian extends Tag("Vegetarian") {
+  case object Vegan extends Tag("Vegan") {
     override val parentTag: Option[Tag] = Some(VeganIsh)
   }
-  case object VegetarianIsh extends Tag("Vegetarian-ish") {
+  case object VeganIsh extends Tag("Vegan-ish") {
     override val parentTag: Option[Tag] = Some(Vegetarian)
   }
-  case object Pescatarian extends Tag("Pescatarian") {
+  case object Vegetarian extends Tag("Vegetarian") {
     override val parentTag: Option[Tag] = Some(VegetarianIsh)
   }
+  case object VegetarianIsh extends Tag("Vegetarian-ish") {
+    override val parentTag: Option[Tag] = Some(Pescatarian)
+  }
+  case object Pescatarian extends Tag("Pescatarian")
 
   // Vibe
   case object ColdWeather extends Tag("Cold Weather")
