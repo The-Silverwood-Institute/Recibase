@@ -428,6 +428,13 @@ object MealsController {
       ),
       MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
       MealStub(
+        "Tuna Fish Pie",
+        Set(Tag.Pescatarian, Tag.Scales),
+        Online(
+          "https://www.taste.com.au/recipes/tuna-pie-potato-topping/53c34dd0-edf6-4db9-929f-ac2fd4b65667"
+        )
+      ),
+      MealStub(
         "Tuna in tomato sauce",
         Set(Tag.Pescatarian),
         GoogleDrive("1nDEnSpUpKG2a3tIL4VklxJrzAVO5GFkX")
