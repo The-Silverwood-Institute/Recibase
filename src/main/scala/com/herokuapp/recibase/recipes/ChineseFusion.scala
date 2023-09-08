@@ -22,7 +22,7 @@ case object ChineseFusion extends Recipe {
     Ingredient("Butternut Squash", "1"),
     Ingredient(
       "Lamb Mince",
-      Some("250g"),
+      Some("500g"),
       None,
       Some(
         "alternatively use turkey thigh mince, chicken thigh fillet also works"
@@ -31,7 +31,7 @@ case object ChineseFusion extends Recipe {
     Ingredient("Leeks", "2 large"),
     Ingredient("Shiitake mushrooms", "125g"),
     Ingredient("Garlic", "4 cloves"),
-    Ingredient("Jar Ginger", "1 fork-full"),
+    Ingredient("Jar Ginger", "2 fork-fulls"),
     Ingredient("Sliced Water chestnuts", "1 tin", "drained"),
     Ingredient("Sliced bamboo", "1 tin", "drained"),
     Ingredient("Five spice"),
