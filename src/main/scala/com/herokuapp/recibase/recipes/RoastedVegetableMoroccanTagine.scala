@@ -15,7 +15,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
     Ingredient("Carrots", "2", "cut into quarters"),
     Ingredient("Pepper", "1", "cut into quarters"),
     Ingredient("Sweet potato", "1", "cut into 3cm chunks"),
-    Ingredient("Garlic", "4 gloves", "peel the skin but leave whole"),
+    Ingredient("Garlic", "4 cloves", "peel the skin but leave whole"),
     Ingredient("Broccoli", "1/2", "cut into florets"),
     Ingredient("Onion", "1", "roughly chopped"),
     Ingredient("Rosemary", "1/2 tsp"),
