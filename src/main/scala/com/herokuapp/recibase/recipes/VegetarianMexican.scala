@@ -10,7 +10,7 @@ case object VegetarianMexican extends Recipe {
   override val description: Option[String] =
     Some("Low spoons vegetarian Mexican")
 
-  override val tags = Set(Tag.Vegetarian, Tag.LowEffort)
+  override val tags = Set(Tag.Vegetarian, Tag.LowEffort, Tag.Stephani)
 
   val ingredients = List(
     Ingredient("Black Beans", Some("2 tins"), Some("drained")),

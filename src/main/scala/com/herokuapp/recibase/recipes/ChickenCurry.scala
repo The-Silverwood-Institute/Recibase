@@ -19,7 +19,8 @@ case object ChickenCurry extends Recipe {
     Tag.Slow,
     Tag.Freezes,
     Tag.Scales,
-    Tag.Spicy
+    Tag.Spicy,
+    Tag.Stephani
   )
 
   val ingredients = List(

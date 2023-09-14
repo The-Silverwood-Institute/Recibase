@@ -8,7 +8,8 @@ case object RoastedArtichokePasta extends Recipe {
   override val source: Option[String] = Some(
     "Stephani"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort)
+  override val tags =
+    Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.Stephani)
 
   override val notes = Some(
     """Ingredients are per person, so scale it appropriately.
