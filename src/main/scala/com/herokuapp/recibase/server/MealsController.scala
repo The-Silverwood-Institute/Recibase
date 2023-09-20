@@ -254,6 +254,13 @@ object MealsController {
         GoogleDrive("1dM9T4Bu7Hj3fbLplX3NYKnCFqvuNrFC4tgWhhgWYTUE")
       ),
       MealStub(
+        "Paneer Butter Masala",
+        Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort, Tag.Spicy),
+        Online(
+          "https://www.gousto.co.uk/cookbook/vegetarian-recipes/paneer-butter-masala-with-coriander-naan"
+        )
+      ),
+      MealStub(
         "Pasta & Pesto",
         Set(
           Tag.VegetarianIsh,
