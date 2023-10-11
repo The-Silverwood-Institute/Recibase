@@ -65,4 +65,9 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   // Good to know
   case object Freezes extends Tag("Freezes")
   case object BetterNextDay extends Tag("Better Next Day")
+
+  // Popularity
+  case object New extends Tag("New")
+  case object Popular extends Tag("Popular")
+  case object Unpopular extends Tag("Unpopular")
 }

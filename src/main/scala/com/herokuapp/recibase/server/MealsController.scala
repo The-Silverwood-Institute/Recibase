@@ -11,6 +11,7 @@ import com.herokuapp.recibase.model.{
   Source,
   Tag
 }
+import com.herokuapp.recibase.usage.UsageData
 
 import scala.collection.immutable
 
@@ -22,9 +23,9 @@ trait MealsController[F[_]] {
 object MealsController {
   def impl[F[_]: Applicative]: MealsController[F] =
     new MealsController[F] {
-      override def meals: F[Set[MealStub]] = mealStubs.pure[F]
+      override def meals: F[Set[MealStub]] = mealStubsWithUsageData.pure[F]
       override def mealNames: F[String] =
-        mealStubs
+        mealStubsWithUsageData
           .filter(_.isDinner)
           .map(_.name)
           .toSeq
@@ -33,7 +34,7 @@ object MealsController {
           .pure[F]
     }
 
-  val mealStubs: Set[MealStub] =
+  private val mealStubs: Set[MealStub] =
     Recipe.recipes.map(MealStub.apply).toSet ++ Set(
       MealStub(
         "Aubergine & Halloumi Lasagne",
@@ -480,8 +481,21 @@ object MealsController {
       )
     )
 
+  val mealStubsWithUsageData = mealStubs.map(meal => {
+    UsageData.mealCount
+      .get(meal.name)
+      .fold(meal)(count => {
+        if (count == 0) meal.copy(tags = meal.tags + Tag.New)
+        else if (count <= 2)
+          meal.copy(tags = meal.tags + Tag.Unpopular)
+        else if (count >= 5)
+          meal.copy(tags = meal.tags + Tag.Popular)
+        else meal
+      })
+  })
+
   private val duplicates =
-    mealStubs.toList.map(_.name).groupBy(derp => derp).flatMap {
+    mealStubsWithUsageData.toList.map(_.name).groupBy(derp => derp).flatMap {
       case (key, occurrences) if occurrences.length > 1 => Some(key)
       case _                                            => None
     }
