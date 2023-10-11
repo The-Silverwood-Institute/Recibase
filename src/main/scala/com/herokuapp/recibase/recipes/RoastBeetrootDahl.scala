@@ -5,7 +5,7 @@ import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
 case object RoastBeetrootDahl extends Recipe {
   val name = "Roast Beetroot Dahl"
 
-  override val source: Option[String] = Some("Gousto")
+  override val source: Option[String] = Some("Hello Fresh")
   override val notes: Option[String] = Some(
     """The beetroot quantity is guestimated. Will refine over time.
         |
