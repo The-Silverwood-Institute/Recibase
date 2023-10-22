@@ -20,7 +20,7 @@ case object ChipotleBurgers extends Recipe {
     Ingredient("Beyond Meat Burgers", "4"),
     Ingredient("Brioche buns", "4"),
     Ingredient("Applewood Smoked Cheddar", "4 slices"),
-    Ingredient("Vegan Bacon Rashers", "120g"),
+    Ingredient("Vegan Streaky Bacon Rashers", "105g"),
     Ingredient(
       "Ketchup",
       None,
