@@ -28,9 +28,9 @@ case object BeetrootRisotto extends Recipe {
       "Water",
       Some("700ml"),
       Some("boiling"),
-      Some("Might need to add more")
+      Some("might need to add more")
     ),
-    Ingredient("Soft Goats Cheese")
+    Ingredient("Soft Goats Cheese", "up to 75g")
   )
   val method = List(
     "Preheat the oven to 200C.",
