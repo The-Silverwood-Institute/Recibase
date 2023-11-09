@@ -26,14 +26,15 @@ case object HoisinDuckWraps extends Recipe {
     Ingredient("Tortilla Wraps", "4"),
     Ingredient("Cherry Tomatoes", None, Some("halved")),
     Ingredient("Hoisin sauce", None, None, Some("Optional")),
+    Ingredient("Mayonnaise"),
     Ingredient("Oil")
   )
   val method = List(
     "Heat some oil in a large frying pan.",
     "Throw in the shredded hoisin duck and cook per packet instructions.",
-    "Warm the tortillas in a microwave per packet instructions",
-    "Add some oil to a small frying pan and cook the red pepper over a medium heat for a few minutes.",
-    "Add the spring onions and cherry tomatoes to the small frying pan and cook for a further 30 seconds.",
+    "Warm the tortillas in a microwave per packet instructions and spread with some mayonnaise",
+    "A few minutes before the duck mixture is ready throw in the peppers.",
+    "Add the spring onions and cherry tomatoes to the pan and cook for a further 30 seconds.",
     "Divide up the shredded hoisin duck and vegetables equally among the tortillas.",
     "Drizzle with hoisin sauce then wrap up and serve."
   )
