@@ -355,6 +355,17 @@ object MealsController {
         )
       ),
       MealStub(
+        "Smoky sausage casserole",
+        Set(
+          Tag.VegetarianIsh,
+          Tag.ColdWeather,
+          Tag.Slow,
+          Tag.Scales,
+          Tag.BetterNextDay
+        ),
+        Online("https://www.bbcgoodfood.com/recipes/smoky-sausage-casserole")
+      ),
+      MealStub(
         "Spanakopita (Spinach/feta pastry)",
         Set(Tag.Vegetarian, Tag.Slow),
         GoogleDrive("1s9Thu2KZuMnAhn6eduQBjBcMdF735VYYeA4Z8jpms4I")
