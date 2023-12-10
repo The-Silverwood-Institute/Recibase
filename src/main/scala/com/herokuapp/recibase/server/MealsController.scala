@@ -425,7 +425,8 @@ object MealsController {
           Tag.Scales,
           Tag.HotWeather,
           Tag.LowEffort
-        )
+        ),
+        GoogleDrive("1sbycCsoWJSO8ETeg_AQ-2rHE4Ea6UYvi")
       ),
       MealStub(
         "Thai Green Curry",
