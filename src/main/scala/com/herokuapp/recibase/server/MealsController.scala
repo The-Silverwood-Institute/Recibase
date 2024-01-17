@@ -65,19 +65,6 @@ object MealsController {
       ),
       MealStub("Beyond Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
       MealStub(
-        "Broccoli and Stilton soup",
-        Set(
-          Tag.Vegetarian,
-          Tag.Soup,
-          Tag.Scales,
-          Tag.Freezes,
-          Tag.BetterNextDay,
-          Tag.Slow,
-          Tag.ColdWeather,
-          Tag.LowEffort
-        )
-      ),
-      MealStub(
         "Haddock Moqueca",
         Set(Tag.Pescatarian, Tag.Spicy),
         Online(
