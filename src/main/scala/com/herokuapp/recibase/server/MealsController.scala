@@ -79,7 +79,7 @@ object MealsController {
       ),
       MealStub(
         "Cashew Curry",
-        Set(Tag.Vegan, Tag.Scales, Tag.Spicy),
+        Set(Tag.Vegan, Tag.Scales),
         Online(
           "https://vegancocotte.com/cashew-curry/"
         )
