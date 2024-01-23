@@ -67,6 +67,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object BetterNextDay extends Tag("Better Next Day")
 
   // Popularity
+  // These are added to recipes automatically
   case object New extends Tag("New")
   case object Popular extends Tag("Popular")
   case object Unpopular extends Tag("Unpopular")
