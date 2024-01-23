@@ -77,6 +77,13 @@ object MealsController {
         "Carrot & Coriander Burgers",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort)
       ),
+      MealStub(
+        "Cashew Curry",
+        Set(Tag.Vegan, Tag.Scales, Tag.Spicy),
+        Online(
+          "https://vegancocotte.com/cashew-curry/"
+        )
+      ),
       MealStub("Cheese and olive tarts", Set(Tag.Vegetarian)),
       MealStub(
         "Cheese scones",
