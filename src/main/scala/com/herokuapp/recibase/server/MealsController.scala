@@ -215,7 +215,8 @@ object MealsController {
       ),
       MealStub(
         "Mozzarella and spinach pancakes",
-        Set(Tag.HighEffort, Tag.Vegetarian)
+        Set(Tag.HighEffort, Tag.Vegetarian),
+        Drive("1L7CueEwwXy6ObWx7A2AjIxO4FdsI-YB_")
       ),
       MealStub(
         "Mozzarella Burgers",
