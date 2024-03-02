@@ -40,11 +40,13 @@ case object ChickenCurry extends Recipe {
     Ingredient("Cloves"),
     Ingredient("Nutmeg"),
     Ingredient("Turmeric"),
+    Ingredient("Red Peppers", Some("2"), None, Some("Optional")),
+    Ingredient("Chillies", None, None, Some("Optional")),
     Ingredient("Naan Bread", None, None, Some("Optional"))
   )
   val method = List(
     "Heat the wok over a hot flame.",
-    "Fry the onions. Add the chicken halfway through then throw in the garlic.",
+    "Fry the onions. Add the chicken halfway through then throw in the garlic and (optional) peppers.",
     "Add the smoked paprika, cumin, nutmeg, cloves and turmeric. Primarily paprika and cumin. Cook the spices for a moment.",
     "Transfer to a large pan.",
     "Add the cream, sweetcorn (including brine), sugar and salt to the large pan. Add a little water, sparingly, if it looks dry.",
