@@ -5,9 +5,13 @@ import com.herokuapp.recibase.usage.{MealLogEntry, UsageData}
 import java.time.LocalDate
 
 class UsageDataSpec extends org.specs2.mutable.Specification {
-  "date parser correctly parses a date string" >> {
+  "date parser correctly parses date strings" >> {
     UsageData.parseDate("Thursday, 17 February 22") must beSuccessfulTry(
       LocalDate.of(2022, 2, 17)
+    )
+
+    UsageData.parseDate("Friday, 8 December 23") must beSuccessfulTry(
+      LocalDate.of(2023, 12, 8)
     )
   }
 

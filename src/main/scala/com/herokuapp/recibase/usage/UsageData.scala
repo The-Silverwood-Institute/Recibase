@@ -37,7 +37,7 @@ object UsageData {
   def parseDate(input: String): Try[LocalDate] = {
     Try {
       val rawDate = input.split(",")(1).trim
-      LocalDate.parse(rawDate, DateTimeFormatter.ofPattern("dd MMMM yy"))
+      LocalDate.parse(rawDate, DateTimeFormatter.ofPattern("d MMMM yy"))
     }
   }
 
