@@ -4,6 +4,8 @@ import io.circe.Encoder
 import io.circe.generic.extras.Configuration
 import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
 
+import java.time.LocalDate
+
 trait Meal {
   def name: String
   def tags: Set[Tag]
@@ -16,7 +18,8 @@ trait Meal {
 case class MealStub(
     name: String,
     tags: Set[Tag],
-    source: Option[Source] = None
+    source: Option[Source] = None,
+    lastEaten: Option[LocalDate] = None
 ) extends Meal {}
 
 object MealStub {
@@ -27,17 +30,21 @@ object MealStub {
     MealStub(name, tags, Some(source))
 
   implicit val stubEncoder: Encoder[MealStub] =
-    Encoder.forProduct4(
+    Encoder.forProduct5(
       "name",
       "tags",
       "inherited_tags",
-      "source"
+      "source",
+      "last_eaten"
     ) { mealStub =>
       (
         mealStub.name,
         mealStub.tags,
         mealStub.inheritedTags,
-        mealStub.source
+        mealStub.source,
+        mealStub.lastEaten.map(date =>
+          s"${date.getYear}-${date.getMonthValue}-${date.getDayOfMonth}"
+        )
       )
     }
 }
