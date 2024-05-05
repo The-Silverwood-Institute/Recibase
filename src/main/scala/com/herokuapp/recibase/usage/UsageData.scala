@@ -1,5 +1,7 @@
 package com.herokuapp.recibase.usage
 
+import org.typelevel.log4cats.Logger
+
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import scala.io.Source
@@ -23,8 +25,8 @@ object UsageData {
     }
     .flatMap {
       case Success(entry) => Some(entry)
-      case Failure(exception) =>
-        println(exception.getMessage)
+      case Failure(_)     =>
+//        println(exception.getMessage)
         None
     }
     .toSet
