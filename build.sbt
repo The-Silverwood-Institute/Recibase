@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
     organization := "The Silverwood Institute",
     name := "Recibase",
     version := "0.2",
-    scalaVersion := "2.13.13",
+    scalaVersion := "2.13.14",
     libraryDependencies ++= Seq(
       "org.http4s" %% "http4s-blaze-server" % Http4sVersion,
       "org.http4s" %% "http4s-blaze-client" % Http4sVersion,
