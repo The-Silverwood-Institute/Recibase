@@ -23,7 +23,9 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
     Ingredient("Soured Cream", "350ml"),
     Ingredient("Plain Flour", "3 tbsp"),
     Ingredient("Salt"),
-    Ingredient("Black Pepper")
+    Ingredient("Black Pepper"),
+    Ingredient("Nutmeg", None, None, Some("Optional")),
+    Ingredient("Brandy", None, None, Some("Optional"))
   )
   val method = List(
     "Chop the shiitake or porchini mushrooms into large pieces",
