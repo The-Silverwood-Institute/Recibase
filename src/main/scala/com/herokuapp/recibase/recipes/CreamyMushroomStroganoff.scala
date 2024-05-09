@@ -35,7 +35,7 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
     "Add the Shiitake or Porchini Mushrooms and cook for a minute more.",
     "Turn down the heat then stir in the soured cream, being careful not to let it boil.",
     "Stir in the vegetable stock until you have a creamy sauce that isn't too watery. You might not need all the stock. Sift in plain flour, a small bit at a time, if needed.",
-    "Add salt and black pepper to taste.",
+    "Add salt, black pepper, nutmeg and brandy to taste.",
     "Serve with rice."
   )
 }
