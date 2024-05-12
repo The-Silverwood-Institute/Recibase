@@ -361,11 +361,6 @@ object MealsController {
         Online("https://www.bbcgoodfood.com/recipes/smoky-sausage-casserole")
       ),
       MealStub(
-        "Spanakopita (Spinach/feta pastry)",
-        Set(Tag.Vegetarian, Tag.Slow),
-        GoogleDrive("1s9Thu2KZuMnAhn6eduQBjBcMdF735VYYeA4Z8jpms4I")
-      ),
-      MealStub(
         "Spiced Parsnip & Apple Soup",
         Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.Spicy, Tag.Freezes),
         Online(
