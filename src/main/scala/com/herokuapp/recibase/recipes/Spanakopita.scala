@@ -43,7 +43,7 @@ case object Spanakopita extends Recipe {
     "Layer the rest of the fillo pasty sheets on top, using the same method as before.",
     "Brush the very top layer with olive oil, and sprinkle with just a few drops of water.",
     "Fold the flaps or excess from the sides, you can crumble them a little. Brush the folded sides well with olive oil. Cut Spanakopita part-way through into squares, or leave the cutting to later.",
-    "Bake for 45-60 minutes, or until the fillo crust is crisp and golden brown. Remove from the oven. Finish cutting into squares and serve."
+    "Bake for 45-60 minutes, or until the fillo crust is crisp and golden brown. Remove from the oven. Finish cutting into squares and serve.",
     "Optionally serve with greek yoghurt or creme fraiche."
   )
 }
