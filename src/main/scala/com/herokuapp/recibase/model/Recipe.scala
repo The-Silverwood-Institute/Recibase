@@ -8,6 +8,7 @@ import org.reflections.Reflections
 
 import scala.reflect.classTag
 import scala.reflect.runtime.universe
+import java.time.LocalDateTime
 
 @JsonCodec
 case class Ingredient(
@@ -60,7 +61,7 @@ object Recipe {
   println(recipes)
 
   implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct12(
+    Encoder.forProduct13(
       "name",
       "permalink",
       "edit",
@@ -72,7 +73,8 @@ object Recipe {
       "inherited_tags",
       "image",
       "ingredients",
-      "method"
+      "method",
+      "fetchedAt"
     )(r =>
       (
         r.name,
@@ -86,7 +88,8 @@ object Recipe {
         r.inheritedTags,
         r.image,
         r.ingredients,
-        r.method
+        r.method,
+        LocalDateTime.now().toString()
       )
     )
 }
