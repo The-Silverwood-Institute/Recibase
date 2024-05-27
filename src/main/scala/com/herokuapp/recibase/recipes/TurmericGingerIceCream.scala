@@ -18,7 +18,7 @@ case object TurmericGingerIceCream extends Recipe {
   )
   override val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
-    Image("https://i.reciba.se/wasabi-ice-cream.jpg")
+    Image("https://i.reciba.se/ice-cream.jpg")
   )
 
   val ingredients = List(
