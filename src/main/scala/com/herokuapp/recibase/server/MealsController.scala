@@ -43,7 +43,10 @@ object MealsController {
       MealStub("Aubergine curry", Set(Tag.Vegan, Tag.Scales, Tag.Slow)),
       MealStub(
         "Avocado and coconut soup",
-        Set(Tag.Vegan, Tag.Soup, Tag.Scales, Tag.Freezes)
+        Set(Tag.Vegan, Tag.Soup, Tag.Scales, Tag.Freezes),
+        Drive(
+          "170P50UetqQPkrqqYvthtt3FBXsjCAYU_"
+        )
       ),
       MealStub(
         "Baked potatoes",
