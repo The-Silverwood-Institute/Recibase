@@ -44,7 +44,7 @@ object MealsController {
       MealStub(
         "Avocado and coconut soup",
         Set(Tag.Vegan, Tag.Soup, Tag.Scales, Tag.Freezes),
-        Drive(
+        GoogleDrive(
           "170P50UetqQPkrqqYvthtt3FBXsjCAYU_"
         )
       ),
