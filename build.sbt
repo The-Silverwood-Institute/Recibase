@@ -1,5 +1,5 @@
 val Http4sVersion = "1.0.0-M38"
-val Specs2Version = "4.20.6"
+val Specs2Version = "4.20.7"
 val LogbackVersion = "1.5.6"
 val EnumeratumVersion = "1.7.3"
 
