@@ -437,7 +437,7 @@ object MealsController {
       ),
       MealStub(
         "Tomato sauce",
-        Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort)
+        Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort, Tag.VeganIsh)
       ),
       MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
       MealStub(
