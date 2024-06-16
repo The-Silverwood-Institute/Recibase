@@ -23,6 +23,7 @@ case object RoastedArtichokePasta extends Recipe {
   override val ingredients: List[Ingredient] = List(
     Ingredient("Sun-dried Tomatoes", "100g"),
     Ingredient("Roasted Artichokes", "140g"),
+    Ingredient("Pine Nuts", None, None, Some("optional"),
     Ingredient("Ricotta", "80-125g"),
     Ingredient("Pasta", None, None, Some("preferably fresh")),
     Ingredient(
@@ -40,6 +41,7 @@ case object RoastedArtichokePasta extends Recipe {
     "Drain the jar of artichokes and lay them on the tray. Roast for 20-30 minutes.",
     "Drain the jar of sun-dried tomatoes and add them to the tray for the last 8-12 minutes.",
     "While the other ingredients are roasting add the ricotta and herbs to a mixing bowl. Mix well.",
+    "If you're adding pine nuts then gently fry them in oil in a small frying pan.",
     "Cook the pasta per packet instructions then drain and leave to cool.",
     "Take the baking tray out of the oven and add all ingredients to the mixing bowl. Mix well and serve."
   )
