@@ -23,7 +23,7 @@ case object RoastedArtichokePasta extends Recipe {
   override val ingredients: List[Ingredient] = List(
     Ingredient("Sun-dried Tomatoes", "100g"),
     Ingredient("Roasted Artichokes", "140g"),
-    Ingredient("Pine Nuts", None, None, Some("optional"),
+    Ingredient("Pine Nuts", None, None, Some("optional")),
     Ingredient("Ricotta", "80-125g"),
     Ingredient("Pasta", None, None, Some("preferably fresh")),
     Ingredient(
