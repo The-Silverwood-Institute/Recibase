@@ -19,7 +19,8 @@ case class MealStub(
     name: String,
     tags: Set[Tag],
     source: Option[Source] = None,
-    lastEaten: Option[LocalDate] = None
+    lastEaten: Option[LocalDate] = None,
+    timesEaten: Option[Int] = None
 ) extends Meal {}
 
 object MealStub {
@@ -30,12 +31,13 @@ object MealStub {
     MealStub(name, tags, Some(source))
 
   implicit val stubEncoder: Encoder[MealStub] =
-    Encoder.forProduct5(
+    Encoder.forProduct6(
       "name",
       "tags",
       "inherited_tags",
       "source",
-      "last_eaten"
+      "last_eaten",
+      "times_eaten"
     ) { mealStub =>
       (
         mealStub.name,
@@ -44,7 +46,8 @@ object MealStub {
         mealStub.source,
         mealStub.lastEaten.map(date =>
           s"${date.getYear}-${date.getMonthValue}-${date.getDayOfMonth}"
-        )
+        ),
+        mealStub.timesEaten
       )
     }
 }

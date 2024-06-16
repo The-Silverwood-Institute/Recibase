@@ -487,8 +487,8 @@ object MealsController {
     )
 
   val mealStubsWithUsageData = mealStubs.map(meal => {
-    val mealWithCount = UsageData.mealCount
-      .getOrElse(meal.name, 0) match {
+    val mealTimesEaten = UsageData.mealCount.getOrElse(meal.name, 0)
+    val mealWithCount = mealTimesEaten match {
       case 0                   => meal.copy(tags = meal.tags + Tag.NeverEaten)
       case count if count <= 2 => meal.copy(tags = meal.tags + Tag.Infrequent)
       case count if count >= 5 =>
@@ -496,11 +496,12 @@ object MealsController {
       case _ => meal
     }
 
-    val mealWithLastEaten = mealWithCount.copy(lastEaten =
-      UsageData.mealLastEaten.get(mealWithCount.name)
+    val mealWithUsageData = mealWithCount.copy(lastEaten =
+      UsageData.mealLastEaten.get(mealWithCount.name),
+      timesEaten = Some(mealTimesEaten)
     )
 
-    mealWithLastEaten
+    mealWithUsageData
   })
 
   private val duplicates =
