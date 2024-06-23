@@ -34,7 +34,7 @@ case object BeetrootRisotto extends Recipe {
   )
   val method = List(
     "Preheat the oven to 200C.",
-    "Place the peeled beetroot on a baking tray, drizzle with oil and put in the oven for twenty minutes or until soft.",
+    "Place the peeled beetroot on a baking tray, drizzle with oil and put in the oven for 20 minutes or until soft.",
     "If the beetroot came with stems and leaves, cut these into small pieces and set aside.",
     "Dissolve the stock cube in the boiling water and add the wine and thyme.",
     "Put the arborio rice in a pan over a medium heat and gradually stir in the stock, mixing often and not adding more until the previous lot of water has been absorbed.",
