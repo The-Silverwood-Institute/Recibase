@@ -195,7 +195,7 @@ object MealsController {
       ),
       MealStub(
         "Mediterranean Vegetable Gnocchi",
-        Set(Tag.Vegetarian, Tag.Scales, Tag.Quick),
+        Set(Tag.Vegetarian, Tag.Scales, Tag.Quick, Tag.HotWeather),
         Online(
           "https://www.gousto.co.uk/cookbook/vegetarian-recipes/mediterranean-veg-gnocchi-with-basil"
         )
