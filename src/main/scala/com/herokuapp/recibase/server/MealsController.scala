@@ -442,7 +442,14 @@ object MealsController {
       ),
       MealStub(
         "Tomato sauce",
-        Set(Tag.Freezes, Tag.Scales, Tag.Slow, Tag.BetterNextDay, Tag.LowEffort, Tag.VeganIsh)
+        Set(
+          Tag.Freezes,
+          Tag.Scales,
+          Tag.Slow,
+          Tag.BetterNextDay,
+          Tag.LowEffort,
+          Tag.VeganIsh
+        )
       ),
       MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
       MealStub(
@@ -501,8 +508,8 @@ object MealsController {
       case _ => meal
     }
 
-    val mealWithUsageData = mealWithCount.copy(lastEaten =
-      UsageData.mealLastEaten.get(mealWithCount.name),
+    val mealWithUsageData = mealWithCount.copy(
+      lastEaten = UsageData.mealLastEaten.get(mealWithCount.name),
       timesEaten = Some(mealTimesEaten)
     )
 
