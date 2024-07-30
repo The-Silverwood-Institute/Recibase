@@ -288,7 +288,9 @@ object MealsController {
       MealStub(
         "Pomegranate Persian Halloumi",
         Set(Tag.LowEffort, Tag.Quick, Tag.HotWeather, Tag.Vegetarian),
-        Online("https://drive.google.com/drive/folders/1sIZae-25brxIrc6KeWuOTf2uXE7lLvbQ")
+        Online(
+          "https://drive.google.com/drive/folders/1sIZae-25brxIrc6KeWuOTf2uXE7lLvbQ"
+        )
       ),
       MealStub(
         "Potato gratin",
