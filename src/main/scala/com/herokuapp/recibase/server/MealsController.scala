@@ -271,7 +271,8 @@ object MealsController {
       ),
       MealStub(
         "Penne with Walnut sauce",
-        Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort)
+        Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather, Tag.LowEffort),
+        GoogleDrive("1-dIvRInPYyiUT1y6Y6cb7bZpnabubuIe")
       ),
       MealStub(
         "Pepper and goats cheese tart",
