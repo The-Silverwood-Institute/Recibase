@@ -206,7 +206,10 @@ object MealsController {
       ),
       MealStub(
         "Mexican Polenta Pie",
-        Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
+        Set(Tag.Vegetarian, Tag.Slow, Tag.Scales),
+        GoogleDrive(
+          "1JC2oUMsAtRLRCyyy8bdqKo1BdwuD-1X0"
+        )
       ),
       MealStub(
         "Mexican Tofu with Refried Beans",
