@@ -20,7 +20,8 @@ case object CodWithLentils extends Recipe {
     Ingredient("Green Lentils", "2 400g tin"),
     Ingredient("Butter"),
     Ingredient("Salt"),
-    Ingredient("Pepper")
+    Ingredient("Pepper"),
+    Ingredient("Lemon Juice")
   )
   val method = List(
     "Salt and pepper the cod. Wrap in tin foil then cook per packet instructions.",
@@ -28,7 +29,7 @@ case object CodWithLentils extends Recipe {
     "Heat a knob of butter in a saucepan.",
     "Add the onion and cook over a medium heat until soft.",
     "Tip in the green lentils and gently heat up. Stir the lentils gently as it's important the lentils don't turn to mush.",
-    "Season with salt and pepper. Add more butter if needed.",
+    "Season with salt, pepper and a dash of lemon juice. Add more butter if needed.",
     "Serve the lentil and onions with the cod on top."
   )
 }
