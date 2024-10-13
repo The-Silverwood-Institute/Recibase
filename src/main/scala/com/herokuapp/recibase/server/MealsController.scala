@@ -399,7 +399,7 @@ object MealsController {
           Tag.HotWeather,
           Tag.LowEffort
         ),
-        Drive("1P-i6q_AgZXCtIBWoBIm3fst70VeJNFqK")
+        GoogleDrive("1P-i6q_AgZXCtIBWoBIm3fst70VeJNFqK")
       ),
       MealStub(
         "Spicy Butternut and Coconut Soup",
