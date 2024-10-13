@@ -391,7 +391,7 @@ object MealsController {
         )
       ),
       MealStub(
-        "Spicy Broccoli & Cauliflower",
+        "Broccoli & Cauliflower Bake",
         Set(
           Tag.Vegetarian,
           Tag.Quick,
