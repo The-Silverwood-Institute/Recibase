@@ -74,7 +74,11 @@ object MealsController {
           "https://www.gousto.co.uk/cookbook/fish-recipes/brazilian-haddock-moqueca-zesty-lime-rice"
         )
       ),
-      MealStub("Honey Mustard Roast Salmon", Set(Tag.Stephani, Tag.LowEffort, Tag.Pescatarian, Tag.Scales), GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")),
+      MealStub(
+        "Honey Mustard Roast Salmon",
+        Set(Tag.Stephani, Tag.LowEffort, Tag.Pescatarian, Tag.Scales),
+        GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")
+      ),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
       MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),
       MealStub(

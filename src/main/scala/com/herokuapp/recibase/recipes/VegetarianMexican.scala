@@ -17,7 +17,12 @@ case object VegetarianMexican extends Recipe {
     Ingredient("Frozen sweetcorn", "260g"),
     Ingredient("Squash", "1"),
     Ingredient("Garlic", None, Some("finely chopped")),
-    Ingredient("Cheese", None, None, Some("ideally Sainsbury's 4 cheese mix or a herb/spiced cheese")),
+    Ingredient(
+      "Cheese",
+      None,
+      None,
+      Some("ideally Sainsbury's 4 cheese mix or a herb/spiced cheese")
+    ),
     Ingredient("Tortillas"),
     Ingredient("Cinnamon"),
     Ingredient("Cumin"),
