@@ -16,7 +16,7 @@ case object ChunkyVegetableCrumble extends Recipe {
 Honey can be added with the carrots for extra sweetness."""
     )
   override val tags =
-    Set(Tag.VegetarianIsh, Tag.Slow, Tag.HighEffort, Tag.Scales)
+    Set(Tag.VegetarianIsh, Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.ColdWeather)
 
   val ingredients = List(
     Ingredient("Onion", "1", "sliced"),
