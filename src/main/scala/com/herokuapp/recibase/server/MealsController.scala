@@ -67,18 +67,6 @@ object MealsController {
         )
       ),
       MealStub("Beyond Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
-      MealStub(
-        "Haddock Moqueca",
-        Set(Tag.Pescatarian, Tag.Spicy),
-        Online(
-          "https://www.gousto.co.uk/cookbook/fish-recipes/brazilian-haddock-moqueca-zesty-lime-rice"
-        )
-      ),
-      MealStub(
-        "Honey Mustard Roast Salmon",
-        Set(Tag.Stephani, Tag.LowEffort, Tag.Pescatarian, Tag.Scales),
-        GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")
-      ),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
       MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),
       MealStub(
@@ -147,6 +135,13 @@ object MealsController {
       ),
       MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan, Tag.LowEffort)),
       MealStub(
+        "Haddock Moqueca",
+        Set(Tag.Pescatarian, Tag.Spicy),
+        Online(
+          "https://www.gousto.co.uk/cookbook/fish-recipes/brazilian-haddock-moqueca-zesty-lime-rice"
+        )
+      ),
+      MealStub(
         "Haggis",
         Set(
           Tag.Vegetarian,
@@ -163,6 +158,11 @@ object MealsController {
         Online(
           "https://www.onegreenplanet.org/vegan-recipe/harira-soup-with-hummus-pitas/"
         )
+      ),
+      MealStub(
+        "Honey Mustard Roast Salmon",
+        Set(Tag.Stephani, Tag.LowEffort, Tag.Pescatarian, Tag.Scales),
+        GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")
       ),
       MealStub(
         "Jamaican Squash and Coconut Stew",
