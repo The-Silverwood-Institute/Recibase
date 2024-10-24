@@ -68,6 +68,11 @@ object MealsController {
       ),
       MealStub("Beyond Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
+      MealStub(
+        "Butternut & Blue Cheese Risotto",
+        Set(Tag.Vegetarian, Tag.Stephani, Tag.LowEffort, Tag.Scales, Tag.Slow),
+        GoogleDrive("1e34QA2s94VJSNVQYxW_hRL3mKjNZtKlS")
+      ),
       MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),
       MealStub(
         "Carrot & Coriander Burgers",
@@ -86,6 +91,13 @@ object MealsController {
         Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge),
         Online(
           "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"
+        )
+      ),
+      MealStub(
+        "Chipotle Mac 'n' Cheese",
+        Set(Tag.Vegetarian, Tag.Scales, Tag.Stodge),
+        Online(
+          "https://drive.google.com/drive/folders/1eFm2usuBrtrDgqYtzRrFIZYe77VKVTu5"
         )
       ),
       MealStub(
