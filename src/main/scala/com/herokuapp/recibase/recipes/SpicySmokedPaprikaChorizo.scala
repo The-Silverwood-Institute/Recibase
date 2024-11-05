@@ -27,7 +27,7 @@ You could try serving this dish over grilled aubergines."""
       Some("Several"),
       Some("fined diced or crushed in a press")
     ),
-    Ingredient("Pointed Red Pepper", Some("1"), Some("sliced")),
+    Ingredient("Pointed Red Peppers", Some("2"), Some("sliced")),
     Ingredient("Carrots", Some("2-3"), Some("diced")),
     Ingredient(
       "Fresh Spinach",
@@ -67,7 +67,7 @@ You could try serving this dish over grilled aubergines."""
     "Cut the chorizo into half centimeter thick semi-circles.",
     "Add the oil and smoked paprika to a wide pan.",
     "Cook the carrots on a medium to high heat for a minute or so. Stir regularly to avoid sticking.",
-    "Add the red onions, pepper and garlic then cook for minute.",
+    "Add the red onions and garlic then cook for minute.",
     "Stir in the chorizo, peppers and tomato paste then cook for a few more minutes.",
     "Add the pasata, tinned tomatoes, cloves, chilli flakes, red wine, oregano, cinamon stick, and honey. If the pan is looking full then wait until the mixure has reduced before adding the rest of the tinned tomatoes/wine.",
     "Wait until bubbling then turn down the heat and simmer for at least 20 minutes.",
