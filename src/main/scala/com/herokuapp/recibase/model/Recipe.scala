@@ -20,9 +20,13 @@ case class Ingredient(
 
 @JsonCodec
 case class IngredientsBlock(
-  name: String,
+  name: Option[String],
   ingredients: List[Ingredient]
 )
+
+object IngredientsBlock {
+  def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock = IngredientsBlock(Some(name), ingredients)
+}
 
 trait Recipe extends Meal with Product {
   private val recipeDir =
@@ -96,7 +100,7 @@ object Recipe {
         r.inheritedTags,
         r.image,
         r.ingredients,
-        r.ingredientsBlocks,
+        List(IngredientsBlock(None, r.ingredients)) ++ r.ingredientsBlocks,
         r.method,
         LocalDateTime.now().toString()
       )
