@@ -495,6 +495,13 @@ object MealsController {
       MealStub("Tuna Pasta", Set(Tag.Pescatarian, Tag.Quick, Tag.LowEffort)),
       MealStub("Tuna steaks with salsa verde", Set(Tag.Pescatarian)),
       MealStub(
+        "Vegan Brownies (Alt Recipe)",
+        Set(Tag.Vegan, Tag.Pudding, Tag.Baking),
+        Online(
+          "https://www.cheapskatecook.com/eggless-brownies-no-weird-ingredients/"
+        )
+      ),
+      MealStub(
         "Vegetable Hot Pot",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.ColdWeather)
       ),
