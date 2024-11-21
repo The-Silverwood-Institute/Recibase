@@ -3,14 +3,14 @@ package com.herokuapp.recibase.recipes
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
 
 case object BirthdayCake extends Recipe {
-  override val name: String = "Birthday Cake"
+  override val name: String = "Birthday Cake (classic)"
 
   override val source: Option[String] = Some(
     "Kit's Mum"
   )
 
   override val description: Option[String] = Some(
-    "My mum's classic madeira cake recipe, with buttercream icing!"
+    "My mum's classic madeira cake recipe. Made with buttercream icing and topped with Smarties!"
   )
 
   override val notes: Option[String] = Some(
