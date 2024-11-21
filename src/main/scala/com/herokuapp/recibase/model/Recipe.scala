@@ -18,6 +18,12 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
+@JsonCodec
+case class IngredientsBlock(
+  name: String,
+  ingredients: List[Ingredient]
+)
+
 trait Recipe extends Meal with Product {
   private val recipeDir =
     "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes"
@@ -31,6 +37,7 @@ trait Recipe extends Meal with Product {
   def tags: Set[Tag] = Set.empty
   def image: Option[Image] = None
   def ingredients: List[Ingredient]
+  def ingredientsBlocks : List[IngredientsBlock] = List.empty
   def method: List[String]
 
   def hasIngredient(ingredient: String): Boolean = {
@@ -61,7 +68,7 @@ object Recipe {
   println(recipes)
 
   implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct13(
+    Encoder.forProduct14(
       "name",
       "permalink",
       "edit",
@@ -73,6 +80,7 @@ object Recipe {
       "inherited_tags",
       "image",
       "ingredients",
+      "ingredient_blocks",
       "method",
       "fetchedAt"
     )(r =>
@@ -88,6 +96,7 @@ object Recipe {
         r.inheritedTags,
         r.image,
         r.ingredients,
+        r.ingredientsBlocks,
         r.method,
         LocalDateTime.now().toString()
       )
