@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object ChipotleBurgers extends Recipe {
   val name = "Chipotle Burgers"
@@ -16,7 +16,7 @@ case object ChipotleBurgers extends Recipe {
       |This actually works better with ancho chilli paste but "ancho burgers" doesn't have the same ring to it.""".stripMargin
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Beyond Meat Burgers", "4"),
     Ingredient("Brioche buns", "4"),
     Ingredient("Applewood Smoked Cheddar", "4 slices"),

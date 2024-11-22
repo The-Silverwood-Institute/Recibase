@@ -20,12 +20,16 @@ case class Ingredient(
 
 @JsonCodec
 case class IngredientsBlock(
-  name: Option[String],
-  ingredients: List[Ingredient]
+    name: Option[String],
+    ingredients: List[Ingredient]
 )
 
 object IngredientsBlock {
-  def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock = IngredientsBlock(Some(name), ingredients)
+  def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock =
+    IngredientsBlock(Some(name), ingredients)
+  def simple(ingredients: Ingredient*): List[IngredientsBlock] = List(
+    IngredientsBlock(None, ingredients.toList)
+  )
 }
 
 trait Recipe extends Meal with Product {
@@ -40,8 +44,7 @@ trait Recipe extends Meal with Product {
   def notes: Option[String] = None
   def tags: Set[Tag] = Set.empty
   def image: Option[Image] = None
-  def ingredients: List[Ingredient]
-  def ingredientsBlocks : List[IngredientsBlock] = List.empty
+  def ingredientsBlocks: List[IngredientsBlock]
   def method: List[String]
 
   def hasIngredient(ingredient: String): Boolean = {
@@ -49,9 +52,13 @@ trait Recipe extends Meal with Product {
 
     if (normalisedIngredient.startsWith("!")) {
       val filteredIngredient = normalisedIngredient.stripPrefix("!")
-      !ingredients.exists(_.name.toLowerCase.contains(filteredIngredient))
+      !ingredientsBlocks
+        .flatMap(_.ingredients)
+        .exists(_.name.toLowerCase.contains(filteredIngredient))
     } else {
-      ingredients.exists(_.name.toLowerCase.contains(normalisedIngredient))
+      ingredientsBlocks
+        .flatMap(_.ingredients)
+        .exists(_.name.toLowerCase.contains(normalisedIngredient))
     }
   }
 }
@@ -72,7 +79,7 @@ object Recipe {
   println(recipes)
 
   implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct14(
+    Encoder.forProduct13(
       "name",
       "permalink",
       "edit",
@@ -83,8 +90,7 @@ object Recipe {
       "tags",
       "inherited_tags",
       "image",
-      "ingredients",
-      "ingredient_blocks",
+      "ingredients_blocks",
       "method",
       "fetchedAt"
     )(r =>
@@ -99,8 +105,7 @@ object Recipe {
         r.tags,
         r.inheritedTags,
         r.image,
-        r.ingredients,
-        List(IngredientsBlock(None, r.ingredients)) ++ r.ingredientsBlocks,
+        r.ingredientsBlocks,
         r.method,
         LocalDateTime.now().toString()
       )

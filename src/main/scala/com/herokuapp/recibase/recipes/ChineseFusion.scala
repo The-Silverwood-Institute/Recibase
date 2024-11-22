@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object ChineseFusion extends Recipe {
   override val name: String = "Chinese Fusion with Hoisin"
@@ -20,7 +26,7 @@ case object ChineseFusion extends Recipe {
       |""".stripMargin
   )
 
-  override val ingredients: List[Ingredient] = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butternut Squash", "1"),
     Ingredient(
       "Lamb Mince",

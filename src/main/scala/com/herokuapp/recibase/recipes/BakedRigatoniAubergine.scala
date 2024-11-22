@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
@@ -13,7 +13,7 @@ case object BakedRigatoniAubergine extends Recipe {
   )
   override val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Onion", "1", "chopped"),
     Ingredient("Garlic", "2-3 cloves", "finely chopped or crushed"),
     Ingredient("Red wine"),

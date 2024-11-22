@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object BroccoliSalmonQuiche extends Recipe {
   val name = "Broccoli & Salmon Quiche"
@@ -11,21 +11,20 @@ case object BroccoliSalmonQuiche extends Recipe {
     )
   override val tags = Set(Tag.Stodge, Tag.Slow, Tag.Pescatarian)
 
-  val ingredients =
-    List(
-      Ingredient(
-        "Broccoli Florets",
-        Some("100g"),
-        Some("Cut to 1-3cm pieces"),
-        Some("Save the stalks for a soup")
-      ),
-      Ingredient("Smoked Salmon", "120g", "Cut into 2cm pieces"),
-      Ingredient("Stilton", "50g"),
-      Ingredient("Shortcrust Pastry Sheet", "230g"),
-      Ingredient("Eggs", "3"),
-      Ingredient("Mascarpone Cheese", "2 tbsp"),
-      Ingredient("Pepper")
-    )
+  val ingredientsBlocks = IngredientsBlock.simple(
+    Ingredient(
+      "Broccoli Florets",
+      Some("100g"),
+      Some("Cut to 1-3cm pieces"),
+      Some("Save the stalks for a soup")
+    ),
+    Ingredient("Smoked Salmon", "120g", "Cut into 2cm pieces"),
+    Ingredient("Stilton", "50g"),
+    Ingredient("Shortcrust Pastry Sheet", "230g"),
+    Ingredient("Eggs", "3"),
+    Ingredient("Mascarpone Cheese", "2 tbsp"),
+    Ingredient("Pepper")
+  )
   val method =
     List(
       "Add the mascarpone cheese to a mixing bowl. It may need a few seconds in the microwave to warm up.",

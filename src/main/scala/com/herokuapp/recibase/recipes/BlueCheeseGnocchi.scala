@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object BlueCheeseGnocchi extends Recipe {
   val name =
@@ -23,7 +23,7 @@ case object BlueCheeseGnocchi extends Recipe {
       Tag.LowEffort
     )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Gnocchi", "500g"),
     Ingredient("Parmesan", Some("~70g"), Some("grated")),
     Ingredient("Creme Fraiche", "150ml"),

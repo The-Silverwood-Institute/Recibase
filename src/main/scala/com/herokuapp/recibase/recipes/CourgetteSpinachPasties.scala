@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object CourgetteSpinachPasties extends Recipe {
   val name = "Courgette and spinach pasties"
@@ -11,7 +11,7 @@ case object CourgetteSpinachPasties extends Recipe {
     "We previously used goats cheese but feta is better at bringing out the courgette's flavour."
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Courgettes", "2"),
     Ingredient("Feta", "200g"),
     Ingredient("Spinach", Some("3 handfulls"), Some("roughly chopped")),

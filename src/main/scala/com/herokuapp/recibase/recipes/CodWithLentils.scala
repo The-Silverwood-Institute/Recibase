@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object CodWithLentils extends Recipe {
   val name = "Cod with Lentils"
@@ -14,7 +14,7 @@ case object CodWithLentils extends Recipe {
     "The green lentils are an essential part of the dish, so don't substitute them for red lentils."
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Red Onion", "1", "chopped"),
     Ingredient("Cod Fillets", "2"),
     Ingredient("Green Lentils", "2 400g tin"),

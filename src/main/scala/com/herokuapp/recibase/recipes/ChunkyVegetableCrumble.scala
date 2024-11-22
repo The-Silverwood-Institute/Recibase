@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object ChunkyVegetableCrumble extends Recipe {
   val name = "Chunky Vegetable Crumble"
@@ -16,9 +22,15 @@ case object ChunkyVegetableCrumble extends Recipe {
 Honey can be added with the carrots for extra sweetness."""
     )
   override val tags =
-    Set(Tag.VegetarianIsh, Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.ColdWeather)
+    Set(
+      Tag.VegetarianIsh,
+      Tag.Slow,
+      Tag.HighEffort,
+      Tag.Scales,
+      Tag.ColdWeather
+    )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Onion", "1", "sliced"),
     Ingredient(
       "Garlic",

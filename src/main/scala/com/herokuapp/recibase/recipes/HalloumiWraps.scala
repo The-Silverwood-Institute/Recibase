@@ -18,7 +18,7 @@ case object HalloumiWraps extends Recipe {
       |""".stripMargin
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Halloumi", "225g", "sliced"),
     Ingredient("Red Pepper", "1", "sliced"),
     Ingredient("Spring Onions", "3", "chopped"),

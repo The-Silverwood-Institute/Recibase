@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object CheesyCodSpinachGratin extends Recipe {
   val name =
@@ -8,7 +14,7 @@ case object CheesyCodSpinachGratin extends Recipe {
   override val permalink: Permalink = Permalink("cheesy-cod")
   override val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Cod", "2 110g fillets"),
     Ingredient("Stock cube", "1"),
     Ingredient("Spinach", Some("80g"), Some("torn or chopped")),

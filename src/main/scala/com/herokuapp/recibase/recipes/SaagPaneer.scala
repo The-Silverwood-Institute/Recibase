@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SaagPaneer extends Recipe {
   val name = "Saag Paneer"
@@ -12,7 +12,7 @@ For frying the paneer, the goal is something like a very shallow shallow fry, wi
   override val tags =
     Set(Tag.Vegetarian, Tag.HotWeather, Tag.Spicy, Tag.LowEffort)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Paneer", Some("1 block"), Some("cut into 2-3 cm cubes")),
     Ingredient("Ground turmeric", "2 tsp"),
     Ingredient("Chilli powder", Some("1/2 tsp")),

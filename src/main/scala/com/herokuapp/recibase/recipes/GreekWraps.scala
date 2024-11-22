@@ -17,7 +17,7 @@ case object GreekWraps extends Recipe {
     """You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg""".stripMargin
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Vivera Veggie Greek Kebab", "125g"),
     Ingredient("Red Pepper", "1", "sliced"),
     Ingredient("Spring Onions", "3", "chopped"),

@@ -13,7 +13,7 @@ case object BeetrootRisotto extends Recipe {
   )
   override val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.HotWeather)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Beetroot",
       Some("5"),

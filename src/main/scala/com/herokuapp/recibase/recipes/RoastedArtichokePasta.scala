@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object RoastedArtichokePasta extends Recipe {
   override val name: String = "Roasted Artichoke Pasta"
@@ -20,7 +20,7 @@ case object RoastedArtichokePasta extends Recipe {
       |""".stripMargin
   )
 
-  override val ingredients: List[Ingredient] = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sun-dried Tomatoes", "100g"),
     Ingredient("Roasted Artichokes", "140g"),
     Ingredient("Pine Nuts", None, None, Some("optional")),

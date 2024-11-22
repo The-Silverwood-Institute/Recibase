@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object RoastedVegetableLasagne extends Recipe {
   val name = "Roasted Vegetable Lasagne"
@@ -16,7 +16,7 @@ Don't worry if the roasted vegetables are ready early. Just take them out and pu
     )
   override val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Vegetarian, Tag.Scales)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Red Peppers", "3"),
     Ingredient("Aubergines", "2"),
     Ingredient("Onions", "2", "diced"),

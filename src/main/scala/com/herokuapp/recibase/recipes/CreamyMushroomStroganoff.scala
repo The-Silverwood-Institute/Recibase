@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object CreamyMushroomStroganoff extends Recipe {
   val name = "Mushroom Stroganoff"
@@ -14,7 +20,7 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
   )
   override val tags = Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.Quick)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butter", "50g"),
     Ingredient("Large Onion", "1", "sliced"),
     Ingredient("Brown Mushrooms", "250g", "sliced"),

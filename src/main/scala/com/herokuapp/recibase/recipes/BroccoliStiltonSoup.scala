@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object BroccoliStiltonSoup extends Recipe {
   val name = "Broccoli and Stilton soup"
@@ -25,7 +31,7 @@ case object BroccoliStiltonSoup extends Recipe {
     Tag.ColdWeather
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Broccoli", "2 heads"),
     Ingredient("Stilton", "220g"),
     Ingredient("Onion", "1 onion", "roughly chopped"),

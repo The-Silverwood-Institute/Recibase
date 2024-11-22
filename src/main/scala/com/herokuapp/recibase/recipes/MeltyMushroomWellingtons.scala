@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object MeltyMushroomWellingtons extends Recipe {
   val name = "Melty Mushroom Wellingtons"
@@ -11,7 +11,7 @@ Makes two large pies."""
   )
   override val tags = Set(Tag.Slow, Tag.Vegetarian, Tag.Stodge, Tag.ColdWeather)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Chestnut mushrooms",
       Some("250g"),

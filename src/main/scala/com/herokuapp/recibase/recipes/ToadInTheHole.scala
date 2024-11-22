@@ -1,6 +1,13 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Image, Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Image,
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object ToadInTheHole extends Recipe {
   val name = "Toad in the Hole"
@@ -16,7 +23,7 @@ case object ToadInTheHole extends Recipe {
   )
   override val tags = Set(Tag.Vegetarian, Tag.LowEffort)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sausages", "6"),
     Ingredient("Flour", "150g"),
     Ingredient("Eggs", "2"),

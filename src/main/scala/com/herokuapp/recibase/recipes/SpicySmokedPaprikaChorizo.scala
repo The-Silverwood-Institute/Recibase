@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SpicySmokedPaprikaChorizo extends Recipe {
   val name = "Spicy Smoked Paprika Chorizo"
@@ -14,7 +14,7 @@ This dish tastes best if you leave it to cool then reheat it.
 You could try serving this dish over grilled aubergines."""
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Spanish Chorizo",
       Some("225g"),

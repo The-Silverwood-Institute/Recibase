@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object BakedSalmonOlivesSpaghetti extends Recipe {
   val name = "Baked Salmon with Olives and Spaghetti"
@@ -16,7 +22,7 @@ case object BakedSalmonOlivesSpaghetti extends Recipe {
         |""".stripMargin)
   override val tags = Set(Tag.Pescatarian, Tag.HotWeather)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Salmon fillets",
       Some("1 per person"),

@@ -19,7 +19,7 @@ case object HoisinDuckWraps extends Recipe {
       |This tastes best with hoisin sauce but mayonnaise works as a decent substitute.""".stripMargin
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Vegetarian Shredded Hoisin Duck", "200g"),
     Ingredient("Red Pepper", "1", "sliced"),
     Ingredient("Spring Onions", "3", "chopped"),

@@ -21,9 +21,7 @@ case object BirthdayCake2 extends Recipe {
 
   override val tags = Set(Tag.Pudding)
 
-  override val ingredients: List[Ingredient] = List.empty
-
-  override val ingredientsBlocks: List[IngredientsBlock] = List(
+  val ingredientsBlocks: List[IngredientsBlock] = List(
     IngredientsBlock(
       "Cake",
       List(

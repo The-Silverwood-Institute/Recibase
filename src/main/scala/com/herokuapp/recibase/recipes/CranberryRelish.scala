@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object CranberryRelish extends Recipe {
   val name = "Cranberry & Cinnamon Relish"
@@ -13,7 +19,7 @@ case object CranberryRelish extends Recipe {
   )
   override val tags = Set(Tag.Christmas, Tag.NonMeal)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Red onions", Some("2"), Some("thinly sliced")),
     Ingredient("Brown sugar", "3 tbsp"),
     Ingredient("Cranberries", "450g"),

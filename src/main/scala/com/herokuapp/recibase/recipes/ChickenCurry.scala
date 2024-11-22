@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Permalink, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object ChickenCurry extends Recipe {
   val name = "Chicken Curry (WIP)"
@@ -23,7 +29,7 @@ case object ChickenCurry extends Recipe {
     Tag.Stephani
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Chicken Breasts", Some("4"), Some("chopped into 3cm pieces")),
     Ingredient("Large Onions", Some("2"), Some("chopped")),
     Ingredient("Garlic", Some("6 cloves"), Some("diced")),

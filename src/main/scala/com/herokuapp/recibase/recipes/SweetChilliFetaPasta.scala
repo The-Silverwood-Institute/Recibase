@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
@@ -11,7 +11,7 @@ There are basically no quantities. Add what seems right."""
   )
   override val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Scales, Tag.LowEffort)
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Pine nuts"),
     Ingredient("Cashew nuts"),
     Ingredient("Brazil nuts"),

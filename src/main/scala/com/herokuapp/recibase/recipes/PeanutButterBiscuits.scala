@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Image,
+  Ingredient,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
@@ -11,7 +17,7 @@ case object PeanutButterBiscuits extends Recipe {
     Image("https://i.reciba.se/peanut-butter-biscuits.jpg")
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Crunchy peanut butter", "250g"),
     Ingredient("Light Brown soft sugar", "200g"),
     Ingredient("Egg", "1 medium")

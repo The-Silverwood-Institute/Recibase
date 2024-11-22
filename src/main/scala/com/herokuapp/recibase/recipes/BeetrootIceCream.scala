@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Image, Ingredient, Recipe, Tag}
+import com.herokuapp.recibase.model.{
+  Image,
+  Ingredient,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 
 case object BeetrootIceCream extends Recipe {
   val name = "Beetroot Ice Cream"
@@ -21,7 +27,7 @@ case object BeetrootIceCream extends Recipe {
     Image("https://i.reciba.se/beetroot-ice-cream.jpg")
   )
 
-  val ingredients = List(
+  val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Mascarpone", "230g"),
     Ingredient("Eggs", "2"),
     Ingredient("Icing Sugar", "60g"),
