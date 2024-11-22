@@ -1,6 +1,12 @@
 package com.herokuapp.recibase.recipes
 
-import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.model.{
+  Ingredient,
+  Recipe,
+  Tag,
+  IngredientsBlock,
+  Image
+}
 
 case object BirthdayCake extends Recipe {
   override val name: String = "Birthday Cake (classic)"
@@ -18,6 +24,9 @@ case object BirthdayCake extends Recipe {
   )
 
   override val tags = Set(Tag.Pudding)
+  override val image: Option[Image] = Some(
+    Image("https://i.reciba.se/birthday-cake.jpg")
+  )
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butter", "5oz"),
