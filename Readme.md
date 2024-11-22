@@ -6,11 +6,11 @@ Recibase is a recipe ingestion and navigation service, designed to ease the choo
 
 Recibase works like so:
 
-1. Write [Scala files][recipes] containing your recipes
-2. Recibase spins up [an recipe API][recipe-api]
+1. Write [Scala files][recipes] containing or linking to your recipes
+2. Recibase spins up [a recipe API][recipe-api]
 3. [The frontend][frontend] lets you browse recipes by name, ingredient and more
 
-There is also a separate [GitHub pages site][recipe-images] to host images of the cooked recipes and a [Meal Chooser][meal-chooser] for filtering a complete list of everything we cook.
+There is also a separate [CDN][recipe-images] to host images of the cooked recipes and a [Meal Chooser][meal-chooser] for filtering a complete list of everything we cook.
 
 ## Roadmap
 
@@ -18,7 +18,7 @@ Recibase is a long term project which will grow depending on what features are u
 
 1. ~~Standardise ingredients schema~~
 2. ~~Add a bunch of recipes~~
-3. Add any small but useful features to improve frontend
+3. ~~Add any small but useful features to improve frontend~~
 4. Improve ingestion debugging capabilities (churn/reporting/etc.)
 5. Continue to develop schema
 6. Migrate frontend to separate React client and REST API
