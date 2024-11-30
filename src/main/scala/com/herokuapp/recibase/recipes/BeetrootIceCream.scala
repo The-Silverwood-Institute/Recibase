@@ -16,7 +16,9 @@ case object BeetrootIceCream extends Recipe {
     "A simple yet decadent earthy ice cream recipe, no churn needed."
   )
   override val notes: Option[String] = Some(
-    """You can substitute beetroot for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
+    """Consider adding a dash of lime to balance the beetroot flavour.
+        |
+        |You can substitute beetroot for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
         |
         |I tend to double up this recipe to make enough for a few days.
         |
