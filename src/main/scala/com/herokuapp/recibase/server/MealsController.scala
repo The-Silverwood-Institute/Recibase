@@ -462,7 +462,13 @@ object MealsController {
         "Thai Green Curry",
         Set(Tag.VeganIsh, Tag.Slow, Tag.Scales, Tag.Spicy)
       ),
-      MealStub("Tofu Katsu Curry", Set(Tag.Vegan)),
+      MealStub(
+        "Tofu Katsu Curry",
+        Set(Tag.Vegan),
+        Online(
+          "https://drive.google.com/drive/u/0/folders/1nGGpfNdO6Qivu3n8E-3f0BwyLS-PpyX2"
+        )
+      ),
       MealStub(
         "Tofu and cashew nut stir fry",
         Set(Tag.Vegan, Tag.Quick, Tag.HotWeather),
@@ -497,7 +503,11 @@ object MealsController {
         GoogleDrive("1nDEnSpUpKG2a3tIL4VklxJrzAVO5GFkX")
       ),
       MealStub("Tuna Pasta", Set(Tag.Pescatarian, Tag.Quick, Tag.LowEffort)),
-      MealStub("Tuna steaks with salsa verde", Set(Tag.Pescatarian)),
+      MealStub(
+        "Tuna steaks with salsa verde",
+        Set(Tag.Pescatarian),
+        Online("https://www.bbc.co.uk/food/recipes/tunasteakswithsalsav_74789")
+      ),
       MealStub(
         "Vegan Brownies (Alt Recipe)",
         Set(Tag.Vegan, Tag.Pudding, Tag.Baking),
@@ -506,8 +516,9 @@ object MealsController {
         )
       ),
       MealStub(
-        "Vegetable Hot Pot",
-        Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.ColdWeather)
+        "Vegetable Hotpot with dumplings",
+        Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.ColdWeather),
+        GoogleDrive("1jsxu4biuRi3ewRQ4g5HDGEpoKw-aMf0e")
       ),
       MealStub(
         "Vegetable Sambar",
