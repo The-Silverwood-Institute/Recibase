@@ -105,7 +105,11 @@ object MealsController {
         Set(Tag.Vegetarian),
         Online("https://www.bbc.co.uk/food/recipes/whole_eggs_in_coconut_23624")
       ),
-      MealStub("Cod in tomato sauce", Set(Tag.Pescatarian)),
+      MealStub(
+        "Cod in tomato sauce",
+        Set(Tag.Pescatarian, Tag.Quick),
+        GoogleDrive("1jiyXj9imR452VqEE299DlRU1ao5K-gVi")
+      ),
       MealStub("Egg & Mozzarella Toasts", Set(Tag.Vegetarian, Tag.Quick)),
       MealStub(
         "Fish Pie",
