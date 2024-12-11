@@ -14,7 +14,8 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
-        cache: sbt
+    - name: Setup SBT
+      uses: sbt/setup-sbt@v1
     - name: Build
       run: sbt "Docker / publishLocal"
     - name: Login to GitHub Container Registry
