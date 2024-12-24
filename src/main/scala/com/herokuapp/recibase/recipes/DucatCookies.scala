@@ -78,7 +78,7 @@ case object DukatenCookies extends Recipe {
   )
 
   override val method: List[String] = List(
-    s"Pre-heat the oven to ${190.celius}",
+    s"Pre-heat the oven to ${190.celsius}",
     "Rub a large baking tray with butter or margarine.",
     "Combine all the buscuit ingredients in order.",
     "Mix together then knead until smooth. If the mixture is too soft then put it in the fridge or freezer for a moment.",
