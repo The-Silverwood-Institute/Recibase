@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object RoastBeetrootDahl extends Recipe {
   val name = "Roast Beetroot Dahl"
@@ -28,7 +29,7 @@ case object RoastBeetrootDahl extends Recipe {
     Ingredient("Oil")
   )
   val method = List(
-    "Preheat the oven to 200 C (400 F, gas mark 6).",
+    s"Preheat the oven to ${200.celsius}.",
     "Spread the beetroot on a baking tray. Drizzle with oil and season with salt and pepper.",
     "Roast the beetroot for 20-25 minutes then set aside.",
     "Boil the water and make stock.",

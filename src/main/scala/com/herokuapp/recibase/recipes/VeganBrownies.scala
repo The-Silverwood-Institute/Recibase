@@ -8,6 +8,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object VeganBrownies extends Recipe {
   val name = "Vegan Brownies (WIP)"
@@ -50,7 +51,7 @@ case object VeganBrownies extends Recipe {
   )
   val method = List(
     "Line a 34cm x 25cm x 6cm roasting tin with grease proof baking paper",
-    "Pre-heat the oven to 180 C (350 F, gas mark 4)",
+    s"Pre-heat the oven to ${180.celsius}",
     "Melt the Vitalite and chocolate together in a heat-proof bowl suspended over a saucepan of barely simmering water.",
     "Whisk the aquafaba, cream of tartar, sugar and vanilla extract together in a bowl until the mixture is thick and creamy and coats the back of a spoon.",
     "Once the Vitalite and chocolate have melted, remove from the heat and gently fold in the aquafaba mixture. Be careful not to go knock the air out of the aquafaba.",

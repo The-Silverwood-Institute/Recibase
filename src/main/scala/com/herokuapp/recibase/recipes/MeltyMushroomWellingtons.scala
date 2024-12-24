@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object MeltyMushroomWellingtons extends Recipe {
   val name = "Melty Mushroom Wellingtons"
@@ -25,7 +26,7 @@ Makes two large pies."""
     Ingredient("Puff pastry", "1 sheet")
   )
   val method = List(
-    "Preheat the oven at 200C.",
+    s"Preheat the oven at ${200.celsius}.",
     "Melt the butter in wide pan.",
     "Cook the garlic and black pepper.",
     "Add the mushrooms and cook over a medium heat until softened. Add the spinach and wilt.",

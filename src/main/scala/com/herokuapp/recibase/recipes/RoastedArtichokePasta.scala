@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object RoastedArtichokePasta extends Recipe {
   override val name: String = "Roasted Artichoke Pasta"
@@ -12,9 +13,9 @@ case object RoastedArtichokePasta extends Recipe {
     Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.Stephani)
 
   override val notes = Some(
-    """Ingredients are per person, so scale it appropriately.
+    s"""Ingredients are per person, so scale it appropriately.
       |
-      |12 minutes for tomatoes and 27 for (Waitrose) artichokes at 200C in your oven. Can probably -2 to +5 on artichokes without much trouble.
+      |12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.
       |
       |Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture.
       |""".stripMargin
@@ -36,7 +37,7 @@ case object RoastedArtichokePasta extends Recipe {
   )
 
   override val method: List[String] = List(
-    "Preheat the oven to 200 C (400 F, gas mark 6).",
+    s"Preheat the oven to ${200.celsius}.",
     "Find a roasting tray with space for the artichokes and sun-dried tomatoes.",
     "Drain the jar of artichokes and lay them on the tray. Roast for 20-30 minutes.",
     "Drain the jar of sun-dried tomatoes and add them to the tray for the last 8-12 minutes.",

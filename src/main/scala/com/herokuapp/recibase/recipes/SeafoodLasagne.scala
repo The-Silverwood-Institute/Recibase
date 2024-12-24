@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object SeafoodLasagne extends Recipe {
   val name = "Seafood Lasagne"
@@ -27,7 +28,7 @@ case object SeafoodLasagne extends Recipe {
     Ingredient("Butter")
   )
   val method = List(
-    "Preheat the oven to 180C",
+    s"Preheat the oven to ${180.celsius}.",
     "Melt a large knob of butter in a saucepan with a low heat.",
     "Add garlic and pepper then cook for a short while.",
     "Sift in flour while stirring then cook for 2-3 minutes.",

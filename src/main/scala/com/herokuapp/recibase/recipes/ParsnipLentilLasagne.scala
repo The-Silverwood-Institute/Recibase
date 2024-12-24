@@ -7,6 +7,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object ParsnipLentilLasagne extends Recipe {
   val name = "Parsnip and Lentil Lasagne"
@@ -44,7 +45,7 @@ case object ParsnipLentilLasagne extends Recipe {
     Ingredient("Nutmeg", None, Some("grated"), Some("Optional"))
   )
   val method = List(
-    "Preheat the oven the 190C/gas mark 5.",
+    s"Preheat the oven the ${190.celsius}.",
     "Heat the oil in a large saucepan.",
     "Add the onion and soften for about 10 minutes.",
     "Add the lentils, red peppers, carrot, vegetable stock, bay leaf and pasatta.",

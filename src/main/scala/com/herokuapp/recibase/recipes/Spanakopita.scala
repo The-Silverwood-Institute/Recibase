@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object Spanakopita extends Recipe {
   val name = "Spanakopita"
@@ -34,7 +35,7 @@ case object Spanakopita extends Recipe {
     Ingredient("Olive Oil")
   )
   val method = List(
-    "Preheat the oven to 160°C.",
+    s"Preheat the oven to ${160.celsius}.",
     "Defrost the spinach and squeeze out as much moisture as you can through a sieve.",
     "Mix every ingredient except the oil and pastry in a bowl.",
     "Brush a 9 1/2″ X 13″ baking dish with olive oil",

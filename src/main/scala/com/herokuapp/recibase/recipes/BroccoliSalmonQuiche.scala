@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object BroccoliSalmonQuiche extends Recipe {
   val name = "Broccoli & Salmon Quiche"
@@ -27,12 +28,13 @@ case object BroccoliSalmonQuiche extends Recipe {
   )
   val method =
     List(
+      s"Pre-heat the oven to ${200.celsius}",
       "Add the mascarpone cheese to a mixing bowl. It may need a few seconds in the microwave to warm up.",
       "Beat in the two eggs.",
       "Mix in the broccoli and salmon pieces",
       "Lay the shortcrust pastry sheet over a 9 inch flan dish and gently push into the edges.",
       "Snip off any excess pastry escaping the dish. You can save this to bake mini sweet treats.",
       "Pour the mixture into the pastry dish, spreading it evenly.",
-      "Bake in the oven at 200C/gas 6 for 20 minutes"
+      "Bake in the oven for 20 minutes"
     )
 }

@@ -7,6 +7,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object ChunkyVegetableCrumble extends Recipe {
   val name = "Chunky Vegetable Crumble"
@@ -89,7 +90,7 @@ Honey can be added with the carrots for extra sweetness."""
     Ingredient("Sunflower seeds", "30g")
   )
   val method = List(
-    "Preheat oven to 190 C (375 F, gas mark 5).",
+    s"Preheat oven to ${190.celsius}.",
     "Heat oil in a large saucepan. Add the onion and garlic and cook until soft.",
     "Add the carrots, parsnips, turnips (if used) and potatoes and cook briefly.",
     "Stir in the stock, Worcestershire sauce, tomato purée and bay leaves (if used).",

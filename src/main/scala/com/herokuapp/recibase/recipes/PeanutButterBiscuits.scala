@@ -7,6 +7,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
@@ -23,7 +24,7 @@ case object PeanutButterBiscuits extends Recipe {
     Ingredient("Egg", "1 medium")
   )
   val method = List(
-    "Preheat oven 180C.",
+    s"Preheat oven ${180.celsius}.",
     "Line 2 baking trays with parchment.",
     "Beat all the ingredients together in a bowl until well combined.",
     "Scoop out tablespoons and roll them into balls.",

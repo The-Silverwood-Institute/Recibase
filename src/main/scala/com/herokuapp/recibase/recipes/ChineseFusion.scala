@@ -7,6 +7,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object ChineseFusion extends Recipe {
   override val name: String = "Chinese Fusion with Hoisin"
@@ -50,7 +51,7 @@ case object ChineseFusion extends Recipe {
   )
 
   override val method: List[String] = List(
-    "Preheat the oven to 200 C (400 F, gas mark 6).",
+    s"Preheat the oven to ${200.celsius}.",
     "Peel butternut squash and cut into 3-4cm cubes.",
     "Place on roasting tray, mix with oil and roast for 80-120 minutes.",
     "Slice leeks into 7mm slices. Finely chop the garlic.",

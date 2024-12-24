@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object RussianMushroomJulienne extends Recipe {
   val name = "Russian Mushroom Julienne"
@@ -20,7 +21,7 @@ case object RussianMushroomJulienne extends Recipe {
     Ingredient("Butter")
   )
   val method = List(
-    "Preheat the oven to 190\u00b0C.",
+    s"Preheat the oven to ${190.celsius}.",
     "In a medium pan, melt the butter then saute the mushrooms and onions on a medium heat, until they've given off liquid.",
     "Transfer the mixture to a medium casserole dish.",
     "Using the same pan, melt a knob of butter and add a slosh of white wine.",

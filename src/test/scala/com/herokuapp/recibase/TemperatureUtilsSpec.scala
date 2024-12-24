@@ -1,6 +1,6 @@
 package com.herokuapp.recibase
 
-import com.herokuapp.recibase.utils.IntUtils._
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 class TemperatureUtilsSpec extends org.specs2.mutable.Specification {
   "Temperature utils" should {

@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object RoastedVegetableMoroccanTagine extends Recipe {
   override val name: String = "Roasted Vegetable Moroccan Tagine"
@@ -43,7 +44,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
   )
 
   override val method: List[String] = List(
-    "Preheat the oven to 200 C (400 F, gas mark 6).",
+    s"Preheat the oven to ${200.celsius}.",
     "Spread the aubergine, carrots, pepper and sweet potato across a large roasting tin. Drizzle with oil and sprinkle with salt and rosemary.",
     "Roast the vegetables for 20m or until lightly browned. Set aside once they're ready.",
     "Boil some water and make 240ml of stock. Mix in the chopped tomatoes, harissa paste, cumin, ground coriander, turmeric and honey. Set aside so the flavours can develop.",

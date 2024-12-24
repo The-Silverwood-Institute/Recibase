@@ -1,7 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import cats.syntax.all._
-import com.herokuapp.recibase.utils.IntUtils._
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 import com.herokuapp.recibase.model.{
   Ingredient,
