@@ -1,4 +1,4 @@
-package com.herokuapp.recibase
+package com.herokuapp.recibase.utils
 
 object IntUtils {
   implicit class TemperatureUtils(t: Int) {

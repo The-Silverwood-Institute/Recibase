@@ -1,6 +1,6 @@
 package com.herokuapp.recibase.model
 
-import com.herokuapp.recibase.StringUtils._
+import com.herokuapp.recibase.utils.StringUtils._
 import com.herokuapp.recibase.recipes._
 import io.circe.Encoder
 import io.circe.generic.JsonCodec
