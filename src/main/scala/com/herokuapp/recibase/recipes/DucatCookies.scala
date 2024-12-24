@@ -81,7 +81,7 @@ case object DukatenCookies extends Recipe {
     s"Pre-heat the oven to ${190.celius}",
     "Rub a large baking tray with butter or margarine.",
     "Combine all the buscuit ingredients in order.",
-    "Mix together then knead until smooth.",
+    "Mix together then knead until smooth. If the mixture is too soft then put it in the fridge or freezer for a moment.",
     "Roll out thin and cut into 4cm circles.",
     "Lay out on the baking tray and bake for 10 minutes or until a light golden colour.",
     "Put to one side to cool.",
