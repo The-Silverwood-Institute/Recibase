@@ -28,6 +28,10 @@ case object DukatenCookies extends Recipe {
 
   override val tags = Set(Tag.Pudding, Tag.Baking)
 
+  override val image: Option[Image] = Some(
+    Image("https://i.reciba.se/dukaten-cookies.jpg")
+  )
+
   val ingredientsBlocks = List(
     IngredientsBlock(
       "Buscuits".some,
