@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
@@ -43,7 +44,7 @@ case object BakedRigatoniAubergine extends Recipe {
     Ingredient("Pepper")
   )
   val method = List(
-    "Preheat the oven to 200 C (400 F, gas mark 6).",
+    s"Preheat the oven to ${200.celsius}.",
     "Heat oil or butter in a saucepan. Add the onion and garlic and cook until soft.",
     "Add the wine, followed by the tins of chopped tomatoes, the sun-dried tomatoes, aubergine, oregano, salt and pepper.",
     "Bring to the boil, cover and simmer for 15-20 minutes.",
