@@ -62,7 +62,7 @@ case object NutRoast extends Recipe {
     "Fold the edges of the pastry up over the mixture.",
     "Slice the second pastry sheet into 1cm wide diagonal strips.",
     "Lay the strips over the mixture in an interlacing lattice. Connect them to the folded-up edges of the first pastry sheet to fully encase the mixture.",
-    "Beat an egg then brush the pastry.",
+    "Beat an egg in a cup then brush the pastry. If you used up all your eggs then brush with milk instead.",
     "Bake in the oven for 40 minutes or until golden brown.",
     "Serve with gravy, roasted vegetables and cranberry relish."
   )
