@@ -13,6 +13,9 @@ import cats.syntax.all._
 case object NutRoast extends Recipe {
   val name = "Nut Roast"
 
+  override def description: Option[String] =
+    "A hearty and filling vegetarian Christmas main. Serve with gravy and roast veg.".some
+
   override val tags =
     Set(Tag.Vegetarian, Tag.HighEffort, Tag.Christmas, Tag.ColdWeather)
 
