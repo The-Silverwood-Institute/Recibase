@@ -196,11 +196,6 @@ object MealsController {
         "Kidney Bean & Vegetable gratin",
         Set(Tag.VegetarianIsh, Tag.Scales)
       ),
-      MealStub(
-        "Lentil & Spinach Stew",
-        Set(Tag.Vegan, Tag.Scales),
-        GoogleDrive("1f247M9Y9DLk4T6NzMng1B6GRvhoaAX74C28UTyxk_Jo")
-      ),
       MealStub("Lentil & Vegetable Pilaf", Set(Tag.Vegan, Tag.Scales)),
       MealStub(
         "Macaroni",

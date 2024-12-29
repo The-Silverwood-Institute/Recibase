@@ -3,7 +3,11 @@ package com.herokuapp.recibase.recipes
 import com.herokuapp.recibase.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object CreamySpinachLentilStew extends Recipe {
-  val name = "Creamy Spinach and Lentil Stew"
+  val name = "Lentil & Spinach Stew"
+
+  override val source: Option[String] = Some(
+    "https://drive.google.com/file/d/1f247M9Y9DLk4T6NzMng1B6GRvhoaAX74C28UTyxk_Jo/view"
+  )
 
   override val tags = Set(Tag.Vegan, Tag.Scales)
 
