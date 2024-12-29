@@ -1,6 +1,7 @@
 package com.herokuapp.recibase.recipes
 
 import com.herokuapp.recibase.model._
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object BeetrootRisotto extends Recipe {
   val name =
@@ -33,7 +34,7 @@ case object BeetrootRisotto extends Recipe {
     Ingredient("Soft Goats Cheese", "up to 75g")
   )
   val method = List(
-    "Preheat the oven to 200C.",
+    s"Preheat the oven to ${200.celsius}.",
     "Place the peeled beetroot on a baking tray, drizzle with oil and put in the oven for 20 minutes or until soft.",
     "If the beetroot came with stems and leaves, cut these into small pieces and set aside.",
     "Dissolve the stock cube in the boiling water and add the wine and thyme.",

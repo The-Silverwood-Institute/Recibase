@@ -7,6 +7,7 @@ import com.herokuapp.recibase.model.{
   Tag,
   IngredientsBlock
 }
+import com.herokuapp.recibase.utils.IntUtils.TemperatureUtils
 
 case object CheesyCodSpinachGratin extends Recipe {
   val name =
@@ -24,7 +25,7 @@ case object CheesyCodSpinachGratin extends Recipe {
     Ingredient("Water", Some("150ml"), Some("boiling"))
   )
   val method = List(
-    "Heat the oven to 200C.",
+    s"Heat the oven to ${200.celsius}.",
     "Dissolve the stock cube and soft cheese in the boiling water.",
     "Place the spinach in an ovenproof dish and pour over the cheesy stock.",
     "Place the cod fillets on top of the spinach.",
