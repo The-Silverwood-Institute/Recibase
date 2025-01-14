@@ -23,7 +23,7 @@ case object CoconutLimeDahl extends Recipe {
     Ingredient("Turmeric", "1 tsp"),
     Ingredient("Garlic", "2 Cloves", "Diced"),
     Ingredient("Coconut Milk", "1 Tin"),
-    Ingredient("Boiling Water", "1200ml"),
+    Ingredient("Boiling Water", "600ml"),
     Ingredient("Onion", "Half", "Chopped"),
     Ingredient("Cumin", "1 tsp"),
     Ingredient("Lime", "1", "Juiced and zested"),
