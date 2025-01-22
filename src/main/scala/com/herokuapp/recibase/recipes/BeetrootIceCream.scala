@@ -5,10 +5,11 @@ import com.herokuapp.recibase.model.{
   Ingredient,
   Recipe,
   Tag,
-  IngredientsBlock
+  IngredientsBlock,
+  IceCream
 }
 
-case object BeetrootIceCream extends Recipe {
+case object BeetrootIceCream extends Recipe with IceCream {
   val name = "Beetroot Ice Cream"
 
   override val source: Option[String] = Some("Kit")
@@ -16,30 +17,22 @@ case object BeetrootIceCream extends Recipe {
     "A simple yet decadent earthy ice cream recipe, no churn needed."
   )
   override val notes: Option[String] = Some(
-    """Consider adding a dash of lime to balance the beetroot flavour.
+    s"""Consider adding a dash of lime to balance the beetroot flavour.
         |
         |You can substitute beetroot for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
         |
-        |I tend to double up this recipe to make enough for a few days.
-        |
-        |You can use up the egg whites by making <a href="https://www.bbcgoodfood.com/recipes/easy-chocolate-mousse" rel="nofollow">chocolate mousse</a>.""".stripMargin
+        |$genericNotes""".stripMargin
   )
   override val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/beetroot-ice-cream.jpg")
   )
 
-  val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Mascarpone", "230g"),
-    Ingredient("Eggs", "2"),
-    Ingredient("Icing Sugar", "60g"),
-    Ingredient("Beetroot Powder", "25g")
+  val ingredientsBlocks = List(
+    genericIngredients.prefixIngredients(Ingredient("Beetroot Powder", "25g"))
   )
-  val method = List(
-    "Carefully separate the egg yolks using your hands or spoons. Put aside the egg whites for another recipe.",
-    "Whisk the egg yolks and sugar in a bowl, with an electric mixer, until thick and light in colour.",
+  val method = genericMethodStart ++ List(
     "Add the mascarpone cheese and beetroot powder. Gently stir in the powder to avoid it going everywhere.",
-    "Continue whisking until thoroughly mixed.",
-    "Decant into a freezer suitable dish and freeze for at least 6 hours."
-  )
+    "Continue whisking until thoroughly mixed."
+  ) ++ genericMethodEnd
 }

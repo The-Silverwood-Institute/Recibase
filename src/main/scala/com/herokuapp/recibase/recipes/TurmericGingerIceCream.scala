@@ -5,10 +5,11 @@ import com.herokuapp.recibase.model.{
   Ingredient,
   Recipe,
   Tag,
-  IngredientsBlock
+  IngredientsBlock,
+  IceCream
 }
 
-case object TurmericGingerIceCream extends Recipe {
+case object TurmericGingerIceCream extends Recipe with IceCream {
   val name = "Turmeric & Ginger Ice Cream"
 
   override val source: Option[String] = Some(
@@ -41,12 +42,9 @@ case object TurmericGingerIceCream extends Recipe {
     Ingredient("Cinnamon", "1 tsp"),
     Ingredient("Chilli Powder", "a pinch")
   )
-  val method = List(
-    "Carefully separate the egg yolks using your hands or spoons. Put aside the egg whites for another recipe.",
-    "Whisk the egg yolks and sugar in a bowl, with an electric mixer, until thick and light in colour.",
+  val method = genericMethodStart ++ List(
     "Add the mascarpone cheese then continue whisking.",
     "Gently stir in all the remaining ingredients, to avoid aerosolising the powdered spices.",
-    "Whisk until thoroughly mixed.",
-    "Decant into a freezer suitable dish and freeze for at least 6 hours."
-  )
+    "Whisk until thoroughly mixed."
+  ) ++ genericMethodEnd
 }

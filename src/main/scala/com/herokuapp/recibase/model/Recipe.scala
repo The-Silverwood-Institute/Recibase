@@ -22,7 +22,10 @@ case class Ingredient(
 case class IngredientsBlock(
     name: Option[String],
     ingredients: List[Ingredient]
-)
+) {
+  def prefixIngredients(additionalIngredients: Ingredient*): IngredientsBlock =
+    copy(ingredients = additionalIngredients.toList ++ ingredients)
+}
 
 object IngredientsBlock {
   def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock =

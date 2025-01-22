@@ -5,10 +5,11 @@ import com.herokuapp.recibase.model.{
   Ingredient,
   Recipe,
   Tag,
-  IngredientsBlock
+  IngredientsBlock,
+  IceCream
 }
 
-case object BaobabIceCream extends Recipe {
+case object BaobabIceCream extends Recipe with IceCream {
   val name = "Baobab Ice Cream"
 
   override val source: Option[String] = Some("Kit")
@@ -16,13 +17,11 @@ case object BaobabIceCream extends Recipe {
     "A simple yet decadent zesty and tart ice cream recipe, no churn needed."
   )
   override val notes: Option[String] = Some(
-    """It got very thick while mixing and was a bit flakey rather than soft so maybe try adding more egg yokes next time.
+    s"""It got very thick while mixing and was a bit flakey rather than soft so maybe try adding more egg yokes next time.
         |
         |You can substitute baobab for wasabi, marmalade or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
         |
-        |I tend to double up this recipe to make enough for a few days.
-        |
-        |You can use up the egg whites by making <a href="https://www.bbcgoodfood.com/recipes/easy-chocolate-mousse" rel="nofollow">chocolate mousse</a>.
+        |$genericNotes
         |
         |Tasting notes: Flavour is sweet with a sparkling sharpness that was zesty but with a starchy depth.
         |
@@ -33,17 +32,12 @@ case object BaobabIceCream extends Recipe {
     Image("https://i.reciba.se/baobab-ice-cream.jpg")
   )
 
-  val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Mascarpone", "230g"),
-    Ingredient("Eggs", "2"),
-    Ingredient("Icing Sugar", "60g"),
-    Ingredient("Baobab powder", "20g")
+  val ingredientsBlocks = List(
+    genericIngredients.prefixIngredients(Ingredient("Baobab powder", "20g"))
   )
-  val method = List(
-    "Carefully separate the egg yolks using your hands or spoons. Put aside the egg whites for another recipe.",
-    "Whisk the egg yolks and sugar in a bowl, with an electric mixer, until thick and light in colour.",
+
+  val method = genericMethodStart ++ List(
     "Add the mascarpone cheese and baobab powder. Gently stir in the powder to avoid it going everywhere.",
-    "Continue whisking until thoroughly mixed.",
-    "Decant into a freezer suitable dish and freeze for at least 6 hours."
-  )
+    "Continue whisking until thoroughly mixed."
+  ) ++ genericMethodEnd
 }
