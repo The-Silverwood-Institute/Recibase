@@ -130,6 +130,11 @@ object MealsController {
       ),
       MealStub("Gnocchi & Tomato Bake", Set(Tag.Vegetarian, Tag.Scales)),
       MealStub(
+        "Gnocchi & Broccoli Bake",
+        Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.Quick),
+        Online("https://www.bbc.co.uk/food/recipes/gnocchi_pasta_bake_51351")
+      ),
+      MealStub(
         "Goan-Style King Prawn Balchão Curry",
         Set(
           Tag.Pescatarian,
@@ -311,7 +316,13 @@ object MealsController {
       ),
       MealStub(
         "Pomegranate Persian Halloumi",
-        Set(Tag.LowEffort, Tag.Quick, Tag.HotWeather, Tag.Vegetarian, Tag.Scales),
+        Set(
+          Tag.LowEffort,
+          Tag.Quick,
+          Tag.HotWeather,
+          Tag.Vegetarian,
+          Tag.Scales
+        ),
         Online(
           "https://drive.google.com/drive/folders/1sIZae-25brxIrc6KeWuOTf2uXE7lLvbQ"
         )
