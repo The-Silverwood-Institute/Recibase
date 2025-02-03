@@ -36,7 +36,7 @@ case object DukatenCookies extends Recipe {
     IngredientsBlock(
       "Biscuits".some,
       List(
-        Ingredient("Flour", "250g"),
+        Ingredient("Plain Flour", "250g"),
         Ingredient("Baking Powder", "1tsp"),
         Ingredient("Sugar", "75g"),
         Ingredient("Vanilla Extract", "1/2 tsp"),

@@ -74,7 +74,7 @@ Honey can be added with the carrots for extra sweetness."""
     Ingredient("Thyme", Some("1-2 tsp"), None, Some("Optional")),
     Ingredient("Salt"),
     Ingredient("Pepper"),
-    Ingredient("Flour", "85g"),
+    Ingredient("Plain Flour", "85g"),
     Ingredient(
       "Butter",
       Some("30g"),

@@ -32,7 +32,7 @@ Don't worry if the roasted vegetables are ready early. Just take them out and pu
       Some("Italian herb blends or just plain oregano works")
     ),
     Ingredient("Butter", "knob"),
-    Ingredient("Flour"),
+    Ingredient("Plain Flour"),
     Ingredient("Milk"),
     Ingredient("Fresh Lasagne sheets", "300g"),
     Ingredient(

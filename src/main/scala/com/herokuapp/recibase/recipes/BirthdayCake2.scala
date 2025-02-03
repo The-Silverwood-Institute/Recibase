@@ -39,7 +39,7 @@ case object BirthdayCake2 extends Recipe {
         Ingredient("Eggs", "2 medium"),
         Ingredient("Lemon", "1/2", "zest only"),
         Ingredient("Milk", "2 tbsp"),
-        Ingredient("Flour", "186g"),
+        Ingredient("Plain Flour", "186g"),
         Ingredient("Baking Powder", "3 tsp")
       )
     ),

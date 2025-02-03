@@ -16,7 +16,7 @@ case object CourgetteSpinachPasties extends Recipe {
     Ingredient("Feta", "200g"),
     Ingredient("Spinach", Some("3 handfulls"), Some("roughly chopped")),
     Ingredient("All Butter Puff Pastry", "320g"),
-    Ingredient("Flour", None, None, Some("to thicken mixture")),
+    Ingredient("Plain Flour", None, None, Some("to thicken mixture")),
     Ingredient("Nutmeg"),
     Ingredient("Lemon Juice"),
     Ingredient("Salt"),

@@ -25,7 +25,7 @@ case object ToadInTheHole extends Recipe {
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sausages", "6"),
-    Ingredient("Flour", "150g"),
+    Ingredient("Plain Flour", "150g"),
     Ingredient("Eggs", "2"),
     Ingredient("Milk", "125ml"),
     Ingredient("Water", "125ml"),
