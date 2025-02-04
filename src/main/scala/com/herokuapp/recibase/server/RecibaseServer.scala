@@ -5,15 +5,19 @@ import fs2.Stream
 import org.http4s.blaze.client.BlazeClientBuilder
 import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.implicits._
+import cats.syntax.all._
 import org.http4s.server.middleware.{CORS, Logger}
+import com.herokuapp.recibase.usage.UsageData
 
 object RecibaseServer {
 
-  def stream[F[_]: Async]: Stream[F, Nothing] = {
+  def stream[F[_]](
+      usageData: UsageData[F]
+  )(implicit F: Async[F]): Stream[F, Nothing] = {
     for {
       _ <- BlazeClientBuilder[F].stream
       recipesAlg = RecipeController.impl[F]
-      mealsAlg = MealsController.impl[F]
+      mealsAlg = MealsController.impl[F](usageData)
       metaAlg = MetaController.impl[F]
 
       // Combine Service Routes into an HttpApp.

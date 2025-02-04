@@ -23,11 +23,14 @@ trait MealsController[F[_]] {
 }
 
 object MealsController {
-  def impl[F[_]: Applicative](implicit F: Sync[F]): MealsController[F] =
+  def impl[F[_]: Applicative](
+      usageData: UsageData[F]
+  )(implicit F: Sync[F]): MealsController[F] =
     new MealsController[F] {
-      override def meals: F[Set[MealStub]] = mealStubsWithUsageData[F]
+      override def meals: F[Set[MealStub]] =
+        mealStubsWithUsageData[F](usageData)
       override def mealNames: F[String] =
-        mealStubsWithUsageData[F].map(
+        mealStubsWithUsageData[F](usageData).map(
           _.filter(_.isDinner)
             .map(_.name)
             .toSeq
@@ -36,10 +39,12 @@ object MealsController {
         )
     }
 
-  def mealStubsWithUsageData[F[_]: Sync]: F[Set[MealStub]] = {
+  def mealStubsWithUsageData[F[_]: Sync](
+      usageData: UsageData[F]
+  ): F[Set[MealStub]] = {
     for {
-      mealCount <- UsageData.mealCount
-      mealLastEaten <- UsageData.mealLastEaten
+      mealCount <- usageData.mealCount
+      mealLastEaten <- usageData.mealLastEaten
     } yield MealDefinitions.mealStubs
       .map(meal => {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
