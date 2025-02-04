@@ -20,7 +20,7 @@ case object CheeseScones extends Recipe {
   override val notes: Option[String] = Some(
     """Leave the milk out as it always needs more.
       |
-      |Don't roll it too thin or they won't rise properly.""".stripMargin
+      |Don't roll the dough too thin or they won't rise properly.""".stripMargin
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(
