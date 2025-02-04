@@ -12,6 +12,10 @@ Recibase works like so:
 
 There is also a separate [CDN][recipe-images] to host images of the cooked recipes and a [Meal Chooser][meal-chooser] for filtering a complete list of everything we cook.
 
+## Platform Architecture
+
+![architecture-diagram](architecture.svg)
+
 ## Roadmap
 
 Recibase is a long term project which will grow depending on what features are useful or interesting to develop. The current plan is:
