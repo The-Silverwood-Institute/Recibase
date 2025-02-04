@@ -566,10 +566,13 @@ object MealsController {
   })
 
   private val duplicates =
-    mealStubsWithUsageData.toList.map(_.name).groupBy(derp => derp).flatMap {
-      case (key, occurrences) if occurrences.length > 1 => Some(key)
-      case _                                            => None
-    }
+    mealStubsWithUsageData.toList
+      .map(_.name.toLowerCase)
+      .groupBy(identity)
+      .flatMap {
+        case (key, occurrences) if occurrences.length > 1 => Some(key)
+        case _                                            => None
+      }
 
   if (duplicates.nonEmpty) {
     throw new Exception(s"Duplicate meal names: ${duplicates.mkString(", ")}")
