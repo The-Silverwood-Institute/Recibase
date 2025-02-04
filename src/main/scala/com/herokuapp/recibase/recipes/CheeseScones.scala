@@ -23,6 +23,10 @@ case object CheeseScones extends Recipe {
       |Don't roll the dough too thin or they won't rise properly.""".stripMargin
   )
 
+  override val image: Option[Image] = Some(
+    Image("https://i.reciba.se/cheese-scones.jpg")
+  )
+
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Plain Flour", "208g"),
     Ingredient("Baking Powder", "21g"),
