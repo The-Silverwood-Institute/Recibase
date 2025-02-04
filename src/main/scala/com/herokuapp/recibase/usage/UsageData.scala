@@ -6,19 +6,18 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import scala.io.Source
 import scala.util.{Failure, Success, Try}
-import cats.effect.kernel.Sync
 import cats.implicits._
 import java.time.Instant
-import cats.effect.kernel.Ref
-import cats.Applicative
 import cats.FlatMap
 import java.time.temporal.TemporalUnit
 import java.time.temporal.ChronoUnit
 import java.time.Duration
+import cats.effect.std.AtomicCell
+import cats.effect.kernel.Async
 
 object UsageData {
-  def apply[F[_]](implicit F: Sync[F]): F[UsageData[F]] =
-    Ref[F].of(FetchedMealLogEntries.empty).map(new UsageData(_))
+  def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =
+    AtomicCell[F].of(FetchedMealLogEntries.empty).map(new UsageData(_))
 
   def parseDate(input: String): Try[LocalDate] = {
     Try {
@@ -42,7 +41,9 @@ object UsageData {
 
 }
 
-class UsageData[F[_]: Sync: Applicative](ref: Ref[F, FetchedMealLogEntries]) {
+class UsageData[F[_]: Async](
+    ref: AtomicCell[F, FetchedMealLogEntries]
+) {
   private val csvUrlOpt = sys.env.get("MEAL_LOG_CSV_URL")
 
   private def getRawCsv = csvUrlOpt
@@ -54,16 +55,18 @@ class UsageData[F[_]: Sync: Applicative](ref: Ref[F, FetchedMealLogEntries]) {
   private val unquotedMatcher = """^\"(.+)\",(.+),(.*)$""".r
 
   private def mealLogEntries: F[Set[MealLogEntry]] = ref
-    .updateAndGet(lastFetched => {
+    .evalUpdateAndGet(lastFetched => {
       val dataIsStale =
         lastFetched.fetchedAt
           .isBefore(Instant.now().minus(UsageData.refreshUsageDataAfter))
       if (dataIsStale) {
-        println("Refreshing stale usage data")
-        // Nasty undeclared side-effecting blocking operation, ew
-        FetchedMealLogEntries(parseCsv(getRawCsv), Instant.now())
+        println(
+          s"Refreshing stale usage data: ${lastFetched.fetchedAt} vs now (${Instant.now()})"
+        )
+        Async[F]
+          .blocking(FetchedMealLogEntries(parseCsv(getRawCsv), Instant.now()))
       } else {
-        lastFetched
+        lastFetched.pure[F]
       }
     })
     .map(_.entries)
