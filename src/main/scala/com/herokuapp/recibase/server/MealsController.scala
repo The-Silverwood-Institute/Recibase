@@ -87,13 +87,6 @@ object MealsController {
       ),
       MealStub("Cheese and olive tarts", Set(Tag.Vegetarian)),
       MealStub(
-        "Cheese scones",
-        Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge),
-        Online(
-          "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"
-        )
-      ),
-      MealStub(
         "Chipotle Mac 'n' Cheese",
         Set(Tag.Vegetarian, Tag.Scales, Tag.Stodge),
         Online(
