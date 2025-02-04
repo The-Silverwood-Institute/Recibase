@@ -6,6 +6,8 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import scala.io.Source
 import scala.util.{Failure, Success, Try}
+import cats.effect.kernel.Sync
+import cats.implicits._
 
 object UsageData {
   private val rawCsv = sys.env
@@ -31,8 +33,11 @@ object UsageData {
     }
     .toSet
 
-  val mealCount: Map[String, Int] = totals(mealLogEntries)
-  val mealLastEaten: Map[String, LocalDate] = lastEaten(mealLogEntries)
+  def mealCount[F[_]: Sync]: F[Map[String, Int]] =
+    totals(mealLogEntries).pure[F]
+  def mealLastEaten[F[_]: Sync]: F[Map[String, LocalDate]] = lastEaten(
+    mealLogEntries
+  ).pure[F]
 
   def parseDate(input: String): Try[LocalDate] = {
     Try {
