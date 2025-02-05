@@ -8,6 +8,7 @@ import se.reciba.api.server.{
   RecibaseRoutes,
   RecipeController
 }
+import se.reciba.api.usage.UsageData
 import org.http4s._
 import org.http4s.implicits._
 import org.specs2.matcher.JsonMatchers
@@ -110,7 +111,8 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
 }
 
 object RecipesSpec {
+  private val usageData = UsageData.apply[IO].unsafeRunSync()
   val recipeController: RecipeController[IO] = RecipeController.impl[IO]
-  val mealController: MealsController[IO] = MealsController.impl[IO]
+  val mealController: MealsController[IO] = MealsController.impl[IO](usageData)
   val metaController: MetaController[IO] = MetaController.impl[IO]
 }
