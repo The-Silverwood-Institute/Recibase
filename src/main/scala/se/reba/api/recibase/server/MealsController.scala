@@ -50,6 +50,8 @@ object MealsController {
       .map(meal => {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
         val mealWithCount = mealTimesEaten match {
+          // Non-dinner items shouldn't be assigned usage tags because they are misleading
+          case _ if !meal.isDinner => meal
           case 0 => meal.copy(tags = meal.tags + Tag.NeverEaten)
           case count if count <= 2 =>
             meal.copy(tags = meal.tags + Tag.Infrequent)
