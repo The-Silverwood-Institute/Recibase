@@ -30,13 +30,14 @@ object MealsController {
       override def meals: F[Set[MealStub]] =
         mealStubsWithUsageData[F](usageData)
       override def mealNames: F[String] =
-        mealStubsWithUsageData[F](usageData).map(
-          _.filter(_.isDinner)
-            .map(_.name)
-            .toSeq
-            .sorted
-            .mkString("\n")
-        )
+        MealDefinitions.mealStubs
+          .filter(_.isDinner)
+          .map(_.name)
+          .toSeq
+          .sorted
+          .mkString("\n")
+          .pure[F]
+
     }
 
   def mealStubsWithUsageData[F[_]: Sync](
