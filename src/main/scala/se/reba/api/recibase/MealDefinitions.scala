@@ -14,6 +14,13 @@ object MealDefinitions {
   val mealStubs: Set[MealStub] =
     Recipe.recipes.map(MealStub.apply).toSet ++ Set(
       MealStub(
+        "Apple and sausage filo casserole",
+        Set(Tag.Vegan, Tag.Scales, Tag.Slow),
+        Online(
+          "https://www.bbc.co.uk/food/recipes/vegan_apple_and_sausage_48574"
+        )
+      ),
+      MealStub(
         "Aubergine & Halloumi Lasagne",
         Set(Tag.Slow, Tag.Vegetarian, Tag.Scales)
       ),
