@@ -14,7 +14,7 @@ object MealDefinitions {
   val mealStubs: Set[MealStub] =
     Recipe.recipes.map(MealStub.apply).toSet ++ Set(
       MealStub(
-        "Apple and sausage filo casserole",
+        "Apple & Sausage Filo Casserole",
         Set(Tag.Vegan, Tag.Scales, Tag.Slow),
         Online(
           "https://www.bbc.co.uk/food/recipes/vegan_apple_and_sausage_48574"
@@ -26,7 +26,7 @@ object MealDefinitions {
       ),
       MealStub("Aubergine curry", Set(Tag.Vegan, Tag.Scales, Tag.Slow)),
       MealStub(
-        "Avocado and coconut soup",
+        "Avocado & coconut soup",
         Set(Tag.Vegan, Tag.Soup, Tag.Scales, Tag.Freezes),
         GoogleDrive(
           "170P50UetqQPkrqqYvthtt3FBXsjCAYU_"
@@ -44,7 +44,7 @@ object MealDefinitions {
         )
       ),
       MealStub(
-        "Bean and Broccoli Pasta",
+        "Bean & Broccoli Pasta",
         Set(Tag.VeganIsh, Tag.Scales),
         Online(
           "https://www.themediterraneandish.com/mediterranean-broccoli-pasta-bean/"
@@ -69,7 +69,7 @@ object MealDefinitions {
           "https://vegancocotte.com/cashew-curry/"
         )
       ),
-      MealStub("Cheese and olive tarts", Set(Tag.Vegetarian)),
+      MealStub("Cheese & olive tarts", Set(Tag.Vegetarian)),
       MealStub(
         "Chipotle Mac 'n' Cheese",
         Set(Tag.Vegetarian, Tag.Scales, Tag.Stodge),
@@ -163,7 +163,7 @@ object MealDefinitions {
         GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")
       ),
       MealStub(
-        "Jamaican Squash and Coconut Stew",
+        "Jamaican Squash & Coconut Stew",
         Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes, Tag.BetterNextDay),
         Online(
           "https://www.gousto.co.uk/cookbook/vegan-recipes/jamaican-squash-coconut-stew"
@@ -222,7 +222,7 @@ object MealDefinitions {
         Online("https://www.gousto.co.uk/cookbook/recipes/mild-paneer-curry")
       ),
       MealStub(
-        "Mozzarella and spinach pancakes",
+        "Mozzarella & spinach pancakes",
         Set(Tag.HighEffort, Tag.Vegetarian),
         GoogleDrive("1L7CueEwwXy6ObWx7A2AjIxO4FdsI-YB_")
       ),
@@ -244,7 +244,7 @@ object MealDefinitions {
         GoogleDrive("1mxBjlql91Kxo6lHZL-LnmHmhGlRYThCk")
       ),
       MealStub(
-        "Mushroom and parsnip rösti pie",
+        "Mushroom & parsnip rösti pie",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort),
         GoogleDrive("1-YvovgTwMtwqYvuEBAz3gb2shqaTRtY69i5zJjNsbd8")
       ),
@@ -253,7 +253,7 @@ object MealDefinitions {
         Set(Tag.Vegan, Tag.Freezes, Tag.BetterNextDay, Tag.Slow, Tag.Scales)
       ),
       MealStub(
-        "Nutty Sweet Potato and Spinach Pie",
+        "Nutty Sweet Potato & Spinach Pie",
         Set(Tag.Vegetarian, Tag.HighEffort, Tag.ColdWeather),
         GoogleDrive("1dM9T4Bu7Hj3fbLplX3NYKnCFqvuNrFC4tgWhhgWYTUE")
       ),
@@ -280,7 +280,7 @@ object MealDefinitions {
         GoogleDrive("1-dIvRInPYyiUT1y6Y6cb7bZpnabubuIe")
       ),
       MealStub(
-        "Pepper and goats cheese tart",
+        "Pepper & goats cheese tart",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Stodge, Tag.HotWeather)
       ),
       MealStub(
@@ -321,7 +321,7 @@ object MealDefinitions {
         GoogleDrive("1mwrdX7b3hk3AArjnDNWjbyMavuJ6JyI5")
       ),
       MealStub(
-        "Roast Aubergine and Basil Risotto",
+        "Roast Aubergine & Basil Risotto",
         Set(Tag.Vegetarian),
         Online(
           "https://www.gousto.co.uk/cookbook/recipes/tomato-risotto-with-crispy-roast-aubergine"
@@ -329,7 +329,7 @@ object MealDefinitions {
       ),
       MealStub("Roast Nut Omelette", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
-        "Roast veg and chickpeas tomato sauce",
+        "Roast veg & chickpeas tomato sauce",
         Set(Tag.Vegan, Tag.Freezes, Tag.Slow, Tag.Scales)
       ),
       MealStub(
@@ -349,12 +349,12 @@ object MealDefinitions {
         )
       ),
       MealStub(
-        "Sausage and Bean Casserole",
+        "Sausage & Bean Casserole",
         Set(Tag.VegetarianIsh, Tag.Scales, Tag.Slow, Tag.ColdWeather),
         Online("https://www.bbcgoodfood.com/recipes/sausage-bean-casserole")
       ),
       MealStub(
-        "Sausages and Mash",
+        "Sausages & Mash",
         Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.LowEffort)
       ),
       MealStub(
@@ -401,7 +401,7 @@ object MealDefinitions {
         GoogleDrive("1P-i6q_AgZXCtIBWoBIm3fst70VeJNFqK")
       ),
       MealStub(
-        "Spicy Butternut and Coconut Soup",
+        "Spicy Butternut & Coconut Soup",
         Set(Tag.Soup, Tag.Scales, Tag.Vegan, Tag.Freezes),
         Online("https://www.bbc.co.uk/food/recipes/pumpkin_soup_45815")
       ),
@@ -431,7 +431,7 @@ object MealDefinitions {
         Set(Tag.Vegetarian, Tag.HotWeather)
       ),
       MealStub(
-        "Sweetcorn and spinach polenta",
+        "Sweetcorn & spinach polenta",
         Set(
           Tag.VegetarianIsh,
           Tag.Quick,
@@ -453,7 +453,7 @@ object MealDefinitions {
         )
       ),
       MealStub(
-        "Tofu and cashew nut stir fry",
+        "Tofu & cashew nut stir fry",
         Set(Tag.Vegan, Tag.Quick, Tag.HotWeather),
         GoogleDrive("1nNWYsSiKtMubmN3VeXgGpIX8_RniCOlp")
       ),
@@ -472,7 +472,7 @@ object MealDefinitions {
           Tag.VeganIsh
         )
       ),
-      MealStub("Tuna and rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
+      MealStub("Tuna & rice peppers", Set(Tag.Pescatarian, Tag.Slow)),
       MealStub(
         "Tuna Fish Pie",
         Set(Tag.Pescatarian, Tag.Scales),
