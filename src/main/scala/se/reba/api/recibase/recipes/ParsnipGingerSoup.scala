@@ -9,7 +9,7 @@ import se.reciba.api.model.{
 }
 
 case object ParsnipGingerSoup extends Recipe {
-  val name = "Parsnip and Ginger Soup"
+  val name = "Parsnip & Ginger Soup"
   override val permalink: Permalink =
     Permalink("parsnip-and-ginger-soup")
 
