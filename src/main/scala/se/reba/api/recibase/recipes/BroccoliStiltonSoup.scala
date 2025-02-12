@@ -9,7 +9,7 @@ import se.reciba.api.model.{
 }
 
 case object BroccoliStiltonSoup extends Recipe {
-  val name = "Broccoli and Stilton soup"
+  val name = "Broccoli & Stilton soup"
   override val permalink: Permalink =
     Permalink("broccoli-stilton-soup")
 
