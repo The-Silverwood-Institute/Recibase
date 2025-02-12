@@ -504,6 +504,17 @@ object MealDefinitions {
         GoogleDrive("1jsxu4biuRi3ewRQ4g5HDGEpoKw-aMf0e")
       ),
       MealStub(
+        "Vegetable Pad Thai",
+        Set(
+          Tag.LowEffort,
+          Tag.Quick,
+          Tag.Vegan
+        ),
+        Online(
+          "https://drive.google.com/drive/folders/1Uz9NU3ffJVFppHr0ZOdYoJ_h-TjVmIkB"
+        )
+      ),
+      MealStub(
         "Vegetable Sambar",
         Set(Tag.Vegetarian, Tag.Spicy, Tag.Scales),
         Online(
