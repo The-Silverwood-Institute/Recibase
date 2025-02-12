@@ -17,7 +17,11 @@ import cats.effect.kernel.Async
 
 object UsageData {
   def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =
-    AtomicCell[F].of(FetchedMealLogEntries.empty).map(new UsageData(_))
+    for {
+      cell <- AtomicCell[F].of(FetchedMealLogEntries.empty)
+      usageData = new UsageData(cell)
+      _ <- usageData.refreshMealLog
+    } yield usageData
 
   def parseDate(input: String): Try[LocalDate] = {
     Try {
@@ -37,7 +41,8 @@ object UsageData {
       mealName -> dates.size
     }
 
-  val refreshUsageDataAfter = Duration.ofHours(12)
+  val softRefreshTime = Duration.ofHours(12)
+  val hardRefreshTime = Duration.ofHours(72)
 
 }
 
@@ -54,22 +59,24 @@ class UsageData[F[_]: Async](
   private val quotedMatcher = """^\"(.+)\",\"(.+)\",(.*)$""".r
   private val unquotedMatcher = """^\"(.+)\",(.+),(.*)$""".r
 
-  private def mealLogEntries: F[Set[MealLogEntry]] = ref
-    .evalUpdateAndGet(lastFetched => {
-      val dataIsStale =
-        lastFetched.fetchedAt
-          .isBefore(Instant.now().minus(UsageData.refreshUsageDataAfter))
-      if (dataIsStale) {
-        println(
-          s"Refreshing stale usage data: ${lastFetched.fetchedAt} vs now (${Instant.now()})"
-        )
-        Async[F]
-          .blocking(FetchedMealLogEntries(parseCsv(getRawCsv), Instant.now()))
-      } else {
-        lastFetched.pure[F]
-      }
-    })
-    .map(_.entries)
+  private def cachedMealLogEntries(timeout: Duration): F[Set[MealLogEntry]] =
+    ref
+      .evalUpdateAndGet(lastFetched => {
+        val dataIsStale =
+          lastFetched.fetchedAt
+            .isBefore(Instant.now().minus(timeout))
+        if (dataIsStale) {
+          println(
+            s"Refreshing stale usage data: ${lastFetched.fetchedAt} vs now ${Instant.now()}, exceeds ${timeout.toHours()} hour timeout"
+          )
+          Async[F]
+            .blocking(FetchedMealLogEntries(parseCsv(getRawCsv), Instant.now()))
+        } else {
+          println("No refresh needed")
+          lastFetched.pure[F]
+        }
+      })
+      .map(_.entries)
 
   private def parseCsv(raw: Iterator[String]): Set[MealLogEntry] = raw
     .map {
@@ -85,10 +92,13 @@ class UsageData[F[_]: Async](
     }
     .toSet
 
+  def refreshMealLog: F[Unit] = cachedMealLogEntries(
+    UsageData.softRefreshTime
+  ).void
   def mealCount: F[Map[String, Int]] =
-    mealLogEntries.map(UsageData.totals)
+    cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.totals)
   def mealLastEaten: F[Map[String, LocalDate]] =
-    mealLogEntries.map(UsageData.lastEaten)
+    cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.lastEaten)
 }
 
 final case class MealLogEntry(mealName: String, date: LocalDate)
