@@ -13,7 +13,7 @@ object Main extends IOApp {
 
     for {
       usageData <- UsageData.apply[IO]
-      exit <- RecibaseServer
+      _ <- RecibaseServer
         .stream[IO](usageData)
         .concurrently(
           Stream
@@ -22,7 +22,6 @@ object Main extends IOApp {
         )
         .compile
         .drain
-        .as(ExitCode.Success)
-    } yield exit
+    } yield ExitCode.Success
   }
 }

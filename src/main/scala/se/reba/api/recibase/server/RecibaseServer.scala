@@ -13,7 +13,7 @@ object RecibaseServer {
 
   def stream[F[_]](
       usageData: UsageData[F]
-  )(implicit F: Async[F]): Stream[F, Nothing] = {
+  )(implicit F: Async[F]): Stream[F, Unit] = {
     for {
       _ <- BlazeClientBuilder[F].stream
       recipesAlg = RecipeController.impl[F]
@@ -37,10 +37,10 @@ object RecibaseServer {
 
       port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
-      exitCode <- BlazeServerBuilder[F]
+      _ <- BlazeServerBuilder[F]
         .bindHttp(port, "0.0.0.0")
         .withHttpApp(finalHttpApp)
         .serve
-    } yield exitCode
-  }.drain
+    } yield ()
+  }
 }
