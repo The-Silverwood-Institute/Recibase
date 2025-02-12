@@ -17,11 +17,7 @@ import cats.effect.kernel.Async
 
 object UsageData {
   def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =
-    for {
-      cell <- AtomicCell[F].of(FetchedMealLogEntries.empty)
-      usageData = new UsageData(cell)
-      _ <- usageData.refreshMealLog
-    } yield usageData
+    AtomicCell[F].of(FetchedMealLogEntries.empty).map(new UsageData(_))
 
   def parseDate(input: String): Try[LocalDate] = {
     Try {
