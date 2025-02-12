@@ -72,7 +72,6 @@ class UsageData[F[_]: Async](
           Async[F]
             .blocking(FetchedMealLogEntries(parseCsv(getRawCsv), Instant.now()))
         } else {
-          println("No refresh needed")
           lastFetched.pure[F]
         }
       })
