@@ -1,4 +1,4 @@
-package se.reba.api.recibase.server
+package se.reciba.api.recibase.server
 
 import cats.effect.Async
 import fs2._

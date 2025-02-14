@@ -1,4 +1,4 @@
-package se.reba.api.recibase.recipes
+package se.reciba.api.recipes
 
 import cats.implicits._
 import se.reciba.api.model.{
