@@ -37,7 +37,7 @@ object IngredientsBlock {
 
 trait Recipe extends Meal with Product {
   private val recipeDir =
-    "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes"
+    "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/se/reciba/api/recibase/recipes"
 
   def permalink: Permalink = Permalink.fromRawString(name)
   def edit: String = s"$recipeDir/${this.productPrefix}.scala"
