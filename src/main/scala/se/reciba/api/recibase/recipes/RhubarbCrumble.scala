@@ -25,7 +25,7 @@ case object RhubarbCrumble extends Recipe {
       |We mix the fruit in the ovenproof dish because ours is basically a glass mixing bowl. If your ovenproof dish is a metal tin you might want to use a mixing bowl first.""".stripMargin
   )
 
-  override val tags = Set(Tag.Pudding)
+  val tags = Set(Tag.Pudding)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Plain Flour", "120g"),

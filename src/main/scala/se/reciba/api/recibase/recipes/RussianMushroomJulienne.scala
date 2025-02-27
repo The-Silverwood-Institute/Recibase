@@ -9,7 +9,7 @@ case object RussianMushroomJulienne extends Recipe {
   override val source: Option[String] = Some(
     "https://livelaughrowe.com/russian-dish-mushroom-julienne/"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Stodge)
+  val tags = Set(Tag.Vegetarian, Tag.Stodge)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Mushrooms", Some("250g"), Some("thinly sliced")),

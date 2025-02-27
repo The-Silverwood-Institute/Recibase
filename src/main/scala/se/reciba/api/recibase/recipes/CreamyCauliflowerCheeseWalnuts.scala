@@ -16,7 +16,7 @@ case object CreamyCauliflowerCheeseWalnuts extends Recipe {
   override val source: Option[String] = Some(
     "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort)
+  val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Cauliflower", Some("1"), Some("cut into 1cm pieces")),

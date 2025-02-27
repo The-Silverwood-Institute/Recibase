@@ -22,7 +22,7 @@ case object ChunkyVegetableCrumble extends Recipe {
       """Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.
 Honey can be added with the carrots for extra sweetness."""
     )
-  override val tags =
+  val tags =
     Set(
       Tag.VegetarianIsh,
       Tag.Slow,

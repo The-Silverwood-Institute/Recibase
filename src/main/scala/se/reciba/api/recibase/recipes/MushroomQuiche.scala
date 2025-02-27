@@ -8,7 +8,7 @@ case object MushroomQuiche extends Recipe {
   override val notes: Option[String] = Some(
     "Take the pastry out of the fridge 40 mins before use!"
   )
-  override val tags = Set(Tag.Stodge, Tag.Slow, Tag.Vegetarian)
+  val tags = Set(Tag.Stodge, Tag.Slow, Tag.Vegetarian)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Chestnut mushrooms", "250g", "sliced"),

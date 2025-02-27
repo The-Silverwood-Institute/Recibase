@@ -12,7 +12,7 @@ case object RoastBeetrootDahl extends Recipe {
         |
         |We use a modified version of <a href="https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/">this</a> Sri Lankan Curry power recipe. Will write down our version some time.""".stripMargin
   )
-  override val tags = Set(Tag.Vegan, Tag.Spicy, Tag.Scales)
+  val tags = Set(Tag.Vegan, Tag.Spicy, Tag.Scales)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Beetroot", "500g", "cut into 2cm chunks"),

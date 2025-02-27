@@ -21,7 +21,7 @@ case object ToadInTheHole extends Recipe {
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/toad-in-the-hole.jpg")
   )
-  override val tags = Set(Tag.Vegetarian, Tag.LowEffort)
+  val tags = Set(Tag.Vegetarian, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sausages", "6"),

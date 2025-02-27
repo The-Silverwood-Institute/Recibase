@@ -14,7 +14,7 @@ case object ChilliConCarne extends Recipe {
     Permalink("chilli-con-carne")
 
   override val source: Option[String] = Some("Kit's Dad")
-  override val tags = Set(
+  val tags = Set(
     Tag.VegetarianIsh,
     Tag.Freezes,
     Tag.BetterNextDay,

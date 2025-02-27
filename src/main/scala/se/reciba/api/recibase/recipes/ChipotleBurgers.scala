@@ -8,7 +8,7 @@ case object ChipotleBurgers extends Recipe {
   override val source: Option[String] = Some(
     "https://www.honestburgers.co.uk/food/burgers/bacon-plant/"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Spicy, Tag.Stodge, Tag.Quick)
+  val tags = Set(Tag.Vegetarian, Tag.Spicy, Tag.Stodge, Tag.Quick)
 
   override val notes: Option[String] = Some(
     """This version is only vegetarian, though you could follow the original Honest Burger version and use vegan mayo/cheese.

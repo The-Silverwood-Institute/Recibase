@@ -8,7 +8,7 @@ case object HoisinDuckWraps extends Recipe {
   override val permalink: Permalink =
     Permalink("duck-wraps")
 
-  override val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
+  val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 
   override val description: Option[String] =
     Some("To the tune of Top Cat: Duck Wraps! They're vegetarian, Duck Wraps!")

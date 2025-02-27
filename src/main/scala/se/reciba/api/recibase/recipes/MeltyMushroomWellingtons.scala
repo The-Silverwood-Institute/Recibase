@@ -10,7 +10,7 @@ case object MeltyMushroomWellingtons extends Recipe {
     """Take the pastry out of the fridge ten minutes before use.
 Makes two large pies."""
   )
-  override val tags = Set(Tag.Slow, Tag.Vegetarian, Tag.Stodge, Tag.ColdWeather)
+  val tags = Set(Tag.Slow, Tag.Vegetarian, Tag.Stodge, Tag.ColdWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(

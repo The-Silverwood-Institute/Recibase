@@ -12,7 +12,7 @@ case object BeetrootRisotto extends Recipe {
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/beetroot-risotto.jpg")
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.HotWeather)
+  val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.HotWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(

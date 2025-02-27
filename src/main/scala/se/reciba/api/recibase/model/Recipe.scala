@@ -45,7 +45,7 @@ trait Recipe extends Meal with Product {
   def description: Option[String] = None
   def tagline: Option[String] = None
   def notes: Option[String] = None
-  def tags: Set[Tag] = Set.empty
+  def tags: Set[Tag]
   def image: Option[Image] = None
   def ingredientsBlocks: List[IngredientsBlock]
   def method: List[String]

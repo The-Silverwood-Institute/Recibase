@@ -7,7 +7,7 @@ case object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
 
   override val source: Option[String] = Some("Alex's Mum")
-  override val tags = Set(Tag.Baking)
+  val tags = Set(Tag.Baking)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/peanut-butter-biscuits.jpg")
   )

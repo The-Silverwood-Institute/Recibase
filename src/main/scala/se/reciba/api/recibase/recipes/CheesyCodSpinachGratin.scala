@@ -13,7 +13,7 @@ case object CheesyCodSpinachGratin extends Recipe {
   val name =
     "Cheesy Cod and Spinach Gratin"
   override val permalink: Permalink = Permalink("cheesy-cod")
-  override val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
+  val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Cod", "2 110g fillets"),

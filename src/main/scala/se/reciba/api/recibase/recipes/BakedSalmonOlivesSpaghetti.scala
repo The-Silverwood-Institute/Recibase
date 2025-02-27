@@ -21,7 +21,7 @@ case object BakedSalmonOlivesSpaghetti extends Recipe {
         |
         |Use the bigger pan.
         |""".stripMargin)
-  override val tags = Set(Tag.Pescatarian, Tag.HotWeather)
+  val tags = Set(Tag.Pescatarian, Tag.HotWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(

@@ -29,7 +29,7 @@ case object VeganBrownies extends Recipe {
         |
         |If you come up with any improvements please <a href="mailto:kittsville@gmail.com">email me</a> or DM me on Twitter: <a href="https://twitter.com/kittsville">@kittsville</a>.""".stripMargin
   )
-  override val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegan)
+  val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegan)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/brownies.jpg")
   )

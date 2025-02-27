@@ -17,7 +17,7 @@ Don't waste time finely chopping the ingredients as they're blended anyway.
 If you don't have a blender you can chop the garlic, chilli and ginger finely then cook the onion at the same time.
 Can take a long time."""
   )
-  override val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Slow, Tag.Spicy)
+  val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Slow, Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Red lentils", "225g"),

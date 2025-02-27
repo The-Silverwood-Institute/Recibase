@@ -27,7 +27,7 @@ case object BaobabIceCream extends Recipe with IceCream {
         |
         |Stephani says: It has a citrus type flavour but with a bready depth, like a very meaty fruit instead of normal citrus fruit texture.""".stripMargin
   )
-  override val tags = Set(Tag.Pudding)
+  val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/baobab-ice-cream.jpg")
   )

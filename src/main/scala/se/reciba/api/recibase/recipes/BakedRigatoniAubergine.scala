@@ -12,7 +12,7 @@ case object BakedRigatoniAubergine extends Recipe {
   override val notes: Option[String] = Some(
     "Traditional parmesan is not vegetarian"
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
+  val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Onion", "1", "chopped"),

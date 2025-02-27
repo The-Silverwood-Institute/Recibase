@@ -14,7 +14,7 @@ case object ChineseFusion extends Recipe {
 
   override val permalink: Permalink = Permalink("chinese-fusion")
 
-  override val tags: Set[Tag] = Set(Tag.Stephani)
+  val tags: Set[Tag] = Set(Tag.Stephani)
 
   override val source: Option[String] = Some(
     "Stephani"

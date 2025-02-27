@@ -11,7 +11,7 @@ case object SmokyChickpeaStew extends Recipe {
   override val description: Option[String] = Some(
     "A simple yet hearty vegan stew"
   )
-  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.Freezes)
+  val tags = Set(Tag.Vegan, Tag.Scales, Tag.Freezes)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sweet Potatoes", "620g", "chopped in 1cm cubes"),

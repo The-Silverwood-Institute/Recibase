@@ -20,7 +20,7 @@ case object BroccoliStiltonSoup extends Recipe {
     "The original recipe uses a 1:2 stilton to broccoli ratio rather than our decadent 1:1 ratio. If you'd prefer not to get gout then stick with the original ratio."
   )
 
-  override val tags = Set(
+  val tags = Set(
     Tag.Slow,
     Tag.Vegetarian,
     Tag.Scales,

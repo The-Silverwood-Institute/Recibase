@@ -10,7 +10,7 @@ case object BroccoliSalmonQuiche extends Recipe {
     Some(
       "Consider using the remaining broccoli stalks and stilton in a broccoli and stilton soup."
     )
-  override val tags = Set(Tag.Stodge, Tag.Slow, Tag.Pescatarian)
+  val tags = Set(Tag.Stodge, Tag.Slow, Tag.Pescatarian)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(

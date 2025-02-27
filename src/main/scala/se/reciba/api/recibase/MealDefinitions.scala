@@ -54,7 +54,13 @@ object MealDefinitions {
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
       MealStub(
         "Butternut & Blue Cheese Risotto",
-        Set(Tag.Vegetarian, Tag.Stephani, Tag.LowEffort, Tag.Scales, Tag.Slow),
+        Set(
+          Tag.Vegetarian,
+          Tag.StephaniUnhealthy,
+          Tag.LowEffort,
+          Tag.Scales,
+          Tag.Slow
+        ),
         GoogleDrive("1e34QA2s94VJSNVQYxW_hRL3mKjNZtKlS")
       ),
       MealStub("Carbonara", Set(Tag.VegetarianIsh, Tag.Quick, Tag.Scales)),

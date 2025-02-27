@@ -8,7 +8,7 @@ case object CodWithLentils extends Recipe {
   override val source: Option[String] = Some(
     "Sand Dollar Café, Aberdeen"
   )
-  override val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
+  val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 
   override val notes: Option[String] = Some(
     "The green lentils are an essential part of the dish, so don't substitute them for red lentils."

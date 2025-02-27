@@ -5,7 +5,7 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 case object LentilShepardsPie extends Recipe {
   val name = "Veggie Shepherd's Pie"
 
-  override val tags =
+  val tags =
     Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.ColdWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(

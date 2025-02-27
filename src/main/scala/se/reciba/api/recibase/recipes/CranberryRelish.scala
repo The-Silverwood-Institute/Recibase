@@ -17,7 +17,7 @@ case object CranberryRelish extends Recipe {
   override val notes: Option[String] = Some(
     "This is best made in advance, to give the flavours time to mix"
   )
-  override val tags = Set(Tag.Christmas, Tag.NonMeal)
+  val tags = Set(Tag.Christmas, Tag.NonMeal)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Red onions", Some("2"), Some("thinly sliced")),

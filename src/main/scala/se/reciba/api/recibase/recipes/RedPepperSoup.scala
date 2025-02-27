@@ -12,7 +12,7 @@ case object RedPepperSoup extends Recipe {
   val name = "Red Pepper & Apple Soup"
   override val permalink: Permalink = Permalink("red-pepper-soup")
 
-  override val tags = Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.LowEffort)
+  val tags = Set(Tag.Soup, Tag.Scales, Tag.VeganIsh, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butter", "Knob"),

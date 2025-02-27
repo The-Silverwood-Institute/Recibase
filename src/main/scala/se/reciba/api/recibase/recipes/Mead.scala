@@ -14,7 +14,7 @@ case object Mead extends Recipe {
         |
         |I'd recommend doubling or tripling the quantities to make this worth the effort.""".stripMargin
   )
-  override val tags = Set(Tag.NonMeal)
+  val tags = Set(Tag.NonMeal)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(

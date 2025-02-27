@@ -8,7 +8,7 @@ case object CheeseScones extends Recipe {
   val name =
     "Cheese Scones"
 
-  override val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)
+  val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)
 
   override val source = Some(
     "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"

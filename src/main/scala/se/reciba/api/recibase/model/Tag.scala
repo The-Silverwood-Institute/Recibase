@@ -45,9 +45,9 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object Pescatarian extends Tag("Pescatarian")
 
   // Poly
-  case object Stephani extends Tag("Stephani")
+  case object StephaniUnhealthy extends Tag("StephaniUnhealthy")
   case object StephaniIsh extends Tag("Stephani-ish")
-  case object Healthy extends Tag("Healthy")
+  case object Stephani extends Tag("Stephani")
 
   // Vibe
   case object ColdWeather extends Tag("Cold Weather")

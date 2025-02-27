@@ -6,7 +6,7 @@ case object HalloumiWraps extends Recipe {
   val name =
     "Halloumi Wraps"
 
-  override val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
+  val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 
   override val description: Option[String] =
     Some("Greek style halloumi wraps")

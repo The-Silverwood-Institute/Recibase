@@ -9,7 +9,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
   override val source: Option[String] = Some(
     "https://www.onegreenplanet.org/vegan-recipe/delicious-roasted-veggie-moroccan-tagine/"
   )
-  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.Slow)
+  val tags = Set(Tag.Vegan, Tag.Scales, Tag.Slow)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Aubergine", "1", "cut into 2cm chunks"),

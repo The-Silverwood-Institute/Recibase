@@ -20,7 +20,7 @@ case object DukatenCookies extends Recipe {
     "If you don't have a small enough biscuit cutter you can use some wider shot glasses. The cookies should have a 4cm diameter."
   )
 
-  override val tags = Set(Tag.Pudding, Tag.Baking)
+  val tags = Set(Tag.Pudding, Tag.Baking)
 
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/dukaten-cookies.jpg")

@@ -21,7 +21,7 @@ case object PistachioIceCream extends Recipe with IceCream {
         |
         |$genericNotes""".stripMargin
   )
-  override val tags = Set(Tag.Pudding)
+  val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/pistachio-ice-cream.jpg")
   )

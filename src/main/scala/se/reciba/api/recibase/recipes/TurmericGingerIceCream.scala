@@ -25,7 +25,7 @@ case object TurmericGingerIceCream extends Recipe with IceCream {
       |
       |For reference the picture is actually marmalade ice cream. It seems I never took a picture when I made this, though I remember it being delicious.""".stripMargin
   )
-  override val tags = Set(Tag.Pudding)
+  val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/ice-cream.jpg")
   )

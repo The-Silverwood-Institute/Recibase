@@ -9,7 +9,7 @@ case object LentilSpinachStew extends Recipe {
     "https://drive.google.com/file/d/1f247M9Y9DLk4T6NzMng1B6GRvhoaAX74C28UTyxk_Jo/view"
   )
 
-  override val tags = Set(Tag.Vegan, Tag.Scales)
+  val tags = Set(Tag.Vegan, Tag.Scales)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Garlic", "1 clove", "diced"),

@@ -14,7 +14,7 @@ case object ParsnipLentilLasagne extends Recipe {
   override val permalink: Permalink =
     Permalink("parsnip-and-lentil-lasagne")
 
-  override val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.Vegetarian)
+  val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.Vegetarian)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Lasagne sheets", Some("200g"), None, Some("12 sheets")),

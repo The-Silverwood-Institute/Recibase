@@ -21,7 +21,7 @@ case object ChickenCurry extends Recipe {
   )
 
   override val source: Option[String] = Some("H + S")
-  override val tags = Set(
+  val tags = Set(
     Tag.Slow,
     Tag.Freezes,
     Tag.Scales,

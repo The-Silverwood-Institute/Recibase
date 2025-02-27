@@ -13,7 +13,7 @@ case object SmokyFishSweetPotatoCurry extends Recipe {
   override val permalink: Permalink =
     Permalink("smoky-fish-curry")
 
-  override val tags = Set(Tag.Pescatarian, Tag.Spicy)
+  val tags = Set(Tag.Pescatarian, Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Onion", "1", "diced"),

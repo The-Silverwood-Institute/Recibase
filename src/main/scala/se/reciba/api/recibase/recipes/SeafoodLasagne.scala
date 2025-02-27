@@ -6,7 +6,7 @@ import se.reciba.api.utils.IntUtils.TemperatureUtils
 case object SeafoodLasagne extends Recipe {
   val name = "Seafood Lasagne"
 
-  override val tags =
+  val tags =
     Set(Tag.Pescatarian, Tag.Slow, Tag.Stodge, Tag.ColdWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(

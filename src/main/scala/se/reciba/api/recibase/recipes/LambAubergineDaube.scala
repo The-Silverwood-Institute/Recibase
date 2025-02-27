@@ -6,7 +6,7 @@ case object LambAubergineDaube extends Recipe {
   val name = "Lamb and Aubergine Daube"
 
   override val source: Option[String] = Some("The Times - Dinner Tonight")
-  override val tags = Set(Tag.Spicy)
+  val tags = Set(Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Aubergine", "350g"),

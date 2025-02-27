@@ -12,7 +12,7 @@ case object NewYorkBagel extends Recipe {
     "A vegetarian take on the classic pastrami bagel"
   )
 
-  override val tags = Set(Tag.Lunch)
+  val tags = Set(Tag.Lunch)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Bagels", "4"),

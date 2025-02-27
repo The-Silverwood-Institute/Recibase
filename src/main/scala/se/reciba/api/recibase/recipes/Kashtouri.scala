@@ -11,7 +11,7 @@ case object Kashtouri extends Recipe {
   override val description: Option[String] = Some(
     "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
   )
-  override val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
+  val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Risotto rice", "150g"),

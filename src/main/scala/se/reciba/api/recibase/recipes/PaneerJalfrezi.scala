@@ -6,7 +6,7 @@ case object PaneerJalfrezi extends Recipe {
   val name = "Paneer Jalfrezi"
 
   override val source: Option[String] = Some("Gousto")
-  override val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy, Tag.LowEffort)
+  val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Onion", "1", "sliced"),

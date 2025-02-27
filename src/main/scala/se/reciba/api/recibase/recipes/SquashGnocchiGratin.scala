@@ -24,8 +24,8 @@ case object SquashGnocchiGratin extends Recipe {
       |If you have a suitable casserole dish you can bake both the squash and the final mixture in the same dish, to save on washing.
       |""".stripMargin
   )
-  override val tags =
-    Set(Tag.Vegetarian, Tag.Slow, Tag.LowEffort, Tag.Healthy, Tag.Scales)
+  val tags =
+    Set(Tag.Vegetarian, Tag.Slow, Tag.LowEffort, Tag.Stephani, Tag.Scales)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Squash", "1", "chopped into 1 1/2cm cubes"),

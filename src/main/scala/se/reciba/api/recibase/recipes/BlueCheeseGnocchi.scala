@@ -14,7 +14,7 @@ case object BlueCheeseGnocchi extends Recipe {
   override val notes: Option[String] = Some(
     "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
   )
-  override val tags =
+  val tags =
     Set(
       Tag.Stodge,
       Tag.Quick,

@@ -9,7 +9,7 @@ case object Quesadillas extends Recipe {
   override val source: Option[String] = Some(
     "https://www.hellofresh.co.uk/recipes/cheesy-chipotle-bean-quesadillas-5feb6402f4480c042d622a2d"
   )
-  override val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Spicy, Tag.LowEffort)
+  val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Spicy, Tag.LowEffort)
 
   override val notes: Option[String] = Some(
     """This also works with ancho chilli paste.

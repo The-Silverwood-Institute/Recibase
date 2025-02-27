@@ -6,7 +6,7 @@ case object BeefWraps extends Recipe {
   val name =
     "Beef Wraps"
 
-  override val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
+  val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 
   override val description: Option[String] =
     Some("Spiced vegetarian beef wraps with black beans")

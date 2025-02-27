@@ -17,7 +17,7 @@ case object Brownies extends Recipe {
         |
         |You can use gluten free flour and the taste is indistinguishable. I've been working on a <a href="https://reciba.se/vegan-brownies">vegan version</a> using aquafaba.""".stripMargin
   )
-  override val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegetarian)
+  val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegetarian)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/brownies.jpg")
   )

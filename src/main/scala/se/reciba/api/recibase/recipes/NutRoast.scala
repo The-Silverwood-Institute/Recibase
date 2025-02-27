@@ -10,7 +10,7 @@ case object NutRoast extends Recipe {
   override def description: Option[String] =
     "A hearty and filling vegetarian Christmas main. Serve with gravy and roast veg.".some
 
-  override val tags =
+  val tags =
     Set(Tag.Vegetarian, Tag.HighEffort, Tag.Christmas, Tag.ColdWeather)
 
   override val notes: Option[String] =

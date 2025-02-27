@@ -32,7 +32,7 @@ case object StrawberryBasilIceCream extends Recipe with IceCream {
         |
         |Kit tasting notes: smells like pesto, tastes juicy and fruity with strawberry dominating the basil. Pepper a bit weak. Might improve after a few days in the freezer but I should consider soaking the pepper in the mascarpone for a day in the fridge before making ice cream. Consider adding a dash of lime juice to balance the strawberry sweetness, like <a href="https://peterleymanorfarm.co.uk/strawberry-basil-and-black-pepper-ice-cream/">this recipe</a> does.""".stripMargin
   )
-  override val tags = Set(Tag.Pudding)
+  val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/strawberry-basil-ice-cream.jpg")
   )

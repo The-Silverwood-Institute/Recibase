@@ -13,7 +13,7 @@ case object ParsnipGingerSoup extends Recipe {
   override val permalink: Permalink =
     Permalink("parsnip-and-ginger-soup")
 
-  override val tags = Set(Tag.Soup, Tag.VeganIsh, Tag.LowEffort)
+  val tags = Set(Tag.Soup, Tag.VeganIsh, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Parnsips", "450g", "Diced"),

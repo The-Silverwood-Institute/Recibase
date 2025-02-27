@@ -19,7 +19,7 @@ case object Spanakopita extends Recipe {
     
     I didn't make this with onion or garlic the first time.""".stripMargin
   )
-  override val tags = Set(Tag.Vegetarian, Tag.Slow)
+  val tags = Set(Tag.Vegetarian, Tag.Slow)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Frozen spinach", "300g"),

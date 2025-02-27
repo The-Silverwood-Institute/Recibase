@@ -17,7 +17,7 @@ case object BirthdayCake extends Recipe {
     "You can optionally slice off the top of the cake, to provide a flat surface for easier decoration."
   )
 
-  override val tags = Set(Tag.Pudding, Tag.Baking)
+  val tags = Set(Tag.Pudding, Tag.Baking)
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/birthday-cake.jpg")
   )
