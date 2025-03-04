@@ -333,6 +333,13 @@ object MealDefinitions {
           "https://www.gousto.co.uk/cookbook/recipes/tomato-risotto-with-crispy-roast-aubergine"
         )
       ),
+      MealStub(
+        "Roast Carrot Soup",
+        Set(Tag.Vegan, Tag.Scales, Tag.Slow, Tag.Freezes),
+        Online(
+          "https://cookieandkate.com/roasted-carrot-soup-recipe/#tasty-recipes-35404-jump-target"
+        )
+      ),
       MealStub("Roast Nut Omelette", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
         "Roast veg & chickpeas tomato sauce",
@@ -362,6 +369,13 @@ object MealDefinitions {
       MealStub(
         "Sausages & Mash",
         Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.LowEffort)
+      ),
+      MealStub(
+        "Scotch Pancakes",
+        Set(Tag.Pudding, Tag.Quick, Tag.LowEffort, Tag.Scales),
+        Online(
+          "https://www.reddit.com/r/Scotland/comments/uhaqax/what_do_you_mean_you_dont_know_how_to_make_drop/"
+        )
       ),
       MealStub(
         "Seitan Tagine",
