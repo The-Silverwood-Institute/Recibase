@@ -33,7 +33,7 @@ case object PomegranateLimeIceCream extends Recipe with IceCream {
     genericIngredients.prefixIngredients(
       Ingredient(
         "Pomegranate powder",
-        "40g".some,
+        "20g".some,
         None,
         "freeze dried, no added sugar".some
       ),
