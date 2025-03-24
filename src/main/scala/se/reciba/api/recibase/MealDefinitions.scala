@@ -265,10 +265,15 @@ object MealDefinitions {
       ),
       MealStub(
         "Paneer Butter Masala",
-        Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort, Tag.Spicy),
+        Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort, Tag.Spicy, Tag.Scales),
         Online(
           "https://www.gousto.co.uk/cookbook/vegetarian-recipes/paneer-butter-masala-with-coriander-naan"
         )
+      ),
+      MealStub(
+        "Paneer Lababdar",
+        Set(Tag.Vegetarian, Tag.Spicy, Tag.Scales),
+        Online("https://www.indianhealthyrecipes.com/paneer-lababdar-recipe/")
       ),
       MealStub(
         "Pasta & Pesto",
