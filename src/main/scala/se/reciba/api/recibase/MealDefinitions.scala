@@ -513,7 +513,7 @@ object MealDefinitions {
       MealStub("Tuna Pasta", Set(Tag.Pescatarian, Tag.Quick, Tag.LowEffort)),
       MealStub(
         "Tuna steaks with salsa verde",
-        Set(Tag.Pescatarian),
+        Set(Tag.Pescatarian, Tag.Stephani, Tag.StephaniIsh),
         Online("https://www.bbc.co.uk/food/recipes/tunasteakswithsalsav_74789")
       ),
       MealStub(
