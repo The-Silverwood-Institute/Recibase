@@ -55,6 +55,7 @@ case object SmokyFishSweetPotatoCurry extends Recipe {
     "Make the stock and add the creamed coconut.",
     "Add the garlic, ginger, ground coriander, ground turmeric, chilli and the sweet potato and mix well.",
     "Pour in the stock and cook for 15-20 mins or until the sweet potato is soft and the stock has thickened.",
-    "Add the smoked fish and cook for 5 mins or until cooked through."
+    "Add the smoked fish and cook for 5 mins or until cooked through.",
+    "Serve and garnish with corriander."
   )
 }
