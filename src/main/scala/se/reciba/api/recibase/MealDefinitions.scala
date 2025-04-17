@@ -169,6 +169,10 @@ object MealDefinitions {
         GoogleDrive("1vhTDuRPfPYHme_T9u2NnTakE1avfdoLk")
       ),
       MealStub(
+        "Homemade Pizza",
+        Set(Tag.HighEffort, Tag.Slow, Tag.Vegetarian, Tag.Stodge)
+      ),
+      MealStub(
         "Jamaican Squash & Coconut Stew",
         Set(Tag.Scales, Tag.Vegan, Tag.Spicy, Tag.Freezes, Tag.BetterNextDay),
         Online(
@@ -297,10 +301,6 @@ object MealDefinitions {
       MealStub(
         "Pies",
         Set(Tag.LowEffort, Tag.Vegetarian, Tag.Stodge)
-      ),
-      MealStub(
-        "Pizza",
-        Set(Tag.HighEffort, Tag.Slow, Tag.Vegetarian, Tag.Stodge)
       ),
       MealStub(
         "Pomegranate Persian Halloumi",
@@ -438,6 +438,10 @@ object MealDefinitions {
         )
       ),
       MealStub("Stir fry", Set(Tag.Quick, Tag.Vegetarian)),
+      MealStub(
+        "Supermarket Pizza",
+        Set(Tag.LowEffort, Tag.Quick, Tag.Vegetarian, Tag.Stodge)
+      ),
       MealStub(
         "Sweet Potato & Smoked Paprika Soup",
         Set(
