@@ -17,9 +17,10 @@ lazy val root = (project in file("."))
       "io.circe" %% "circe-generic" % "0.14.12",
       "io.circe" %% "circe-generic-extras" % "0.14.4",
       "com.beachape" %% "enumeratum" % EnumeratumVersion,
-      "com.beachape" %% "enumeratum-circe" % EnumeratumVersion,
+      "com.beachape" %% "enumeratum-circe" % "1.7.5",
       "org.apache.commons" % "commons-lang3" % "3.17.0",
       "org.reflections" % "reflections" % "0.10.2",
+      "org.apache.commons" % "commons-csv" % "1.14.0",
       "org.specs2" %% "specs2-core" % Specs2Version % "test",
       "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
       "ch.qos.logback" % "logback-classic" % LogbackVersion
