@@ -14,6 +14,8 @@ import java.time.temporal.ChronoUnit
 import java.time.Duration
 import cats.effect.std.AtomicCell
 import cats.effect.kernel.Async
+import org.apache.commons.csv.{CSVFormat, CSVParser}
+import scala.jdk.CollectionConverters._
 
 object UsageData {
   def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =
@@ -47,13 +49,13 @@ class UsageData[F[_]: Async](
 ) {
   private val csvUrlOpt = sys.env.get("MEAL_LOG_CSV_URL")
 
-  private def getRawCsv = csvUrlOpt
-    .map(Source.fromURL)
-    .map(_.getLines())
-    .getOrElse(Iterator.empty)
+  // .parse(Source.fromURL(sys.env.get("MEAL_LOG_CSV_URL").get).bufferedReader())
+  private val csvReader =
+    CSVFormat.RFC4180.builder().setHeader().setSkipHeaderRecord(true).get()
 
-  private val quotedMatcher = """^\"(.+)\",\"(.+)\",(.*)$""".r
-  private val unquotedMatcher = """^\"(.+)\",(.+),(.*)$""".r
+  private def getRawCsv = csvUrlOpt
+    .map(Source.fromURL(_).bufferedReader())
+    .map(csvReader.parse)
 
   private def cachedMealLogEntries(timeout: Duration): F[Set[MealLogEntry]] =
     ref
@@ -73,19 +75,20 @@ class UsageData[F[_]: Async](
       })
       .map(_.entries)
 
-  private def parseCsv(raw: Iterator[String]): Set[MealLogEntry] = raw
-    .map {
-      case quotedMatcher(rawDate, name, _)   => MealLogEntry(name, rawDate)
-      case unquotedMatcher(rawDate, name, _) => MealLogEntry(name, rawDate)
-      case unknown => Failure(InvalidMealLogCsvRow(unknown))
-    }
-    .flatMap {
-      case Success(entry) => Some(entry)
-      case Failure(_)     =>
-//        println(exception.getMessage)
-        None
-    }
-    .toSet
+  private def parseCsv(parserOpt: Option[CSVParser]): Set[MealLogEntry] =
+    parserOpt.fold[Set[MealLogEntry]](Set.empty)(parser => {
+      parser
+        .getRecords()
+        .asScala
+        .flatMap(record => {
+          (record.get("Date"), record.get("Meal"), record.get("Notes")) match {
+            case (_, "", _) => None
+            case (rawDate, mealName, _) =>
+              MealLogEntry(mealName, rawDate).toOption
+          }
+        })
+        .toSet
+    })
 
   def refreshMealLog: F[Unit] = cachedMealLogEntries(
     UsageData.softRefreshTime
