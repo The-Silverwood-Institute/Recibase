@@ -1,5 +1,6 @@
 package se.reciba.api.model
 
+import cats.syntax.all._
 import se.reciba.api.utils.StringUtils._
 import se.reciba.api.recipes._
 import io.circe.Encoder
@@ -117,8 +118,11 @@ object Recipe {
 
 object Ingredient {
   def apply(name: String, quantity: String): Ingredient =
-    new Ingredient(name, Some(quantity))
+    new Ingredient(name, quantity.some)
 
   def apply(name: String, quantity: String, prep: String): Ingredient =
-    new Ingredient(name, Some(quantity), Some(prep))
+    new Ingredient(name, quantity.some, prep.some)
+
+  def apply(name: String, quantity: String, prep: String, notes: String): Ingredient =
+    new Ingredient(name, quantity.some, prep.some, notes.some)
 }

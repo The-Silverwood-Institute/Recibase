@@ -8,8 +8,8 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 
-case object SmokyFishSweetPotatoCurry extends Recipe {
-  val name = "Smoky fish and sweet potato curry"
+case object SmokyFishSquashCurry extends Recipe {
+  val name = "Smoky fish and squash curry"
   override val permalink: Permalink =
     Permalink("smoky-fish-curry")
 
@@ -46,15 +46,16 @@ case object SmokyFishSweetPotatoCurry extends Recipe {
     Ingredient("Stock cube", "1"),
     Ingredient("Ground coriander", "1 tsp"),
     Ingredient("Ground turmeric", "1 tsp"),
-    Ingredient("Sweet potato", "200g", "cut into bite-size pieces"),
+    Ingredient("Squash", "200g", "peeled and cut into bite-size pieces", "alternatively use sweet potato"),
     Ingredient("Water", "350ml", "boiling"),
     Ingredient("Naan Bread", None, None, Some("Optional"))
   )
   val method = List(
     "Soften the onion in a pan.",
     "Make the stock and add the creamed coconut.",
-    "Add the garlic, ginger, ground coriander, ground turmeric, chilli and the sweet potato and mix well.",
-    "Pour in the stock and cook for 15-20 mins or until the sweet potato is soft and the stock has thickened.",
-    "Add the smoked fish and cook for 5 mins or until cooked through."
+    "Add the garlic, ginger, ground coriander, ground turmeric, chilli and the squash and mix well.",
+    "Pour in the stock and cook for 15-20 mins or until the squash is soft and the stock has thickened.",
+    "Add the smoked fish and cook for 5 mins or until cooked through.",
+    "Serve and garnish with corriander."
   )
 }
