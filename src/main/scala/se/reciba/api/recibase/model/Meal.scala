@@ -5,6 +5,7 @@ import io.circe.generic.extras.Configuration
 import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
 
 import java.time.LocalDate
+import se.reciba.api.recibase.model.DatedNote
 
 trait Meal {
   def name: String
@@ -18,10 +19,8 @@ trait Meal {
 case class MealStub(
     name: String,
     tags: Set[Tag],
-    source: Option[Source] = None,
-    lastEaten: Option[LocalDate] = None,
-    timesEaten: Option[Int] = None
-) extends Meal {}
+    source: Option[Source] = None
+) extends Meal
 
 object MealStub {
   def apply(recipe: Recipe): MealStub =
@@ -29,13 +28,40 @@ object MealStub {
 
   def apply(name: String, tags: Set[Tag], source: Source): MealStub =
     MealStub(name, tags, Some(source))
+}
 
-  implicit val stubEncoder: Encoder[MealStub] =
-    Encoder.forProduct6(
+case class MealStubWithUsageData(
+    name: String,
+    tags: Set[Tag],
+    source: Option[Source],
+    datedNotes: List[DatedNote],
+    lastEaten: Option[LocalDate],
+    timesEaten: Int
+) extends Meal
+
+object MealStubWithUsageData {
+  def apply(
+      mealStub: MealStub,
+      datedNotes: List[DatedNote],
+      lastEaten: Option[LocalDate],
+      timesEaten: Int
+  ): MealStubWithUsageData =
+    MealStubWithUsageData(
+      mealStub.name,
+      mealStub.tags,
+      mealStub.source,
+      datedNotes,
+      lastEaten,
+      timesEaten
+    )
+
+  implicit val stubEncoder: Encoder[MealStubWithUsageData] =
+    Encoder.forProduct7(
       "name",
       "tags",
       "inherited_tags",
       "source",
+      "dated_notes",
       "last_eaten",
       "times_eaten"
     ) { mealStub =>
@@ -44,6 +70,7 @@ object MealStub {
         mealStub.tags,
         mealStub.inheritedTags,
         mealStub.source,
+        mealStub.datedNotes,
         mealStub.lastEaten.map(date =>
           s"${date.getYear}-${date.getMonthValue}-${date.getDayOfMonth}"
         ),

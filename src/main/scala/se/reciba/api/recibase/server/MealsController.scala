@@ -9,7 +9,8 @@ import se.reciba.api.model.{
   Online,
   Recipe,
   Source,
-  Tag
+  Tag,
+  MealStubWithUsageData
 }
 import se.reciba.api.usage.UsageData
 
@@ -18,7 +19,7 @@ import se.reciba.api.MealDefinitions
 import cats.effect.kernel.Sync
 
 trait MealsController[F[_]] {
-  def meals: F[Set[MealStub]]
+  def meals: F[Set[MealStubWithUsageData]]
   def mealNames: F[String]
 }
 
@@ -27,7 +28,7 @@ object MealsController {
       usageData: UsageData[F]
   )(implicit F: Sync[F]): MealsController[F] =
     new MealsController[F] {
-      override def meals: F[Set[MealStub]] =
+      override def meals: F[Set[MealStubWithUsageData]] =
         mealStubsWithUsageData[F](usageData)
       override def mealNames: F[String] =
         MealDefinitions.mealStubs
@@ -42,14 +43,15 @@ object MealsController {
 
   def mealStubsWithUsageData[F[_]: Sync](
       usageData: UsageData[F]
-  ): F[Set[MealStub]] = {
+  ): F[Set[MealStubWithUsageData]] = {
     for {
       mealCount <- usageData.mealCount
       mealLastEaten <- usageData.mealLastEaten
+      mealNotes <- usageData.mealNotes
     } yield MealDefinitions.mealStubs
       .map(meal => {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
-        val mealWithCount = mealTimesEaten match {
+        val mealWithFrequencyTags = mealTimesEaten match {
           // Non-dinner items shouldn't be assigned usage tags because they are misleading
           case _ if !meal.isDinner => meal
           case 0 => meal.copy(tags = meal.tags + Tag.NeverEaten)
@@ -60,12 +62,12 @@ object MealsController {
           case _ => meal
         }
 
-        val mealWithUsageData = mealWithCount.copy(
-          lastEaten = mealLastEaten.get(mealWithCount.name),
-          timesEaten = Some(mealTimesEaten)
+        MealStubWithUsageData(
+          mealWithFrequencyTags,
+          mealNotes.getOrElse(meal.name, List.empty),
+          mealLastEaten.get(mealWithFrequencyTags.name),
+          mealTimesEaten
         )
-
-        mealWithUsageData
       })
   }
 

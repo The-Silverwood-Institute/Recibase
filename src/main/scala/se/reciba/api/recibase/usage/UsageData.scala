@@ -16,6 +16,7 @@ import cats.effect.std.AtomicCell
 import cats.effect.kernel.Async
 import org.apache.commons.csv.{CSVFormat, CSVParser}
 import scala.jdk.CollectionConverters._
+import se.reciba.api.recibase.model.DatedNote
 
 object UsageData {
   def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =
@@ -37,6 +38,16 @@ object UsageData {
   def totals(logEntries: Set[MealLogEntry]): Map[String, Int] =
     logEntries.groupBy(_.mealName).map { case (mealName, dates) =>
       mealName -> dates.size
+    }
+
+  def notes(logEntries: Set[MealLogEntry]): Map[String, List[DatedNote]] =
+    logEntries.groupBy(_.mealName).map { case (mealName, entries) =>
+      mealName -> entries
+        .collect { case MealLogEntry(_, date, Some(note)) =>
+          DatedNote(date, note)
+        }
+        .toList
+        .sortBy(_.date)
     }
 
   val softRefreshTime = Duration.ofHours(12)
@@ -83,8 +94,8 @@ class UsageData[F[_]: Async](
         .flatMap(record => {
           (record.get("Date"), record.get("Meal"), record.get("Notes")) match {
             case (_, "", _) => None
-            case (rawDate, mealName, _) =>
-              MealLogEntry(mealName, rawDate).toOption
+            case (rawDate, mealName, rawNote) =>
+              MealLogEntry(mealName, rawDate, rawNote).toOption
           }
         })
         .toSet
@@ -97,13 +108,25 @@ class UsageData[F[_]: Async](
     cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.totals)
   def mealLastEaten: F[Map[String, LocalDate]] =
     cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.lastEaten)
+  def mealNotes: F[Map[String, List[DatedNote]]] =
+    cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.notes)
 }
 
-final case class MealLogEntry(mealName: String, date: LocalDate)
+final case class MealLogEntry(
+    mealName: String,
+    date: LocalDate,
+    note: Option[String]
+)
 
 object MealLogEntry {
-  def apply(mealName: String, rawDate: String): Try[MealLogEntry] =
-    UsageData.parseDate(rawDate).map(MealLogEntry(mealName, _))
+  def apply(
+      mealName: String,
+      rawDate: String,
+      rawNote: String
+  ): Try[MealLogEntry] = {
+    val note = if (rawNote == "") None else Some(rawNote)
+    UsageData.parseDate(rawDate).map(MealLogEntry(mealName, _, note))
+  }
 }
 
 case class FetchedMealLogEntries(entries: Set[MealLogEntry], fetchedAt: Instant)
