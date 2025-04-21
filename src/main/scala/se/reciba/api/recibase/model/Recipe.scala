@@ -9,6 +9,7 @@ import org.reflections.Reflections
 
 import scala.reflect.classTag
 import scala.reflect.runtime.universe
+import se.reciba.api.recibase.model.DatedNote
 
 @JsonCodec
 case class Ingredient(
@@ -66,6 +67,8 @@ trait Recipe extends Meal with Product {
   }
 }
 
+case class RecipeWithUsageData(recipe: Recipe, datedNotes: List[DatedNote])
+
 object Recipe {
   import scala.jdk.CollectionConverters._
 
@@ -80,9 +83,11 @@ object Recipe {
     .toSeq
 
   println(recipes)
+}
 
-  implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct12(
+object RecipeWithUsageData {
+  implicit val encodeRecipe: Encoder[RecipeWithUsageData] =
+    Encoder.forProduct13(
       "name",
       "permalink",
       "edit",
@@ -90,6 +95,7 @@ object Recipe {
       "description",
       "tagline",
       "notes",
+      "dated_notes",
       "tags",
       "inherited_tags",
       "image",
@@ -97,18 +103,19 @@ object Recipe {
       "method"
     )(r =>
       (
-        r.name,
-        r.permalink.value,
-        r.edit,
-        r.source,
-        r.description,
-        r.tagline,
-        r.notes,
-        r.tags,
-        r.inheritedTags,
-        r.image,
-        r.ingredientsBlocks,
-        r.method
+        r.recipe.name,
+        r.recipe.permalink.value,
+        r.recipe.edit,
+        r.recipe.source,
+        r.recipe.description,
+        r.recipe.tagline,
+        r.recipe.notes,
+        r.datedNotes,
+        r.recipe.tags,
+        r.recipe.inheritedTags,
+        r.recipe.image,
+        r.recipe.ingredientsBlocks,
+        r.recipe.method
       )
     )
 }

@@ -16,7 +16,7 @@ object RecibaseServer {
   )(implicit F: Async[F]): Stream[F, Unit] = {
     for {
       _ <- BlazeClientBuilder[F].stream
-      recipesAlg = RecipeController.impl[F]
+      recipesAlg = RecipeController.impl[F](usageData)
       mealsAlg = MealsController.impl[F](usageData)
       metaAlg = MetaController.impl[F]
 

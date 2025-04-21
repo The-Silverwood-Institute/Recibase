@@ -2,12 +2,13 @@ package se.reciba.api.server
 
 import cats.Applicative
 import cats.implicits._
-import se.reciba.api.model.{MenuEntry, Recipe}
+import se.reciba.api.model.{MenuEntry, Recipe, RecipeWithUsageData}
 
 import scala.language.implicitConversions
+import se.reciba.api.usage.UsageData
 
 trait RecipeController[F[_]] {
-  def recipe(recipeUrl: String): F[Option[Recipe]]
+  def recipe(recipeUrl: String): F[Option[RecipeWithUsageData]]
   def recipes(
       withIngredient: Option[String]
   ): F[Seq[MenuEntry]]
@@ -19,8 +20,20 @@ object RecipeController {
       recipes.map(recipe => MenuEntry(recipe.name, recipe.permalink.value))
   }
 
-  val routing: Map[String, Recipe] =
+  private val routing: Map[String, Recipe] =
     Recipe.recipes.map(recipe => recipe.permalink.value -> recipe).toMap
+
+  def getRecipe[F[_]: Applicative](
+      usageData: UsageData[F],
+      recipeUrl: String
+  ): F[Option[RecipeWithUsageData]] =
+    usageData.mealNotes.map(notes =>
+      routing
+        .get(recipeUrl)
+        .map(recipe =>
+          RecipeWithUsageData(recipe, notes.getOrElse(recipe.name, List.empty))
+        )
+    )
 
   def listRecipes(
       hasIngredient: Option[String]
@@ -37,10 +50,10 @@ object RecipeController {
       ev: RecipeController[F]
   ): RecipeController[F] = ev
 
-  def impl[F[_]: Applicative]: RecipeController[F] =
+  def impl[F[_]: Applicative](usageData: UsageData[F]): RecipeController[F] =
     new RecipeController[F] {
-      def recipe(recipeUrl: String): F[Option[Recipe]] =
-        routing.get(recipeUrl).pure[F]
+      def recipe(recipeUrl: String): F[Option[RecipeWithUsageData]] =
+        getRecipe(usageData, recipeUrl)
       def recipes(
           withIngredient: Option[String]
       ): F[Seq[MenuEntry]] =

@@ -13,7 +13,7 @@ trait Meal {
 
   def isDinner: Boolean = tags.intersect(Tag.nonDinnerTags).isEmpty
 
-  protected def inheritedTags: Set[Tag] = tags.flatMap(_.allParentTags)
+  def inheritedTags: Set[Tag] = tags.flatMap(_.allParentTags)
 }
 
 case class MealStub(
