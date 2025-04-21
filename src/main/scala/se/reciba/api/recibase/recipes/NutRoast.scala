@@ -13,7 +13,7 @@ case object NutRoast extends Recipe {
   val tags =
     Set(Tag.Vegetarian, Tag.HighEffort, Tag.Christmas, Tag.ColdWeather)
 
-  override val notes: Option[String] =
+  override val notes: List[String] = List(
     """We use Waitrose mixed roasted nuts, which is a mixture of brazil nuts, almonds, hazelnuts and macadamia nuts. The pre-roasting really adds to the flavour, so if you buy raw nuts do consider roasting them youself.
     |
     |You can prepare the dry ingredients several days in advance, to reduce stress on the day.
@@ -22,7 +22,8 @@ case object NutRoast extends Recipe {
     |
     |The ingredient quantities are largely vibe based, depending how Alex feels each year.
     |
-    |The number of eggs needed varies each year, depending how dry the mixture is. Always buy more than needed.""".stripMargin.some
+    |The number of eggs needed varies each year, depending how dry the mixture is. Always buy more than needed.""".stripMargin
+  )
 
   override val image: Option[Image] = Some(
     Image("https://i.reciba.se/nut-roast.jpg")

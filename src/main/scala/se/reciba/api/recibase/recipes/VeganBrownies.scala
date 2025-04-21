@@ -20,7 +20,7 @@ case object VeganBrownies extends Recipe {
   override val description: Option[String] = Some(
     "Version 4 of my vegan alt recipe, based on Linda McCartney's classic brownies"
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """This recipe is all about the chocolate, so use high quality 70%+ dark cooking chocolate. I use Willie's Cacao Chocolate Drops but other vegan cooking chocolates are available. Always check the ingredients as some contain milk.
         |
         |If your vegan butter is unsalted then use a full teaspoon of salt. I reduced the salt quantity to 1/2 tsp because Vitalite is quite salty. The vegan version uses way less butter, but is still failing keep its fluffy texture, so I might reduce the Vitalite further.

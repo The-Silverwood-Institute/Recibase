@@ -8,7 +8,7 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
   val tags = Set(Tag.Spicy, Tag.Scales, Tag.BetterNextDay, Tag.Slow)
 
   override val source: Option[String] = Some("Kit's Dad")
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """If your chorio is very spicy you might not need any chilli flakes. Similarly if you use chilli oil.
 This dish tastes best if you leave it to cool then reheat it.
 You could try serving this dish over grilled aubergines."""

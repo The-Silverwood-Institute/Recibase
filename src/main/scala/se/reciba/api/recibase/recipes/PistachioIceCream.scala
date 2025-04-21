@@ -16,7 +16,7 @@ case object PistachioIceCream extends Recipe with IceCream {
   override val description: Option[String] = Some(
     "A simple yet decadent Pistachio ice cream recipe, no churn needed."
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     s"""You can substitute pistachios for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
         |
         |$genericNotes""".stripMargin

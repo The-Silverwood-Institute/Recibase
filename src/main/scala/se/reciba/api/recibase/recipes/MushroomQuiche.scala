@@ -5,7 +5,7 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 case object MushroomQuiche extends Recipe {
   val name = "Mushroom Quiche"
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "Take the pastry out of the fridge 40 mins before use!"
   )
   val tags = Set(Tag.Stodge, Tag.Slow, Tag.Vegetarian)

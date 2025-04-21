@@ -6,7 +6,7 @@ import se.reciba.api.utils.IntUtils.TemperatureUtils
 case object MeltyMushroomWellingtons extends Recipe {
   val name = "Melty Mushroom Wellingtons"
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """Take the pastry out of the fridge ten minutes before use.
 Makes two large pies."""
   )

@@ -11,7 +11,7 @@ case object BlueCheeseGnocchi extends Recipe {
       "Gnocchi with creme fraiche and spinach topped with grilled blue stilton."
     )
   override val tagline: Option[String] = Some("Fill the void with cheese")
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
   )
   val tags =

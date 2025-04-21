@@ -19,7 +19,7 @@ case object StrawberryBasilIceCream extends Recipe with IceCream {
 
   override val source: Option[String] = Some("Kit")
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     s"""$genericNotes
         |
         |I vibed the quantity of pepper. A few grinder twists wasn't enough so I added a healthy dose the second time. If I make this again I'll measure it in tsp. Consider using a fine spice mill or grinding with a mortar and pestal, because my supermarket grinder left large pieces.

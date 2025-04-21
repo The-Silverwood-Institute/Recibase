@@ -15,7 +15,7 @@ case object ToadInTheHole extends Recipe {
     Permalink.fromRawString("toad-in-the-hole")
 
   override val source: Option[String] = Some("Jeremy")
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "If you're using vegetarian sausages don't fully cook them beforehand, otherwise they get too dry."
   )
   override val image: Option[Image] = Some(

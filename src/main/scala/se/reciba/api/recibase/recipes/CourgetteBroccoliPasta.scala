@@ -6,8 +6,8 @@ case object CourgetteBroccoliPasta extends Recipe {
   val name = "Courgette & Broccoli Pasta"
 
   override val source: Option[String] = Some("Gousto")
-  override val notes: Option[String] =
-    Some(
+  override val notes: List[String] =
+    List(
       """If tagliatelle is unavailable try spaghetti.
           |
           |You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.

@@ -13,7 +13,7 @@ case object BirthdayCake extends Recipe {
     "My mum's classic madeira cake recipe. Made with buttercream icing and topped with Smarties!"
   )
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "You can optionally slice off the top of the cake, to provide a flat surface for easier decoration."
   )
 

@@ -17,7 +17,7 @@ case object RhubarbCrumble extends Recipe {
     "https://web.archive.org/web/20210227223551/http://www.claudiandfin.co.uk/healthy-rhubarb-date-crumble-recipe/"
   )
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """Make sure to keep the butter in the fridge until right before you need it, to avoid it melting.
       |
       |You can leave out the dates or substitute the filling for another fruit combination. We use this recipe as the template for all our crumbles.

@@ -13,7 +13,7 @@ case object HoisinDuckWraps extends Recipe {
   override val description: Option[String] =
     Some("To the tune of Top Cat: Duck Wraps! They're vegetarian, Duck Wraps!")
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg.
       |
       |This tastes best with hoisin sauce but mayonnaise works as a decent substitute.""".stripMargin

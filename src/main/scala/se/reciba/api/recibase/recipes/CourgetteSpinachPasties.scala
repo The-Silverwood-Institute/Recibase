@@ -7,7 +7,7 @@ case object CourgetteSpinachPasties extends Recipe {
 
   val tags = Set(Tag.Slow, Tag.Vegetarian, Tag.Stodge)
 
-  override val notes: Some[String] = Some(
+  override val notes: List[String] = List(
     "We previously used goats cheese but feta is better at bringing out the courgette's flavour."
   )
 

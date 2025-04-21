@@ -17,7 +17,7 @@ case object CheeseScones extends Recipe {
   override val description: Option[String] =
     Some("Scones, with cheese. Fill with jams and more")
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """Leave the milk out as it always needs more.
       |
       |Don't roll the dough too thin or they won't rise properly.""".stripMargin

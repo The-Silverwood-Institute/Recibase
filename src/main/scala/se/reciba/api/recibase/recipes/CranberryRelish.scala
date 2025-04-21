@@ -14,7 +14,7 @@ case object CranberryRelish extends Recipe {
     Permalink("cranberry-relish")
 
   override val source: Option[String] = Some("Kit's Mum")
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "This is best made in advance, to give the flavours time to mix"
   )
   val tags = Set(Tag.Christmas, Tag.NonMeal)

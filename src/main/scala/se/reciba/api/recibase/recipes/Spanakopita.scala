@@ -9,7 +9,7 @@ case object Spanakopita extends Recipe {
   override val source: Option[String] = Some(
     "Minna"
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """
     The frozen spinach quantity is approximate as I measured an old bag that had a lot of ice in it.
 

@@ -11,7 +11,7 @@ case object Quesadillas extends Recipe {
   )
   val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Spicy, Tag.LowEffort)
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """This also works with ancho chilli paste.
       |
       |The original makes a side salad but I have better things to do with my life.""".stripMargin

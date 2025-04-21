@@ -16,7 +16,7 @@ case object SquashGnocchiGratin extends Recipe {
   override val source: Option[String] = Some(
     "https://vervetimes.com/rukmini-iyers-crispy-baked-squash-and-gnocchi-gratin-with-creme-fraiche-feta-and-kale-feasting-with-ocado/"
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """Using 200g feta felt like a bit too much so I've noted it down as 100g. Can adjust if that's too little.
       |
       |You can use pumpkin instead of squash.

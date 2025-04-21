@@ -13,7 +13,7 @@ case object BirthdayCake2 extends Recipe {
     "Madeira cake with buttercream icing and topped with Smarties"
   )
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """This is based on the BBC cake calculator for my 2 x 18cm round cake tins with the addition of Smarties and marzipan lettering.
       |
       |You always add too little icing to the middle of the cake and have a lot left over.""".stripMargin

@@ -16,7 +16,7 @@ case object DukatenCookies extends Recipe {
     "Dukatenplätzchen, rum flavoured German Christmas cookies"
   )
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "If you don't have a small enough biscuit cutter you can use some wider shot glasses. The cookies should have a 4cm diameter."
   )
 

@@ -8,8 +8,8 @@ case object RoastedVegetableLasagne extends Recipe {
   override val source: Option[String] = Some(
     "https://www.bbcgoodfood.com/recipes/10603/roasted-vegetable-lasagne"
   )
-  override val notes: Option[String] =
-    Some(
+  override val notes: List[String] =
+    List(
       """This takes a while to make so leave lots of time.
 
 Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."""

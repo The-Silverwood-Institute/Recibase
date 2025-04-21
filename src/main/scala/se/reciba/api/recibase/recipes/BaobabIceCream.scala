@@ -16,7 +16,7 @@ case object BaobabIceCream extends Recipe with IceCream {
   override val description: Option[String] = Some(
     "A simple yet decadent zesty and tart ice cream recipe, no churn needed."
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     s"""It got very thick while mixing and was a bit flakey rather than soft so maybe try adding more egg yokes next time.
         |
         |You can substitute baobab for wasabi, marmalade or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.

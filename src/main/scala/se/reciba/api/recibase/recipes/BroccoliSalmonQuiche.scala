@@ -6,8 +6,8 @@ import se.reciba.api.utils.IntUtils.TemperatureUtils
 case object BroccoliSalmonQuiche extends Recipe {
   val name = "Broccoli & Salmon Quiche"
 
-  override val notes: Option[String] =
-    Some(
+  override val notes: List[String] =
+    List(
       "Consider using the remaining broccoli stalks and stilton in a broccoli and stilton soup."
     )
   val tags = Set(Tag.Stodge, Tag.Slow, Tag.Pescatarian)

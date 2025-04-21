@@ -8,7 +8,7 @@ case object ScrambledEggs extends Recipe {
   override val description: Option[String] = Some(
     "Soft, buttery scrambled eggs."
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """Variants:
       |Paprika - add a generous amount of (smoked) paprika along with the salt/pepper.
       |Sriracha - mix in a dash of sriracha for a spicier dish. Can be combined with the paprika.

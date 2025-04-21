@@ -11,7 +11,7 @@ case object Dahl extends Recipe {
   override val description: Option[String] = Some(
     "An Indian dish of lentils infused with spices."
   )
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "Roasted nuts can also be added. Cook them until brown with a little oil in the small pan before adding the butter, cumin and onion."
   )
   val tags = Set(Tag.Vegan, Tag.Scales, Tag.Spicy, Tag.LowEffort)

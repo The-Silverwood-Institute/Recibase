@@ -16,7 +16,7 @@ case object BroccoliStiltonSoup extends Recipe {
   override val description: Option[String] =
     Some("A rich and nutritious winter warmer")
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     "The original recipe uses a 1:2 stilton to broccoli ratio rather than our decadent 1:1 ratio. If you'd prefer not to get gout then stick with the original ratio."
   )
 

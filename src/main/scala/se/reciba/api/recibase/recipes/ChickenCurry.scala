@@ -12,7 +12,7 @@ case object ChickenCurry extends Recipe {
   val name = "Chicken Curry (WIP)"
   override val permalink: Permalink = Permalink("chicken-curry")
 
-  override val notes: Some[String] = Some(
+  override val notes: List[String] = List(
     """
       |This is H's spice blend. Alternative spice profile by S:
       |Lots of cumin, smoked paprika (sweet) and cinnamon. A medium amount of turmeric and nutmeg. A couple tsp cloves. No sugar. Only salt after cooking.

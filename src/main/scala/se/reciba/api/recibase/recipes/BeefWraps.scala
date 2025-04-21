@@ -11,7 +11,7 @@ case object BeefWraps extends Recipe {
   override val description: Option[String] =
     Some("Spiced vegetarian beef wraps with black beans")
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg."""
   )
 

@@ -20,7 +20,7 @@ case object ChineseFusion extends Recipe {
     "Stephani"
   )
 
-  override val notes: Option[String] = Some(
+  override val notes: List[String] = List(
     """You can add the salt during cooking rather than at the end.
       |
       |Yes I know, using a wok on a medium heat, blah blah blah.

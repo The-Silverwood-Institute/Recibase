@@ -8,8 +8,8 @@ case object CoconutLimeDahl extends Recipe {
   override val source: Option[String] = Some(
     "https://greedypanda.co.uk/2021/05/coconut-lime-dal/"
   )
-  override val notes: Option[String] =
-    Some(
+  override val notes: List[String] =
+    List(
       """Serves 4
         |
         |You can cook this in a rice cooker, using the slow cooker setting, although the lentils may degrade more.
