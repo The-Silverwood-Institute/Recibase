@@ -71,9 +71,7 @@ object MealStubWithUsageData {
         mealStub.inheritedTags,
         mealStub.source,
         mealStub.datedNotes,
-        mealStub.lastEaten.map(date =>
-          s"${date.getYear}-${date.getMonthValue}-${date.getDayOfMonth}"
-        ),
+        mealStub.lastEaten,
         mealStub.timesEaten
       )
     }
