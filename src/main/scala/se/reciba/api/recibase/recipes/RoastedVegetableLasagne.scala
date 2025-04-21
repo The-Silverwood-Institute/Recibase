@@ -10,9 +10,8 @@ case object RoastedVegetableLasagne extends Recipe {
   )
   override val notes: List[String] =
     List(
-      """This takes a while to make so leave lots of time.
-
-Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."""
+      "This takes a while to make so leave lots of time.",
+      "Don't worry if the roasted vegetables are ready early. Just take them out and put them to one side, or decant them onto a plate."
     )
   val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Vegetarian, Tag.Scales)
 

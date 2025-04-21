@@ -18,11 +18,9 @@ case object RhubarbCrumble extends Recipe {
   )
 
   override val notes: List[String] = List(
-    """Make sure to keep the butter in the fridge until right before you need it, to avoid it melting.
-      |
-      |You can leave out the dates or substitute the filling for another fruit combination. We use this recipe as the template for all our crumbles.
-      |
-      |We mix the fruit in the ovenproof dish because ours is basically a glass mixing bowl. If your ovenproof dish is a metal tin you might want to use a mixing bowl first.""".stripMargin
+    "Make sure to keep the butter in the fridge until right before you need it, to avoid it melting.",
+    "You can leave out the dates or substitute the filling for another fruit combination. We use this recipe as the template for all our crumbles.",
+    "We mix the fruit in the ovenproof dish because ours is basically a glass mixing bowl. If your ovenproof dish is a metal tin you might want to use a mixing bowl first."
   )
 
   val tags = Set(Tag.Pudding)

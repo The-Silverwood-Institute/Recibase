@@ -13,9 +13,8 @@ case object Brownies extends Recipe {
     "I originally got this Linda McCartney recipe from my dad, although I've since re-found it on Louise Gorrod's website. I've mirrored it here both for my own notes and because websites inevitably disappear when you least expect them to."
   )
   override val notes: List[String] = List(
-    """This recipe is all about the chocolate, so use high quality 70% dark cooking chocolate. I use Willie's Cacao Chocolate Drops or Menier Swiss Dark Chocolate.
-        |
-        |You can use gluten free flour and the taste is indistinguishable. I've been working on a <a href="https://reciba.se/vegan-brownies">vegan version</a> using aquafaba.""".stripMargin
+    "This recipe is all about the chocolate, so use high quality 70% dark cooking chocolate. I use Willie's Cacao Chocolate Drops or Menier Swiss Dark Chocolate.",
+    """You can use gluten free flour and the taste is indistinguishable. I've been working on a <a href="https://reciba.se/vegan-brownies">vegan version</a> using aquafaba."""
   )
   val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegetarian)
   override val image: Option[Image] = Some(

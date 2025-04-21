@@ -8,9 +8,8 @@ case object RoastBeetrootDahl extends Recipe {
 
   override val source: Option[String] = Some("Hello Fresh")
   override val notes: List[String] = List(
-    """The beetroot quantity is guestimated. Will refine over time.
-        |
-        |We use a modified version of <a href="https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/">this</a> Sri Lankan Curry power recipe. Will write down our version some time.""".stripMargin
+    "The beetroot quantity is guestimated. Will refine over time.",
+    """We use a modified version of <a href="https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/">this</a> Sri Lankan Curry power recipe. Will write down our version some time.""".stripMargin
   )
   val tags = Set(Tag.Vegan, Tag.Spicy, Tag.Scales)
 

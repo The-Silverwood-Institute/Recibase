@@ -17,9 +17,8 @@ case object MarmaladeIceCream extends Recipe with IceCream {
     "A sweet and tart ice cream recipe, no churn needed."
   )
   override val notes: List[String] = List(
-    s"""You can substitute marmalade for blackberries, cinnamon or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
-        |
-        |$genericNotes""".stripMargin
+    "You can substitute marmalade for blackberries, cinnamon or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.",
+    genericNotes
   )
   val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

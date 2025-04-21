@@ -19,8 +19,8 @@ case object ChunkyVegetableCrumble extends Recipe {
   )
   override val notes: List[String] =
     List(
-      """Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.
-Honey can be added with the carrots for extra sweetness."""
+      "Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.",
+      "Honey can be added with the carrots for extra sweetness."
     )
   val tags =
     Set(

@@ -20,9 +20,8 @@ case object PomegranateLimeIceCream extends Recipe with IceCream {
   override val source: Option[String] = Some("Kit")
 
   override val notes: List[String] = List(
-    s"""$genericNotes
-        |
-        |Kit tasting notes: A perfectly enjoyable but fairly tame flavour profile. At least compared to the weirder flavours I've made. I'm glad I added as much lime as I did because it provides a necessary punchy comparison to the subtler pomegranate. I should have used fresh lime juice and zest but I think I went shopping in a bit of a rush.""".stripMargin
+    genericNotes,
+    "Kit tasting notes: A perfectly enjoyable but fairly tame flavour profile. At least compared to the weirder flavours I've made. I'm glad I added as much lime as I did because it provides a necessary punchy comparison to the subtler pomegranate. I should have used fresh lime juice and zest but I think I went shopping in a bit of a rush."
   )
   val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

@@ -10,14 +10,10 @@ case object Spanakopita extends Recipe {
     "Minna"
   )
   override val notes: List[String] = List(
-    """
-    The frozen spinach quantity is approximate as I measured an old bag that had a lot of ice in it.
-
-    Iceland frozen spinach is better than other supermarkets' as they include whole leaves, while others are completely shredded.
-    
-    I used approximately 1/2tsp fennel seeds the first time and it wasn't enough, so I'm hoping 1tsp is enough.
-    
-    I didn't make this with onion or garlic the first time.""".stripMargin
+    "The frozen spinach quantity is approximate as I measured an old bag that had a lot of ice in it.",
+    "Iceland frozen spinach is better than other supermarkets' as they include whole leaves, while others are completely shredded.",
+    "I used approximately 1/2tsp fennel seeds the first time and it wasn't enough, so I'm hoping 1tsp is enough.",
+    "I didn't make this with onion or garlic the first time."
   )
   val tags = Set(Tag.Vegetarian, Tag.Slow)
 

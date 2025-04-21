@@ -9,9 +9,9 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
 
   override val source: Option[String] = Some("Kit's Dad")
   override val notes: List[String] = List(
-    """If your chorio is very spicy you might not need any chilli flakes. Similarly if you use chilli oil.
-This dish tastes best if you leave it to cool then reheat it.
-You could try serving this dish over grilled aubergines."""
+    "If your chorio is very spicy you might not need any chilli flakes. Similarly if you use chilli oil.",
+    "This dish tastes best if you leave it to cool then reheat it.",
+    "You could try serving this dish over grilled aubergines."
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(

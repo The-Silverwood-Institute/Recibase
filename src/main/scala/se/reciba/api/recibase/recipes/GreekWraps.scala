@@ -14,7 +14,7 @@ case object GreekWraps extends Recipe {
     Some("Greek style vegetarian kebab wraps")
 
   override val notes: List[String] = List(
-    """You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg""".stripMargin
+    "You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg"
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(

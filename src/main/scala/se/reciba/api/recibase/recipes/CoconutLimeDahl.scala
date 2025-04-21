@@ -10,11 +10,9 @@ case object CoconutLimeDahl extends Recipe {
   )
   override val notes: List[String] =
     List(
-      """Serves 4
-        |
-        |You can cook this in a rice cooker, using the slow cooker setting, although the lentils may degrade more.
-        |
-        |The garlic will have a stronger flavour than normal, because it is boiled rather than cooked. Consider adjusting quantity.""".stripMargin
+      "Serves 4",
+      "You can cook this in a rice cooker, using the slow cooker setting, although the lentils may degrade more.",
+      "The garlic will have a stronger flavour than normal, because it is boiled rather than cooked. Consider adjusting quantity."
     )
   val tags = Set(Tag.Vegan, Tag.Spicy, Tag.LowEffort, Tag.Scales)
 

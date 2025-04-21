@@ -6,8 +6,8 @@ case object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
 
   override val notes: List[String] = List(
-    """Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.
-There are basically no quantities. Add what seems right."""
+    "Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.",
+    "There are basically no quantities. Add what seems right."
   )
   val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Scales, Tag.LowEffort)
 

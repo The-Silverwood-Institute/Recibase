@@ -17,15 +17,11 @@ case object BaobabIceCream extends Recipe with IceCream {
     "A simple yet decadent zesty and tart ice cream recipe, no churn needed."
   )
   override val notes: List[String] = List(
-    s"""It got very thick while mixing and was a bit flakey rather than soft so maybe try adding more egg yokes next time.
-        |
-        |You can substitute baobab for wasabi, marmalade or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
-        |
-        |$genericNotes
-        |
-        |Tasting notes: Flavour is sweet with a sparkling sharpness that was zesty but with a starchy depth.
-        |
-        |Stephani says: It has a citrus type flavour but with a bready depth, like a very meaty fruit instead of normal citrus fruit texture.""".stripMargin
+    "It got very thick while mixing and was a bit flakey rather than soft so maybe try adding more egg yokes next time.",
+    "You can substitute baobab for wasabi, marmalade or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.",
+    genericNotes,
+    "Tasting notes: Flavour is sweet with a sparkling sharpness that was zesty but with a starchy depth.",
+    "Stephani says: It has a citrus type flavour but with a bready depth, like a very meaty fruit instead of normal citrus fruit texture."
   )
   val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

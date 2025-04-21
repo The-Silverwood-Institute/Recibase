@@ -14,9 +14,8 @@ case object BirthdayCake2 extends Recipe {
   )
 
   override val notes: List[String] = List(
-    """This is based on the BBC cake calculator for my 2 x 18cm round cake tins with the addition of Smarties and marzipan lettering.
-      |
-      |You always add too little icing to the middle of the cake and have a lot left over.""".stripMargin
+    "This is based on the BBC cake calculator for my 2 x 18cm round cake tins with the addition of Smarties and marzipan lettering.",
+    "You always add too little icing to the middle of the cake and have a lot left over."
   )
 
   val tags = Set(Tag.Pudding, Tag.Baking)

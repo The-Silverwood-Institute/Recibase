@@ -8,11 +8,9 @@ case object CourgetteBroccoliPasta extends Recipe {
   override val source: Option[String] = Some("Gousto")
   override val notes: List[String] =
     List(
-      """If tagliatelle is unavailable try spaghetti.
-          |
-          |You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.
-          |
-          |Try adding a tablespoon of creme fraiche or soured cream, for a richer sauce.""".stripMargin
+      "If tagliatelle is unavailable try spaghetti.",
+      "You can use garlic paste instead if you add it to the stock, rather than cooking it with the courgettes.",
+      "Try adding a tablespoon of creme fraiche or soured cream, for a richer sauce."
     )
   val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather)
 

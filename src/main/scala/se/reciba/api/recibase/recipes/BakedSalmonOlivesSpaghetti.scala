@@ -17,10 +17,10 @@ case object BakedSalmonOlivesSpaghetti extends Recipe {
   override val description: Option[String] =
     Some("Baked salmon served on a bed of spaghetti, onions and olives.")
   override val notes: List[String] =
-    List("""Cover the baking tray in foil for easier cleaning later.
-        |
-        |Use the bigger pan.
-        |""".stripMargin)
+    List(
+      "Cover the baking tray in foil for easier cleaning later.",
+      "Use the bigger pan."
+    )
   val tags = Set(Tag.Pescatarian, Tag.HotWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(

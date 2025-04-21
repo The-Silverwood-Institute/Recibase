@@ -12,10 +12,8 @@ case object HalloumiWraps extends Recipe {
     Some("Greek style halloumi wraps")
 
   override val notes: List[String] = List(
-    """You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg.
-      |
-      |A single packet of halloumi is slightly too little but two is slightly too much. Ideally cook this for an odd number of people or find a recipe to use up the remainder.
-      |""".stripMargin
+    "You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg.",
+    "A single packet of halloumi is slightly too little but two is slightly too much. Ideally cook this for an odd number of people or find a recipe to use up the remainder."
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(

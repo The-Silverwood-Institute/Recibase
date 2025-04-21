@@ -17,12 +17,9 @@ case object SquashGnocchiGratin extends Recipe {
     "https://vervetimes.com/rukmini-iyers-crispy-baked-squash-and-gnocchi-gratin-with-creme-fraiche-feta-and-kale-feasting-with-ocado/"
   )
   override val notes: List[String] = List(
-    """Using 200g feta felt like a bit too much so I've noted it down as 100g. Can adjust if that's too little.
-      |
-      |You can use pumpkin instead of squash.
-      |
-      |If you have a suitable casserole dish you can bake both the squash and the final mixture in the same dish, to save on washing.
-      |""".stripMargin
+    "Using 200g feta felt like a bit too much so I've noted it down as 100g. Can adjust if that's too little.",
+    "You can use pumpkin instead of squash.",
+    "If you have a suitable casserole dish you can bake both the squash and the final mixture in the same dish, to save on washing."
   )
   val tags =
     Set(Tag.Vegetarian, Tag.Slow, Tag.LowEffort, Tag.Stephani, Tag.Scales)

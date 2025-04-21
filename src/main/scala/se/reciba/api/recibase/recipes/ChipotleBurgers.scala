@@ -11,9 +11,8 @@ case object ChipotleBurgers extends Recipe {
   val tags = Set(Tag.Vegetarian, Tag.Spicy, Tag.Stodge, Tag.Quick)
 
   override val notes: List[String] = List(
-    """This version is only vegetarian, though you could follow the original Honest Burger version and use vegan mayo/cheese.
-      |
-      |This actually works better with ancho chilli paste but "ancho burgers" doesn't have the same ring to it.""".stripMargin
+    "This version is only vegetarian, though you could follow the original Honest Burger version and use vegan mayo/cheese.",
+    """This actually works better with ancho chilli paste but "ancho burgers" doesn't have the same ring to it."""
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(

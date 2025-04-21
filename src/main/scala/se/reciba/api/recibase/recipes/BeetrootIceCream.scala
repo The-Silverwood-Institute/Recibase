@@ -17,11 +17,9 @@ case object BeetrootIceCream extends Recipe with IceCream {
     "A simple yet decadent earthy ice cream recipe, no churn needed."
   )
   override val notes: List[String] = List(
-    s"""Consider adding a dash of lime to balance the beetroot flavour.
-        |
-        |You can substitute beetroot for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.
-        |
-        |$genericNotes""".stripMargin
+    "Consider adding a dash of lime to balance the beetroot flavour.",
+    "You can substitute beetroot for blackberries or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.",
+    genericNotes
   )
   val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

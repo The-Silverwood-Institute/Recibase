@@ -10,9 +10,8 @@ case object Mead extends Recipe {
   )
   override val tagline: Option[String] = Some("A medieval classic")
   override val notes: List[String] = List(
-    """This recipe requires a large pan, 2 ~1L flip top bottles, funnel, airlock and rubber bung.Sterilise all equipment before use to avoid comtaminating your mead.
-        |
-        |I'd recommend doubling or tripling the quantities to make this worth the effort.""".stripMargin
+    "This recipe requires a large pan, 2 ~1L flip top bottles, funnel, airlock and rubber bung.Sterilise all equipment before use to avoid comtaminating your mead.",
+    "I'd recommend doubling or tripling the quantities to make this worth the effort."
   )
   val tags = Set(Tag.NonMeal)
 

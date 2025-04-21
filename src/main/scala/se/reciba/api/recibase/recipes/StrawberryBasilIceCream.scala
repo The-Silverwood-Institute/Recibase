@@ -20,17 +20,12 @@ case object StrawberryBasilIceCream extends Recipe with IceCream {
   override val source: Option[String] = Some("Kit")
 
   override val notes: List[String] = List(
-    s"""$genericNotes
-        |
-        |I vibed the quantity of pepper. A few grinder twists wasn't enough so I added a healthy dose the second time. If I make this again I'll measure it in tsp. Consider using a fine spice mill or grinding with a mortar and pestal, because my supermarket grinder left large pieces.
-        |
-        |There was only 1/4tsp of vanilla essence left the first time I made this. I think 1/2-1tsp would work best.
-        |
-        |While the food colouring is optional the mixture is a concrete grey by default, so I'd recommend it! I've doubled the quantity of food colouring when writing this up because the mixture was still a bit grey, but YMMV.
-        |
-        |Stephani tasting notes: Interesting and complex. Most liked so far. Strong basil flavour with moments of strawberry and black pepper.
-        |
-        |Kit tasting notes: smells like pesto, tastes juicy and fruity with strawberry dominating the basil. Pepper a bit weak. Might improve after a few days in the freezer but I should consider soaking the pepper in the mascarpone for a day in the fridge before making ice cream. Consider adding a dash of lime juice to balance the strawberry sweetness, like <a href="https://peterleymanorfarm.co.uk/strawberry-basil-and-black-pepper-ice-cream/">this recipe</a> does.""".stripMargin
+    genericNotes,
+    "I vibed the quantity of pepper. A few grinder twists wasn't enough so I added a healthy dose the second time. If I make this again I'll measure it in tsp. Consider using a fine spice mill or grinding with a mortar and pestal, because my supermarket grinder left large pieces.",
+    "There was only 1/4tsp of vanilla essence left the first time I made this. I think 1/2-1tsp would work best.",
+    "While the food colouring is optional the mixture is a concrete grey by default, so I'd recommend it! I've doubled the quantity of food colouring when writing this up because the mixture was still a bit grey, but YMMV.",
+    "Stephani tasting notes: Interesting and complex. Most liked so far. Strong basil flavour with moments of strawberry and black pepper.",
+    """Kit tasting notes: smells like pesto, tastes juicy and fruity with strawberry dominating the basil. Pepper a bit weak. Might improve after a few days in the freezer but I should consider soaking the pepper in the mascarpone for a day in the fridge before making ice cream. Consider adding a dash of lime juice to balance the strawberry sweetness, like <a href="https://peterleymanorfarm.co.uk/strawberry-basil-and-black-pepper-ice-cream/">this recipe</a> does."""
   )
   val tags = Set(Tag.Pudding)
   override val image: Option[Image] = Some(

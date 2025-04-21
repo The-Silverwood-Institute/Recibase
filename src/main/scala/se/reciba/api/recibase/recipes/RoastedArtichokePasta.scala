@@ -13,12 +13,9 @@ case object RoastedArtichokePasta extends Recipe {
     Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.StephaniUnhealthy)
 
   override val notes: List[String] = List(
-    s"""Ingredients are per person, so scale it appropriately.
-      |
-      |12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.
-      |
-      |Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture.
-      |""".stripMargin
+    "Ingredients are per person, so scale it appropriately.",
+    "12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.",
+    "Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture."
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(
