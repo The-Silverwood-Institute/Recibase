@@ -83,7 +83,7 @@ object Recipe {
   println(recipes)
 
   implicit val encodeRecipe: Encoder[Recipe] =
-    Encoder.forProduct13(
+    Encoder.forProduct14(
       "name",
       "permalink",
       "edit",
@@ -91,6 +91,7 @@ object Recipe {
       "description",
       "tagline",
       "notes",
+      "legacy_notes",
       "tags",
       "inherited_tags",
       "image",
@@ -105,6 +106,7 @@ object Recipe {
         r.source,
         r.description,
         r.tagline,
+        r.notes,
         r.notes,
         r.tags,
         r.inheritedTags,
