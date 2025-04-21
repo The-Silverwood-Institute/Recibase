@@ -46,7 +46,12 @@ case object SmokyFishSquashCurry extends Recipe {
     Ingredient("Stock cube", "1"),
     Ingredient("Ground coriander", "1 tsp"),
     Ingredient("Ground turmeric", "1 tsp"),
-    Ingredient("Squash", "200g", "peeled and cut into bite-size pieces", "alternatively use sweet potato"),
+    Ingredient(
+      "Squash",
+      "200g",
+      "peeled and cut into bite-size pieces",
+      "alternatively use sweet potato"
+    ),
     Ingredient("Water", "350ml", "boiling"),
     Ingredient("Naan Bread", None, None, Some("Optional"))
   )
