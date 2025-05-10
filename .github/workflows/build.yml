@@ -1,4 +1,4 @@
-name: Build Docker Image
+name: Test Code + Build Docker Image
 on:
   push:
     branches:
@@ -16,6 +16,8 @@ jobs:
         java-version: 17
     - name: Setup SBT
       uses: sbt/setup-sbt@v1
+    - name: Test
+      run: sbt test
     - name: Build
       run: sbt "Docker / publishLocal"
     - name: Login to GitHub Container Registry
