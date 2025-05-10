@@ -112,7 +112,8 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
 
 object RecipesSpec {
   private val usageData = UsageData.apply[IO].unsafeRunSync()
-  val recipeController: RecipeController[IO] = RecipeController.impl[IO](usageData)
+  val recipeController: RecipeController[IO] =
+    RecipeController.impl[IO](usageData)
   val mealController: MealsController[IO] = MealsController.impl[IO](usageData)
   val metaController: MetaController[IO] = MetaController.impl[IO]
 }

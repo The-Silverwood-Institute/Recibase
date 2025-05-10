@@ -16,7 +16,7 @@ case object BeetrootRisotto extends Recipe {
   override def notes: List[String] = List(
     """<a href="https://t.sci1.uk/risotto-calculator/">An arborio rice/water ratio calculator</a>"""
   )
-    
+
   val tags = Set(Tag.Vegetarian, Tag.Slow, Tag.HotWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
