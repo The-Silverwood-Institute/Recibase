@@ -16,6 +16,8 @@ jobs:
         java-version: 17
     - name: Setup SBT
       uses: sbt/setup-sbt@v1
+    - name: scalafmtCheckAll
+      run: sbt scalafmtCheckAll
     - name: Test
       run: sbt test
     - name: Build
