@@ -93,7 +93,7 @@ class UsageData[F[_]: Async](
         .asScala
         .flatMap(record => {
           (record.get("Date"), record.get("Meal"), record.get("Notes")) match {
-            case (_, "", _) => None
+            case (_, "", _)                   => None
             case (rawDate, mealName, rawNote) =>
               MealLogEntry(mealName, rawDate, rawNote).toOption
           }
