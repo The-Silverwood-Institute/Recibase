@@ -60,7 +60,7 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
       Some("Ground also works")
     ),
     Ingredient("Pitted Black Olives", Some("6 tbsp"), Some("halved")),
-    Ingredient("Cannellini beans", Some("1 400g tin"), None, Some("Optional")),
+    Ingredient("Cannellini beans", Some("1 400g tin"), Some("drained and rinsed"), Some("Optional")),
     Ingredient(
       "Celery",
       None,
@@ -73,12 +73,12 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
   val method = List(
     "Cut the chorizo into half centimeter thick semi-circles.",
     "Add the oil and smoked paprika to a wide pan.",
-    "Cook the carrots on a medium to high heat for a minute or so. Stir regularly to avoid sticking.",
+    "Cook the carrots and celery on a medium to high heat for a minute or so. Stir regularly to avoid sticking.",
     "Add the red onions and garlic then cook for minute.",
     "Stir in the chorizo, peppers and tomato paste then cook for a few more minutes.",
     "Add the pasata, tinned tomatoes, cloves, chilli flakes, red wine, oregano, cinamon stick, and honey. If the pan is looking full then wait until the mixure has reduced before adding the rest of the tinned tomatoes/wine.",
     "Wait until bubbling then turn down the heat and simmer for at least 20 minutes.",
-    "Stir in spinach and mascarpone",
+    "Stir in spinach, mascarpone and cannellini beans.",
     "Serve with pasta"
   )
 }
