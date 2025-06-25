@@ -310,6 +310,7 @@ object MealDefinitions {
           Tag.HotWeather,
           Tag.Vegetarian,
           Tag.Scales
+          Tag.StephaniIsh
         ),
         Online(
           "https://drive.google.com/drive/folders/1sIZae-25brxIrc6KeWuOTf2uXE7lLvbQ"
