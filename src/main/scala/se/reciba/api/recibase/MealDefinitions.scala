@@ -309,7 +309,7 @@ object MealDefinitions {
           Tag.Quick,
           Tag.HotWeather,
           Tag.Vegetarian,
-          Tag.Scales
+          Tag.Scales,
           Tag.StephaniIsh
         ),
         Online(
