@@ -60,7 +60,12 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
       Some("Ground also works")
     ),
     Ingredient("Pitted Black Olives", Some("6 tbsp"), Some("halved")),
-    Ingredient("Cannellini beans", Some("1 400g tin"), Some("drained and rinsed"), Some("Optional")),
+    Ingredient(
+      "Cannellini beans",
+      Some("1 400g tin"),
+      Some("drained and rinsed"),
+      Some("Optional")
+    ),
     Ingredient(
       "Celery",
       None,
