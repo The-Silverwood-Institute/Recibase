@@ -33,7 +33,8 @@ case object VegetarianMexican extends Recipe {
     Ingredient("Tortillas"),
     Ingredient("Cinnamon"),
     Ingredient("Cumin"),
-    Ingredient("Salt")
+    Ingredient("Salt"),
+    Ingredient("Soured Cream", None, None, Some("optional")),
   )
   val method = List(
     s"Preheat the oven to ${200.celsius}.",
