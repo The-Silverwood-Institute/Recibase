@@ -45,8 +45,12 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object Pescatarian extends Tag("Pescatarian")
 
   // Poly
-  case object StephaniUnhealthy extends Tag("StephaniUnhealthy")
-  case object StephaniIsh extends Tag("Stephani-ish")
+  case object StephaniUnhealthy extends Tag("StephaniUnhealthy") {
+    override val parentTag: Option[Tag] = Some(StephaniIsh)
+  }
+  case object StephaniIsh extends Tag("Stephani-ish") {
+    override val parentTag: Option[Tag] = Some(Stephani)
+  }
   case object Stephani extends Tag("Stephani")
 
   // Vibe
