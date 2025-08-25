@@ -43,6 +43,7 @@ case object BirthdayCake2 extends Recipe {
         Ingredient("Icing Sugar", "300g"),
         Ingredient("Vanilla Extract", "1 tsp"),
         Ingredient("Milk", "1 tbsp"),
+        Ingredient("Smarties", Some("200g"), None, Some("optional")),
         Ingredient(
           "Cocoa powder",
           Some("4.5 tsp"),
@@ -65,13 +66,14 @@ case object BirthdayCake2 extends Recipe {
     "In a large bowl, cream together the butter and sugar using an electric mixer until the mixture is pale and fluffy.",
     "Beat in the eggs one at a time, mixing until the egg is completely incorporated into the batter before adding the next. Add a tablespoon of flour if the mixture curdles.",
     "Mix in the lemon zest.",
-    "Fold in the flour using a large metal spoon until no traces of flour are visible. Gently fold in the milk to loosen the mixture.",
+    "Fold in the flour and baking powder using a large metal spoon until no traces of flour are visible. Gently fold in the milk to loosen the mixture.",
     "Spoon the mixture into the prepared cake tins, spreading evenly with a spatula. Make a slight dip in the centre with the tip of the spatula if you don't want the cake to be domed in the middle.",
     "Bake for 25 minutes, or until the cakes spring back when the centre is pressed gently with a finger.",
     "Remove from the oven and take the cakes out of the tins after about 10 minutes. Place the cakes on a wire rack to cool completely.",
     "To make the buttercream icing, sift half the icing sugar into a bowl.",
     "Add the softened butter and (optional) cocoa powder then beat until light and fluffy.",
     "Beat in the remaining icing sugar then beat in the vanilla extract and the milk.",
-    "Place one of the cakes upside down onto a cake board or stand. Using a palette knife or spatula, spread the icing onto the bottom layer of the cake, then place the second layer on top."
+    "Place one of the cakes upside down onto a cake board or stand. Using a palette knife or spatula, spread the icing onto the bottom layer of the cake, then place the second layer on top.",
+    "Decorate with smarties and marzipan lettering, if desired."
   )
 }
