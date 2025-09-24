@@ -440,6 +440,11 @@ object MealDefinitions {
       ),
       MealStub("Stir fry", Set(Tag.Quick, Tag.Vegetarian)),
       MealStub(
+        "Stir fry Teriyaki Mackerel",
+        Set(Tag.Pescatarian, Tag.Stephani),
+        GoogleDrive("19vVWmaiDP-6ww8vBf-E39jMMDN8XrpfE")
+      ),
+      MealStub(
         "Supermarket Pizza",
         Set(Tag.LowEffort, Tag.Quick, Tag.Vegetarian, Tag.Stodge)
       ),
