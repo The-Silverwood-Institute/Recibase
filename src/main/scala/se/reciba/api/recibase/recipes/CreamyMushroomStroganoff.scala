@@ -21,7 +21,7 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
   val tags = Set(Tag.Vegetarian, Tag.Scales, Tag.LowEffort, Tag.Quick)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Butter", "50g"),
+    Ingredient("Butter"),
     Ingredient("Large Onion", "1", "sliced"),
     Ingredient("Brown Mushrooms", "250g", "sliced"),
     Ingredient("Shiitake or Porchini Mushrooms", "Some"),
