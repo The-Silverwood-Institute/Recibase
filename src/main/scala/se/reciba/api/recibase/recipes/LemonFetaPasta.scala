@@ -5,7 +5,7 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 case object LemonFetaPasta extends Recipe {
   val name = "Lemon Feta Pasta"
 
-  val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.LowEffort, Tag.Scales)
+  val tags = Set(Tag.Quick, Tag.Pescatarian, Tag.LowEffort, Tag.Scales)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Pine nuts"),
