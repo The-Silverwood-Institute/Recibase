@@ -58,7 +58,12 @@ case object DukatenCookies extends Recipe {
       "Frosting".some,
       List(
         Ingredient("Powdered Sugar", "100g"),
-        Ingredient("Cocoa", "1 heaped tablespoon".some, None, "not a measuring spoon"),
+        Ingredient(
+          "Cocoa",
+          "1 heaped tablespoon".some,
+          None,
+          "not a measuring spoon"
+        ),
         Ingredient("Water", "1-2 tbsp".some, "hot".some, None),
         Ingredient("Butter", "28g".some, "melted".some)
       )
