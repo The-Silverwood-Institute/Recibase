@@ -5,7 +5,7 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 case object MushroomRisotto extends Recipe {
   val name = "Mushroom Risotto"
 
-  val tags = Set(Tag.Vegetarian)
+  val tags = Set(Tag.Vegetarian, Tag.LowEffort, Tag.Quick)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Chestnut mushrooms", Some("250g"), Some("sliced")),
@@ -30,9 +30,11 @@ case object MushroomRisotto extends Recipe {
   )
   val method = List(
     "Dissolve the stock cube in the boiling water and add the dried mushrooms, wine and black pepper.",
-    "Melt the butter in a wide pan and cook the mushrooms over a medium heat. Set aside.",
-    "Meanwhile add the arborio rice to a second pan and gradually stir in the stock, mixing often and not adding more until the previous lot of water has been absorbed.",
-    "When the rice is tender, add it to the mushroom pan and mix thoroughly.",
+    "Melt the butter in a wide pan and cook the mushrooms over a medium heat.",
+    "Remove from the pan and set aside.",
+    "Add the arborio rice to your pan with a small amount of butter and toast for 30 seconds.",
+    "Gradually stir in the stock, mixing often. Only add more stock when the rice has absorbed the previous lot of stock.",
+    "When the rice is tender, add the mushrooms and mix thoroughly.",
     "Mix in the stilton and allow it to melt through the risotto."
   )
 }
