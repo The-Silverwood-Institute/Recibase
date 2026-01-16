@@ -22,7 +22,8 @@ case object CheesyCodSpinachGratin extends Recipe {
     Ingredient("Panko breadcrumbs", "30g"),
     Ingredient("Cheddar", Some("40g"), Some("grated")),
     Ingredient("Soft cheese", "50g"),
-    Ingredient("Water", Some("150ml"), Some("boiling"))
+    Ingredient("Water", Some("150ml"), Some("boiling")),
+    Ingredient("Crispy Potato Slices", None, None, Some("optional"))
   )
   val method = List(
     s"Heat the oven to ${200.celsius}.",
