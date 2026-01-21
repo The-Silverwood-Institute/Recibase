@@ -35,6 +35,7 @@ case object BroccoliSalmonQuiche extends Recipe {
       "Lay the shortcrust pastry sheet over a 9 inch flan dish and gently push into the edges.",
       "Snip off any excess pastry escaping the dish. You can save this to bake mini sweet treats.",
       "Pour the mixture into the pastry dish, spreading it evenly.",
+      "Crumble stilton over the top of the quiche.",
       "Bake in the oven for 20 minutes"
     )
 }
