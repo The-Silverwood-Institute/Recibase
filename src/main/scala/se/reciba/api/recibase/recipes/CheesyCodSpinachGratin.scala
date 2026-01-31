@@ -8,12 +8,17 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import se.reciba.api.model.Image
 
 case object CheesyCodSpinachGratin extends Recipe {
   val name =
     "Cheesy Cod and Spinach Gratin"
   override val permalink: Permalink = Permalink("cheesy-cod")
   val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
+
+  override val image: Option[Image] = Some(
+    Image("https://i.reciba.se/cod-spinach-gratin.jpg")
+  )
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Cod", "2 110g fillets"),
