@@ -1,23 +1,24 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object RussianMushroomJulienne extends Recipe {
   val name = "Russian Mushroom Julienne"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://livelaughrowe.com/russian-dish-mushroom-julienne/"
-  )
+  ).some
   val tags = Set(Tag.Vegetarian, Tag.Stodge)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Mushrooms", Some("250g"), Some("thinly sliced")),
-    Ingredient("Onion", None, Some("thinly sliced")),
+    Ingredient("Mushrooms", "250g".some, "thinly sliced".some),
+    Ingredient("Onion", None, "thinly sliced".some),
     Ingredient("White wine"),
     Ingredient("Soured cream", "150ml"),
     Ingredient("Double cream", "120ml"),
-    Ingredient("Mozzarella cheese", Some("240g"), Some("roughly chopped")),
+    Ingredient("Mozzarella cheese", "240g".some, "roughly chopped".some),
     Ingredient("Butter")
   )
   val method = List(

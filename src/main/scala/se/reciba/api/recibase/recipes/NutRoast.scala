@@ -21,9 +21,9 @@ case object NutRoast extends Recipe {
     "The number of eggs needed varies each year, depending how dry the mixture is. Always buy more than needed."
   )
 
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/nut-roast.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Mixed Roasted Nuts", "500g"),

@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -14,7 +15,7 @@ case object BroccoliStiltonSoup extends Recipe {
     Permalink("broccoli-stilton-soup")
 
   override val description: Option[String] =
-    Some("A rich and nutritious winter warmer")
+    "A rich and nutritious winter warmer".some
 
   override val notes: List[String] = List(
     "The original recipe uses a 1:2 stilton to broccoli ratio rather than our decadent 1:1 ratio. If you'd prefer not to get gout then stick with the original ratio."

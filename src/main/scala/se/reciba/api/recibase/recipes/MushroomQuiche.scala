@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object MushroomQuiche extends Recipe {
@@ -14,12 +15,12 @@ case object MushroomQuiche extends Recipe {
     Ingredient("Chestnut mushrooms", "250g", "sliced"),
     Ingredient(
       "Dried mushrooms",
-      Some("handful"),
+      "handful".some,
       None,
-      Some("Porcini, shiitake, wild, etc")
+      "Porcini, shiitake, wild, etc".some
     ),
     Ingredient("Red onion", "1", "sliced"),
-    Ingredient("Parmesan", None, Some("Grated")),
+    Ingredient("Parmesan", None, "Grated".some),
     Ingredient("Mascarpone", "2 tbsp"),
     Ingredient("Eggs", "2"),
     Ingredient("Salt"),

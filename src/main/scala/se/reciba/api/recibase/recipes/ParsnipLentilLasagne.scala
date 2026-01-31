@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -17,14 +18,14 @@ case object ParsnipLentilLasagne extends Recipe {
   val tags = Set(Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.Vegetarian)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Lasagne sheets", Some("200g"), None, Some("12 sheets")),
-    Ingredient("Soft Goats cheese", Some("150g"), None, Some("or ricotta")),
+    Ingredient("Lasagne sheets", "200g".some, None, "12 sheets".some),
+    Ingredient("Soft Goats cheese", "150g".some, None, "or ricotta".some),
     Ingredient("Feta", "200g"),
     Ingredient(
       "Milk",
-      Some("100ml"),
+      "100ml".some,
       None,
-      Some("Full fat or semi-skimmed")
+      "Full fat or semi-skimmed".some
     ),
     Ingredient("Parsnips", "400g", "sliced into sticks"),
     Ingredient("Red Onion", "1 large", "thinly sliced"),
@@ -35,14 +36,14 @@ case object ParsnipLentilLasagne extends Recipe {
     Ingredient("Passata", "250ml"),
     Ingredient(
       "Kidney Beans",
-      Some("2 400g tins"),
-      Some("drained and rinsed")
+      "2 400g tins".some,
+      "drained and rinsed".some
     ),
-    Ingredient("Sunflower Oil", None, None, Some("or olive oil")),
+    Ingredient("Sunflower Oil", None, None, "or olive oil".some),
     Ingredient("Bay Leaf"),
     Ingredient("Salt"),
     Ingredient("Pepper"),
-    Ingredient("Nutmeg", None, Some("grated"), Some("Optional"))
+    Ingredient("Nutmeg", None, "grated".some, "Optional".some)
   )
   val method = List(
     s"Preheat the oven the ${190.celsius}.",

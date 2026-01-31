@@ -1,16 +1,17 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object Kashtouri extends Recipe {
   val name = "Kashtouri"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "An Egyptian dish of rice, macaroni and lentils in a spicy tomato sauce."
-  )
+  ).some
   val tags = Set(Tag.Vegan, Tag.Scales, Tag.HotWeather, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
@@ -18,14 +19,14 @@ case object Kashtouri extends Recipe {
     Ingredient("Macaroni", "150g"),
     Ingredient(
       "Red lentils",
-      Some("150g"),
+      "150g".some,
       None,
-      Some("Or 1 400g tin green lentils")
+      "Or 1 400g tin green lentils".some
     ),
-    Ingredient("Onion", Some("1"), Some("finely chopped")),
-    Ingredient("Garlic", None, Some("finely chopped or crushed")),
+    Ingredient("Onion", "1".some, "finely chopped".some),
+    Ingredient("Garlic", None, "finely chopped or crushed".some),
     Ingredient("Chopped tomatoes", "1 400g tin"),
-    Ingredient("Cayenne pepper", Some("1-2 tsp")),
+    Ingredient("Cayenne pepper", "1-2 tsp".some),
     Ingredient("Ground coriander", "1 tsp"),
     Ingredient("Lemon juice"),
     Ingredient("Salt"),

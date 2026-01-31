@@ -1,11 +1,12 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object ButternutChilli extends Recipe {
   val name = "Butternut Chilli"
 
-  override val source: Option[String] = Some("Harry")
+  override val source: Option[String] = "Harry".some
   val tags = Set(Tag.Vegetarian, Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
@@ -18,9 +19,9 @@ case object ButternutChilli extends Recipe {
     Ingredient("Soured Cream", "2 tbsp"),
     Ingredient(
       "Piquillo peppers",
-      Some("6"),
-      Some("Chopped"),
-      Some("or 1 roasted Romano pepper")
+      "6".some,
+      "Chopped".some,
+      "or 1 roasted Romano pepper".some
     ),
     Ingredient("Garlic", "1 large clove", "chopped"),
     Ingredient("Cayenne Pepper", "1 tsp"),

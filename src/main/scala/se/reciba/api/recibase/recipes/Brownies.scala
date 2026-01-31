@@ -1,29 +1,30 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Image, Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object Brownies extends Recipe {
   val name = "Brownies"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.louisegorrod.com/buttercup-archive/2011/07/chocolate-brownies.html"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "I originally got this Linda McCartney recipe from my dad, although I've since re-found it on Louise Gorrod's website. I've mirrored it here both for my own notes and because websites inevitably disappear when you least expect them to."
-  )
+  ).some
   override val notes: List[String] = List(
     "This recipe is all about the chocolate, so use high quality 70% dark cooking chocolate. I use Willie's Cacao Chocolate Drops or Menier Swiss Dark Chocolate.",
     """You can use gluten free flour and the taste is indistinguishable. I've been working on a <a href="https://reciba.se/vegan-brownies">vegan version</a> using aquafaba."""
   )
   val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegetarian)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/brownies.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Unsalted Butter", "300g"),
-    Ingredient("Dark Chocolate", Some("300g"), Some("Broken into pieces")),
+    Ingredient("Dark Chocolate", "300g".some, "Broken into pieces".some),
     Ingredient("Eggs", "5 large"),
     Ingredient("Granulated Sugar", "450g"),
     Ingredient("Vanilla Extract", "1 tbsp"),

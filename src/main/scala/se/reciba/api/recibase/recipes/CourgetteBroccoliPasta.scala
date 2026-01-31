@@ -1,11 +1,12 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object CourgetteBroccoliPasta extends Recipe {
   val name = "Courgette & Broccoli Pasta"
 
-  override val source: Option[String] = Some("Gousto")
+  override val source: Option[String] = "Gousto".some
   override val notes: List[String] =
     List(
       "If tagliatelle is unavailable try spaghetti.",
@@ -15,16 +16,16 @@ case object CourgetteBroccoliPasta extends Recipe {
   val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.HotWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Courgette", Some("1"), Some("roughly chopped")),
-    Ingredient("Tenderstem broccoli", Some("120g"), Some("halved")),
+    Ingredient("Courgette", "1".some, "roughly chopped".some),
+    Ingredient("Tenderstem broccoli", "120g".some, "halved".some),
     Ingredient("Fresh tagliatelle", "190g"),
-    Ingredient("Garlic", Some("3 cloves"), Some("finely chopped")),
+    Ingredient("Garlic", "3 cloves".some, "finely chopped".some),
     Ingredient("Baby spinach", "80g"),
-    Ingredient("Parmesan", None, Some("grated")),
+    Ingredient("Parmesan", None, "grated".some),
     Ingredient("Lemon juice"),
     Ingredient("Dried chilli flakes"),
-    Ingredient("Flaked almonds", Some("handful"), None, Some("optional")),
-    Ingredient("Soured cream", Some("1 tbsp"), None, Some("optional")),
+    Ingredient("Flaked almonds", "handful".some, None, "optional".some),
+    Ingredient("Soured cream", "1 tbsp".some, None, "optional".some),
     Ingredient("Vegetable stock"),
     Ingredient("Olive oil")
   )

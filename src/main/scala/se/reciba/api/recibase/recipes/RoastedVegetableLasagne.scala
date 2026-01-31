@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object RoastedVegetableLasagne extends Recipe {
   val name = "Roasted Vegetable Lasagne"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.bbcgoodfood.com/recipes/10603/roasted-vegetable-lasagne"
-  )
+  ).some
   override val notes: List[String] =
     List(
       "This takes a while to make so leave lots of time.",
@@ -26,9 +27,9 @@ case object RoastedVegetableLasagne extends Recipe {
     Ingredient("Chopped Tomatoes", "3 tins"),
     Ingredient(
       "Dried mixed herbs",
-      Some("handful"),
+      "handful".some,
       None,
-      Some("Italian herb blends or just plain oregano works")
+      "Italian herb blends or just plain oregano works".some
     ),
     Ingredient("Butter", "knob"),
     Ingredient("Plain Flour"),
@@ -36,13 +37,13 @@ case object RoastedVegetableLasagne extends Recipe {
     Ingredient("Fresh Lasagne sheets", "300g"),
     Ingredient(
       "Mozzarella",
-      Some("125g"),
+      "125g".some,
       None,
-      Some("I'd buy extra just to be safe. Can always nom the rest")
+      "I'd buy extra just to be safe. Can always nom the rest".some
     ),
     Ingredient("Olive Oil"),
-    Ingredient("Cherry Tomatoes", None, Some("Halved"), Some("Optional")),
-    Ingredient("Fresh Basil", None, None, Some("Optional"))
+    Ingredient("Cherry Tomatoes", None, "Halved".some, "Optional".some),
+    Ingredient("Fresh Basil", None, None, "Optional".some)
   )
   val method = List(
     "Pre-heat the oven to 200C/fan 180C/gas 6.",

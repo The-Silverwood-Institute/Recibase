@@ -1,12 +1,13 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object RoastBeetrootDahl extends Recipe {
   val name = "Roast Beetroot Dahl"
 
-  override val source: Option[String] = Some("Hello Fresh")
+  override val source: Option[String] = "Hello Fresh".some
   override val notes: List[String] = List(
     "The beetroot quantity is guestimated. Will refine over time.",
     """We use a modified version of <a href="https://www.theflavorbender.com/sri-lankan-roasted-curry-powder/">this</a> Sri Lankan Curry power recipe. Will write down our version some time.""".stripMargin
@@ -19,7 +20,7 @@ case object RoastBeetrootDahl extends Recipe {
     Ingredient("Spring Onions", "2", "chopped"),
     Ingredient("Lime", "1", "zested and juiced"),
     Ingredient("Garlic", "2 cloves", "chopped"),
-    Ingredient("Flatbreads", Some("4"), None, Some("Optional")),
+    Ingredient("Flatbreads", "4".some, None, "Optional".some),
     Ingredient("Sri Lankan Curry Powder", "a few tablespoons"),
     Ingredient("Stock cube", "1"),
     Ingredient("Coconut Milk", "1 400ml tin"),

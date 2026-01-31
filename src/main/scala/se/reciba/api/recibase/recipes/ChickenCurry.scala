@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -20,7 +21,7 @@ case object ChickenCurry extends Recipe {
       |""".stripMargin
   )
 
-  override val source: Option[String] = Some("H + S")
+  override val source: Option[String] = "H + S".some
   val tags = Set(
     Tag.Slow,
     Tag.Freezes,
@@ -30,12 +31,12 @@ case object ChickenCurry extends Recipe {
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Chicken Breasts", Some("4"), Some("chopped into 3cm pieces")),
-    Ingredient("Large Onions", Some("2"), Some("chopped")),
-    Ingredient("Garlic", Some("6 cloves"), Some("diced")),
-    Ingredient("Green Beans", Some("220g"), Some("topped, tailed and halved")),
-    Ingredient("Chestnut Mushrooms", Some("485g"), Some("chopped")),
-    Ingredient("Double Cream", Some("75ml"), None, Some("add more if desired")),
+    Ingredient("Chicken Breasts", "4".some, "chopped into 3cm pieces".some),
+    Ingredient("Large Onions", "2".some, "chopped".some),
+    Ingredient("Garlic", "6 cloves".some, "diced".some),
+    Ingredient("Green Beans", "220g".some, "topped, tailed and halved".some),
+    Ingredient("Chestnut Mushrooms", "485g".some, "chopped".some),
+    Ingredient("Double Cream", "75ml".some, None, "add more if desired".some),
     Ingredient("Sweetcorn", "1 large tin"),
     Ingredient("Lemongrass", "2 stems"),
     Ingredient("Kaffir lime leaves"),
@@ -46,9 +47,9 @@ case object ChickenCurry extends Recipe {
     Ingredient("Cloves"),
     Ingredient("Nutmeg"),
     Ingredient("Turmeric"),
-    Ingredient("Red Peppers", Some("2"), None, Some("Optional")),
-    Ingredient("Chillies", None, None, Some("Optional")),
-    Ingredient("Naan Bread", None, None, Some("Optional"))
+    Ingredient("Red Peppers", "2".some, None, "Optional".some),
+    Ingredient("Chillies", None, None, "Optional".some),
+    Ingredient("Naan Bread", None, None, "Optional".some)
   )
   val method = List(
     "Heat the wok over a hot flame.",

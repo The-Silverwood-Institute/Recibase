@@ -1,17 +1,18 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
 
 case object BirthdayCake2 extends Recipe {
   override val name: String = "Birthday Cake"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.bbc.co.uk/games/embed/food-interactive-sponge-cake-calculator?units=metric&cakeType=layer_cake&tinShape=round&mode=tinSize&value=18cm&flavouring=lemon&icing=buttercream_fill_cover"
-  )
+  ).some
 
-  override val description: Option[String] = Some(
+  override val description: Option[String] = (
     "Madeira cake with buttercream icing and topped with Smarties"
-  )
+  ).some
 
   override val notes: List[String] = List(
     "This is based on the BBC cake calculator for my 2 x 18cm round cake tins with the addition of Smarties and marzipan lettering.",
@@ -19,9 +20,9 @@ case object BirthdayCake2 extends Recipe {
   )
 
   val tags = Set(Tag.Pudding, Tag.Baking)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/birthday-cake.jpg")
-  )
+  ).some
 
   val ingredientsBlocks: List[IngredientsBlock] = List(
     IngredientsBlock(
@@ -43,18 +44,18 @@ case object BirthdayCake2 extends Recipe {
         Ingredient("Icing Sugar", "300g"),
         Ingredient("Vanilla Extract", "1 tsp"),
         Ingredient("Milk", "1 tbsp"),
-        Ingredient("Smarties", Some("200g"), None, Some("optional")),
+        Ingredient("Smarties", "200g".some, None, "optional".some),
         Ingredient(
           "Cocoa powder",
-          Some("4.5 tsp"),
+          "4.5 tsp".some,
           None,
-          Some("add if you want chocolate icing")
+          "add if you want chocolate icing".some
         ),
         Ingredient(
           "Marzipan",
           None,
           None,
-          Some("optional, if you want to decorate with lettering")
+          "optional, if you want to decorate with lettering".some
         )
       )
     )

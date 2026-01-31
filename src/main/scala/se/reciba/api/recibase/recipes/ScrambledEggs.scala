@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object ScrambledEggs extends Recipe {
   val name = "Scrambled Eggs"
 
-  override val description: Option[String] = Some(
+  override val description: Option[String] = (
     "Soft, buttery scrambled eggs."
-  )
+  ).some
   override val notes: List[String] = List(
     """Variants:
       |Paprika - add a generous amount of (smoked) paprika along with the salt/pepper.
@@ -18,7 +19,7 @@ case object ScrambledEggs extends Recipe {
   val tags = Set(Tag.Lunch, Tag.Vegetarian, Tag.LowEffort, Tag.Quick)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Butter", None, None, Some("Use a decent amount")),
+    Ingredient("Butter", None, None, "Use a decent amount".some),
     Ingredient("Eggs", "2"),
     Ingredient("Milk"),
     Ingredient("Salt"),

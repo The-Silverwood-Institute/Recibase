@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -16,9 +17,9 @@ case object ChineseFusion extends Recipe {
 
   val tags: Set[Tag] = Set(Tag.Stephani)
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Stephani"
-  )
+  ).some
 
   override val notes: List[String] = List(
     "You can add the salt during cooking rather than at the end.",
@@ -29,11 +30,11 @@ case object ChineseFusion extends Recipe {
     Ingredient("Butternut Squash", "1"),
     Ingredient(
       "Lamb Mince",
-      Some("500g"),
+      "500g".some,
       None,
-      Some(
+      (
         "alternatively use turkey thigh mince, chicken thigh fillet also works"
-      )
+      ).some
     ),
     Ingredient("Leeks", "2 large"),
     Ingredient("Shiitake mushrooms", "125g"),

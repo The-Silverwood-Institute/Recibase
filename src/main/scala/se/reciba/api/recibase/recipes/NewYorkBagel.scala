@@ -1,16 +1,17 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object NewYorkBagel extends Recipe {
   val name = "New York Bagels"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.thevegspace.co.uk/recipe-four-fabulously-filling-bagel-toppings/"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "A vegetarian take on the classic pastrami bagel"
-  )
+  ).some
 
   val tags = Set(Tag.Lunch)
 
@@ -18,24 +19,24 @@ case object NewYorkBagel extends Recipe {
     Ingredient("Bagels", "4"),
     Ingredient(
       "Squeaky Bean Deli Pastrami",
-      Some("180g"),
+      "180g".some,
       None,
-      Some("2 packets")
+      "2 packets".some
     ),
     Ingredient(
       "Cooked Beetroot",
-      Some("180g"),
+      "180g".some,
       None,
-      Some("ideally pre-grated sweet & smoky")
+      "ideally pre-grated sweet & smoky".some
     ),
     Ingredient("Pickles"),
     Ingredient(
       "Cheese",
       None,
       None,
-      Some("ideally something fancy like Comté")
+      "ideally something fancy like Comté".some
     ),
-    Ingredient("Mayonnaise", None, None, Some("optional"))
+    Ingredient("Mayonnaise", None, None, "optional".some)
   )
   val method = List(
     "Halve and lightly toast the bagels.",

@@ -124,7 +124,7 @@ object MealLogEntry {
       rawDate: String,
       rawNote: String
   ): Try[MealLogEntry] = {
-    val note = if (rawNote == "") None else Some(rawNote)
+    val note = if (rawNote == "") None else rawNote.some
     UsageData.parseDate(rawDate).map(MealLogEntry(mealName, _, note))
   }
 }

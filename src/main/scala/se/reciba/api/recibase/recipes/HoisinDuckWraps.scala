@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model._
 
 case object HoisinDuckWraps extends Recipe {
@@ -11,7 +12,7 @@ case object HoisinDuckWraps extends Recipe {
   val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 
   override val description: Option[String] =
-    Some("To the tune of Top Cat: Duck Wraps! They're vegetarian, Duck Wraps!")
+    "To the tune of Top Cat: Duck Wraps! They're vegetarian, Duck Wraps!".some
 
   override val notes: List[String] = List(
     "You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg.",
@@ -23,8 +24,8 @@ case object HoisinDuckWraps extends Recipe {
     Ingredient("Red Pepper", "1", "sliced"),
     Ingredient("Spring Onions", "3", "chopped"),
     Ingredient("Tortilla Wraps", "4"),
-    Ingredient("Cherry Tomatoes", None, Some("halved")),
-    Ingredient("Hoisin sauce", None, None, Some("Optional")),
+    Ingredient("Cherry Tomatoes", None, "halved".some),
+    Ingredient("Hoisin sauce", None, None, "Optional".some),
     Ingredient("Mayonnaise"),
     Ingredient("Oil")
   )

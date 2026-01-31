@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object CoconutLimeDahl extends Recipe {
   val name = "Coconut Lime Dahl"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://greedypanda.co.uk/2021/05/coconut-lime-dal/"
-  )
+  ).some
   override val notes: List[String] =
     List(
       "Serves 4",

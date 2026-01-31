@@ -1,11 +1,12 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object LambAubergineDaube extends Recipe {
   val name = "Lamb and Aubergine Daube"
 
-  override val source: Option[String] = Some("The Times - Dinner Tonight")
+  override val source: Option[String] = "The Times - Dinner Tonight".some
   val tags = Set(Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
@@ -14,10 +15,10 @@ case object LambAubergineDaube extends Recipe {
     Ingredient("Lamb Neck Fillet", "750g"),
     Ingredient("Chopped Tomatoes", "1 400g tin"),
     Ingredient("Chicken Stock", "250ml"),
-    Ingredient("Cumin Seed", Some("1/2 tsp")),
-    Ingredient("Fennel Seed", Some("1/2 tsp")),
-    Ingredient("Dried Chilli Flakes", Some("1/2 tsp")),
-    Ingredient("Ginger", Some("10g"), Some("peeled and grated")),
+    Ingredient("Cumin Seed", "1/2 tsp".some),
+    Ingredient("Fennel Seed", "1/2 tsp".some),
+    Ingredient("Dried Chilli Flakes", "1/2 tsp".some),
+    Ingredient("Ginger", "10g".some, "peeled and grated".some),
     Ingredient("Olive Oil"),
     Ingredient("Cinamon Stick"),
     Ingredient("Salt"),

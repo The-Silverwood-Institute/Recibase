@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -15,7 +16,7 @@ case object BakedSalmonOlivesSpaghetti extends Recipe {
     Permalink("salmon-olive-spaghetti")
 
   override val description: Option[String] =
-    Some("Baked salmon served on a bed of spaghetti, onions and olives.")
+    "Baked salmon served on a bed of spaghetti, onions and olives.".some
   override val notes: List[String] =
     List(
       "Cover the baking tray in foil for easier cleaning later.",
@@ -26,18 +27,18 @@ case object BakedSalmonOlivesSpaghetti extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Salmon fillets",
-      Some("1 per person"),
+      "1 per person".some,
       None,
-      Some("Approximately 1 inch wide")
+      "Approximately 1 inch wide".some
     ),
-    Ingredient("Capers", None, Some("finely chopped")),
+    Ingredient("Capers", None, "finely chopped".some),
     Ingredient("Olive oil"),
     Ingredient("Onion", "1", "sliced"),
     Ingredient("Pimento-stuffed olives"),
     Ingredient("Lemon juice"),
-    Ingredient("Thyme", None, None, Some("Dried or fresh")),
+    Ingredient("Thyme", None, None, "Dried or fresh".some),
     Ingredient("Spaghetti"),
-    Ingredient("Cherry tomatoes", None, Some("halved"), Some("Optional"))
+    Ingredient("Cherry tomatoes", None, "halved".some, "Optional".some)
   )
   val method = List(
     s"Preheat the oven at ${160.celsius}.",

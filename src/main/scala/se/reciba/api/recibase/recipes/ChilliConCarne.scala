@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -13,7 +14,7 @@ case object ChilliConCarne extends Recipe {
   override val permalink: Permalink =
     Permalink("chilli-con-carne")
 
-  override val source: Option[String] = Some("Kit's Dad")
+  override val source: Option[String] = "Kit's Dad".some
   val tags = Set(
     Tag.VegetarianIsh,
     Tag.Freezes,
@@ -41,8 +42,8 @@ case object ChilliConCarne extends Recipe {
     Ingredient("Onion", "1"),
     Ingredient("Garlic Clove", "1"),
     Ingredient("Kidney Beans", "1 400g tin"),
-    Ingredient("Honey", Some("1 tbsp"), None, Some("Optional")),
-    Ingredient("Dark cooking chocolate", None, None, Some("Optional")),
+    Ingredient("Honey", "1 tbsp".some, None, "Optional".some),
+    Ingredient("Dark cooking chocolate", None, None, "Optional".some),
     Ingredient("Mince", "500g")
   )
   val method = List(

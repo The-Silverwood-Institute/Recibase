@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object LentilShepardsPie extends Recipe {
@@ -9,27 +10,27 @@ case object LentilShepardsPie extends Recipe {
     Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.Scales, Tag.ColdWeather)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Onions", Some("1"), Some("Diced")),
-    Ingredient("Carrots", Some("4"), Some("Diced")),
-    Ingredient("Celery", Some("1 head"), Some("Chopped"), Some("Optional")),
-    Ingredient("Garlic", Some("4 Cloves"), Some("Finely chopped")),
-    Ingredient("Chestnut mushrooms", Some("200g"), Some("sliced")),
+    Ingredient("Onions", "1".some, "Diced".some),
+    Ingredient("Carrots", "4".some, "Diced".some),
+    Ingredient("Celery", "1 head".some, "Chopped".some, "Optional".some),
+    Ingredient("Garlic", "4 Cloves".some, "Finely chopped".some),
+    Ingredient("Chestnut mushrooms", "200g".some, "sliced".some),
     Ingredient("Red Lentils", "230g"),
     Ingredient("Butter"),
-    Ingredient("Bay Leaf", Some("2"), None, Some("Optional")),
+    Ingredient("Bay Leaf", "2".some, None, "Optional".some),
     Ingredient("Thyme", "1 tbsp"),
-    Ingredient("Red wine", Some("100ml"), None, Some("Optional")),
+    Ingredient("Red wine", "100ml".some, None, "Optional".some),
     Ingredient("Stock cube", "1"),
     Ingredient("Tomato purée", "3 tbsp"),
     Ingredient(
       "King Edwards Potatoes",
-      Some("500g"),
+      "500g".some,
       None,
-      Some("Other floury potatoes will do")
+      "Other floury potatoes will do".some
     ),
     Ingredient("Butter", "85g"),
     Ingredient("Milk", "100ml"),
-    Ingredient("Cheddar", Some("50g"), Some("Grated"))
+    Ingredient("Cheddar", "50g".some, "Grated".some)
   )
   val method = List(
     "To make the sauce, heat the butter in a pan, then gently fry the onions, carrots, celery and garlic for 15 mins until soft and golden.",

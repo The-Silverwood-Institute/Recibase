@@ -1,16 +1,17 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object Dahl extends Recipe {
   val name = "Dahl"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "An Indian dish of lentils infused with spices."
-  )
+  ).some
   override val notes: List[String] = List(
     "Roasted nuts can also be added. Cook them until brown with a little oil in the small pan before adding the butter, cumin and onion."
   )
@@ -20,29 +21,29 @@ case object Dahl extends Recipe {
     Ingredient("Red lentils", "350g"),
     Ingredient(
       "Water",
-      Some("800ml"),
-      Some("boiling"),
-      Some("Quantity is important!")
+      "800ml".some,
+      "boiling".some,
+      "Quantity is important!".some
     ),
     Ingredient(
       "Ground turmeric",
-      Some("1 tsp"),
+      "1 tsp".some,
       None,
-      Some("Use 2-3 tsp instead")
+      "Use 2-3 tsp instead".some
     ),
     Ingredient("Chilli powder", "1/2 tsp"),
     Ingredient(
       "Ginger",
-      Some("1 cm piece"),
-      Some("peeled and finely chopped"),
-      Some("Replace with ground ginger if necessary")
+      "1 cm piece".some,
+      "peeled and finely chopped".some,
+      "Replace with ground ginger if necessary".some
     ),
     Ingredient("Garlic", "2 cloves", "finely chopped"),
     Ingredient(
       "Garam masala",
-      Some("1/2 tsp"),
+      "1/2 tsp".some,
       None,
-      Some("Use at least 1 tsp")
+      "Use at least 1 tsp".some
     ),
     Ingredient("Salt"),
     Ingredient("Butter", "25g approx"),

@@ -1,5 +1,6 @@
 package se.reciba.api
 
+import cats.syntax.option._
 import se.reciba.api.usage.{MealLogEntry, UsageData}
 
 import java.time.LocalDate
@@ -48,13 +49,13 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
         MealLogEntry(
           "Macaroni",
           LocalDate.of(2022, 2, 17),
-          Some("Add more cheese")
+          "Add more cheese".some
         ),
         MealLogEntry("Beyond Burgers", LocalDate.of(2022, 2, 18), None),
         MealLogEntry(
           "Macaroni",
           LocalDate.of(2022, 2, 19),
-          Some("Try paprika on top before grilling")
+          "Try paprika on top before grilling".some
         ),
         MealLogEntry("Macaroni", LocalDate.of(2022, 2, 20), None)
       )

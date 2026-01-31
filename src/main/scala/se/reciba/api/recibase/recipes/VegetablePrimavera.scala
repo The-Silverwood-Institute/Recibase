@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object VegetablePrimavera extends Recipe {
   val name = "Vegetable Primavera"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"
-  )
+  ).some
   override val notes: List[String] = List(
     "The mustard is a key part of the dish, so the quantity here is only a suggestion. Alex likes to use a lot.",
     "Most combinations of small or baby vegetables work, as does e.g. tenderstem broccoli. Carrot sticks are a suitable replacement for baby carrots, too. Use whatever you have or can get. Aim for 3-4 types. Suggestions include: baby sweetcorn, green beans, baby carrots, mange tout.",
@@ -19,24 +20,24 @@ case object VegetablePrimavera extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Baby vegetables",
-      Some("3-4 varieties"),
+      "3-4 varieties".some,
       None,
-      Some("See notes for suggestions")
+      "See notes for suggestions".some
     ),
     Ingredient(
       "Tortellini or ravioli",
-      Some("400g"),
+      "400g".some,
       None,
-      Some("Choose your own flavour")
+      "Choose your own flavour".some
     ),
     Ingredient(
       "Olive oil",
-      Some("1 tbsp"),
+      "1 tbsp".some,
       None,
-      Some("Extra virgin preferred")
+      "Extra virgin preferred".some
     ),
-    Ingredient("Lemon", Some("1/2"), None, Some("Or use lemon juice")),
-    Ingredient("Wholegrain mustard", Some("1-2 tbsp")),
+    Ingredient("Lemon", "1/2".some, None, "Or use lemon juice".some),
+    Ingredient("Wholegrain mustard", "1-2 tbsp".some),
     Ingredient("Salt"),
     Ingredient("Black pepper")
   )

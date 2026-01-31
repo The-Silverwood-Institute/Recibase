@@ -1,5 +1,6 @@
 package se.reciba.api.model
 
+import cats.syntax.option._
 import io.circe.Encoder
 import io.circe.generic.extras.Configuration
 import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
@@ -24,10 +25,10 @@ case class MealStub(
 
 object MealStub {
   def apply(recipe: Recipe): MealStub =
-    MealStub(recipe.name, recipe.tags, Some(Recibase(recipe.permalink.value)))
+    MealStub(recipe.name, recipe.tags, Recibase(recipe.permalink.value).some)
 
   def apply(name: String, tags: Set[Tag], source: Source): MealStub =
-    MealStub(name, tags, Some(source))
+    MealStub(name, tags, source.some)
 }
 
 case class MealStubWithUsageData(

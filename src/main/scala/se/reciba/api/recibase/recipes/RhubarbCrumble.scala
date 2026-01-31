@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -13,9 +14,9 @@ case object RhubarbCrumble extends Recipe {
 
   override val permalink: Permalink = Permalink("rhubarb-crumble")
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://web.archive.org/web/20210227223551/http://www.claudiandfin.co.uk/healthy-rhubarb-date-crumble-recipe/"
-  )
+  ).some
 
   override val notes: List[String] = List(
     "Make sure to keep the butter in the fridge until right before you need it, to avoid it melting.",

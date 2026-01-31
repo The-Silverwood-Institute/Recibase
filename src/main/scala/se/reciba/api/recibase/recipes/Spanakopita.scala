@@ -1,14 +1,15 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object Spanakopita extends Recipe {
   val name = "Spanakopita"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Minna"
-  )
+  ).some
   override val notes: List[String] = List(
     "The frozen spinach quantity is approximate as I measured an old bag that had a lot of ice in it.",
     "Iceland frozen spinach is better than other supermarkets' as they include whole leaves, while others are completely shredded.",

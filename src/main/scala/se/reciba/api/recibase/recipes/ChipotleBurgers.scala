@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object ChipotleBurgers extends Recipe {
   val name = "Chipotle Burgers"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.honestburgers.co.uk/food/burgers/bacon-plant/"
-  )
+  ).some
   val tags = Set(Tag.Vegetarian, Tag.Spicy, Tag.Stodge, Tag.Quick)
 
   override val notes: List[String] = List(
@@ -24,16 +25,16 @@ case object ChipotleBurgers extends Recipe {
       "Ketchup",
       None,
       None,
-      Some(
+      (
         "A premium brand like Sauce Shop"
-      )
+      ).some
     ),
     Ingredient("Mayonnaise"),
     Ingredient(
       "Chipotle paste",
-      Some("30g"),
+      "30g".some,
       None,
-      Some("or ancho chilli paste")
+      "or ancho chilli paste".some
     ),
     Ingredient("Oil")
   )

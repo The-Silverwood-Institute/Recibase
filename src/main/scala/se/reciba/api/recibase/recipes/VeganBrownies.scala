@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Image,
   Ingredient,
@@ -14,12 +15,12 @@ case object VeganBrownies extends Recipe {
   val name = "Vegan Brownies (WIP)"
   override val permalink: Permalink = Permalink("vegan-brownies")
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://reciba.se/brownies"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "Version 4 of my vegan alt recipe, based on Linda McCartney's classic brownies"
-  )
+  ).some
   override val notes: List[String] = List(
     "This recipe is all about the chocolate, so use high quality 70%+ dark cooking chocolate. I use Willie's Cacao Chocolate Drops but other vegan cooking chocolates are available. Always check the ingredients as some contain milk.",
     "If your vegan butter is unsalted then use a full teaspoon of salt. I reduced the salt quantity to 1/2 tsp because Vitalite is quite salty. The vegan version uses way less butter, but is still failing keep its fluffy texture, so I might reduce the Vitalite further.",
@@ -27,18 +28,18 @@ case object VeganBrownies extends Recipe {
     """If you come up with any improvements please <a href="mailto:kittsville@gmail.com">email me</a> or DM me on Twitter: <a href="https://twitter.com/kittsville">@kittsville</a>."""
   )
   val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegan)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/brownies.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Vitalite", "200g"),
-    Ingredient("Dark Chocolate", Some("300g"), Some("Broken into pieces")),
+    Ingredient("Dark Chocolate", "300g".some, "Broken into pieces".some),
     Ingredient(
       "Aquafaba",
-      Some("214ml"),
+      "214ml".some,
       None,
-      Some("Collect the water from 2 tins of chickpeas")
+      "Collect the water from 2 tins of chickpeas".some
     ),
     Ingredient("Cream of tartar", "1/4 tsp"),
     Ingredient("Granulated Sugar", "450g"),

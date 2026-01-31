@@ -1,26 +1,27 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
 
 case object BirthdayCake extends Recipe {
   override val name: String = "Birthday Cake (classic)"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Kit's Mum"
-  )
+  ).some
 
-  override val description: Option[String] = Some(
+  override val description: Option[String] = (
     "My mum's classic madeira cake recipe. Made with buttercream icing and topped with Smarties!"
-  )
+  ).some
 
   override val notes: List[String] = List(
     "You can optionally slice off the top of the cake, to provide a flat surface for easier decoration."
   )
 
   val tags = Set(Tag.Pudding, Tag.Baking)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/birthday-cake.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butter", "5oz"),
@@ -34,15 +35,15 @@ case object BirthdayCake extends Recipe {
     Ingredient("Smarties", "136g"),
     Ingredient(
       "Vanilla Extract",
-      Some("1 tsp"),
+      "1 tsp".some,
       None,
-      Some("buy vanilla extract, not vanilla flavouring")
+      "buy vanilla extract, not vanilla flavouring".some
     ),
     Ingredient(
       "Marzipan",
       None,
       None,
-      Some("optional, if you want to decorate with lettering")
+      "optional, if you want to decorate with lettering".some
     )
   )
 

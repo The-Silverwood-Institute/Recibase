@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SpicySmokedPaprikaChorizo extends Recipe {
@@ -7,7 +8,7 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
 
   val tags = Set(Tag.Spicy, Tag.Scales, Tag.BetterNextDay, Tag.Slow)
 
-  override val source: Option[String] = Some("Kit's Dad")
+  override val source: Option[String] = "Kit's Dad".some
   override val notes: List[String] = List(
     "If your chorio is very spicy you might not need any chilli flakes. Similarly if you use chilli oil.",
     "This dish tastes best if you leave it to cool then reheat it.",
@@ -17,63 +18,63 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Spanish Chorizo",
-      Some("225g"),
+      "225g".some,
       None,
-      Some("ideally good quality")
+      "ideally good quality".some
     ),
-    Ingredient("Red Onions", Some("4"), Some("finely diced")),
+    Ingredient("Red Onions", "4".some, "finely diced".some),
     Ingredient(
       "Garlic Cloves",
-      Some("Several"),
-      Some("fined diced or crushed in a press")
+      "Several".some,
+      "fined diced or crushed in a press".some
     ),
-    Ingredient("Pointed Red Peppers", Some("2"), Some("sliced")),
-    Ingredient("Carrots", Some("2-3"), Some("diced")),
+    Ingredient("Pointed Red Peppers", "2".some, "sliced".some),
+    Ingredient("Carrots", "2-3".some, "diced".some),
     Ingredient(
       "Fresh Spinach",
-      Some("100g"),
-      Some("torn"),
-      Some("frozen would also work")
+      "100g".some,
+      "torn".some,
+      "frozen would also work".some
     ),
     Ingredient("Tinned Tomatoes", "3"),
     Ingredient("Tomato Paste", "4 Inches"),
     Ingredient(
       "Red Wine",
-      Some("10-20CL"),
+      "10-20CL".some,
       None,
-      Some("something in the \u00a35-10 range")
+      "something in the \u00a35-10 range".some
     ),
     Ingredient("Smoked Paprika", "Several teaspoons"),
     Ingredient("Olive Oil"),
     Ingredient("Chilli Flakes"),
     Ingredient(
       "Honey",
-      Some("2 tsp"),
+      "2 tsp".some,
       None,
-      Some("anything but that Rowse shit")
+      "anything but that Rowse shit".some
     ),
     Ingredient("Dried Oregano", "1 tbsp"),
     Ingredient(
       "Stick of Cinnamon",
-      Some("1"),
+      "1".some,
       None,
-      Some("Ground also works")
+      "Ground also works".some
     ),
-    Ingredient("Pitted Black Olives", Some("6 tbsp"), Some("halved")),
+    Ingredient("Pitted Black Olives", "6 tbsp".some, "halved".some),
     Ingredient(
       "Cannellini beans",
-      Some("1 400g tin"),
-      Some("drained and rinsed"),
-      Some("Optional")
+      "1 400g tin".some,
+      "drained and rinsed".some,
+      "Optional".some
     ),
     Ingredient(
       "Celery",
       None,
-      Some("chopped into 1cm pieces"),
-      Some("Optional")
+      "chopped into 1cm pieces".some,
+      "Optional".some
     ),
-    Ingredient("Whole Cloves", Some("2-3"), None, Some("Optional")),
-    Ingredient("Mascarpone", Some("2 tbsp"), None, Some("Optional"))
+    Ingredient("Whole Cloves", "2-3".some, None, "Optional".some),
+    Ingredient("Mascarpone", "2 tbsp".some, None, "Optional".some)
   )
   val method = List(
     "Cut the chorizo into half centimeter thick semi-circles.",

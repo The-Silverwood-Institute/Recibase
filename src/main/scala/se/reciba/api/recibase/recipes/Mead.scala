@@ -1,14 +1,15 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object Mead extends Recipe {
   val name = "Mead"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.diynatural.com/homemade-mead-honey-mead-recipe/"
-  )
-  override val tagline: Option[String] = Some("A medieval classic")
+  ).some
+  override val tagline: Option[String] = "A medieval classic".some
   override val notes: List[String] = List(
     "This recipe requires a large pan, 2 ~1L flip top bottles, funnel, airlock and rubber bung.Sterilise all equipment before use to avoid comtaminating your mead.",
     "I'd recommend doubling or tripling the quantities to make this worth the effort."
@@ -18,9 +19,9 @@ case object Mead extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Honey",
-      Some("340g"),
+      "340g".some,
       None,
-      Some("A premium, ideally local, brand")
+      "A premium, ideally local, brand".some
     ),
     Ingredient("Tap Water", "416ml"),
     Ingredient("Boiling Water", "630ml"),

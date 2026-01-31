@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -16,19 +17,19 @@ case object CheesyCodSpinachGratin extends Recipe {
   override val permalink: Permalink = Permalink("cheesy-cod")
   val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/cod-spinach-gratin.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Cod", "2 110g fillets"),
     Ingredient("Stock cube", "1"),
-    Ingredient("Spinach", Some("80g"), Some("torn or chopped")),
+    Ingredient("Spinach", "80g".some, "torn or chopped".some),
     Ingredient("Panko breadcrumbs", "30g"),
-    Ingredient("Cheddar", Some("40g"), Some("grated")),
+    Ingredient("Cheddar", "40g".some, "grated".some),
     Ingredient("Soft cheese", "50g"),
-    Ingredient("Water", Some("150ml"), Some("boiling")),
-    Ingredient("Crispy Potato Slices", None, None, Some("optional"))
+    Ingredient("Water", "150ml".some, "boiling".some),
+    Ingredient("Crispy Potato Slices", None, None, "optional".some)
   )
   val method = List(
     s"Heat the oven to ${200.celsius}.",

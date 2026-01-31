@@ -1,37 +1,38 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SmokyChickpeaStew extends Recipe {
   val name = "Smoky Sweet potato and chickpea stew"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.budgetbytes.com/smoky-potato-chickpea-stew/"
-  )
-  override val description: Option[String] = Some(
+  ).some
+  override val description: Option[String] = (
     "A simple yet hearty vegan stew"
-  )
+  ).some
   val tags = Set(Tag.Vegan, Tag.Scales, Tag.Freezes)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Sweet Potatoes", "620g", "chopped in 1cm cubes"),
     Ingredient("Garlic Cloves", "4", "finely chopped or crushed"),
-    Ingredient("Carrots", Some("2"), Some("diced"), Some("optional")),
+    Ingredient("Carrots", "2".some, "diced".some, "optional".some),
     Ingredient("Onions", "2", "chopped"),
     Ingredient("Red pepper", "1", "sliced"),
     Ingredient("Fresh ginger", "2 tsp", "grated or finely chopped"),
     Ingredient(
       "Spinach",
-      Some("a large handful"),
-      Some("chopped"),
-      Some("alternatively kale")
+      "a large handful".some,
+      "chopped".some,
+      "alternatively kale".some
     ),
     Ingredient("Sundried tomatoes", "285g", "chopped"),
     Ingredient(
       "Vegetarian chorizo sausages",
-      Some("6"),
+      "6".some,
       None,
-      Some("optional")
+      "optional".some
     ),
     Ingredient("Kidney Beans", "1 400g tin"),
     Ingredient("Chopped tomatoes", "1 400g tin"),

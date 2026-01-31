@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Image,
   Ingredient,
@@ -14,13 +15,13 @@ case object ToadInTheHole extends Recipe {
   override val permalink: Permalink =
     Permalink.fromRawString("toad-in-the-hole")
 
-  override val source: Option[String] = Some("Jeremy")
+  override val source: Option[String] = "Jeremy".some
   override val notes: List[String] = List(
     "If you're using vegetarian sausages don't fully cook them beforehand, otherwise they get too dry."
   )
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/toad-in-the-hole.jpg")
-  )
+  ).some
   val tags = Set(Tag.Vegetarian, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(

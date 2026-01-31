@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model._
 
 case object BeefWraps extends Recipe {
@@ -9,7 +10,7 @@ case object BeefWraps extends Recipe {
   val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 
   override val description: Option[String] =
-    Some("Spiced vegetarian beef wraps with black beans")
+    "Spiced vegetarian beef wraps with black beans".some
 
   override val notes: List[String] = List(
     "You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg."
@@ -20,7 +21,7 @@ case object BeefWraps extends Recipe {
     Ingredient("Red Pepper", "1", "sliced"),
     Ingredient("Spring Onions", "3", "chopped"),
     Ingredient("Tortilla Wraps", "4"),
-    Ingredient("Cherry Tomatoes", None, Some("halved")),
+    Ingredient("Cherry Tomatoes", None, "halved".some),
     Ingredient("Black Beans", "1 400g tin"),
     Ingredient("Cayenne pepper"),
     Ingredient("Smoked Paprika"),

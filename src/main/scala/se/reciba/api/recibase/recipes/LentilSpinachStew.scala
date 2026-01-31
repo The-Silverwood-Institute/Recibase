@@ -1,13 +1,14 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object LentilSpinachStew extends Recipe {
   val name = "Lentil & Spinach Stew"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://drive.google.com/file/d/1f247M9Y9DLk4T6NzMng1B6GRvhoaAX74C28UTyxk_Jo/view"
-  )
+  ).some
 
   val tags = Set(Tag.Vegan, Tag.Scales)
 
@@ -15,8 +16,8 @@ case object LentilSpinachStew extends Recipe {
     Ingredient("Garlic", "1 clove", "diced"),
     Ingredient("Onion", "1", "roughly chopped"),
     Ingredient("Carrots", "2-3", "chopped"),
-    Ingredient("Salad Tomatoes", None, Some("chopped")),
-    Ingredient("Cream of coconut", None, Some("grated")),
+    Ingredient("Salad Tomatoes", None, "chopped".some),
+    Ingredient("Cream of coconut", None, "grated".some),
     Ingredient("Frozen Spinach"),
     Ingredient("Lentils", "150g"),
     Ingredient("Water", "400ml"),

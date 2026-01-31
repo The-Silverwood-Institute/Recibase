@@ -1,16 +1,16 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object BlueCheeseGnocchi extends Recipe {
   val name =
     "Blue Cheese Gnocchi"
 
-  override val description: Option[String] =
-    Some(
-      "Gnocchi with creme fraiche and spinach topped with grilled blue stilton."
-    )
-  override val tagline: Option[String] = Some("Fill the void with cheese")
+  override val description: Option[String] = (
+    "Gnocchi with creme fraiche and spinach topped with grilled blue stilton."
+  ).some
+  override val tagline: Option[String] = "Fill the void with cheese".some
   override val notes: List[String] = List(
     "You can also use fresh tagliatelle rather than gnocchi, although you'll need a lot more creme fraiche."
   )
@@ -25,13 +25,13 @@ case object BlueCheeseGnocchi extends Recipe {
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Gnocchi", "500g"),
-    Ingredient("Parmesan", Some("~70g"), Some("grated")),
+    Ingredient("Parmesan", "~70g".some, "grated".some),
     Ingredient("Creme Fraiche", "150ml"),
     Ingredient("Spinach", "200g"),
-    Ingredient("Stilton", Some("200g"), Some("diced/crumbled")),
-    Ingredient("Pimento Stuffed olives", None, None, Some("Optional")),
-    Ingredient("Cherry Tomatoes", None, None, Some("Optional")),
-    Ingredient("Fresh bread", None, None, Some("Optional"))
+    Ingredient("Stilton", "200g".some, "diced/crumbled".some),
+    Ingredient("Pimento Stuffed olives", None, None, "Optional".some),
+    Ingredient("Cherry Tomatoes", None, None, "Optional".some),
+    Ingredient("Fresh bread", None, None, "Optional".some)
   )
   val method =
     List(

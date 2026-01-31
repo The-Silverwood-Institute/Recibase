@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -23,7 +24,7 @@ case object RedPepperSoup extends Recipe {
     Ingredient("Water", "600ml"),
     Ingredient("Stock Cube"),
     Ingredient("Mixed Herbs"),
-    Ingredient("Extra vegetables", None, None, Some("Optional"))
+    Ingredient("Extra vegetables", None, None, "Optional".some)
   )
   val method = List(
     "Chop up everything and place everything but the onions in a bowl.",

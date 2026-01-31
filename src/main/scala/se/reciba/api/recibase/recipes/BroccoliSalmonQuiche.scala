@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
@@ -15,9 +16,9 @@ case object BroccoliSalmonQuiche extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Broccoli Florets",
-      Some("100g"),
-      Some("Cut to 1-3cm pieces"),
-      Some("Save the stalks for a soup")
+      "100g".some,
+      "Cut to 1-3cm pieces".some,
+      "Save the stalks for a soup".some
     ),
     Ingredient("Smoked Salmon", "120g", "Cut into 2cm pieces"),
     Ingredient("Stilton", "50g"),

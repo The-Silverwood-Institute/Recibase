@@ -1,5 +1,6 @@
 package se.reciba.api.model
 
+import cats.syntax.option._
 import enumeratum.{CirceEnum, Enum, EnumEntry}
 
 sealed abstract class Tag(override val entryName: String) extends EnumEntry {
@@ -31,25 +32,25 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
 
   // Dietary
   case object Vegan extends Tag("Vegan") {
-    override val parentTag: Option[Tag] = Some(VeganIsh)
+    override val parentTag: Option[Tag] = VeganIsh.some
   }
   case object VeganIsh extends Tag("Vegan-ish") {
-    override val parentTag: Option[Tag] = Some(Vegetarian)
+    override val parentTag: Option[Tag] = Vegetarian.some
   }
   case object Vegetarian extends Tag("Vegetarian") {
-    override val parentTag: Option[Tag] = Some(VegetarianIsh)
+    override val parentTag: Option[Tag] = VegetarianIsh.some
   }
   case object VegetarianIsh extends Tag("Vegetarian-ish") {
-    override val parentTag: Option[Tag] = Some(Pescatarian)
+    override val parentTag: Option[Tag] = Pescatarian.some
   }
   case object Pescatarian extends Tag("Pescatarian")
 
   // Poly
   case object StephaniUnhealthy extends Tag("StephaniUnhealthy") {
-    override val parentTag: Option[Tag] = Some(StephaniIsh)
+    override val parentTag: Option[Tag] = StephaniIsh.some
   }
   case object StephaniIsh extends Tag("Stephani-ish") {
-    override val parentTag: Option[Tag] = Some(Stephani)
+    override val parentTag: Option[Tag] = Stephani.some
   }
   case object Stephani extends Tag("Stephani")
 

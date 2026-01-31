@@ -30,7 +30,7 @@ case class IngredientsBlock(
 
 object IngredientsBlock {
   def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock =
-    IngredientsBlock(Some(name), ingredients)
+    IngredientsBlock(name.some, ingredients)
   def simple(ingredients: Ingredient*): List[IngredientsBlock] = List(
     IngredientsBlock(None, ingredients.toList)
   )

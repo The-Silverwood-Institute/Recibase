@@ -1,16 +1,17 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Image, Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
 
-  override val source: Option[String] = Some("Alex's Mum")
+  override val source: Option[String] = "Alex's Mum".some
   val tags = Set(Tag.Baking)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/peanut-butter-biscuits.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Crunchy peanut butter", "250g"),

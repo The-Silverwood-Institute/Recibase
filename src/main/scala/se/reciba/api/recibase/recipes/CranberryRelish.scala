@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -13,14 +14,14 @@ case object CranberryRelish extends Recipe {
   override val permalink: Permalink =
     Permalink("cranberry-relish")
 
-  override val source: Option[String] = Some("Kit's Mum")
+  override val source: Option[String] = "Kit's Mum".some
   override val notes: List[String] = List(
     "This is best made in advance, to give the flavours time to mix"
   )
   val tags = Set(Tag.Christmas, Tag.NonMeal)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Red onions", Some("2"), Some("thinly sliced")),
+    Ingredient("Red onions", "2".some, "thinly sliced".some),
     Ingredient("Brown sugar", "3 tbsp"),
     Ingredient("Cranberries", "450g"),
     Ingredient("Redcurrant jelly", "2 tbsp"),

@@ -1,11 +1,12 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object PaneerJalfrezi extends Recipe {
   val name = "Paneer Jalfrezi"
 
-  override val source: Option[String] = Some("Gousto")
+  override val source: Option[String] = "Gousto".some
   val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(

@@ -15,8 +15,8 @@ object RedirectHeroku {
       headers = Headers(
         Location(
           Uri(
-            Some(Scheme.https),
-            Some(Authority(host = RegName("api.reciba.se"))),
+            Scheme.https.some,
+            Authority(host = RegName("api.reciba.se")).some,
             request.uri.path,
             request.uri.query,
             request.uri.fragment

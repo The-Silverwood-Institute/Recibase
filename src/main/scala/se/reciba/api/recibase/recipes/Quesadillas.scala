@@ -1,14 +1,15 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object Quesadillas extends Recipe {
   val name = "Quesadillas"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.hellofresh.co.uk/recipes/cheesy-chipotle-bean-quesadillas-5feb6402f4480c042d622a2d"
-  )
+  ).some
   val tags = Set(Tag.Quick, Tag.Vegetarian, Tag.Spicy, Tag.LowEffort)
 
   override val notes: List[String] = List(
@@ -20,18 +21,18 @@ case object Quesadillas extends Recipe {
     Ingredient("Mixed beans", "1 400ml tin"),
     Ingredient(
       "Kidney beans",
-      Some("1 400ml tin"),
+      "1 400ml tin".some,
       None,
-      Some("or black beans")
+      "or black beans".some
     ),
     Ingredient(
       "Frozen Sweetcorn",
       None,
       None,
-      Some("optional, if the mixed beans have no sweetcorn")
+      "optional, if the mixed beans have no sweetcorn".some
     ),
-    Ingredient("Cheddar", Some("60g"), Some("grated")),
-    Ingredient("Spring Onions", Some("8"), Some("chopped")),
+    Ingredient("Cheddar", "60g".some, "grated".some),
+    Ingredient("Spring Onions", "8".some, "chopped".some),
     Ingredient("Chipotle paste", "5 tsp"),
     Ingredient("Tomato Puree", "2 tbsp"),
     Ingredient("Tortillas", "4"),

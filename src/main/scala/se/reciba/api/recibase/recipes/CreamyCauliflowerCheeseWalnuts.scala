@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -13,23 +14,23 @@ case object CreamyCauliflowerCheeseWalnuts extends Recipe {
   override val permalink: Permalink =
     Permalink("creamy-cauliflower-cheese")
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://docs.google.com/document/d/1A0bgFOwirLW2mct8KNrxYdk4OEsGZtY23mFdgOljHFA"
-  )
+  ).some
   val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Cauliflower", Some("1"), Some("cut into 1cm pieces")),
+    Ingredient("Cauliflower", "1".some, "cut into 1cm pieces".some),
     Ingredient(
       "Creme Fraiche",
-      Some("300g"),
+      "300g".some,
       None,
-      Some("or Cream Cheese")
+      "or Cream Cheese".some
     ),
     Ingredient("Dijon Mustard", "1 tsp"),
-    Ingredient("Blue Cheese", Some("125g"), Some("crumbled")),
-    Ingredient("Walnuts", Some("25g"), Some("roughly chopped")),
-    Ingredient("Cheddar Cheese", Some("50g"), Some("grated")),
+    Ingredient("Blue Cheese", "125g".some, "crumbled".some),
+    Ingredient("Walnuts", "25g".some, "roughly chopped".some),
+    Ingredient("Cheddar Cheese", "50g".some, "grated".some),
     Ingredient("Salt"),
     Ingredient("Black pepper")
   )

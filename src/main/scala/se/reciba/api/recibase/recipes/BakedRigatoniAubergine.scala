@@ -1,14 +1,15 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"
-  )
+  ).some
   override val notes: List[String] = List(
     "Traditional parmesan is not vegetarian"
   )
@@ -23,22 +24,22 @@ case object BakedRigatoniAubergine extends Recipe {
     Ingredient("Aubergine", "1", "cut into 1cm cubes"),
     Ingredient(
       "Oregano",
-      Some("2 tbsp"),
-      Some("chopped"),
-      Some("Fresh or dried")
+      "2 tbsp".some,
+      "chopped".some,
+      "Fresh or dried".some
     ),
     Ingredient(
       "Rigatoni",
-      Some("225g"),
+      "225g".some,
       None,
-      Some("Or penne or other chunky pasta tube")
+      "Or penne or other chunky pasta tube".some
     ),
     Ingredient("Breadcrumbs", "30g"),
     Ingredient(
       "Parmesan",
-      Some("30g"),
+      "30g".some,
       None,
-      Some("Or a ball of mozzarella")
+      "Or a ball of mozzarella".some
     ),
     Ingredient("Salt"),
     Ingredient("Pepper")

@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SaagPaneer extends Recipe {
@@ -13,37 +14,37 @@ case object SaagPaneer extends Recipe {
     Set(Tag.Vegetarian, Tag.HotWeather, Tag.Spicy, Tag.LowEffort)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Paneer", Some("1 block"), Some("cut into 2-3 cm cubes")),
+    Ingredient("Paneer", "1 block".some, "cut into 2-3 cm cubes".some),
     Ingredient("Ground turmeric", "2 tsp"),
-    Ingredient("Chilli powder", Some("1/2 tsp")),
-    Ingredient("Onion", Some("1"), Some("diced, but not too finely")),
+    Ingredient("Chilli powder", "1/2 tsp".some),
+    Ingredient("Onion", "1".some, "diced, but not too finely".some),
     Ingredient(
       "Ground cumin",
-      Some("1/2 tsp"),
+      "1/2 tsp".some,
       None,
-      Some("Probably optional")
+      "Probably optional".some
     ),
     Ingredient(
       "Ground cinnamon",
-      Some("1/2 tsp"),
+      "1/2 tsp".some,
       None,
-      Some("Can probably replace this and the cumin with garam masala")
+      "Can probably replace this and the cumin with garam masala".some
     ),
     Ingredient(
       "Tomatoes",
-      Some("2"),
-      Some("diced"),
-      Some(
+      "2".some,
+      "diced".some,
+      (
         "Tins of chopped tomatoes are far too wet for this. Also optional."
-      )
+      ).some
     ),
     Ingredient(
       "Spinach",
-      Some("1 large bag minimum"),
-      Some("torn up"),
-      Some("Can also use frozen spinach. Either way, a lot is needed.")
+      "1 large bag minimum".some,
+      "torn up".some,
+      "Can also use frozen spinach. Either way, a lot is needed.".some
     ),
-    Ingredient("Peas", None, None, Some("Optional"))
+    Ingredient("Peas", None, None, "Optional".some)
   )
   val method = List(
     "Add oil, turmeric and chilli powder to a wide, deep pan.",

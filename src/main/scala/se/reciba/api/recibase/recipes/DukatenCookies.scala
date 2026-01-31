@@ -8,13 +8,13 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
 case object DukatenCookies extends Recipe {
   override val name: String = "Dukaten Cookies"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Stephani"
-  )
+  ).some
 
-  override val description: Option[String] = Some(
+  override val description: Option[String] = (
     "Dukatenplätzchen, rum flavoured German Christmas cookies"
-  )
+  ).some
 
   override val notes: List[String] = List(
     "If you don't have a small enough biscuit cutter you can use some wider shot glasses. The cookies should have a 4cm diameter."
@@ -22,9 +22,9 @@ case object DukatenCookies extends Recipe {
 
   val tags = Set(Tag.Pudding, Tag.Baking)
 
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/dukaten-cookies.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = List(
     IngredientsBlock(

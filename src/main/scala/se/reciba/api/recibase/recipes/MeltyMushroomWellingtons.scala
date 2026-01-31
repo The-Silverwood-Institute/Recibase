@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
@@ -15,12 +16,12 @@ case object MeltyMushroomWellingtons extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Chestnut mushrooms",
-      Some("250g"),
-      Some("half sliced, half diced")
+      "250g".some,
+      "half sliced, half diced".some
     ),
-    Ingredient("Spinach", None, Some("torn up")),
+    Ingredient("Spinach", None, "torn up".some),
     Ingredient("Stilton", "220g", "finely chopped"),
-    Ingredient("Garlic", None, Some("finely chopped")),
+    Ingredient("Garlic", None, "finely chopped".some),
     Ingredient("Butter", "knob"),
     Ingredient("Black pepper"),
     Ingredient("Puff pastry", "1 sheet")

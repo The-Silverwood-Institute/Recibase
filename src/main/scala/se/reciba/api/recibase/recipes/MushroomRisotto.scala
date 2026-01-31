@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object MushroomRisotto extends Recipe {
@@ -8,12 +9,12 @@ case object MushroomRisotto extends Recipe {
   val tags = Set(Tag.Vegetarian, Tag.LowEffort, Tag.Quick)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Chestnut mushrooms", Some("250g"), Some("sliced")),
+    Ingredient("Chestnut mushrooms", "250g".some, "sliced".some),
     Ingredient(
       "Dried mushrooms",
-      Some("handful"),
+      "handful".some,
       None,
-      Some("Porcini, shiitake, wild, etc")
+      "Porcini, shiitake, wild, etc".some
     ),
     Ingredient("Arborio rice", "1 cup"),
     Ingredient("White wine", "A decent slosh"),
@@ -21,9 +22,9 @@ case object MushroomRisotto extends Recipe {
     Ingredient("Stock cube", "1"),
     Ingredient(
       "Water",
-      Some("700ml"),
-      Some("boiling"),
-      Some("Might need to add more")
+      "700ml".some,
+      "boiling".some,
+      "Might need to add more".some
     ),
     Ingredient("Stilton", "100g"),
     Ingredient("Butter", "knob")

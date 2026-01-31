@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 
 case object SweetChilliFetaPasta extends Recipe {
@@ -17,14 +18,14 @@ case object SweetChilliFetaPasta extends Recipe {
     Ingredient("Brazil nuts"),
     Ingredient(
       "Feta",
-      Some("1 block, approx. 200g"),
-      Some("cut into 1cm cubes")
+      "1 block, approx. 200g".some,
+      "cut into 1cm cubes".some
     ),
     Ingredient(
       "Tuna chunks",
-      Some("1 80g tin"),
-      Some("drained"),
-      Some("Optional")
+      "1 80g tin".some,
+      "drained".some,
+      "Optional".some
     ),
     Ingredient("Sweet chilli sauce"),
     Ingredient("Black pepper"),
@@ -32,7 +33,7 @@ case object SweetChilliFetaPasta extends Recipe {
       "Fusilli",
       None,
       None,
-      Some("Spaghetti also works well here")
+      "Spaghetti also works well here".some
     )
   )
   val method = List(

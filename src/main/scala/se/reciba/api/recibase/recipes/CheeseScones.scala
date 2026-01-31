@@ -1,6 +1,6 @@
 package se.reciba.api.recipes
 
-import cats.syntax.all._
+import cats.syntax.option._
 import se.reciba.api.model._
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
@@ -10,21 +10,21 @@ case object CheeseScones extends Recipe {
 
   val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)
 
-  override val source = Some(
+  override val source = (
     "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"
-  )
+  ).some
 
   override val description: Option[String] =
-    Some("Scones, with cheese. Fill with jams and more")
+    "Scones, with cheese. Fill with jams and more".some
 
   override val notes: List[String] = List(
     "Leave the milk out as it always needs more.",
     "Don't roll the dough too thin or they won't rise properly."
   )
 
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/cheese-scones.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Plain Flour", "208g"),

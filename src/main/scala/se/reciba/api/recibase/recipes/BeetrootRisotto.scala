@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model._
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
@@ -9,9 +10,9 @@ case object BeetrootRisotto extends Recipe {
   override val permalink: Permalink =
     Permalink("beetroot-risotto")
 
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/beetroot-risotto.jpg")
-  )
+  ).some
 
   override def notes: List[String] = List(
     """<a href="https://t.sci1.uk/risotto-calculator/">An arborio rice/water ratio calculator</a>"""
@@ -22,9 +23,9 @@ case object BeetrootRisotto extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Beetroot",
-      Some("5"),
-      Some("peeled and cut into 1-2cm pieces"),
-      Some("Quantity is approximate")
+      "5".some,
+      "peeled and cut into 1-2cm pieces".some,
+      "Quantity is approximate".some
     ),
     Ingredient("Arborio rice", "1 cup"),
     Ingredient("White wine", "A decent slosh"),
@@ -32,9 +33,9 @@ case object BeetrootRisotto extends Recipe {
     Ingredient("Stock cube", "1"),
     Ingredient(
       "Water",
-      Some("700ml"),
-      Some("boiling"),
-      Some("might need to add more")
+      "700ml".some,
+      "boiling".some,
+      "might need to add more".some
     ),
     Ingredient("Soft Goats Cheese", "up to 75g")
   )

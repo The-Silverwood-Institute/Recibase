@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -15,26 +16,26 @@ case object VegetarianMexican extends Recipe {
     Permalink("vegetarian-mexican")
 
   override val description: Option[String] =
-    Some("Low spoons vegetarian Mexican")
+    "Low spoons vegetarian Mexican".some
 
   val tags = Set(Tag.Vegetarian, Tag.LowEffort, Tag.Stephani)
 
   val ingredientsBlocks = IngredientsBlock.simple(
-    Ingredient("Black Beans", Some("2 tins"), Some("drained")),
+    Ingredient("Black Beans", "2 tins".some, "drained".some),
     Ingredient("Frozen sweetcorn", "260g"),
     Ingredient("Squash", "1"),
-    Ingredient("Garlic", None, Some("finely chopped")),
+    Ingredient("Garlic", None, "finely chopped".some),
     Ingredient(
       "Cheese",
       None,
       None,
-      Some("ideally Sainsbury's 4 cheese mix or a herb/spiced cheese")
+      "ideally Sainsbury's 4 cheese mix or a herb/spiced cheese".some
     ),
     Ingredient("Tortillas"),
     Ingredient("Cinnamon"),
     Ingredient("Cumin"),
     Ingredient("Salt"),
-    Ingredient("Soured Cream", None, None, Some("optional"))
+    Ingredient("Soured Cream", None, None, "optional".some)
   )
   val method = List(
     s"Preheat the oven to ${200.celsius}.",

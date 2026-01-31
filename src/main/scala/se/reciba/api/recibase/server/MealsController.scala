@@ -76,7 +76,7 @@ object MealsController {
       .map(_.name.toLowerCase)
       .groupBy(identity)
       .flatMap {
-        case (key, occurrences) if occurrences.length > 1 => Some(key)
+        case (key, occurrences) if occurrences.length > 1 => key.some
         case _                                            => None
       }
 

@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -20,28 +21,28 @@ case object SmokyFishSquashCurry extends Recipe {
     Ingredient("Garlic", "1 clove", "finely chopped"),
     Ingredient(
       "Smoked fish",
-      Some("200g"),
-      Some("cut into bite-size pieces"),
-      Some("Either haddock or basa")
+      "200g".some,
+      "cut into bite-size pieces".some,
+      "Either haddock or basa".some
     ),
-    Ingredient("Coriander", Some("5g"), None, Some("Optional")),
+    Ingredient("Coriander", "5g".some, None, "Optional".some),
     Ingredient(
       "Red chilli",
-      Some("1"),
-      Some("sliced"),
-      Some("Replace with chilli flakes or powder")
+      "1".some,
+      "sliced".some,
+      "Replace with chilli flakes or powder".some
     ),
     Ingredient(
       "Creamed coconut",
-      Some("50g"),
+      "50g".some,
       None,
-      Some("More is better")
+      "More is better".some
     ),
     Ingredient(
       "Ginger",
-      Some("30g"),
-      Some("finely chopped or grated"),
-      Some("Use ground ginger for speed")
+      "30g".some,
+      "finely chopped or grated".some,
+      "Use ground ginger for speed".some
     ),
     Ingredient("Stock cube", "1"),
     Ingredient("Ground coriander", "1 tsp"),
@@ -53,7 +54,7 @@ case object SmokyFishSquashCurry extends Recipe {
       "alternatively use sweet potato"
     ),
     Ingredient("Water", "350ml", "boiling"),
-    Ingredient("Naan Bread", None, None, Some("Optional"))
+    Ingredient("Naan Bread", None, None, "Optional".some)
   )
   val method = List(
     "Soften the onion in a pan.",

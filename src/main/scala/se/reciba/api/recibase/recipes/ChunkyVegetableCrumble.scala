@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -14,9 +15,9 @@ case object ChunkyVegetableCrumble extends Recipe {
   override val permalink: Permalink =
     Permalink("vegetable-crumble")
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"
-  )
+  ).some
   override val notes: List[String] =
     List(
       "Most brands of Worcestershire Sauce contain anchovies and are therefore not vegetarian. There are some that are, however.",
@@ -42,50 +43,50 @@ case object ChunkyVegetableCrumble extends Recipe {
     Ingredient("Parsnips", "2", "cut into 2cm chunks"),
     Ingredient(
       "Baby turnips",
-      Some("350g"),
-      Some("quartered"),
-      Some("Optional. Never been added")
+      "350g".some,
+      "quartered".some,
+      "Optional. Never been added".some
     ),
     Ingredient(
       "New potatoes",
-      Some("5-6"),
-      Some("cut into 2cm chunks"),
-      Some("Whatever number seems reasonable for the pan size")
+      "5-6".some,
+      "cut into 2cm chunks".some,
+      "Whatever number seems reasonable for the pan size".some
     ),
     Ingredient(
       "Vegetable stock",
-      Some("450ml"),
+      "450ml".some,
       None,
-      Some("Use less for a thicker dish (preferred)")
+      "Use less for a thicker dish (preferred)".some
     ),
     Ingredient("Worcestershire sauce", "generous dash"),
     Ingredient("Tomato purée", "1 tbsp"),
     Ingredient(
       "Bay leaves",
-      Some("2"),
+      "2".some,
       None,
-      Some("Optional. Never been added")
+      "Optional. Never been added".some
     ),
     Ingredient(
       "Butter beans",
       "1 410g tin",
       "drained and rinsed"
     ),
-    Ingredient("Thyme", Some("1-2 tsp"), None, Some("Optional")),
+    Ingredient("Thyme", "1-2 tsp".some, None, "Optional".some),
     Ingredient("Salt"),
     Ingredient("Pepper"),
     Ingredient("Plain Flour", "85g"),
     Ingredient(
       "Butter",
-      Some("30g"),
-      Some("diced"),
-      Some("Should be cool, not room temp.")
+      "30g".some,
+      "diced".some,
+      "Should be cool, not room temp.".some
     ),
     Ingredient(
       "Mature cheddar cheese",
-      Some("75g"),
-      Some("coarsely grated"),
-      Some("Always use more")
+      "75g".some,
+      "coarsely grated".some,
+      "Always use more".some
     ),
     Ingredient("Sunflower seeds", "30g")
   )

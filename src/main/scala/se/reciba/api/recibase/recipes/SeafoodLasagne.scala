@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
@@ -13,9 +14,9 @@ case object SeafoodLasagne extends Recipe {
     Ingredient("Semi-skimmed milk", "1L"),
     Ingredient(
       "Mixed seafood",
-      Some("400g"),
+      "400g".some,
       None,
-      Some("you can buy a pie mix or pick and mix your own")
+      "you can buy a pie mix or pick and mix your own".some
     ),
     Ingredient("Garlic clove", "1"),
     Ingredient("Plain flour", "50g"),

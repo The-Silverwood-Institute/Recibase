@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Ingredient,
   Permalink,
@@ -11,9 +12,9 @@ import se.reciba.api.model.{
 case object CreamyMushroomStroganoff extends Recipe {
   val name = "Mushroom Stroganoff"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "http://allrecipes.co.uk/recipe/6460/creamy-mushroom-stroganoff.aspx"
-  )
+  ).some
   override val notes: List[String] = List(
     """You can substitute Shiitake or Porchini mushrooms for their dried equivalents.
 Pots of dried forest mushrooms also work. Try softening the mushrooms in the stock."""
@@ -30,9 +31,9 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
     Ingredient("Plain Flour", "3 tbsp"),
     Ingredient("Salt"),
     Ingredient("Black Pepper"),
-    Ingredient("Nutmeg", None, None, Some("Optional")),
-    Ingredient("Brandy", None, None, Some("Optional")),
-    Ingredient("Worcestershire sauce", None, None, Some("Optional"))
+    Ingredient("Nutmeg", None, None, "Optional".some),
+    Ingredient("Brandy", None, None, "Optional".some),
+    Ingredient("Worcestershire sauce", None, None, "Optional".some)
   )
   val method = List(
     "Chop the shiitake or porchini mushrooms into large pieces",

@@ -1,5 +1,6 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{
   Image,
   Ingredient,
@@ -12,21 +13,21 @@ import se.reciba.api.model.{
 case object MascarponeIceCream extends Recipe with IceCream {
   val name = "Mascarpone Ice Cream"
 
-  override val tagline: Option[String] = Some("Don't eat too much at once...")
+  override val tagline: Option[String] = "Don't eat too much at once...".some
 
-  override val source: Option[String] = Some("George")
-  override val description: Option[String] = Some(
+  override val source: Option[String] = "George".some
+  override val description: Option[String] = (
     "A simple yet decadent ice cream recipe, no churn needed."
-  )
+  ).some
 
   override val notes: List[String] = List(
     "You can substitute marmalade for blackberries, cinnamon or any ingredient you fancy. Just be careful not to choose anything too watery, or you'll get ice crystals forming. It's also lovely plain.",
     genericNotes
   )
   val tags = Set(Tag.Pudding)
-  override val image: Option[Image] = Some(
+  override val image: Option[Image] = (
     Image("https://i.reciba.se/ice-cream.jpg")
-  )
+  ).some
 
   val ingredientsBlocks = List(
     genericIngredients.copy(ingredients =

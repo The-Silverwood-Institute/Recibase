@@ -1,14 +1,15 @@
 package se.reciba.api.recipes
 
+import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object RoastedVegetableMoroccanTagine extends Recipe {
   override val name: String = "Roasted Vegetable Moroccan Tagine"
 
-  override val source: Option[String] = Some(
+  override val source: Option[String] = (
     "https://www.onegreenplanet.org/vegan-recipe/delicious-roasted-veggie-moroccan-tagine/"
-  )
+  ).some
   val tags = Set(Tag.Vegan, Tag.Scales, Tag.Slow)
 
   val ingredientsBlocks = IngredientsBlock.simple(
@@ -28,16 +29,16 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
     Ingredient("Harissa Paste", "1 tsp"),
     Ingredient(
       "Honey",
-      Some("1 tsp"),
+      "1 tsp".some,
       None,
-      Some("can use maple syrup instead")
+      "can use maple syrup instead".some
     ),
     Ingredient("Stock Cube", "1"),
     Ingredient(
       "Couscous",
-      Some("200g"),
+      "200g".some,
       None,
-      Some("can serve with rice instead")
+      "can serve with rice instead".some
     ),
     Ingredient("Olive Oil"),
     Ingredient("Salt")
