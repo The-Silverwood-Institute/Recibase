@@ -49,7 +49,7 @@ If you want to use the web interface you'll need to set up the [frontend][fronte
 
 I've been using AI (yes, I know) to fix the disparity of our meal collection mostly existing outside Recibase, by scanning the various photos we have of recipe cards and book pages. Here's prompts used to get recipe parts from photos:
 
-> This photo contains the steps to cook a recipe, split into two columns. Please OCR the recipe's method, ignoring any red text. The output should be a JSON array of strings. Ask for any clarification if needed. Replace any dashes "–" with "-" and any apostraphes "’" with "'"
+> This photo contains the steps to cook a recipe, split into two columns. Please OCR the recipe's method, ignoring any red text. The output should be a JSON array of strings. Ask for any clarification if needed. Replace any dashes "–" with "-" and any apostraphes "’" with "'". Newlines indicate new array elements. Array elements should always end with a full stop.
 
 > Please OCR the recipes in the `photographs` directory and write a Scala recipe for each recipe. Create the new Scala files in the `src/main/scala/se/reciba/api/recibase/recipes` directory. Each subfolder in the `photographs` is a recipe. Use the name of each subfolder as the name of the recipe. Structure the new recipe Scala files similarly to the existing recipe Scala files. Ignore fields you do not have data for like `image`, `notes` or `tags`. The `permalink` of the recipe should be the name of the recipe lowercase then  kebab-case formatted. The name of each recipe Scala file should be the recipe name with no spaces and Studly Case formatted. If a step in the recipe's method is too long split it into two steps.
 
