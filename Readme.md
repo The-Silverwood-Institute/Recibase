@@ -45,6 +45,12 @@ Recibase is a long term project which will grow depending on what features are u
 
 If you want to use the web interface you'll need to set up the [frontend][frontend] too
 
+## Parsing recipes
+
+I've been using AI (yes, I know) to fix the disparity of our meal collection mostly existing outside Recibase, by scanning the various photos we have of recipe cards and book pages. Here's prompts used to get recipe parts from photos:
+
+> This photo contains the steps to cook a recipe, split into two columns. Please OCR the recipe's method, ignoring any red text. The output should be a JSON array of strings. Ask for any clarification if needed. Replace any dashes "–" with "-" and any apostraphes "’" with "'"
+
 ## Contributing/Questions
 
 If you have any questions or want to help out feel free to [open an issue][new-issue]
