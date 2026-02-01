@@ -2,6 +2,9 @@ package se.reciba.api.utils
 
 object IntUtils {
   implicit class TemperatureUtils(t: Int) {
+
+    def simpleFanInstruction: String = s"$t°C (fan ${t - 20}°C)"
+
     def celsius: String = {
       val asFahrenheit = (t.toFloat * 9 / 5) + 32
       val roundedFahrenheit = nearestMultipleOf(asFahrenheit, 5)
