@@ -77,13 +77,6 @@ object MealDefinitions {
       ),
       MealStub("Cheese & olive tarts", Set(Tag.Vegetarian)),
       MealStub(
-        "Chipotle Mac 'n' Cheese",
-        Set(Tag.Vegetarian, Tag.Scales, Tag.Stodge),
-        Online(
-          "https://drive.google.com/drive/folders/1eFm2usuBrtrDgqYtzRrFIZYe77VKVTu5"
-        )
-      ),
-      MealStub(
         "Coconut & egg curry",
         Set(Tag.Vegetarian),
         Online("https://www.bbc.co.uk/food/recipes/whole_eggs_in_coconut_23624")
