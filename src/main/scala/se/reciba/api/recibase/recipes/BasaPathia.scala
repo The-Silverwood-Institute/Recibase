@@ -1,14 +1,20 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model.{Ingredient, Permalink, Recipe, Tag, IngredientsBlock}
+import se.reciba.api.model.{
+  Ingredient,
+  Permalink,
+  Recipe,
+  Tag,
+  IngredientsBlock
+}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 case object BasaPathia extends Recipe {
   val name = "Basa Pathia"
 
   override val permalink: Permalink = Permalink("basa-pathia")
-  val tags = Set(Tag.AI)
+  val tags = Set(Tag.AI, Tag.Pescatarian, Tag.Spicy)
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Brown onion", "1", "finely chopped"),
@@ -31,7 +37,7 @@ case object BasaPathia extends Recipe {
   )
 
   val method = List(
-    s"Preheat the oven to ${200.celsius} (fan ${180.celsius}).",
+    s"Preheat the oven to ${200.simpleFanInstruction}.",
     "Heat a wide-based pan (preferably non-stick) with a drizzle of vegetable oil over a medium heat.",
     "Once hot, add the chopped onion with a generous pinch of salt and cook for 6-8 minutes or until softened.",
     "Meanwhile, heat a pot with a matching lid with a generous drizzle of vegetable oil over a medium heat.",
