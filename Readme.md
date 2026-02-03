@@ -73,7 +73,7 @@ MealStub("Aubergine curry", Set(Tag.Vegan, Tag.Scales, Tag.Slow))
 ```
 The 3rd parameter is an optional link to the full recipe, which is only defined if that recipe exists on the internet.
 
-[recipes]: https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/com/herokuapp/recibase/recipes
+[recipes]: https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/se/reciba/api/recibase/recipes
 [recipe-api]: https://api.reciba.se/
 [frontend]: https://github.com/The-Silverwood-Institute/Frontend
 [new-issue]: https://github.com/The-Silverwood-Institute/Recibase/issues/new
