@@ -16,6 +16,8 @@ case object BasaPathia extends Recipe {
   override val permalink: Permalink = Permalink("basa-pathia")
   val tags = Set(Tag.AI, Tag.Pescatarian, Tag.Spicy)
 
+  override val source: Option[String] = "Gousto".some
+
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Brown onion", "1", "finely chopped"),
     Ingredient("Cumin seeds", "1 tsp"),

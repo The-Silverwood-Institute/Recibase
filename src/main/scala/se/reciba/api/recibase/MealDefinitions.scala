@@ -111,19 +111,6 @@ object MealDefinitions {
         Online("https://www.bbc.co.uk/food/recipes/gnocchi_pasta_bake_51351")
       ),
       MealStub(
-        "Goan-Style King Prawn Balchão Curry",
-        Set(
-          Tag.Pescatarian,
-          Tag.LowEffort,
-          Tag.Quick,
-          Tag.Spicy,
-          Tag.Scales
-        ),
-        Online(
-          "https://www.gousto.co.uk/cookbook/fish-recipes/goan-prawn-balchao-curry-with-basmati-rice"
-        )
-      ),
-      MealStub(
         "Goats cheese, leek and spinach pasta bake",
         Set(Tag.Vegetarian, Tag.Scales, Tag.HotWeather),
         Online(

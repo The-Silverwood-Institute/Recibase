@@ -16,6 +16,8 @@ case object ButternutSquashPadThai extends Recipe {
   override val permalink: Permalink = Permalink("butternut-squash-pad-thai")
   val tags = Set(Tag.AI, Tag.Spicy, Tag.Vegan, Tag.Quick)
 
+  override val source: Option[String] = "Gousto".some
+
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Butternut squash", "120g", "cut into 2cm cubes"),
     Ingredient("Lime", "1"),

@@ -16,6 +16,8 @@ case object ChristmasNaanwidge extends Recipe {
   override val permalink: Permalink = Permalink("christmas-naanwidge")
   val tags = Set(Tag.AI, Tag.Christmas, Tag.Stodge, Tag.Vegetarian, Tag.Spicy)
 
+  override val source: Option[String] = "Gousto".some
+
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Coriander", "10g"),
     Ingredient("Ground turmeric", "1 tsp"),

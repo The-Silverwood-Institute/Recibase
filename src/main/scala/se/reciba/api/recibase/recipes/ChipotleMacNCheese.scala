@@ -16,6 +16,8 @@ case object ChipotleMacNCheese extends Recipe {
   override val permalink: Permalink = Permalink("chipotle-mac-n-cheese")
   val tags = Set(Tag.AI, Tag.Vegetarian, Tag.Scales, Tag.Stodge)
 
+  override val source: Option[String] = "Gousto".some
+
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Yellow pepper", "1", "cut into thin strips"),
     Ingredient("Red pepper", "1", "cut into thin strips"),
