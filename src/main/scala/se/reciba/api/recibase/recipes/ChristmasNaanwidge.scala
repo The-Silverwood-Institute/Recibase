@@ -30,6 +30,7 @@ case object ChristmasNaanwidge extends Recipe {
     Ingredient("Greek-style yoghurt", "100g"),
     Ingredient("Smoked paprika", "1 tsp"),
     Ingredient("Cranberry sauce", "40g"),
+    Ingredient("Tamarind paste", "15g"),
     Ingredient("Plain naans", "2"),
     Ingredient("Salt"),
     Ingredient("Pepper"),
