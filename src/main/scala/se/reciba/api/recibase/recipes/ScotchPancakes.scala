@@ -31,6 +31,7 @@ case object DropPancakes extends Recipe {
     "Serve the drop pancakes topped with extra butter and a drizzle of maple syrup alongside seasonal fruit, if you like."
   )
 
-  override val notes: Option[String] =
-    "You need butter to cook the pancakes. Too much and they won't cook properly".some
+  override val notes: List[String] = List(
+    "You need butter to cook the pancakes. Too much and they won't cook properly"
+  )
 }
