@@ -10,8 +10,6 @@ case object Pancakes extends Recipe {
     "Eth"
   ).some
 
-  val tags = Set(Tag.Vegetarian, Tag.Pudding, Tag.Quick, Tag.Scales)
-
   override val description: Option[String] = (
     "Incredibly simple crepe style pancakes"
   ).some
