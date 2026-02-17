@@ -1,10 +1,13 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Permalink}
 
 case object DropPancakes extends Recipe {
-  val name = "Scotch Pancakes"
+  val name = "Scotch Pancakes (BBC)"
+
+  override val permalink: Permalink =
+    Permalink("scotch-pancakes")
 
   override val source: Option[String] =
     "https://www.bbcgoodfood.com/recipes/drop-pancakes".some
