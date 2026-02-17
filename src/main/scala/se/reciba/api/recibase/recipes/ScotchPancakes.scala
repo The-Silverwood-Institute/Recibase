@@ -1,7 +1,13 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Permalink}
+import se.reciba.api.model.{
+  Ingredient,
+  Recipe,
+  Tag,
+  IngredientsBlock,
+  Permalink
+}
 
 case object DropPancakes extends Recipe {
   val name = "Scotch Pancakes (BBC)"
