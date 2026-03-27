@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object ChipotleBurgers extends Recipe {
   val name = "Chipotle Burgers"
+  val createdAt = LocalDate.of(2022, 10, 16)
 
   override val source: Option[String] = (
     "https://www.honestburgers.co.uk/food/burgers/bacon-plant/"

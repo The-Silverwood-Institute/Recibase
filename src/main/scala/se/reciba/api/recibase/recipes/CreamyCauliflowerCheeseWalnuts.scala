@@ -8,9 +8,11 @@ import se.reciba.api.model.{
   Tag,
   IngredientsBlock
 }
+import java.time.LocalDate
 
 case object CreamyCauliflowerCheeseWalnuts extends Recipe {
   val name = "Creamy cauliflower cheese with walnuts"
+  val createdAt = LocalDate.of(2020, 4, 24)
   override val permalink: Permalink =
     Permalink("creamy-cauliflower-cheese")
 

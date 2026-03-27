@@ -2,6 +2,7 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object BlueCheeseGnocchi extends Recipe {
   val name =

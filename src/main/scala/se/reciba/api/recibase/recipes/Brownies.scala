@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Image, Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object Brownies extends Recipe {
   val name = "Brownies"
+  val createdAt = LocalDate.of(2022, 1, 9)
 
   override val source: Option[String] = (
     "https://www.louisegorrod.com/buttercup-archive/2011/07/chocolate-brownies.html"

@@ -2,6 +2,7 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
+import java.time.LocalDate
 
 case object BirthdayCake2 extends Recipe {
   override val name: String = "Birthday Cake"

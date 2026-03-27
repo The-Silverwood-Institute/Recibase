@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 import cats.syntax.all._
+import java.time.LocalDate
 
 case object NutRoast extends Recipe {
   val name = "Nut Roast"
+  val createdAt = LocalDate.of(2024, 12, 25)
 
   override def description: Option[String] =
     "A hearty and filling vegetarian Christmas main. Serve with gravy and roast veg.".some

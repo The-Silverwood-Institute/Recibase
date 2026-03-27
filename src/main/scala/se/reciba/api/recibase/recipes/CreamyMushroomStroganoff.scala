@@ -8,9 +8,11 @@ import se.reciba.api.model.{
   Tag,
   IngredientsBlock
 }
+import java.time.LocalDate
 
 case object CreamyMushroomStroganoff extends Recipe {
   val name = "Mushroom Stroganoff"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val source: Option[String] = (
     "http://allrecipes.co.uk/recipe/6460/creamy-mushroom-stroganoff.aspx"

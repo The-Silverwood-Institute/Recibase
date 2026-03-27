@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   Tag,
   IngredientsBlock
 }
+import java.time.LocalDate
 
 case object ToadInTheHole extends Recipe {
   val name = "Toad in the Hole"
+  val createdAt = LocalDate.of(2021, 9, 1)
   override val permalink: Permalink =
     Permalink.fromRawString("toad-in-the-hole")
 

@@ -3,6 +3,7 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model._
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object CheeseScones extends Recipe {
   val name =

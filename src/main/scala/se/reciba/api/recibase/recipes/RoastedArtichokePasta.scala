@@ -3,6 +3,7 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object RoastedArtichokePasta extends Recipe {
   override val name: String = "Roasted Artichoke Pasta"

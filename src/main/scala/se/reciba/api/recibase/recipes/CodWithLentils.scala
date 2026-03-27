@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object CodWithLentils extends Recipe {
   val name = "Cod with Lentils"
+  val createdAt = LocalDate.of(2023, 3, 17)
 
   override val source: Option[String] = (
     "Sand Dollar Café, Aberdeen"

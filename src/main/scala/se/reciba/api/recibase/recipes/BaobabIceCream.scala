@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock,
   IceCream
 }
+import java.time.LocalDate
 
 case object BaobabIceCream extends Recipe with IceCream {
   val name = "Baobab Ice Cream"
+  val createdAt = LocalDate.of(2021, 6, 12)
 
   override val source: Option[String] = "Kit".some
   override val description: Option[String] = (

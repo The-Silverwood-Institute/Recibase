@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object VegetablePrimavera extends Recipe {
   val name = "Vegetable Primavera"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"

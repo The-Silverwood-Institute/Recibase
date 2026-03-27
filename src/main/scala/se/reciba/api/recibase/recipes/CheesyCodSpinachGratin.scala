@@ -10,6 +10,7 @@ import se.reciba.api.model.{
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 import se.reciba.api.model.Image
+import java.time.LocalDate
 
 case object CheesyCodSpinachGratin extends Recipe {
   val name =

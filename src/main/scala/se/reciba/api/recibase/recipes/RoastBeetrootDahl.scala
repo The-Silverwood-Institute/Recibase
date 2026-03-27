@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object RoastBeetrootDahl extends Recipe {
   val name = "Roast Beetroot Dahl"
+  val createdAt = LocalDate.of(2022, 2, 20)
 
   override val source: Option[String] = "Hello Fresh".some
   override val notes: List[String] = List(

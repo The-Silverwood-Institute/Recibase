@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object ChipotleMacNCheese extends Recipe {
   val name = "Chipotle Mac 'n' Cheese"
+  val createdAt = LocalDate.of(2026, 2, 1)
 
   override val permalink: Permalink = Permalink("chipotle-mac-n-cheese")
   val tags = Set(Tag.AI, Tag.Vegetarian, Tag.Scales, Tag.Stodge)
