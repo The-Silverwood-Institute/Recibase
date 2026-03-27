@@ -17,6 +17,7 @@ import se.reciba.api.usage.UsageData
 import scala.collection.immutable
 import se.reciba.api.MealDefinitions
 import cats.effect.kernel.Sync
+import java.time.LocalDate
 
 trait MealsController[F[_]] {
   def meals: F[Set[MealStubWithUsageData]]
@@ -51,21 +52,27 @@ object MealsController {
     } yield MealDefinitions.mealStubs
       .map(meal => {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
-        val mealWithFrequencyTags = mealTimesEaten match {
+        val extraFrequencyTags = mealTimesEaten match {
           // Non-dinner items shouldn't be assigned usage tags because they are misleading
-          case _ if !meal.isDinner => meal
-          case 0 => meal.copy(tags = meal.tags + Tag.NeverEaten)
+          case _ if !meal.isDinner => Set.empty
+          case 0 => Set(Tag.NeverEaten)
           case count if count <= 2 =>
-            meal.copy(tags = meal.tags + Tag.Infrequent)
+            Set(Tag.Infrequent)
           case count if count >= 5 =>
-            meal.copy(tags = meal.tags + Tag.Popular)
-          case _ => meal
+            Set(Tag.Popular)
+          case _ => Set.empty
+        }
+        val extraRecencyTags = meal.createdAt.map(_.isAfter(LocalDate.now().minusMonths(12))) match {
+          case Some(true) => Set(Tag.New)
+          case _ => Set.empty
         }
 
         MealStubWithUsageData(
-          mealWithFrequencyTags,
+          meal.name,
+          meal.tags ++ extraFrequencyTags ++ extraRecencyTags,
+          meal.source,
           mealNotes.getOrElse(meal.name, List.empty),
-          mealLastEaten.get(mealWithFrequencyTags.name),
+          mealLastEaten.get(meal.name),
           mealTimesEaten
         )
       })

@@ -20,12 +20,13 @@ trait Meal {
 case class MealStub(
     name: String,
     tags: Set[Tag],
-    source: Option[Source] = None
+    source: Option[Source] = None,
+    createdAt: Option[LocalDate] = None
 ) extends Meal
 
 object MealStub {
   def apply(recipe: Recipe): MealStub =
-    MealStub(recipe.name, recipe.tags, Recibase(recipe.permalink.value).some)
+    MealStub(recipe.name, recipe.tags, Recibase(recipe.permalink.value).some, recipe.createdAt.some)
 
   def apply(name: String, tags: Set[Tag], source: Source): MealStub =
     MealStub(name, tags, source.some)
@@ -41,21 +42,6 @@ case class MealStubWithUsageData(
 ) extends Meal
 
 object MealStubWithUsageData {
-  def apply(
-      mealStub: MealStub,
-      datedNotes: List[DatedNote],
-      lastEaten: Option[LocalDate],
-      timesEaten: Int
-  ): MealStubWithUsageData =
-    MealStubWithUsageData(
-      mealStub.name,
-      mealStub.tags,
-      mealStub.source,
-      datedNotes,
-      lastEaten,
-      timesEaten
-    )
-
   implicit val stubEncoder: Encoder[MealStubWithUsageData] =
     Encoder.forProduct7(
       "name",
