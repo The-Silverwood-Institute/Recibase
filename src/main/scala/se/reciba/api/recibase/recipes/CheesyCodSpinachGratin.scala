@@ -15,6 +15,7 @@ import java.time.LocalDate
 case object CheesyCodSpinachGratin extends Recipe {
   val name =
     "Cheesy Cod and Spinach Gratin"
+  val createdAt = LocalDate.of(2020, 4, 24)
   override val permalink: Permalink = Permalink("cheesy-cod")
   val tags = Set(Tag.Pescatarian, Tag.LowEffort, Tag.Quick)
 

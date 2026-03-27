@@ -7,6 +7,7 @@ import java.time.LocalDate
 case object BeefWraps extends Recipe {
   val name =
     "Beef Wraps"
+  val createdAt = LocalDate.of(2025, 2, 3)
 
   val tags = Set(Tag.Lunch, Tag.Quick, Tag.Vegetarian)
 

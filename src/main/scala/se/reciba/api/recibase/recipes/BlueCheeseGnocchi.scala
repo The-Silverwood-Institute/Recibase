@@ -7,6 +7,7 @@ import java.time.LocalDate
 case object BlueCheeseGnocchi extends Recipe {
   val name =
     "Blue Cheese Gnocchi"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val description: Option[String] = (
     "Gnocchi with creme fraiche and spinach topped with grilled blue stilton."

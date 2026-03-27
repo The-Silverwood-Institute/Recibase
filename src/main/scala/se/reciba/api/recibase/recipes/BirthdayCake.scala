@@ -6,6 +6,7 @@ import java.time.LocalDate
 
 case object BirthdayCake extends Recipe {
   override val name: String = "Birthday Cake (classic)"
+  val createdAt = LocalDate.of(2023, 8, 8)
 
   override val source: Option[String] = (
     "Kit's Mum"

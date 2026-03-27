@@ -8,6 +8,7 @@ import java.time.LocalDate
 case object BeetrootRisotto extends Recipe {
   val name =
     "Roast Beetroot Risotto"
+  val createdAt = LocalDate.of(2020, 4, 24)
   override val permalink: Permalink =
     Permalink("beetroot-risotto")
 

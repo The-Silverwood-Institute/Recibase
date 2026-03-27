@@ -7,6 +7,7 @@ import java.time.LocalDate
 case object GreekWraps extends Recipe {
   val name =
     "Greek Kebab Wraps"
+  val createdAt = LocalDate.of(2023, 11, 9)
   override val permalink: Permalink =
     Permalink("greek-wraps")
 

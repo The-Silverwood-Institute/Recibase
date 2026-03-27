@@ -6,6 +6,7 @@ import java.time.LocalDate
 
 case object BirthdayCake2 extends Recipe {
   override val name: String = "Birthday Cake"
+  val createdAt = LocalDate.of(2024, 11, 21)
 
   override val source: Option[String] = (
     "https://www.bbc.co.uk/games/embed/food-interactive-sponge-cake-calculator?units=metric&cakeType=layer_cake&tinShape=round&mode=tinSize&value=18cm&flavouring=lemon&icing=buttercream_fill_cover"
