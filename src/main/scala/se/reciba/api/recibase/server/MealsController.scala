@@ -55,17 +55,18 @@ object MealsController {
         val extraFrequencyTags = mealTimesEaten match {
           // Non-dinner items shouldn't be assigned usage tags because they are misleading
           case _ if !meal.isDinner => Set.empty
-          case 0 => Set(Tag.NeverEaten)
+          case 0                   => Set(Tag.NeverEaten)
           case count if count <= 2 =>
             Set(Tag.Infrequent)
           case count if count >= 5 =>
             Set(Tag.Popular)
           case _ => Set.empty
         }
-        val extraRecencyTags = meal.createdAt.map(_.isAfter(LocalDate.now().minusMonths(12))) match {
-          case Some(true) => Set(Tag.New)
-          case _ => Set.empty
-        }
+        val extraRecencyTags =
+          meal.createdAt.map(_.isAfter(LocalDate.now().minusMonths(12))) match {
+            case Some(true) => Set(Tag.New)
+            case _          => Set.empty
+          }
 
         MealStubWithUsageData(
           meal.name,

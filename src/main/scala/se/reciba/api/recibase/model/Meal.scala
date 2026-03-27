@@ -26,7 +26,12 @@ case class MealStub(
 
 object MealStub {
   def apply(recipe: Recipe): MealStub =
-    MealStub(recipe.name, recipe.tags, Recibase(recipe.permalink.value).some, recipe.createdAt.some)
+    MealStub(
+      recipe.name,
+      recipe.tags,
+      Recibase(recipe.permalink.value).some,
+      recipe.createdAt.some
+    )
 
   def apply(name: String, tags: Set[Tag], source: Source): MealStub =
     MealStub(name, tags, source.some)
