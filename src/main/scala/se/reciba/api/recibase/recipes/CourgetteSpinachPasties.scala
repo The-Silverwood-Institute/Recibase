@@ -16,7 +16,7 @@ case object CourgetteSpinachPasties extends Recipe {
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient("Courgettes", "2"),
-    Ingredient("Feta", "200g"),
+    Ingredient("Feta", "200g", "diced"),
     Ingredient("Spinach", "3 handfulls".some, "roughly chopped".some),
     Ingredient("All Butter Puff Pastry", "320g"),
     Ingredient("Plain Flour", None, None, "to thicken mixture".some),
@@ -27,7 +27,7 @@ case object CourgetteSpinachPasties extends Recipe {
   )
   val method = List(
     "Grate the courgettes using a fine grater, then strain the result in a sieve.",
-    "Mix the grated courgette, goats cheese, lemon juice, nutmeg and spinach in a pan on a low heat.",
+    "Mix the grated courgette, feta, lemon juice, nutmeg and spinach in a pan on a low heat.",
     "Bring to a very gentle simmer then turn off the heat.",
     "Sift in a small amount of flour to thicken the mixure.",
     "Leave the mixture to cool for a few minutes and lay out the pastry, cutting it into two pieces.",
