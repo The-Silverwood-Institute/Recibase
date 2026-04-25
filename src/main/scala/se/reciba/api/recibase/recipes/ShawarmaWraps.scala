@@ -5,7 +5,7 @@ import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 import java.time.LocalDate
 
-case object ShawarmaWrap extends Recipe {
+case object ShawarmaWraps extends Recipe {
   override val name: String = "Shawarma Wraps"
   override val description: Option[String] =
     "Roasted sweet potato, red pepper and veggie mince with eastern spices in a wrap".some
@@ -25,11 +25,6 @@ case object ShawarmaWrap extends Recipe {
         Ingredient("Red Pepper", "1", "sliced"),
         Ingredient("Red Onion", "1", "thinly sliced"),
         Ingredient("Vivera Plant-Based Shawarma Kebab", "1", "175g"),
-        Ingredient(
-          "Eastern Spices",
-          "1",
-          "1 tsp each of cumin, coriander, turmeric, paprika, garam masala"
-        ),
         Ingredient("Garlic", "3 cloves", "sliced"),
         Ingredient("Wraps"),
         Ingredient("Siracha Sauce", None, None, "Optional".some),
@@ -44,12 +39,12 @@ case object ShawarmaWrap extends Recipe {
     IngredientsBlock(
       "Shawarma Spice mix",
       List(
-        Ingredient("Cumin", "1 tsp"),
-        Ingredient("Ground Coriander", "1 tsp"),
-        Ingredient("Smoked Paprika", "1 tsp"),
-        Ingredient("Ground Cinnamon", "1/2 tsp"),
-        Ingredient("Allspice", "1/2 tsp"),
-        Ingredient("Cayenne Pepper", "1/2 tsp")
+        Ingredient("Cumin", "1/2 tsp"),
+        Ingredient("Ground Coriander", "1/2 tsp"),
+        Ingredient("Smoked Paprika", "1/2 tsp"),
+        Ingredient("Ground Cinnamon", "1/4 tsp"),
+        Ingredient("Allspice", "1/4 tsp"),
+        Ingredient("Cayenne Pepper", "1/4 tsp")
       )
     )
   )
