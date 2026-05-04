@@ -17,7 +17,7 @@ case object RoastedArtichokePasta extends Recipe {
 
   override val notes: List[String] = List(
     "Ingredients are per person, so scale it appropriately.",
-    "12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.",
+    s"12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.",
     "Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture."
   )
 
