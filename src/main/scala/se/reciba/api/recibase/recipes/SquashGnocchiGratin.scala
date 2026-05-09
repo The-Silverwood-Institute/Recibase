@@ -15,7 +15,7 @@ case object SquashGnocchiGratin extends Recipe {
   val createdAt = LocalDate.of(2024, 1, 30)
 
   override val permalink: Permalink = Permalink("squash-gnocchi-gratin")
-  
+
   override val notes: List[String] = List(
     "Using 200g feta felt like a bit too much so I've noted it down as 100g. Can adjust if that's too little.",
     "You can use pumpkin instead of squash.",
