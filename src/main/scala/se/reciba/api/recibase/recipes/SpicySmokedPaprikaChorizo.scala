@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object SpicySmokedPaprikaChorizo extends Recipe {
   val name = "Spicy Smoked Paprika Chorizo"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   val tags = Set(Tag.Spicy, Tag.Scales, Tag.BetterNextDay, Tag.Slow)
 

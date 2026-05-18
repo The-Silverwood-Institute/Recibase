@@ -77,4 +77,5 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   case object NeverEaten extends Tag("Never Eaten")
   case object Popular extends Tag("Popular")
   case object Infrequent extends Tag("Infrequent")
+  case object New extends Tag("New")
 }

@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object ChristmasNaanwidge extends Recipe {
   val name = "Christmas Naanwidge"
+  val createdAt = LocalDate.of(2026, 2, 1)
 
   override val permalink: Permalink = Permalink("christmas-naanwidge")
   val tags = Set(Tag.AI, Tag.Christmas, Tag.Stodge, Tag.Vegetarian, Tag.Spicy)

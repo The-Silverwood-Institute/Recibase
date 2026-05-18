@@ -2,10 +2,12 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model._
+import java.time.LocalDate
 
 case object HoisinDuckWraps extends Recipe {
   val name =
     "Hoisin Duck Wraps"
+  val createdAt = LocalDate.of(2023, 3, 29)
   override val permalink: Permalink =
     Permalink("duck-wraps")
 

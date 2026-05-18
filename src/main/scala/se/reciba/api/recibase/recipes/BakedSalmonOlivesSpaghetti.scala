@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object BakedSalmonOlivesSpaghetti extends Recipe {
   val name = "Baked Salmon with Olives and Spaghetti"
+  val createdAt = LocalDate.of(2020, 4, 24)
   override val permalink: Permalink =
     Permalink("salmon-olive-spaghetti")
 

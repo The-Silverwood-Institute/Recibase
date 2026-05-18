@@ -8,9 +8,11 @@ import se.reciba.api.model.{
   Tag,
   IngredientsBlock
 }
+import java.time.LocalDate
 
 case object BroccoliStiltonSoup extends Recipe {
   val name = "Broccoli & Stilton soup"
+  val createdAt = LocalDate.of(2024, 1, 17)
   override val permalink: Permalink =
     Permalink("broccoli-stilton-soup")
 

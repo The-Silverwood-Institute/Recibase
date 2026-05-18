@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object BakedRigatoniAubergine extends Recipe {
   val name = "Baked Rigatoni with Aubergine"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val source: Option[String] = (
     "Vegetarian Cookery Bible (2012: Reader's Digest)"

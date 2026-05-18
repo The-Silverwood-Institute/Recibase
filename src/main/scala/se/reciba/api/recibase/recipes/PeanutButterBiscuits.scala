@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Image, Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object PeanutButterBiscuits extends Recipe {
   val name = "Peanut Butter Biscuits"
+  val createdAt = LocalDate.of(2021, 1, 24)
 
   override val source: Option[String] = "Alex's Mum".some
   val tags = Set(Tag.Baking)

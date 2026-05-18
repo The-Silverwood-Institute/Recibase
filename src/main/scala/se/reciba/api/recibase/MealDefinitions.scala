@@ -357,7 +357,7 @@ object MealDefinitions {
         Set(Tag.Vegetarian, Tag.Quick, Tag.Scales, Tag.LowEffort)
       ),
       MealStub(
-        "Scotch Pancakes",
+        "Scotch Pancakes (authentic)",
         Set(Tag.Pudding, Tag.Quick, Tag.LowEffort, Tag.Scales),
         Online(
           "https://www.reddit.com/r/Scotland/comments/uhaqax/what_do_you_mean_you_dont_know_how_to_make_drop/"

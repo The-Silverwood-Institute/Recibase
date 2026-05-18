@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object ChineseFusion extends Recipe {
   override val name: String = "Chinese Fusion with Hoisin"
+  val createdAt = LocalDate.of(2023, 9, 8)
 
   override val permalink: Permalink = Permalink("chinese-fusion")
 

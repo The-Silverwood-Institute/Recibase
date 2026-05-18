@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object Quesadillas extends Recipe {
   val name = "Quesadillas"
+  val createdAt = LocalDate.of(2022, 11, 18)
 
   override val source: Option[String] = (
     "https://www.hellofresh.co.uk/recipes/cheesy-chipotle-bean-quesadillas-5feb6402f4480c042d622a2d"

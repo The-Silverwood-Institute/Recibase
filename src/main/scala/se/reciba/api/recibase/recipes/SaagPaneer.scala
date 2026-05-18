@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object SaagPaneer extends Recipe {
   val name = "Saag Paneer"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val notes: List[String] = List(
     "All quantities are very approximate. Some ingredients are probably also missing as I really just make this up as I go...",

@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock
 }
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object ChunkyVegetableCrumble extends Recipe {
   val name = "Chunky Vegetable Crumble"
+  val createdAt = LocalDate.of(2020, 4, 24)
   override val permalink: Permalink =
     Permalink("vegetable-crumble")
 

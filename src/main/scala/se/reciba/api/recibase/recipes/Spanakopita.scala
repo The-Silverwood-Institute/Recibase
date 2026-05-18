@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object Spanakopita extends Recipe {
   val name = "Spanakopita"
+  val createdAt = LocalDate.of(2024, 5, 12)
 
   override val source: Option[String] = (
     "Minna"

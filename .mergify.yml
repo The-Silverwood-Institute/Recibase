@@ -15,5 +15,4 @@ pull_request_rules:
     actions:
       review:
         type: APPROVE
-      delete_head_branch: {}
       queue:

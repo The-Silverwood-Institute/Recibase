@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object SweetChilliFetaPasta extends Recipe {
   val name = "Sweet chilli feta pasta"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val notes: List[String] = List(
     "Try to find large bottles of sweet chilli sauce. You can get about a litre for the same price as one of the tiny bottles. This recipe needs quite a bit.",

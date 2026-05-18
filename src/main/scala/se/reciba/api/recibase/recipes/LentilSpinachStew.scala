@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object LentilSpinachStew extends Recipe {
   val name = "Lentil & Spinach Stew"
+  val createdAt = LocalDate.of(2022, 3, 26)
 
   override val source: Option[String] = (
     "https://drive.google.com/file/d/1f247M9Y9DLk4T6NzMng1B6GRvhoaAX74C28UTyxk_Jo/view"

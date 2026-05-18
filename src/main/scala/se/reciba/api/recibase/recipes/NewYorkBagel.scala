@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object NewYorkBagel extends Recipe {
   val name = "New York Bagels"
+  val createdAt = LocalDate.of(2021, 9, 13)
 
   override val source: Option[String] = (
     "https://www.thevegspace.co.uk/recipe-four-fabulously-filling-bagel-toppings/"

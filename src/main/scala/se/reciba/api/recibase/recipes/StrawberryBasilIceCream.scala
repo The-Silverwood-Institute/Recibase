@@ -10,9 +10,11 @@ import se.reciba.api.model.{
   IceCream,
   Permalink
 }
+import java.time.LocalDate
 
 case object StrawberryBasilIceCream extends Recipe with IceCream {
   val name = "Strawberry, Basil & Black Pepper Ice Cream"
+  val createdAt = LocalDate.of(2025, 2, 14)
 
   override val permalink: Permalink =
     Permalink("strawberry-basil-ice-cream")

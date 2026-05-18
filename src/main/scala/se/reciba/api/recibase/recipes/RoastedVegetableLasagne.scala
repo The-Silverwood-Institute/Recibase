@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object RoastedVegetableLasagne extends Recipe {
   val name = "Roasted Vegetable Lasagne"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val source: Option[String] = (
     "https://www.bbcgoodfood.com/recipes/10603/roasted-vegetable-lasagne"

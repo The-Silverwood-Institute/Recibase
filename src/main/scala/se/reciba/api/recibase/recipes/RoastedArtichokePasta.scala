@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object RoastedArtichokePasta extends Recipe {
   override val name: String = "Roasted Artichoke Pasta"
+  val createdAt = LocalDate.of(2023, 8, 8)
 
   override val source: Option[String] = (
     "Stephani"
@@ -15,7 +17,7 @@ case object RoastedArtichokePasta extends Recipe {
 
   override val notes: List[String] = List(
     "Ingredients are per person, so scale it appropriately.",
-    "12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.",
+    s"12 minutes for tomatoes and 27 for (Waitrose) artichokes at ${200.celsius} in your oven. Can probably -2 to +5 on artichokes without much trouble.",
     "Waiting for the pasta and vegetables to cool before mixing with the ricotta is optional. It depends how to feel about heat affecting the ricotta's texture."
   )
 

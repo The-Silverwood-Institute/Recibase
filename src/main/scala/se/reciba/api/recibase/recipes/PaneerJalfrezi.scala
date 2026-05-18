@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object PaneerJalfrezi extends Recipe {
   val name = "Paneer Jalfrezi"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val source: Option[String] = "Gousto".some
   val tags = Set(Tag.Vegetarian, Tag.Quick, Tag.Spicy, Tag.LowEffort)

@@ -2,9 +2,11 @@ package se.reciba.api.recipes
 
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import java.time.LocalDate
 
 case object MushroomQuiche extends Recipe {
   val name = "Mushroom Quiche"
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val notes: List[String] = List(
     "Take the pastry out of the fridge 40 mins before use!"

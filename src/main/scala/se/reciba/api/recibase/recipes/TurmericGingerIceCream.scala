@@ -9,9 +9,11 @@ import se.reciba.api.model.{
   IngredientsBlock,
   IceCream
 }
+import java.time.LocalDate
 
 case object TurmericGingerIceCream extends Recipe with IceCream {
   val name = "Turmeric & Ginger Ice Cream"
+  val createdAt = LocalDate.of(2022, 4, 9)
 
   override val source: Option[String] = (
     "https://www.sugarlovespices.com/turmeric-ginger-honey-no-churn-ice-cream/"

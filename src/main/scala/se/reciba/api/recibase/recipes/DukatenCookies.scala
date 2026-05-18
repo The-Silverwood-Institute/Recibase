@@ -4,9 +4,11 @@ import cats.syntax.all._
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
+import java.time.LocalDate
 
 case object DukatenCookies extends Recipe {
   override val name: String = "Dukaten Cookies"
+  val createdAt = LocalDate.of(2024, 12, 24)
 
   override val source: Option[String] = (
     "Stephani"

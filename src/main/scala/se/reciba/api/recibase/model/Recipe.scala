@@ -10,6 +10,7 @@ import org.reflections.Reflections
 import scala.reflect.classTag
 import scala.reflect.runtime.universe
 import se.reciba.api.recibase.model.DatedNote
+import java.time.LocalDate
 
 @JsonCodec
 case class Ingredient(
@@ -41,6 +42,7 @@ trait Recipe extends Meal with Product {
     "https://github.com/The-Silverwood-Institute/Recibase/tree/master/src/main/scala/se/reciba/api/recibase/recipes"
 
   def permalink: Permalink = Permalink.fromRawString(name)
+  def createdAt: LocalDate
   def edit: String = s"$recipeDir/${this.productPrefix}.scala"
   def source: Option[String] = None
   def description: Option[String] = None

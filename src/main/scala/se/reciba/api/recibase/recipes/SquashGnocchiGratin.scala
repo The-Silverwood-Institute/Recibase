@@ -8,15 +8,14 @@ import se.reciba.api.model.{
   Tag,
   IngredientsBlock
 }
+import java.time.LocalDate
 
 case object SquashGnocchiGratin extends Recipe {
   val name = "Squash and Gnocchi Gratin"
+  val createdAt = LocalDate.of(2024, 1, 30)
 
   override val permalink: Permalink = Permalink("squash-gnocchi-gratin")
 
-  override val source: Option[String] = (
-    "https://vervetimes.com/rukmini-iyers-crispy-baked-squash-and-gnocchi-gratin-with-creme-fraiche-feta-and-kale-feasting-with-ocado/"
-  ).some
   override val notes: List[String] = List(
     "Using 200g feta felt like a bit too much so I've noted it down as 100g. Can adjust if that's too little.",
     "You can use pumpkin instead of squash.",

@@ -3,9 +3,11 @@ package se.reciba.api.recipes
 import cats.syntax.option._
 import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+import java.time.LocalDate
 
 case object RoastedVegetableMoroccanTagine extends Recipe {
   override val name: String = "Roasted Vegetable Moroccan Tagine"
+  val createdAt = LocalDate.of(2022, 3, 27)
 
   override val source: Option[String] = (
     "https://www.onegreenplanet.org/vegan-recipe/delicious-roasted-veggie-moroccan-tagine/"
