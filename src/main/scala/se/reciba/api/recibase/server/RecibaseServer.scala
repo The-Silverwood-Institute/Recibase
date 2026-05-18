@@ -28,8 +28,7 @@ object RecibaseServer {
           .withAllowCredentials(false)
           .apply(routes)
       )
-      httpWithRedirect = RedirectHeroku(corsHttp)
-      finalHttpApp = Logger.httpApp(false, false)(httpWithRedirect.orNotFound)
+      finalHttpApp = Logger.httpApp(false, false)(corsHttp.orNotFound)
 
       port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
