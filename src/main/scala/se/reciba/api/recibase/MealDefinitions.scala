@@ -120,7 +120,7 @@ object MealDefinitions {
       MealStub("Grilled aubergine", Set(Tag.Quick, Tag.Vegan, Tag.LowEffort)),
       MealStub(
         "Haddock Moqueca",
-        Set(Tag.Pescatarian, Tag.Spicy),
+        Set(Tag.Pescatarian, Tag.Spicy, Tag.Quick, Tag.LowEffort),
         Online(
           "https://www.gousto.co.uk/cookbook/fish-recipes/brazilian-haddock-moqueca-zesty-lime-rice"
         )
