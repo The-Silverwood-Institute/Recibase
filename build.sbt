@@ -1,4 +1,5 @@
 val Http4sVersion = "1.0.0-M46"
+val BlazeVersion = "v1.0.0-M41"
 val Specs2Version = "4.23.0"
 val LogbackVersion = "1.5.32"
 val EnumeratumVersion = "1.9.7"
@@ -10,8 +11,8 @@ lazy val root = (project in file("."))
     version := "0.2",
     scalaVersion := "2.13.18",
     libraryDependencies ++= Seq(
-      "org.http4s" %% "http4s-blaze-server" % Http4sVersion,
-      "org.http4s" %% "http4s-blaze-client" % Http4sVersion,
+      "org.http4s" %% "http4s-blaze-server" % BlazeVersion,
+      "org.http4s" %% "http4s-blaze-client" % BlazeVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
       "org.http4s" %% "http4s-dsl" % Http4sVersion,
       "io.circe" %% "circe-generic" % "0.14.15",
