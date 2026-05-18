@@ -43,19 +43,21 @@ case class MealStubWithUsageData(
     source: Option[Source],
     datedNotes: List[DatedNote],
     lastEaten: Option[LocalDate],
-    timesEaten: Int
+    timesEaten: Int,
+    featured: Boolean
 ) extends Meal
 
 object MealStubWithUsageData {
   implicit val stubEncoder: Encoder[MealStubWithUsageData] =
-    Encoder.forProduct7(
+    Encoder.forProduct8(
       "name",
       "tags",
       "inherited_tags",
       "source",
       "dated_notes",
       "last_eaten",
-      "times_eaten"
+      "times_eaten",
+      "featured"
     ) { mealStub =>
       (
         mealStub.name,
@@ -64,7 +66,8 @@ object MealStubWithUsageData {
         mealStub.source,
         mealStub.datedNotes,
         mealStub.lastEaten,
-        mealStub.timesEaten
+        mealStub.timesEaten,
+        mealStub.featured
       )
     }
 }

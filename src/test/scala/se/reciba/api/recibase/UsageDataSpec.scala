@@ -43,6 +43,79 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
     )
   }
 
+  "featuredMeals returns the most recent featured date per meal" >> {
+    UsageData.featuredMeals(
+      Set(
+        MealLogEntry(
+          "Macaroni",
+          LocalDate.of(2022, 2, 17),
+          None,
+          featured = true
+        ),
+        MealLogEntry(
+          "Macaroni",
+          LocalDate.of(2022, 2, 19),
+          None,
+          featured = true
+        ),
+        MealLogEntry(
+          "Beyond Burgers",
+          LocalDate.of(2022, 2, 18),
+          None,
+          featured = true
+        ),
+        MealLogEntry(
+          "Salad",
+          LocalDate.of(2022, 2, 20),
+          None,
+          featured = false
+        )
+      )
+    ) must_== Map(
+      "Macaroni" -> LocalDate.of(2022, 2, 19),
+      "Beyond Burgers" -> LocalDate.of(2022, 2, 18)
+    )
+  }
+
+  "MealLogEntry parses Feature column" >> {
+    MealLogEntry(
+      "Macaroni",
+      "Thursday, 17 February 22",
+      "",
+      "TRUE"
+    ) must beSuccessfulTry(
+      MealLogEntry("Macaroni", LocalDate.of(2022, 2, 17), None, featured = true)
+    )
+
+    MealLogEntry(
+      "Macaroni",
+      "Thursday, 17 February 22",
+      "",
+      "FALSE"
+    ) must beSuccessfulTry(
+      MealLogEntry(
+        "Macaroni",
+        LocalDate.of(2022, 2, 17),
+        None,
+        featured = false
+      )
+    )
+
+    MealLogEntry(
+      "Macaroni",
+      "Thursday, 17 February 22",
+      "",
+      ""
+    ) must beSuccessfulTry(
+      MealLogEntry(
+        "Macaroni",
+        LocalDate.of(2022, 2, 17),
+        None,
+        featured = false
+      )
+    )
+  }
+
   "aggregates notes made when making meals" >> {
     UsageData.notes(
       Set(

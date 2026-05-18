@@ -43,12 +43,20 @@ object UsageData {
   def notes(logEntries: Set[MealLogEntry]): Map[String, List[DatedNote]] =
     logEntries.groupBy(_.mealName).map { case (mealName, entries) =>
       mealName -> entries
-        .collect { case MealLogEntry(_, date, Some(note)) =>
+        .collect { case MealLogEntry(_, date, Some(note), _) =>
           DatedNote(date, note)
         }
         .toList
         .sortBy(_.date)
     }
+
+  def featuredMeals(logEntries: Set[MealLogEntry]): Map[String, LocalDate] =
+    logEntries
+      .filter(_.featured)
+      .groupMapReduce(_.mealName)(_.date) {
+        case (left, right) if left.isAfter(right) => left
+        case (_, right)                           => right
+      }
 
   val softRefreshTime = Duration.ofHours(12)
   val hardRefreshTime = Duration.ofHours(72)
@@ -92,10 +100,16 @@ class UsageData[F[_]: Async](
         .getRecords()
         .asScala
         .flatMap(record => {
-          (record.get("Date"), record.get("Meal"), record.get("Notes")) match {
-            case (_, "", _)                   => None
-            case (rawDate, mealName, rawNote) =>
-              MealLogEntry(mealName, rawDate, rawNote).toOption
+          (
+            record.get("Date"),
+            record.get("Meal"),
+            record.get("Notes"),
+            Option(record.get("Feature")).getOrElse("")
+          ) match {
+            case (_, "", _, _) =>
+              None
+            case (rawDate, mealName, rawNote, rawFeature) =>
+              MealLogEntry(mealName, rawDate, rawNote, rawFeature).toOption
           }
         })
         .toSet
@@ -110,22 +124,27 @@ class UsageData[F[_]: Async](
     cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.lastEaten)
   def mealNotes: F[Map[String, List[DatedNote]]] =
     cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.notes)
+  def featuredMeals: F[Map[String, LocalDate]] =
+    cachedMealLogEntries(UsageData.hardRefreshTime).map(UsageData.featuredMeals)
 }
 
 final case class MealLogEntry(
     mealName: String,
     date: LocalDate,
-    note: Option[String]
+    note: Option[String],
+    featured: Boolean = false
 )
 
 object MealLogEntry {
   def apply(
       mealName: String,
       rawDate: String,
-      rawNote: String
+      rawNote: String,
+      rawFeature: String
   ): Try[MealLogEntry] = {
     val note = if (rawNote == "") None else rawNote.some
-    UsageData.parseDate(rawDate).map(MealLogEntry(mealName, _, note))
+    val featured = rawFeature == "TRUE"
+    UsageData.parseDate(rawDate).map(MealLogEntry(mealName, _, note, featured))
   }
 }
 

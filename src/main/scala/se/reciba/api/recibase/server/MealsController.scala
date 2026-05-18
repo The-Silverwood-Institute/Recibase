@@ -49,6 +49,7 @@ object MealsController {
       mealCount <- usageData.mealCount
       mealLastEaten <- usageData.mealLastEaten
       mealNotes <- usageData.mealNotes
+      featuredMeals <- usageData.featuredMeals
     } yield MealDefinitions.mealStubs
       .map(meal => {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
@@ -67,6 +68,9 @@ object MealsController {
             case Some(true) => Set(Tag.New)
             case _          => Set.empty
           }
+        val mealFeatured = featuredMeals
+          .get(meal.name)
+          .exists(_.isAfter(LocalDate.now().minusMonths(6)))
 
         MealStubWithUsageData(
           meal.name,
@@ -74,7 +78,8 @@ object MealsController {
           meal.source,
           mealNotes.getOrElse(meal.name, List.empty),
           mealLastEaten.get(meal.name),
-          mealTimesEaten
+          mealTimesEaten,
+          mealFeatured
         )
       })
   }
