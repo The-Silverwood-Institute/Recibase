@@ -7,6 +7,8 @@ import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.implicits._
 import cats.syntax.all._
 import org.http4s.server.middleware.{CORS, Logger}
+import org.typelevel.log4cats.LoggerFactory
+import org.typelevel.log4cats.slf4j.Slf4jFactory
 import se.reciba.api.usage.UsageData
 
 object RecibaseServer {
@@ -14,26 +16,20 @@ object RecibaseServer {
   def stream[F[_]](
       usageData: UsageData[F]
   )(implicit F: Async[F]): Stream[F, Unit] = {
+    implicit val loggerFactory: LoggerFactory[F] = Slf4jFactory.create[F]
     for {
       _ <- BlazeClientBuilder[F].stream
       recipesAlg = RecipeController.impl[F](usageData)
       mealsAlg = MealsController.impl[F](usageData)
       metaAlg = MetaController.impl[F]
-
-      // Combine Service Routes into an HttpApp.
-      // Can also be done via a Router if you
-      // want to extract a segments not checked
-      // in the underlying routes.
-      httpApp = RedirectHeroku(
+      routes = RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg)
+      corsHttp <- Stream.eval(
         CORS.policy.withAllowOriginAll
           .withAllowCredentials(false)
-          .apply(
-            RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg).orNotFound
-          )
+          .apply(routes)
       )
-
-      // With Middlewares in place
-      finalHttpApp = Logger.httpApp(false, false)(httpApp)
+      httpWithRedirect = RedirectHeroku(corsHttp)
+      finalHttpApp = Logger.httpApp(false, false)(httpWithRedirect.orNotFound)
 
       port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 

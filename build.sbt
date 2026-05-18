@@ -1,5 +1,5 @@
-val Http4sVersion = "1.0.0-M46"
-val BlazeVersion = "v1.0.0-M41"
+val Http4sVersion = "1.0.0-M44"
+val BlazeVersion = "1.0.0-M41"
 val Specs2Version = "4.23.0"
 val LogbackVersion = "1.5.32"
 val EnumeratumVersion = "1.9.7"
@@ -24,7 +24,8 @@ lazy val root = (project in file("."))
       "org.apache.commons" % "commons-csv" % "1.14.1",
       "org.specs2" %% "specs2-core" % Specs2Version % "test",
       "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
-      "ch.qos.logback" % "logback-classic" % LogbackVersion
+      "ch.qos.logback" % "logback-classic" % LogbackVersion,
+      "org.typelevel" %% "log4cats-slf4j" % "2.7.0"
     ),
     addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
