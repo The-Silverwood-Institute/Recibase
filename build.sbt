@@ -25,7 +25,7 @@ lazy val root = (project in file("."))
       "org.specs2" %% "specs2-core" % Specs2Version % "test",
       "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
       "ch.qos.logback" % "logback-classic" % LogbackVersion,
-      "org.typelevel" %% "log4cats-slf4j" % "2.7.0"
+      "org.typelevel" %% "log4cats-slf4j" % "2.7.1"
     ),
     addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
