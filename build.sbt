@@ -1,7 +1,7 @@
 val Http4sVersion = "1.0.0-M44"
 val BlazeVersion = "1.0.0-M41"
 val Specs2Version = "4.23.0"
-val LogbackVersion = "1.5.32"
+val LogbackVersion = "1.5.33"
 val EnumeratumVersion = "1.9.7"
 
 lazy val root = (project in file("."))
