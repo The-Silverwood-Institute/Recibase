@@ -68,9 +68,7 @@ object MealsController {
             case Some(true) => Set(Tag.New)
             case _          => Set.empty
           }
-        val mealFeatured = featuredMeals
-          .get(meal.name)
-          .exists(_.isAfter(LocalDate.now().minusMonths(6)))
+        val mealFeatured = featuredMeals.get(meal.name)
 
         MealStubWithUsageData(
           meal.name,

@@ -44,7 +44,7 @@ case class MealStubWithUsageData(
     datedNotes: List[DatedNote],
     lastEaten: Option[LocalDate],
     timesEaten: Int,
-    featured: Boolean
+    featured: Option[LocalDate]
 ) extends Meal
 
 object MealStubWithUsageData {
