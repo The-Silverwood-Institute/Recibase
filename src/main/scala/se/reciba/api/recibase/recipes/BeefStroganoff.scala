@@ -10,7 +10,7 @@ case object BeefStroganoff extends Recipe {
 
   val tags = Set(Tag.Scales, Tag.Slow)
 
-  val source = "Kit's Dad".some
+  override val source = "Kit's Dad".some
 
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
