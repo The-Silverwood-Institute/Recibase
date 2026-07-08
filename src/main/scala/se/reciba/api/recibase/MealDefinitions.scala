@@ -170,11 +170,6 @@ object MealDefinitions {
       ),
       MealStub("Lentil & Vegetable Pilaf", Set(Tag.Vegan, Tag.Scales)),
       MealStub(
-        "Macaroni",
-        Set(Tag.Scales, Tag.Vegetarian, Tag.ColdWeather, Tag.Stodge),
-        GoogleDrive("1aiAdl0JqdR6rU0Y-vJgsLre6IbJGhG8iCyD7HzP5Cvc")
-      ),
-      MealStub(
         "Vegetarian Meatballs",
         Set(Tag.Scales, Tag.Vegetarian)
       ),
@@ -334,11 +329,6 @@ object MealDefinitions {
       MealStub(
         "Roast vegetable risotto",
         Set(Tag.Vegetarian, Tag.Slow, Tag.Scales)
-      ),
-      MealStub(
-        "Roasted Vegetable Tart",
-        Set(Tag.Vegetarian, Tag.HotWeather),
-        GoogleDrive("1nIIXKu72Kohy6UDK_PwiMYYSp7I3Wcou")
       ),
       MealStub(
         "Satay Sweet Potato Curry",
