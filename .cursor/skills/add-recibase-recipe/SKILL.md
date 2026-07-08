@@ -14,7 +14,7 @@ Recipes are Scala `case object`s in `src/main/scala/se/reciba/api/recibase/recip
 1. Read 1–2 nearby recipes for style (e.g. `ChilliConCarne.scala`, `BirthdayCake2.scala`).
 2. Create `PascalCase.scala` matching the `case object` name (e.g. `BeefStroganoff.scala`).
 3. Use package `se.reciba.api.recipes` (not `recibase.recipes`).
-4. Set `createdAt` to today's date.
+4. Set `createdAt` to today's date if the recipe is new. If the recipe existed as a `MealStub` before then set it to `LocalDate.of(2020, 4, 24)`
 5. Pick tags from `Tag` in `src/main/scala/se/reciba/api/recibase/model/Tag.scala`.
 6. Verify the file compiles / has no linter errors.
 
