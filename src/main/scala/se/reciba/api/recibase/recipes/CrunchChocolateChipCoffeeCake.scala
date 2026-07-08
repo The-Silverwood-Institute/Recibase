@@ -9,7 +9,7 @@ case object CrunchChocolateChipCoffeeCake extends Recipe {
   val name = "Crunch Chocolate Chip Coffee Cake"
   override val permalink = Permalink("coffee-cake")
 
-  val createdAt = LocalDate.of(2026, 7, 8)
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   val tags = Set(Tag.Pudding, Tag.Baking, Tag.Vegetarian)
 

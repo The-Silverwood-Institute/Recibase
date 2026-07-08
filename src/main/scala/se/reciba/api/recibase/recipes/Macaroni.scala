@@ -5,7 +5,7 @@ import java.time.LocalDate
 
 case object Macaroni extends Recipe {
   val name = "Macaroni"
-  val createdAt = LocalDate.of(2026, 7, 8)
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   override val notes: List[String] = List(
     "We largely vibe the ingredients for this recipe."

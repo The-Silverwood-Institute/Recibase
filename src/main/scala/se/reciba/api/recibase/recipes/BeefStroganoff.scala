@@ -6,7 +6,7 @@ import java.time.LocalDate
 
 case object BeefStroganoff extends Recipe {
   val name = "Beef Stroganoff"
-  val createdAt = LocalDate.of(2026, 7, 8)
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   val tags = Set(Tag.Scales, Tag.Slow)
 

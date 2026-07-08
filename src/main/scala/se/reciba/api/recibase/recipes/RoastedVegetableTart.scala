@@ -7,7 +7,7 @@ import java.time.LocalDate
 
 case object RoastedVegetableTart extends Recipe {
   val name = "Roasted Vegetable Tart"
-  val createdAt = LocalDate.of(2026, 7, 8)
+  val createdAt = LocalDate.of(2020, 4, 24)
 
   val tags = Set(Tag.Vegetarian, Tag.HotWeather, Tag.Slow)
 
