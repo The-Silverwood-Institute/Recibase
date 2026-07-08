@@ -7,7 +7,7 @@ import se.reciba.api.model.Permalink
 
 case object CrunchChocolateChipCoffeeCake extends Recipe {
   val name = "Crunch Chocolate Chip Coffee Cake"
-  val permalink = Permalink("coffee-cake")
+  override val permalink = Permalink("coffee-cake")
 
   val createdAt = LocalDate.of(2026, 7, 8)
 
