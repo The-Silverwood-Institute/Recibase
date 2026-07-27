@@ -50,7 +50,6 @@ object MealDefinitions {
           "https://www.themediterraneandish.com/mediterranean-broccoli-pasta-bean/"
         )
       ),
-      MealStub("Truffle Burgers", Set(Tag.Vegetarian, Tag.Quick, Tag.Stodge)),
       MealStub("Butternut squash risotto", Set(Tag.Vegan, Tag.HotWeather)),
       MealStub(
         "Butternut & Blue Cheese Risotto",
