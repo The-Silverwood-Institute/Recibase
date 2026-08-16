@@ -33,7 +33,7 @@ enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 
 Docker / version := "latest"
-dockerBaseImage := "eclipse-temurin:17"
+dockerBaseImage := "eclipse-temurin:25"
 dockerExposedPorts := Seq(8081)
 
 scalacOptions ++= Seq(

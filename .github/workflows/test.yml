@@ -11,7 +11,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: temurin
-        java-version: 17
+        java-version: 25
     - name: Setup SBT
       uses: sbt/setup-sbt@v1
     - name: Test

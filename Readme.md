@@ -33,7 +33,7 @@ Recibase is a long term project which will grow depending on what features are u
 ## Requirements
 
 - SBT
-- Java 17
+- Java 25
 
 ## Usage
 
