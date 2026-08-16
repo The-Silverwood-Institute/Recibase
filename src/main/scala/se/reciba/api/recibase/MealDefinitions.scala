@@ -270,20 +270,6 @@ object MealDefinitions {
         Set(Tag.LowEffort, Tag.Vegetarian, Tag.Stodge)
       ),
       MealStub(
-        "Pomegranate Persian Halloumi",
-        Set(
-          Tag.LowEffort,
-          Tag.Quick,
-          Tag.HotWeather,
-          Tag.Vegetarian,
-          Tag.Scales,
-          Tag.StephaniIsh
-        ),
-        Online(
-          "https://drive.google.com/drive/folders/1sIZae-25brxIrc6KeWuOTf2uXE7lLvbQ"
-        )
-      ),
-      MealStub(
         "Potato gratin",
         Set(
           Tag.Vegetarian,
@@ -443,13 +429,6 @@ object MealDefinitions {
         Set(Tag.VeganIsh, Tag.Slow, Tag.Scales, Tag.Spicy)
       ),
       MealStub(
-        "Tofu Katsu Curry",
-        Set(Tag.Vegan),
-        Online(
-          "https://drive.google.com/drive/u/0/folders/1nGGpfNdO6Qivu3n8E-3f0BwyLS-PpyX2"
-        )
-      ),
-      MealStub(
         "Tofu & cashew nut stir fry",
         Set(Tag.Vegan, Tag.Quick, Tag.HotWeather),
         GoogleDrive("1nNWYsSiKtMubmN3VeXgGpIX8_RniCOlp")
@@ -499,17 +478,6 @@ object MealDefinitions {
         "Vegetable Hotpot with dumplings",
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort, Tag.ColdWeather),
         GoogleDrive("1jsxu4biuRi3ewRQ4g5HDGEpoKw-aMf0e")
-      ),
-      MealStub(
-        "Vegetable Pad Thai",
-        Set(
-          Tag.LowEffort,
-          Tag.Quick,
-          Tag.Vegan
-        ),
-        Online(
-          "https://drive.google.com/drive/folders/1Uz9NU3ffJVFppHr0ZOdYoJ_h-TjVmIkB"
-        )
       ),
       MealStub(
         "Vegetable Sambar",
