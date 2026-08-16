@@ -1,6 +1,6 @@
 ---
 name: add-recibase-recipe
-description: Add or edit Recibase recipes in Scala. Use when the user asks to add a recipe, convert recipe text into code, or work in src/main/scala/se/reciba/api/recibase/recipes/.
+description: Add or edit Recibase recipes in Scala. Use when the user asks to add a recipe, convert recipe text into code, type up a MealStub, or work in src/main/scala/se/reciba/api/recibase/recipes/.
 ---
 
 # Add a Recibase Recipe
@@ -14,9 +14,17 @@ Recipes are Scala `case object`s in `src/main/scala/se/reciba/api/recibase/recip
 1. Read 1–2 nearby recipes for style (e.g. `ChilliConCarne.scala`, `BirthdayCake2.scala`).
 2. Create `PascalCase.scala` matching the `case object` name (e.g. `BeefStroganoff.scala`).
 3. Use package `se.reciba.api.recipes` (not `recibase.recipes`).
-4. Set `createdAt` to today's date if the recipe is new. If the recipe existed as a `MealStub` before then set it to `LocalDate.of(2020, 4, 24)`
+4. Set `createdAt` to today's date if the recipe is new. If converting a `MealStub`, follow **Converting a MealStub** below.
 5. Pick tags from `Tag` in `src/main/scala/se/reciba/api/recibase/model/Tag.scala`.
 6. Verify the file compiles / has no linter errors.
+
+## Converting a MealStub
+
+When typing up a stub from `MealDefinitions.scala`:
+
+- Keep the stub's `name` and `tags` unless the user changes them.
+- Set `createdAt` to `LocalDate.of(2020, 4, 24)`.
+- **Delete the stub** from `MealDefinitions.scala`. Meals are `Recipe.recipes ++` the stub set; leaving it in duplicates the meal.
 
 ## Template
 
@@ -58,7 +66,7 @@ case object ExampleRecipe extends Recipe {
 
 ## Optional fields
 
-- `source` — URL or attribution string
+- `source` — attribution string (`"Gousto"`, `"Kit's Dad"`), not a URL. URLs belong on MealStubs as `Online(...)`.
 - `description` — short summary
 - `tagline` — one-liner
 - `notes` — `List[String]` of extra tips (HTML links allowed)
@@ -145,7 +153,7 @@ Meat dishes often use `VegetarianIsh` (not `Vegetarian`). Baking/puddings use `P
 
 - Match naming and tone of neighbouring recipes; don't over-comment.
 - Put ingredient alternatives or cut guidance in `notes` on the ingredient, not in `method`.
-- Keep the diff to one new file unless editing an existing recipe.
+- Keep the diff to one new file unless editing an existing recipe or converting a MealStub.
 - Filename = `case object` name = `productPrefix` used in the GitHub edit link.
 
 ## Examples in this repo
