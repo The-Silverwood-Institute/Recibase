@@ -29,6 +29,7 @@ case object PomegranatePersianHalloumi extends Recipe {
     Ingredient("Red onion", "2", "finely sliced"),
     Ingredient("Sultanas", "30g"),
     Ingredient("Pomegranate molasses", "15g"),
+    Ingredient("Pomegranate seeds", "10g".some, None, "optional".some),
     Ingredient("Ras el hanout", "1 tbsp"),
     Ingredient("Mint", "10g", "leaves stripped and roughly chopped"),
     Ingredient("Natural yoghurt", "80g"),
@@ -49,6 +50,6 @@ case object PomegranatePersianHalloumi extends Recipe {
     "Combine the chopped mint in a small bowl with the natural yoghurt.",
     "Return the reserved pan to a medium-high heat.",
     "Once hot, add the spiced halloumi and cook for 1-2 min on each side or until golden.",
-    "Serve the halloumi over the pomegranate couscous and dollop over the mint yoghurt."
+    "Serve the halloumi over the pomegranate couscous with a garnish of pomegranate seeds."
   )
 }
