@@ -21,7 +21,9 @@ object RecibaseServer {
     val recipesAlg = RecipeController.impl[F](usageData)
     val mealsAlg = MealsController.impl[F](usageData)
     val metaAlg = MetaController.impl[F]
-    val routes = RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg)
+    val routes =
+      RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg) <+> WebhookRoutes
+        .routes[F]()
     val port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
     for {
