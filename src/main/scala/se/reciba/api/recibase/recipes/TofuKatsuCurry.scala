@@ -22,7 +22,11 @@ case object TofuKatsuCurry extends Recipe {
     Ingredient("Tenderstem broccoli", "160g"),
     Ingredient("Panko breadcrumbs", "40g"),
     Ingredient("Vegan mayonnaise", "25ml"),
-    Ingredient("Fresh root ginger", "15g", "peeled and finely chopped or grated"),
+    Ingredient(
+      "Fresh root ginger",
+      "15g",
+      "peeled and finely chopped or grated"
+    ),
     Ingredient("Curry powder", "1 tbsp"),
     Ingredient("Plain flour", "2 tbsp"),
     Ingredient("Soy sauce", "15ml"),
