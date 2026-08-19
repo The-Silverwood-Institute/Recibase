@@ -28,7 +28,8 @@ class WebhookRoutesSpec extends org.specs2.mutable.Specification {
   }
 
   private def postHooks(token: String): Response[IO] = {
-    val request = Request[IO](Method.POST, Uri.unsafeFromString(s"/hooks?k=$token"))
+    val request =
+      Request[IO](Method.POST, Uri.unsafeFromString(s"/hooks?k=$token"))
     WebhookRoutes
       .routes[IO](expectedToken = None, forwardToUrl = None)
       .orNotFound(request)
