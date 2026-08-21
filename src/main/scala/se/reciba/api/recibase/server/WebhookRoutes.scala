@@ -71,14 +71,19 @@ object WebhookRoutes {
   ): F[Response[F]] =
     req.body.compile.toList.flatMap { bytes =>
       Async[F].blocking {
-        val upstream = postThenFollowGets(forwardTo, bytes.toArray)
-        if (upstream.statusCode() < 200 || upstream.statusCode() >= 300) {
-          val snippet =
-            new String(upstream.body(), StandardCharsets.UTF_8).take(500)
-          logger.warn(
-            s"webhook upstream ${upstream.statusCode()} ${upstream.uri()} $snippet"
-          )
-        }
+        val payload = bytes.toArray
+        logger.info(
+          s"webhook request payload: ${new String(payload, StandardCharsets.UTF_8)}"
+        )
+        val upstream = postThenFollowGets(forwardTo, payload)
+        val responseBody =
+          new String(upstream.body(), StandardCharsets.UTF_8)
+        val msg =
+          s"webhook upstream ${upstream.statusCode()} ${upstream.uri()} $responseBody"
+        if (upstream.statusCode() < 200 || upstream.statusCode() >= 300)
+          logger.warn(msg)
+        else
+          logger.info(msg)
         val status = Status
           .fromInt(upstream.statusCode())
           .getOrElse(Status.BadGateway)
