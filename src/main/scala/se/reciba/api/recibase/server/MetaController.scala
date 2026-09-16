@@ -21,7 +21,8 @@ object MetaController {
         "recipe" -> "/recipes/{recipe_permalink}",
         "meals_list" -> "/meals/",
         "meal_names_text" -> "/meals/raw",
-        "service_info" -> "/manifest"
+        "service_info" -> "/manifest",
+        "health" -> "/health"
       ).pure[F]
     }
 }

@@ -32,9 +32,17 @@ lazy val root = (project in file("."))
 enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 
+import com.typesafe.sbt.packager.docker._
+
 Docker / version := "latest"
 dockerBaseImage := "eclipse-temurin:25"
 dockerExposedPorts := Seq(8081)
+dockerCommands ++= Seq(
+  Cmd(
+    "HEALTHCHECK",
+    "--interval=10s --timeout=5s --start-period=60s --retries=5 CMD bash -c \"exec 3<>/dev/tcp/127.0.0.1/8081 && printf 'GET /health HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && grep -q '200' <&3\""
+  )
+)
 
 scalacOptions ++= Seq(
   "-deprecation",

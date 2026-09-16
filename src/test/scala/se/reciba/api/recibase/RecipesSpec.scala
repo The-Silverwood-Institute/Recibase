@@ -44,6 +44,16 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     }
   }
 
+  "health" >> {
+    "return 200" >> {
+      healthQuery.status must beEqualTo(Status.Ok)
+    }
+
+    "return ok" >> {
+      healthQuery.as[String].unsafeRunSync() must beEqualTo("ok")
+    }
+  }
+
   "single recipe" >> {
     "if recipe doesn't exist" >> {
       lazy val request = recipeQuery("i-do-not-exist")
@@ -94,6 +104,18 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
         RecipesSpec.metaController
       )
       .orNotFound(getRecipes)
+      .unsafeRunSync()
+  }
+
+  private lazy val healthQuery: Response[IO] = {
+    val getHealth = Request[IO](Method.GET, uri"/health")
+    RecibaseRoutes
+      .routes(
+        RecipesSpec.recipeController,
+        RecipesSpec.mealController,
+        RecipesSpec.metaController
+      )
+      .orNotFound(getHealth)
       .unsafeRunSync()
   }
 
