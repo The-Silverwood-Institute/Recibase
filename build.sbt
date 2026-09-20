@@ -33,10 +33,25 @@ enablePlugins(JavaAppPackaging)
 enablePlugins(DockerPlugin)
 
 import com.typesafe.sbt.packager.docker._
+import scala.sys.process._
+import scala.util.Try
+
+def gitCommitForDocker: String = {
+  val fromEnv = Seq("GITHUB_SHA", "GIT_COMMIT")
+    .flatMap(k => sys.env.get(k).map(_.trim))
+    .find(_.matches("[0-9a-fA-F]{7,40}"))
+  fromEnv
+    .orElse(
+      Try("git rev-parse HEAD".!!.trim).toOption
+        .filter(_.matches("[0-9a-fA-F]{7,40}"))
+    )
+    .getOrElse("latest")
+}
 
 Docker / version := "latest"
 dockerBaseImage := "eclipse-temurin:25"
 dockerExposedPorts := Seq(8081)
+dockerEnvVars += "GIT_COMMIT" -> gitCommitForDocker
 dockerCommands ++= Seq(
   Cmd(
     "HEALTHCHECK",
