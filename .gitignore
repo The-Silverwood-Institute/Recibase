@@ -19,3 +19,4 @@ project/plugins/project/
 .vscode/
 .DS_Store
 photographs/
+.env
