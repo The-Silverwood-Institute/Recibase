@@ -44,6 +44,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
     override val parentTag: Option[Tag] = Pescatarian.some
   }
   case object Pescatarian extends Tag("Pescatarian")
+  case object GlutenFree extends Tag("Gluten-Free")
 
   // Poly
   case object StephaniUnhealthy extends Tag("StephaniUnhealthy") {
