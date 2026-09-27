@@ -1,18 +1,79 @@
 name: Test
 on:
   pull_request
+
+# contents: write pushes the formatting commit. checks: write records the
+# result on that commit, because a GITHUB_TOKEN push does not start a new run.
+permissions:
+  contents: write
+  checks: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
+      with:
+        # The pull request ref is a merge commit, which cannot be pushed.
+        ref: ${{ github.event.pull_request.head.sha }}
+
     - name: Setup JDK
       uses: actions/setup-java@v3
       with:
         distribution: temurin
         java-version: 25
+
     - name: Setup SBT
       uses: sbt/setup-sbt@v1
-    - name: Test
-      run: sbt test
+
+    - name: Format and test
+      run: sbt "scalafmtAll; test"
+
+    - name: Push formatting fixes
+      if: github.event.pull_request.head.repo.full_name == github.repository
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        HEAD_REF: ${{ github.head_ref }}
+        REPO: ${{ github.repository }}
+      run: |
+        set -euo pipefail
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "Scala sources are already formatted."
+          exit 0
+        fi
+        git status --porcelain
+        git add -u
+        git -c user.name="github-actions[bot]" \
+          -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+          commit -m "Format Scala sources"
+        git push origin "HEAD:${HEAD_REF}"
+        sha="$(git rev-parse HEAD)"
+        now="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+        gh api --method POST "/repos/${REPO}/check-runs" --input - <<EOF
+        {
+          "name": "test",
+          "head_sha": "${sha}",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "${now}",
+          "completed_at": "${now}",
+          "details_url": "${GITHUB_SERVER_URL}/${REPO}/actions/runs/${GITHUB_RUN_ID}",
+          "output": {
+            "title": "Tests passed on formatted sources",
+            "summary": "scalafmt fixed Scala formatting and pushed that commit. Tests ran against those formatted sources in this workflow run."
+          }
+        }
+        EOF
+
+    - name: Reject unformatted fork pull requests
+      if: github.event.pull_request.head.repo.full_name != github.repository
+      run: |
+        set -euo pipefail
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "Scala sources are already formatted."
+          exit 0
+        fi
+        echo "Scala sources are not formatted. CI cannot push to a fork. Run 'sbt scalafmtAll' and update the pull request."
+        git status --porcelain
+        exit 1
