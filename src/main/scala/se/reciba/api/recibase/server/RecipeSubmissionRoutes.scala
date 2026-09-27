@@ -96,7 +96,7 @@ object RecipeSubmissionRoutes {
             else
               turnstile.allow(token).flatMap {
                 case false => forbidden
-                case true =>
+                case true  =>
                   accept[F](
                     json,
                     config,
