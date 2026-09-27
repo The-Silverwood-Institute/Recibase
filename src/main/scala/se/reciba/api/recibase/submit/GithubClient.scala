@@ -159,7 +159,7 @@ class GithubClient[F[_]: Async](
       "head" -> Json.fromString(branch),
       "base" -> Json.fromString(settings.baseBranch),
       "body" -> Json.fromString(pullBody),
-      "draft" -> Json.False
+      "draft" -> Json.True
     )
     val (status, body) =
       post(http, s"/repos/${settings.repository}/pulls", payload)

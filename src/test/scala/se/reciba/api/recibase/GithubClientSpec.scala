@@ -73,7 +73,7 @@ class GithubClientSpec extends org.specs2.mutable.Specification {
         val pull = recorded(3).json
         pull.hcursor.get[String]("head") must beRight("recipe/phone-test-soup")
         pull.hcursor.get[String]("base") must beRight("master")
-        pull.hcursor.get[Boolean]("draft") must beRight(false)
+        pull.hcursor.get[Boolean]("draft") must beRight(true)
         pull.hcursor.get[String]("body") must beRight(
           "Submitted from the contribute page."
         )

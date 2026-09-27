@@ -1,6 +1,9 @@
 name: Test
 on:
-  pull_request
+  pull_request:
+    # ready_for_review runs this workflow when a draft is marked ready.
+    # recipe/* drafts stay skipped until then so they can be reviewed first.
+    types: [opened, synchronize, reopened, ready_for_review]
 
 # contents: write pushes the formatting commit. checks: write records the
 # result on that commit, because a GITHUB_TOKEN push does not start a new run.
@@ -10,6 +13,7 @@ permissions:
 
 jobs:
   test:
+    if: ${{ !(github.event.pull_request.draft && startsWith(github.head_ref, 'recipe/')) }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
