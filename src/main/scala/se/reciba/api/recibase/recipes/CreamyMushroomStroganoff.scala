@@ -33,19 +33,21 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
     Ingredient("Plain Flour", "3 tbsp"),
     Ingredient("Salt"),
     Ingredient("Black Pepper"),
+    Ingredient("Garlic", "1 clove".some, "diced".some, "Optional".some),
     Ingredient("Nutmeg", None, None, "Optional".some),
     Ingredient("Brandy", None, None, "Optional".some),
+    Ingredient("Marjoram", None, None, "Optional".some),
     Ingredient("Worcestershire sauce", None, None, "Optional".some)
   )
   val method = List(
     "Chop the shiitake or porchini mushrooms into large pieces",
     "Boil the kettle then use as little water as possible to disolve the cube in a jug.",
-    "Melt butter in a large frying pan then soften the onion.",
+    "Melt butter in a large frying pan then soften the onion with the garlic.",
     "Turn up the heat and add the brown mushrooms. Cook for a minute or so.",
     "Add the Shiitake or Porchini Mushrooms and cook for a minute more.",
     "Turn down the heat then stir in the soured cream, being careful not to let it boil.",
     "Stir in the vegetable stock until you have a creamy sauce that isn't too watery. You might not need all the stock. Sift in plain flour, a small bit at a time, if needed.",
-    "Add salt, black pepper, nutmeg, Worcestershire sauce and brandy to taste.",
+    "Add salt, black pepper, nutmeg, Worcestershire sauce, marjoram and brandy to taste.",
     "Serve with rice."
   )
 }
