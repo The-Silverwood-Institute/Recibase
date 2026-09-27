@@ -7,6 +7,7 @@ import io.circe.jawn
 import org.http4s.circe._
 import org.http4s.dsl.Http4sDsl
 import org.http4s.{HttpRoutes, Request, Response, Status}
+import org.typelevel.ci._
 import se.reciba.api.model.Recipe
 import se.reciba.api.submit.{
   BranchAlreadyExists,
@@ -30,8 +31,6 @@ import java.time.{LocalDate, ZoneId}
 object RecipeSubmissionRoutes {
   private val DefaultMaxBytes = 256 * 1024
 
-  // The body contains the passcode. Do not log it. The server request logger
-  // is constructed with headers and bodies disabled.
   def routes[F[_]: Async](
       config: Option[RecipeSubmissionConfig] = RecipeSubmissionConfig.fromEnv,
       pullRequests: Option[RecipePullRequests[F]] = None,
@@ -99,6 +98,7 @@ object RecipeSubmissionRoutes {
                 case true  =>
                   accept[F](
                     json,
+                    bearerPasscode(req),
                     config,
                     client,
                     existingRecipes,
@@ -110,8 +110,23 @@ object RecipeSubmissionRoutes {
     }
   }
 
+  private def bearerPasscode[F[_]](req: Request[F]): String =
+    req.headers.get(ci"Authorization").map(_.head.value) match {
+      case Some(value)
+          if value.regionMatches(
+            true,
+            0,
+            "Bearer ",
+            0,
+            "Bearer ".length
+          ) =>
+        value.substring("Bearer ".length)
+      case _ => ""
+    }
+
   private def accept[F[_]: Async](
       json: Json,
+      passcode: String,
       config: RecipeSubmissionConfig,
       client: RecipePullRequests[F],
       existingRecipes: Seq[Recipe],
@@ -119,7 +134,6 @@ object RecipeSubmissionRoutes {
   ): F[Response[F]] = {
     val dsl = new Http4sDsl[F] {}
     import dsl._
-    val passcode = json.hcursor.get[String]("passcode").getOrElse("")
     if (!Passcode.equal(config.passcode, passcode))
       Response[F](Status.Unauthorized)
         .withEntity(errorJson("invalid passcode"))

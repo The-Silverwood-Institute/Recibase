@@ -49,7 +49,8 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
       val client = recording(Right("https://github.com/example/pull/1"))
       val response = post(
         routes(client),
-        """{"name":"Phone Test Soup","cf-turnstile-response":"token"}"""
+        """{"name":"Phone Test Soup","cf-turnstile-response":"token"}""",
+        passcode = None
       )
       response.status must beEqualTo(Status.Unauthorized)
       errorOf(response) must beEqualTo("invalid passcode")
@@ -60,7 +61,8 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
       val client = recording(Right("https://github.com/example/pull/1"))
       val response = post(
         routes(client, Seq(ChilliConCarne)),
-        s"""{"passcode":"nope","cf-turnstile-response":"token","name":"${ChilliConCarne.name}"}"""
+        s"""{"cf-turnstile-response":"token","name":"${ChilliConCarne.name}"}""",
+        passcode = Some("nope")
       )
       response.status must beEqualTo(Status.Unauthorized)
       client.opened must beEmpty
@@ -215,7 +217,7 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
   "turnstile" >> {
     "rejects a missing token before the passcode" >> {
       val client = recording(Right("https://github.com/example/pull/1"))
-      val response = post(routes(client), """{"passcode":"s3cret"}""")
+      val response = post(routes(client), "{}")
       response.status must beEqualTo(Status.Forbidden)
       errorOf(response) must beEqualTo("forbidden")
       client.opened must beEmpty
@@ -253,12 +255,21 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
     def allow(token: String): IO[Boolean] = IO.pure(false)
   }
 
-  private def post(routes: HttpRoutes[IO], payload: String): Response[IO] =
+  private def post(
+      routes: HttpRoutes[IO],
+      payload: String,
+      passcode: Option[String] = Some("s3cret")
+  ): Response[IO] = {
+    val request = Request[IO](Method.POST, uri"/recipe-submissions")
+      .withEntity(payload)
     routes
       .orNotFound(
-        Request[IO](Method.POST, uri"/recipe-submissions").withEntity(payload)
+        passcode.fold(request)(code =>
+          request.putHeaders("Authorization" -> s"Bearer $code")
+        )
       )
       .unsafeRunSync()
+  }
 
   private def body(response: Response[IO]): String =
     response.bodyText.compile.string.unsafeRunSync()
@@ -275,7 +286,6 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
 
   private def recipeJson(name: String, method: String = "Simmer."): String =
     s"""{
-      |  "passcode": "s3cret",
       |  "cf-turnstile-response": "token",
       |  "name": ${Json.fromString(name).noSpaces},
       |  "tags": [],

@@ -32,7 +32,7 @@ object RecibaseServer {
           .withAllowCredentials(false)
           .apply(routes)
       )
-      finalHttpApp = Logger.httpApp(false, false)(corsHttp.orNotFound)
+      finalHttpApp = Logger.httpApp(true, true)(corsHttp.orNotFound)
       _ <- Stream
         .resource(
           EmberServerBuilder
