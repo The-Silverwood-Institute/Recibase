@@ -112,7 +112,11 @@ object RecipeSource {
       for {
         checkedName <- text("Name", name, NameLimit, singleLine = true)
         checkedSource <- optionalText("Source", source)
-        checkedDescription <- optionalText("Description", description)
+        checkedDescription <- optionalText(
+          "Description",
+          description,
+          singleLine = false
+        )
         checkedNotes <- listText("A note", notes)
         checkedTags <- parseTags(tags)
         checkedIngredients <- ingredients(submission.ingredients)
@@ -204,12 +208,13 @@ object RecipeSource {
 
   private def optionalText(
       label: String,
-      value: Option[String]
+      value: Option[String],
+      singleLine: Boolean = true
   ): Either[SubmitRejection, Option[String]] =
     value match {
       case None       => Right(None)
       case Some(text) =>
-        this.text(label, text, TextLimit, singleLine = true).map(Some(_))
+        this.text(label, text, TextLimit, singleLine).map(Some(_))
     }
 
   private def listText(

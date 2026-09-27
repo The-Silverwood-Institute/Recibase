@@ -57,6 +57,18 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
       }
     }
 
+    "keeps newlines in a description" >> {
+      val submission = named("Phone Test Soup").copy(
+        description = Some("A weeknight soup.\nBetter the next day.")
+      )
+      val generated = RecipeSource.generate(submission, today, Seq.empty)
+      generated must beRight.like { case recipe =>
+        recipe.source must contain(
+          """override val description: Option[String] = "A weeknight soup.\nBetter the next day.".some"""
+        )
+      }
+    }
+
     "stores temperature text as a plain string" >> {
       val submission = named("Phone Test Soup").copy(
         method = List("Preheat to ${180.celsius}.")
