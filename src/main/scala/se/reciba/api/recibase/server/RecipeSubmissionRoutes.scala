@@ -91,12 +91,10 @@ object RecipeSubmissionRoutes {
           case Right(json) =>
             val token =
               json.hcursor.get[String]("cf-turnstile-response").getOrElse("")
-            val remoteIp =
-              json.hcursor.get[String]("remoteip").toOption.getOrElse("")
             if (!Turnstile.tokenAccepted(token, config.turnstile.hostnames))
               forbidden
             else
-              turnstile.allow(token, remoteIp).flatMap {
+              turnstile.allow(token).flatMap {
                 case false => forbidden
                 case true =>
                   accept[F](

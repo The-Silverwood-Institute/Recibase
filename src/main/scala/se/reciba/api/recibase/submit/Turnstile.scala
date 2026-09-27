@@ -15,7 +15,7 @@ import scala.util.control.NonFatal
 case class TurnstileSettings(secret: String, hostnames: Set[String])
 
 trait Turnstile[F[_]] {
-  def allow(token: String, remoteIp: String): F[Boolean]
+  def allow(token: String): F[Boolean]
 }
 
 object Turnstile {
@@ -41,7 +41,7 @@ class CloudflareTurnstile[F[_]: Async](settings: TurnstileSettings)
     extends Turnstile[F] {
   private val logger = LoggerFactory.getLogger(getClass)
 
-  def allow(token: String, remoteIp: String): F[Boolean] =
+  def allow(token: String): F[Boolean] =
     Async[F].blocking {
       if (!Turnstile.tokenAccepted(token, settings.hostnames)) false
       else {
@@ -50,7 +50,7 @@ class CloudflareTurnstile[F[_]: Async](settings: TurnstileSettings)
           .followRedirects(HttpClient.Redirect.NEVER)
           .connectTimeout(Duration.ofSeconds(10))
           .build()
-        try verify(http, token, remoteIp)
+        try verify(http, token)
         catch {
           case NonFatal(error) =>
             logger.warn(
@@ -65,10 +65,9 @@ class CloudflareTurnstile[F[_]: Async](settings: TurnstileSettings)
 
   private def verify(
       http: HttpClient,
-      token: String,
-      remoteIp: String
+      token: String
   ): Boolean = {
-    val body = formBody(token, remoteIp)
+    val body = formBody(token)
     val request = HttpRequest
       .newBuilder(URI.create(Turnstile.SiteverifyUrl))
       .timeout(Duration.ofSeconds(10))
@@ -88,11 +87,11 @@ class CloudflareTurnstile[F[_]: Async](settings: TurnstileSettings)
       }
   }
 
-  private def formBody(token: String, remoteIp: String): String = {
+  private def formBody(token: String): String = {
     val fields = List(
       "secret" -> settings.secret,
       "response" -> token
-    ) ++ Option(remoteIp).filter(_.nonEmpty).map("remoteip" -> _)
+    )
     fields
       .map { case (key, value) =>
         URLEncoder.encode(key, StandardCharsets.UTF_8) + "=" +

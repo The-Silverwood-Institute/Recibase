@@ -246,11 +246,11 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
     )
 
   private val allow: Turnstile[IO] = new Turnstile[IO] {
-    def allow(token: String, remoteIp: String): IO[Boolean] = IO.pure(true)
+    def allow(token: String): IO[Boolean] = IO.pure(true)
   }
 
   private val deny: Turnstile[IO] = new Turnstile[IO] {
-    def allow(token: String, remoteIp: String): IO[Boolean] = IO.pure(false)
+    def allow(token: String): IO[Boolean] = IO.pure(false)
   }
 
   private def post(routes: HttpRoutes[IO], payload: String): Response[IO] =
