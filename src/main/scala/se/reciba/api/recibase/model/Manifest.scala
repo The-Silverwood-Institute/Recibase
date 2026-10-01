@@ -1,11 +1,31 @@
 package se.reciba.api.model
 
-import io.circe.generic.JsonCodec
+import io.circe.Encoder
 
-@JsonCodec
-case class Manifest(version: String)
+case class Manifest(
+    version: String,
+    name: String,
+    sourceUrl: String,
+    baseCommitUrl: String
+)
 
 object Manifest {
+  val Name: String = "Recibase"
+  val SourceUrl: String =
+    "https://github.com/The-Silverwood-Institute/Recibase"
+  val BaseCommitUrl: String = s"$SourceUrl/commit/"
+
+  implicit val encodeManifest: Encoder[Manifest] =
+    Encoder.forProduct4(
+      "version",
+      "name",
+      "source_url",
+      "base_commit_url"
+    )(m => (m.version, m.name, m.sourceUrl, m.baseCommitUrl))
+
+  def apply(version: String): Manifest =
+    new Manifest(version, Name, SourceUrl, BaseCommitUrl)
+
   private val commitEnvKeys =
     Seq("GIT_COMMIT", "SOURCE_COMMIT", "GITHUB_SHA")
 

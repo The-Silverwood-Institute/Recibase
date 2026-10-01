@@ -1,8 +1,19 @@
 package se.reciba.api
 
+import io.circe.syntax._
 import se.reciba.api.model.Manifest
 
 class ManifestSpec extends org.specs2.mutable.Specification {
+  "manifest json" >> {
+    val json = Manifest("cafeba6").asJson
+    json.hcursor.get[String]("name") should beRight(Manifest.Name)
+    json.hcursor.get[String]("source_url") should beRight(Manifest.SourceUrl)
+    json.hcursor.get[String]("base_commit_url") should beRight(
+      Manifest.BaseCommitUrl
+    )
+    json.hcursor.get[String]("version") should beRight("cafeba6")
+  }
+
   "deployedVersion" >> {
     "prefer GIT_COMMIT over Coolify SOURCE_COMMIT" >> {
       val env = Map(
