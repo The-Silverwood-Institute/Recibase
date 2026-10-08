@@ -1,4 +1,4 @@
-val Http4sVersion = "1.0.0-M48"
+val Http4sVersion = "1.0.0-M49"
 val Specs2Version = "4.23.0"
 val LogbackVersion = "1.6.5"
 val EnumeratumVersion = "1.9.8"
