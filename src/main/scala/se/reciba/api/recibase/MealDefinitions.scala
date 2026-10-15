@@ -68,8 +68,8 @@ object MealDefinitions {
         Set(Tag.Vegetarian, Tag.Slow, Tag.HighEffort)
       ),
       MealStub(
-        "Cashew Curry",
-        Set(Tag.Vegan, Tag.Scales),
+        "Tofu Cashew Curry",
+        Set(Tag.Vegan, Tag.Scales, Tag.Freezes),
         Online(
           "https://vegancocotte.com/cashew-curry/"
         )
