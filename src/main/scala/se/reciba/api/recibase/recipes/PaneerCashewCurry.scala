@@ -22,6 +22,7 @@ case object PaneerCashewCurry extends Recipe {
     Ingredient("Coconut oil", "1 tbsp"),
     Ingredient("Onion", "1 medium", "roughly chopped"),
     Ingredient("Red pepper", "1", "sliced"),
+    Ingredient("Cherry tomatoes", "150g", "halved", "optional"),
     Ingredient("Garlic", "2 large cloves", "finely chopped"),
     Ingredient("Fresh ginger", "1 inch", "finely chopped"),
     Ingredient("Ground cumin", "1/2 tbsp"),
