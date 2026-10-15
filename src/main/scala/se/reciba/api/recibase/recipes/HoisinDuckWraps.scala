@@ -18,7 +18,8 @@ case object HoisinDuckWraps extends Recipe {
 
   override val notes: List[String] = List(
     "You can use up other vegetables like courgettes or red onions. Just fry them at the same time as the other veg.",
-    "This tastes best with hoisin sauce but mayonnaise works as a decent substitute."
+    "This tastes best with hoisin sauce but mayonnaise works as a decent substitute.",
+    "If you add cucumber, either add less or remove the tomatoes entirely. To avoid the wraps being too wet."
   )
 
   val ingredientsBlocks = IngredientsBlock.simple(
@@ -27,6 +28,7 @@ case object HoisinDuckWraps extends Recipe {
     Ingredient("Spring Onions", "3", "chopped"),
     Ingredient("Tortilla Wraps", "4"),
     Ingredient("Cherry Tomatoes", None, "halved".some),
+    Ingredient("Cucumber", None, "diced".some, "Optional".some),
     Ingredient("Hoisin sauce", None, None, "Optional".some),
     Ingredient("Mayonnaise"),
     Ingredient("Oil")
