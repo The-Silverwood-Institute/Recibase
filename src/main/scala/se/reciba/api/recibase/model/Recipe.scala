@@ -83,8 +83,6 @@ object Recipe {
       mirror.reflectModule(moduleSymbol).instance.asInstanceOf[Recipe]
     })
     .toSeq
-
-  println(recipes)
 }
 
 object RecipeWithUsageData {
