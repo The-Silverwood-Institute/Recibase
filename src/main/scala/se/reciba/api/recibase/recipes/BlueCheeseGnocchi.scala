@@ -37,12 +37,12 @@ case object BlueCheeseGnocchi extends Recipe {
   )
   val method =
     List(
-      "Tear up the spinach into a colander",
-      "Place the gnocchi in a pan of boiling water and simmer until the gnocchi start to float to the surface",
-      "Drain the gnocchi into the colander, over the spinach. Shake to displace any trapped water ",
-      "Empty the gnocchi/spinach into an ovenproof dish and mix in the parmesan and creme fraiche",
-      "Sprinkle crumbled stilton over the top",
-      "Grill on a medium/high heat until the stilton is bubbling and golden",
+      "Tear up the spinach into a colander.",
+      "Place the gnocchi in a pan of boiling water and simmer until the gnocchi start to float to the surface.",
+      "Drain the gnocchi into the colander, over the spinach. Shake to displace any trapped water.",
+      "Empty the gnocchi/spinach into an ovenproof dish and mix in the parmesan and creme fraiche.",
+      "Sprinkle crumbled stilton over the top.",
+      "Grill on a medium/high heat until the stilton is bubbling and golden.",
       "Serve on fresh bread with cherry tomatoes, olives, and anything else you can think of."
     )
 

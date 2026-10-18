@@ -33,7 +33,7 @@ case object BeefWraps extends Recipe {
   val method = List(
     "Heat some oil in a large frying pan.",
     "Throw in the beef strips along with the cayenne pepper and paprika. Cook per packet instructions.",
-    "Warm the tortillas in a microwave per packet instructions and spread with some mayonnaise",
+    "Warm the tortillas in a microwave per packet instructions and spread with some mayonnaise.",
     "A few minutes before the beef strips are ready throw in the peppers.",
     "Add the spring onions, cherry tomatoes and black beans to the pan and cook for a further 30 seconds.",
     "Divide up the mixture equally among the tortillas.",

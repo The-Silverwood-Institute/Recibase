@@ -37,7 +37,7 @@ case object Spanakopita extends Recipe {
     s"Preheat the oven to ${160.celsius}.",
     "Defrost the spinach and squeeze out as much moisture as you can through a sieve.",
     "Mix every ingredient except the oil and pastry in a bowl.",
-    "Brush a 9 1/2″ X 13″ baking dish with olive oil",
+    "Brush a 9 1/2″ X 13″ baking dish with olive oil.",
     "Line the baking dish with 2/3rds of the fillo pastry sheets. Add them two at a time then brush the layer with olive oil.",
     "Evenly spread the spinach and feta filling over the fillo crust.",
     "Layer the rest of the fillo pasty sheets on top, using the same method as before.",

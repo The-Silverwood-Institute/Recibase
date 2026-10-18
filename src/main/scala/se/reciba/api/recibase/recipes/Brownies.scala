@@ -34,8 +34,8 @@ case object Brownies extends Recipe {
     Ingredient("Salt", "1 tsp")
   )
   val method = List(
-    "Line a 34cm x 25cm x 6cm roasting tin with grease proof baking paper",
-    s"Pre-heat the oven to ${180.celsius}",
+    "Line a 34cm x 25cm x 6cm roasting tin with grease proof baking paper.",
+    s"Pre-heat the oven to ${180.celsius}.",
     "Melt the butter and chocolate together in a heat-proof bowl suspended over a saucepan of barely simmering water.",
     "Whisk the eggs, sugar and vanilla extract together in a bowl until the mixture is thick and creamy and coats the back of a spoon.",
     "Once the butter and chocolate have melted, remove from the heat and gently fold in the egg mixture. Be careful not to go knock the air out of the egg mixture.",

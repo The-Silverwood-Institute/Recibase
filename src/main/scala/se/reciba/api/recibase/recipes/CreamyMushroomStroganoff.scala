@@ -40,7 +40,7 @@ Pots of dried forest mushrooms also work. Try softening the mushrooms in the sto
     Ingredient("Worcestershire sauce", None, None, "Optional".some)
   )
   val method = List(
-    "Chop the shiitake or porchini mushrooms into large pieces",
+    "Chop the shiitake or porchini mushrooms into large pieces.",
     "Boil the kettle then use as little water as possible to disolve the cube in a jug.",
     "Melt butter in a large frying pan then soften the onion with the garlic.",
     "Turn up the heat and add the brown mushrooms. Cook for a minute or so.",

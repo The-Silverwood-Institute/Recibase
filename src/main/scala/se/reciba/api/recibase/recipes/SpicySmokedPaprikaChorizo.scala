@@ -87,6 +87,6 @@ case object SpicySmokedPaprikaChorizo extends Recipe {
     "Add the pasata, tinned tomatoes, cloves, chilli flakes, red wine, oregano, cinamon stick, and honey. If the pan is looking full then wait until the mixure has reduced before adding the rest of the tinned tomatoes/wine.",
     "Wait until bubbling then turn down the heat and simmer for at least 20 minutes.",
     "Stir in spinach, mascarpone and cannellini beans.",
-    "Serve with pasta"
+    "Serve with pasta."
   )
 }

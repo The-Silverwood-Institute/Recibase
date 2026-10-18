@@ -109,7 +109,7 @@ case object SpicedAppleWinterSoup extends Recipe {
 
   val method = List(
     "Add onions, carrots and parsnips into a medium high heat in a large, 3-5lt container or slow cooker.",
-    "After 7 minutes, while the veg is sweating, add in your chopped apples and then sweat until all veg is fork soft (another 5-10 minutes)",
+    "After 7 minutes, while the veg is sweating, add in your chopped apples and then sweat until all veg is fork soft (another 5-10 minutes).",
     "Heat 200ml of apple juice to dissolve stock into, then add all apple juice to the pot. add in your spice mesh bag and bring to simmer.",
     "Reduce heat to medium low, and leave to simmer for at least 30 minutes. Once reduced to desired apple-tensisity, serve."
   )

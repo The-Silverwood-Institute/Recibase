@@ -25,7 +25,7 @@ case object PeanutButterBiscuits extends Recipe {
     "Line 2 baking trays with parchment.",
     "Beat all the ingredients together in a bowl until well combined.",
     "Scoop out tablespoons and roll them into balls.",
-    "Arrange on baking trays, well spaced out",
+    "Arrange on baking trays, well spaced out.",
     "Flatten with a fork.",
     "Bake for 12 minutes. Leave to cool for 5 minutes.",
     "Transfer to a rack to cool completely."

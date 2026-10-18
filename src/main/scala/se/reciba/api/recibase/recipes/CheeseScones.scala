@@ -51,6 +51,6 @@ case object CheeseScones extends Recipe {
     "Make a well in the centre of the mixture and slowly add the milk, mixing each time. Don't add it all at once as you might not need it. We usually need extra though.",
     "Lightly flour a surface and roll the dough to a 2cm thickness. Cut out scone shapes and lay them on the baking tray.",
     "Glaze with milk and top with the remaining cheese, leaving a slight gap at the edge of each scone.",
-    "Bake in the oven for 15-20 minutes then serve with butter and jams"
+    "Bake in the oven for 15-20 minutes then serve with butter and jams."
   )
 }

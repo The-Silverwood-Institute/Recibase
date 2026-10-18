@@ -36,7 +36,7 @@ case object HoisinDuckWraps extends Recipe {
   val method = List(
     "Heat some oil in a large frying pan.",
     "Throw in the shredded hoisin duck and cook per packet instructions.",
-    "Warm the tortillas in a microwave per packet instructions and spread with some mayonnaise",
+    "Warm the tortillas in a microwave per packet instructions and spread with some mayonnaise.",
     "A few minutes before the duck mixture is ready throw in the peppers.",
     "Add the spring onions and cherry tomatoes to the pan and cook for a further 30 seconds.",
     "Divide up the shredded hoisin duck and vegetables equally among the tortillas.",

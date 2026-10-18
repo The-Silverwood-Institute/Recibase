@@ -45,7 +45,7 @@ case object NutRoast extends Recipe {
     Ingredient("Oil")
   )
   val method = List(
-    s"Pre-heat the oven to ${200.celsius}",
+    s"Pre-heat the oven to ${200.celsius}.",
     "Smash up the nuts with a large mortar and pestle. If you don't have one you can smash up the nuts using a metal mixing bowl and the end of a rolling pin.",
     "Transfer the mixture to a large mixing bowl.",
     "Toast the bread then blend it into breadcrumbs and add to the mixture.",

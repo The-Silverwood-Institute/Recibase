@@ -37,7 +37,7 @@ case object CreamyCauliflowerCheeseWalnuts extends Recipe {
     Ingredient("Black pepper")
   )
   val method = List(
-    "Steam the cauliflower until tender, drain, then place in a grill-suitable dish",
+    "Steam the cauliflower until tender, drain, then place in a grill-suitable dish.",
     "Mix the cream cheese and mustard with the cauliflower, then stir in the blue cheese. Season with a little salt if necessary and plenty of pepper.",
     "Scatter the walnuts on top, then cover with the cheddar (this helps to prevent the walnuts from burning).",
     "Place under a preheated hot grill for 10-15 minutes, or until the top is golden brown and the inside hot and bubbling."

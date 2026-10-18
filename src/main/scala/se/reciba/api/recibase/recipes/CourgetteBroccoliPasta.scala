@@ -32,15 +32,15 @@ case object CourgetteBroccoliPasta extends Recipe {
     Ingredient("Olive oil")
   )
   val method = List(
-    "Dissolve the stock in 200ml of boiling water",
-    "Heat some olive oil on a high heat in a wide pan",
-    "Fry the broccoli stalks for a minute",
-    "Add the broccoli florets and fry for a few more minutes, until browned",
-    "Remove the broccoli from the pan and set aside",
-    "Cook the courgettes and garlic for 4-5 minutes or until starting to soften, then turn off the heat",
-    "Cook the tagliatelle per packet instructions",
-    "Drain the tagliatelle and add it to the courgette pan",
-    "Add the lemon juice, chilli flakes, parmesan, flaked almonds, spinach, soured cream (optional), stock and broccoli to the pan",
-    "Cook on a medium heat for 2 minutes until the sauce has thickened and the spinach wilted"
+    "Dissolve the stock in 200ml of boiling water.",
+    "Heat some olive oil on a high heat in a wide pan.",
+    "Fry the broccoli stalks for a minute.",
+    "Add the broccoli florets and fry for a few more minutes, until browned.",
+    "Remove the broccoli from the pan and set aside.",
+    "Cook the courgettes and garlic for 4-5 minutes or until starting to soften, then turn off the heat.",
+    "Cook the tagliatelle per packet instructions.",
+    "Drain the tagliatelle and add it to the courgette pan.",
+    "Add the lemon juice, chilli flakes, parmesan, flaked almonds, spinach, soured cream (optional), stock and broccoli to the pan.",
+    "Cook on a medium heat for 2 minutes until the sauce has thickened and the spinach wilted."
   )
 }

@@ -53,7 +53,7 @@ case object SmokyChickpeaStew extends Recipe {
     "Add the potatoes, chickpeas, red pepper, sundried tomatoes and chopped tomatoes.",
     "Turn up the heat to bring to a boil, then turn down to a light simmer for 45m, sturring occasionaly.",
     "Meanwhile, cook the veggie sausages and allow to cool, then slice into 2cm pieces.",
-    "Add the sausages and kidney beans then simmer for a further 5-10m",
-    "Throw in the spinach shortly before serving"
+    "Add the sausages and kidney beans then simmer for a further 5-10m.",
+    "Throw in the spinach shortly before serving."
   )
 }

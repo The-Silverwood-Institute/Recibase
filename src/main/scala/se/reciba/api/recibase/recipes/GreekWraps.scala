@@ -34,7 +34,7 @@ case object GreekWraps extends Recipe {
     "Heat some oil in a large frying pan.",
     "Throw in the Greek kebab mixture and cook per packet instructions.",
     "Mix together a few tablespoons of mayonnaise and some Sriracha to make spicy mayo.",
-    "Warm the tortillas in a microwave per packet instructions and spread with the spicy mayo",
+    "Warm the tortillas in a microwave per packet instructions and spread with the spicy mayo.",
     "A few minutes before the kebab mixture is ready throw in the peppers.",
     "Add the spring onions and cherry tomatoes to the pan and cook for a further 30 seconds.",
     "Divide up the mixture equally among the tortillas."

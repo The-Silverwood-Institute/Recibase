@@ -73,16 +73,16 @@ case object DukatenCookies extends Recipe {
   )
 
   override val method: List[String] = List(
-    s"Pre-heat the oven to ${190.celsius}",
+    s"Pre-heat the oven to ${190.celsius}.",
     "Rub a large baking tray with butter or margarine.",
     "Combine all the biscuit ingredients in order.",
     "Mix together then knead until smooth. If the mixture is too soft then put it in the fridge or freezer for a moment.",
     "Roll out thin and cut into 4cm circles.",
     "Lay out on the baking tray and bake for 10 minutes or until a light golden colour.",
     "Put to one side to cool.",
-    "While the biscuits are baking you can also make the filling and frosting:",
+    "While the biscuits are baking you can also make the filling and frosting.",
     "Make the filling by combining all the ingredients with a food mixer.",
-    "Make the frosting by mixing all the ingredients until smooth",
+    "Make the frosting by mixing all the ingredients until smooth.",
     "Once the biscuits are cool lay out half of them on a sheet of baking paper. Leave room between the biscuits and the edge for the frosting to ooze.",
     "Place a drop of the filling on top of each biscuit then flatten the mixture by placing down another biscuit on top.",
     "Once all the biscuits are filled drizzle the frosting over one side of each biscuit.",

@@ -30,7 +30,7 @@ case object TruffleBurgers extends Recipe {
     "Spread the truffle mayo on the bottom of each bun and jam on the top.",
     "Lightly brush a griddle pan with oil then heat on your hottest hob.",
     "Lay out the patties on the griddle and cook for a few minutes until almost browned. Open a window or two and be careful not to let the oil smoke.",
-    "Turn over and brown the other side",
+    "Turn over and brown the other side.",
     "Turn over, again, and lay out a slice of Manchego on top of each patty.",
     "Lay out the patties on the burger buns. If you fancy shortening your lifespan then drizzle the pan's oil over the patties before adding the bun top."
   )
