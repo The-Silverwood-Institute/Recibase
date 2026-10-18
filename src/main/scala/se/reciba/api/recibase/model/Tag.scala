@@ -27,17 +27,17 @@ sealed abstract class Tag(
     val category: TagCategory,
     val description: Option[String] = None
 ) extends EnumEntry {
-  def implies: Set[Tag] = Set.empty
+  def inherits: Set[Tag] = Set.empty
 
-  def impliedTags: Set[Tag] = {
+  def inheritedTags: Set[Tag] = {
     def walk(remaining: Set[Tag], seen: Set[Tag]): Set[Tag] =
       if (remaining.isEmpty) seen
       else {
-        val next = remaining.flatMap(_.implies).diff(seen)
+        val next = remaining.flatMap(_.inherits).diff(seen)
         walk(next, seen ++ remaining)
       }
 
-    walk(implies, Set.empty)
+    walk(inherits, Set.empty)
   }
 }
 
@@ -93,14 +93,14 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         None
       )
 
-  // Dietary. Each tag implies the next, looser one.
+  // Dietary. Each tag inherits the next, looser one.
   case object Vegan
       extends Tag(
         "Vegan",
         TagCategory.Diet,
         "No animal products".some
       ) {
-    override def implies: Set[Tag] = Set(VeganIsh)
+    override def inherits: Set[Tag] = Set(VeganIsh)
   }
   case object VeganIsh
       extends Tag(
@@ -108,7 +108,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Diet,
         "Can make vegan with minimal changes".some
       ) {
-    override def implies: Set[Tag] = Set(Vegetarian)
+    override def inherits: Set[Tag] = Set(Vegetarian)
   }
   case object Vegetarian
       extends Tag(
@@ -116,7 +116,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Diet,
         "No meat or fish".some
       ) {
-    override def implies: Set[Tag] = Set(VegetarianIsh)
+    override def inherits: Set[Tag] = Set(VegetarianIsh)
   }
   case object VegetarianIsh
       extends Tag(
@@ -124,7 +124,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Diet,
         "Can make vegetarian with minimal changes".some
       ) {
-    override def implies: Set[Tag] = Set(Pescatarian)
+    override def inherits: Set[Tag] = Set(Pescatarian)
   }
   case object Pescatarian
       extends Tag(
@@ -146,7 +146,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Preference,
         "Contains no Stephani allergens but low on nutrients".some
       ) {
-    override def implies: Set[Tag] = Set(StephaniIsh)
+    override def inherits: Set[Tag] = Set(StephaniIsh)
   }
   case object StephaniIsh
       extends Tag(
@@ -154,7 +154,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Preference,
         "Can make Stephani compatible with minimal changes".some
       ) {
-    override def implies: Set[Tag] = Set(Stephani)
+    override def inherits: Set[Tag] = Set(Stephani)
   }
   case object Stephani
       extends Tag(

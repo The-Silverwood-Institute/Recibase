@@ -94,8 +94,8 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
         val vegan = catalog.tags.find(_.name == "Vegan")
         vegan must beSome.like { case tag =>
           tag.category must beEqualTo("diet")
-          tag.implies must beEqualTo(List("Vegan-ish"))
-          tag.impliedTags must beEqualTo(
+          tag.inherits must beEqualTo(List("Vegan-ish"))
+          tag.inheritedTags must beEqualTo(
             List(
               "Vegan-ish",
               "Vegetarian",

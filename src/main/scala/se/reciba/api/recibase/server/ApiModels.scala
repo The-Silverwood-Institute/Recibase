@@ -75,8 +75,8 @@ final case class TagDoc(
     name: String,
     description: Option[String],
     category: String,
-    implies: List[String],
-    impliedTags: List[String]
+    inherits: List[String],
+    inheritedTags: List[String]
 )
 
 object TagDoc {
@@ -91,8 +91,8 @@ object TagDoc {
       tag.entryName,
       tag.description,
       tag.category.entryName,
-      Tag.displayNames(tag.implies),
-      Tag.displayNames(tag.impliedTags)
+      Tag.displayNames(tag.inherits),
+      Tag.displayNames(tag.inheritedTags)
     )
 }
 

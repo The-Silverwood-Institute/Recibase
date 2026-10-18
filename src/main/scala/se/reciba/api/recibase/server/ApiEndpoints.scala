@@ -76,7 +76,7 @@ object ApiEndpoints {
       .tag("Meta")
       .summary("List tags")
       .description(
-        "Every tag, with its category, description, and the tags it implies. Usage tags are calculated by the server and are not written on recipes."
+        "Every tag, with its category, description, and the tags it inherits. Usage tags are calculated by the server and are not written on recipes."
       )
       .out(jsonBody[TagCatalog])
 
