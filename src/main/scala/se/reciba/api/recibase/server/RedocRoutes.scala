@@ -23,6 +23,8 @@ object RedocRoutes {
     val html = Redoc.redocHtml("Recibase", "./docs.yaml")
 
     HttpRoutes.of[F] {
+      case GET -> Root =>
+        PermanentRedirect(Location(uri"/docs/"))
       case GET -> Root / "docs" =>
         PermanentRedirect(Location(uri"/docs/"))
       case GET -> Root / "docs" / "" =>

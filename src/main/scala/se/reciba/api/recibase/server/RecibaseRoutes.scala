@@ -43,8 +43,6 @@ object RecibaseRoutes {
         Ok(M.manifest.map(_.asJson))
       case GET -> Root / "health" =>
         Ok("ok")
-      case GET -> Root =>
-        Ok(M.docs.map(_.asJson))
     }
   }
 }

@@ -25,6 +25,14 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
   private val docs = RedocRoutes.routes[IO](ApiEndpoints.all).orNotFound
 
   "redoc" >> {
+    "redirects the API root to the docs page" >> {
+      val response = docs(Request[IO](Method.GET, uri"/")).unsafeRunSync()
+      response.status must beEqualTo(Status.PermanentRedirect)
+      response.headers.get(ci"Location").map(_.head.value) must beSome(
+        "/docs/"
+      )
+    }
+
     "redirects /docs to the trailing-slash page" >> {
       val response = docs(Request[IO](Method.GET, uri"/docs")).unsafeRunSync()
       response.status must beEqualTo(Status.PermanentRedirect)
