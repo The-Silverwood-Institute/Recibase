@@ -49,7 +49,7 @@ case object ToadInTheHole extends Recipe {
     "Pour the remainder of the batter over the sausages.",
     "Bake in the oven for 25-30 minutes. You MUST NOT open the oven while it is cooking.",
     "Meanwhile add the gravy granules and a splash of red wine to a measuring jug.",
-    "Top up the jug with boiling water to 400ml.",
+    "Top up the jug with boiling water to {400ml}.",
     "Stir in the marmite. Add more water if the gravy is too thick.",
     "Serve the toad in the hole with lashings of gravy."
   )

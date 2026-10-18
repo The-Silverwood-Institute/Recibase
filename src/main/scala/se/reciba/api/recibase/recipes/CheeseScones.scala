@@ -47,7 +47,7 @@ case object CheeseScones extends Recipe {
     s"Pre-heat the oven to ${180.celsius} and cut baking paper to cover a large baking tray.",
     "Sift the flour, salt, baking powder and cayenne pepper together in a mixing bowl.",
     "Add the butter in pieces and combine with your fingertips to make breadcrumbs.",
-    "Add 100g of the cheese and rub together.",
+    "Add {100g} of the cheese and rub together.",
     "Make a well in the centre of the mixture and slowly add the milk, mixing each time. Don't add it all at once as you might not need it. We usually need extra though.",
     "Lightly flour a surface and roll the dough to a 2cm thickness. Cut out scone shapes and lay them on the baking tray.",
     "Glaze with milk and top with the remaining cheese, leaving a slight gap at the edge of each scone.",

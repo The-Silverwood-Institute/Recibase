@@ -46,7 +46,7 @@ case object TangyVegetablePadThai extends Recipe {
     "Boil over a high heat for 4-5 min or until softened with a slight bite.",
     "Drain the noodles, run them under cold water, then return to the pot with a drizzle of vegetable oil and set aside.",
     "Peel lengths off the courgette until you have a pile of ribbons.",
-    "Add the tamarind paste to a bowl with the soy sauce, mirin, sriracha, the juice of 1/2 the lime and 1 tsp sugar and mix.",
+    "Add the tamarind paste to a bowl with the soy sauce, mirin, sriracha, the juice of 1/2 the lime and {1 tsp} sugar and mix.",
     "Once the pepper has softened, add the courgette ribbons and sliced garlic to the pan and cook for 1-2 min until fragrant, then remove from the heat.",
     "Crush the roasted peanuts with a rolling pin.",
     "Roughly chop the Thai basil and coriander, including the stalks.",

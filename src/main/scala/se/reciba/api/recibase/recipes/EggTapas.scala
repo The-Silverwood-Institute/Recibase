@@ -47,11 +47,11 @@ case object EggTapas extends Recipe {
     "Heat a wide frying pan with a drizzle of olive oil over a medium-high heat.",
     "Add the sliced pepper and onion with a pinch of both salt and sugar. Cook for 7-9 min or until they've softened.",
     "Once softened, add the chopped garlic and cook for a further 1 min.",
-    "Make 200ml of vegetable stock then stir in half of the chipotle paste.",
+    "Make {200ml} of vegetable stock then stir in half of the chipotle paste.",
     "Add the stock and beans to the softened pepper and onion and cook for 10-15 min over a low heat or until reduced to a thick stew.",
     "Trim, then slice the spring onion finely. Chop the coriander finely, including the stalks.",
     "Combine the mayonnaise with the chopped spring onion, remaining chipotle paste, a drizzle of olive oil and half of the chopped coriander. Season with a pinch of both salt and pepper and set aside.",
-    "Once your potatoes are almost cooked: Heat another pan with a matching lid (large enough to fit 2 eggs) with 1 tbsp olive oil over a medium-low heat.",
+    "Once your potatoes are almost cooked: Heat another pan with a matching lid (large enough to fit 2 eggs) with {1 tbsp} olive oil over a medium-low heat.",
     "Crack the eggs into a bowl, and once the pan is hot, add the eggs in one go. Cover with a lid and cook for 2-3 min or until done to your liking, then remove from the heat and season with salt and pepper.",
     "Stir the remaining chopped coriander through the pepper and bean stew.",
     "Serve the eggs over the stew with the crispy potatoes and smoky mayo to the side."

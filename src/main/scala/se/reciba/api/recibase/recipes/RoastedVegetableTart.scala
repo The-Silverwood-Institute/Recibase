@@ -31,7 +31,7 @@ case object RoastedVegetableTart extends Recipe {
   )
 
   val method = List(
-    s"Heat the oven to ${200.celsius}. Cut the aubergines and courgettes into 1cm slices. Arrange all the vegetables in a single layer in a roasting tin, scatter the garlic and rosemary or thyme over them, then drizzle with 2 tablespoons of the olive oil. Season to taste.",
+    s"Heat the oven to ${200.celsius}. Cut the aubergines and courgettes into 1cm slices. Arrange all the vegetables in a single layer in a roasting tin, scatter the garlic and rosemary or thyme over them, then drizzle with {2 tablespoons} of the olive oil. Season to taste.",
     "Roast the vegetables for 40-60 minutes until they have softened and browned.",
     "Meanwhile, place a baking sheet in the oven to warm. Line a 20-23cm loose-based tart tin with the sheets of filo pastry, brushing each layer with oil before adding the next. Crumple up any overhanging edges to form a rim. Place the tin on the baking sheet and bake the pastry case for 5-8 minutes until golden brown.",
     s"Reduce the oven to ${160.celsius}. Spoon the roasted vegetables into the pastry case and scatter the cheese and chopped rosemary and thyme evenly over the top. Return the tart to the oven for 10 minutes, or until the cheese has just melted. Cut into quarters and serve."

@@ -41,7 +41,7 @@ case object ButternutChilli extends Recipe {
     "Soften the onion and garlic in olive oil in a heavy lidded pan.",
     "Stir chilli, cayenne, oregano and bay into onion then stir-fry for 1 minute.",
     "Add squash, olives, lemon and wine. Simmer, stirring, for 2 min.",
-    "Add tomatoes, 150ml water and crumbled stock cube. Gently simmer, cover and cook for 20 min.",
+    "Add tomatoes, {150ml} water and crumbled stock cube. Gently simmer, cover and cook for 20 min.",
     "Chop the peppers and add to the pan. Taste for salt, adding extra water if drying out.",
     "Cover and cook for a further 20 min until lemon is tender.",
     "Drain and rinse the beans. Add to the pot.",

@@ -32,7 +32,7 @@ case object CranberryRelish extends Recipe {
   )
   val method = List(
     "Gently cook the onions in the oil and sugar for about 20 minutes, stirring frequently, until soft and caramelised.",
-    "Add the remaining ingredients along with 150ml boiling water.",
+    "Add the remaining ingredients along with {150ml} boiling water.",
     "Simmer gently for about 10 minutes until the cranberries are softened but not completely broken down.",
     "Add additional sugar if needed, but don't overdo it. The relish should have a tart flavour.",
     "Serve warm or cold."

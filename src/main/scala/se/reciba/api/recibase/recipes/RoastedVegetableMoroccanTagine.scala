@@ -50,7 +50,7 @@ case object RoastedVegetableMoroccanTagine extends Recipe {
     s"Preheat the oven to ${200.celsius}.",
     "Spread the aubergine, carrots, pepper and sweet potato across a large roasting tin. Drizzle with oil and sprinkle with salt and rosemary.",
     "Roast the vegetables for 20m or until lightly browned. Set aside once they're ready.",
-    "Boil some water and make 240ml of stock. Mix in the chopped tomatoes, harissa paste, cumin, ground coriander, turmeric and honey. Set aside so the flavours can develop.",
+    "Boil some water and make {240ml} of stock. Mix in the chopped tomatoes, harissa paste, cumin, ground coriander, turmeric and honey. Set aside so the flavours can develop.",
     "Wait until the vegetables have been roasting for 15 minutes.",
     "Heat some olive oil in a large pan. Everything will eventually be added to this pan, so make sure it's big enough.",
     "Add the onions, garlic and broccoli to the pan and saute over a medium heat for 5-10 minutes, or until the garlic and onions are slightly browned.",

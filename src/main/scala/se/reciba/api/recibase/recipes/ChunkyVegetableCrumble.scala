@@ -98,7 +98,7 @@ case object ChunkyVegetableCrumble extends Recipe {
     "Add the carrots, parsnips, turnips (if used) and potatoes and cook briefly.",
     "Stir in the stock, Worcestershire sauce, tomato purée and bay leaves (if used).",
     "Bring to the boil and simmer for 20 minutes, stirring occasionally.",
-    "Put the flour in a mixing bowl and rub in the butter to make the crumble topping. Sprinkle over 1 1/2 tbsp water and mix with fork to make large crumbs. Stir in the cheese and sunflower seeds.",
+    "Put the flour in a mixing bowl and rub in the butter to make the crumble topping. Sprinkle over {1 1/2 tbsp} water and mix with fork to make large crumbs. Stir in the cheese and sunflower seeds.",
     "Stir the butter beans into the vegetable mixture and cook for further 5-7 minutes or until vegetables are tender.",
     "Remove the bay leaves (if added).",
     "Blend, mash or puree approx. 1 ladleful of the vegetable mixture.",

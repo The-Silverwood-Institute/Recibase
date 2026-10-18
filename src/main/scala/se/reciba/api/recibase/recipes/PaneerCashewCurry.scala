@@ -39,7 +39,7 @@ case object PaneerCashewCurry extends Recipe {
   )
 
   val method = List(
-    "Cover the cashews with boiling water and boil for 10 minutes. Drain, keeping 2/3 cup of the cashew water.",
+    "Cover the cashews with boiling water and boil for 10 minutes. Drain, keeping {2/3 cup} of the cashew water.",
     "Add the cashews and reserved water to a food processor and blitz for 3-4 minutes until smooth. Set the cashew cream aside.",
     "In the meantime, heat the coconut oil in a large, deep pan and saute the onion and red pepper for 4-5 minutes over a medium heat until softened.",
     "Stir in the garlic and ginger and cook for another minute.",

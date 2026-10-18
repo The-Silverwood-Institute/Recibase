@@ -43,10 +43,10 @@ case object GoanKingPrawnBalchao extends Recipe {
   val method = List(
     "Fry the onion in a wide pan with a generous drizzle of vegetable oil over a medium heat for 10-12 min or until softened.",
     "Rinse the rice and cook in the water for 10-12 minutes.",
-    "Add the chopped garlic, ginger, ground coriander, ground cumin, chilli flakes, cayenne pepper and a generous pinch of salt to a pestle & mortar and grind to a smooth paste. Add 2 tbsp vegetable oil and give everything a good mix up.",
+    "Add the chopped garlic, ginger, ground coriander, ground cumin, chilli flakes, cayenne pepper and a generous pinch of salt to a pestle & mortar and grind to a smooth paste. Add {2 tbsp} vegetable oil and give everything a good mix up.",
     "Once the onion has softened, add the Balchao spice paste and tomato paste to the pan and cook for 4-5 min or until fragrant.",
-    "Add the king prawns, tamarind paste, cider vinegar and 1 tsp sugar and cook for 2-3 min or until the prawns are almost cooked through.",
-    "Add the baby leaf spinach with 60ml cold water and cook for a further 2-3 min or until the spinach has just wilted and the sauce is thickened to a curry-like consistency.",
+    "Add the king prawns, tamarind paste, cider vinegar and {1 tsp} sugar and cook for 2-3 min or until the prawns are almost cooked through.",
+    "Add the baby leaf spinach with {60ml} cold water and cook for a further 2-3 min or until the spinach has just wilted and the sauce is thickened to a curry-like consistency.",
     "Serve the Goan prawn Balchao curry over the basmati rice."
   )
 }

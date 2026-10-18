@@ -32,7 +32,7 @@ case object CourgetteBroccoliPasta extends Recipe {
     Ingredient("Olive oil")
   )
   val method = List(
-    "Dissolve the stock in 200ml of boiling water.",
+    "Dissolve the stock in {200ml} of boiling water.",
     "Heat some olive oil on a high heat in a wide pan.",
     "Fry the broccoli stalks for a minute.",
     "Add the broccoli florets and fry for a few more minutes, until browned.",

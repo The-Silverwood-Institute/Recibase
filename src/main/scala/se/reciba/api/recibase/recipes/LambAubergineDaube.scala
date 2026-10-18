@@ -27,7 +27,7 @@ case object LambAubergineDaube extends Recipe {
     Ingredient("Lemon")
   )
   val method = List(
-    "Cut the aubergine into kebab sized chunks then immerse in water diluted with 2tbsp. Leave 20 for minutes. Rinse and drain.",
+    "Cut the aubergine into kebab sized chunks then immerse in water diluted with {2tbsp}. Leave 20 for minutes. Rinse and drain.",
     "Finely chop the onions. Pulverise the cumin, fennel, chilli flakes and ginger to make a corse paste.",
     "Cut the lamb into kebab sized pieces.",
     "Heat the oil in a large frying pan and stir fry the aubergine, tossing until beginning to soften but not completely cooked. Remove from the pan.",

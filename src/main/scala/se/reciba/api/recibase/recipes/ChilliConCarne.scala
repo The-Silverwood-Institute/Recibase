@@ -49,7 +49,7 @@ case object ChilliConCarne extends Recipe {
     Ingredient("Mince", "500g")
   )
   val method = List(
-    "Slice onions, crush garlic then brown in 2 tsp olive oil.",
+    "Slice onions, crush garlic then brown in {2 tsp} olive oil.",
     "Add the pepper and cook for a minute.",
     "Add the mince in batches and brown then stir in chilli powder and paprika.",
     "Add the stock cube/Bovril dissolved in a small amount of water and stir.",

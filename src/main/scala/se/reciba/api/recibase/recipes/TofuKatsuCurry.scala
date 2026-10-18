@@ -43,14 +43,14 @@ case object TofuKatsuCurry extends Recipe {
     "Add the breaded tofu to a baking tray lined with non-stick baking paper.",
     "Drizzle generously with vegetable oil and bake for 10 min.",
     "Add the Tenderstem broccoli to the tray, drizzle with oil and return to the oven for 10-15 min or until the tofu is golden and crispy and the broccoli is tender.",
-    "Add the rice to a pot with a lid with 225ml cold water and bring to the boil over a high heat.",
+    "Add the rice to a pot with a lid with {225ml} cold water and bring to the boil over a high heat.",
     "Once boiling, reduce the heat to very low and cook, covered, for 12-15 min or until all the water has absorbed and the rice is cooked.",
     "Once done, stir vigorously to release the starch, then remove from the heat and set aside (lid on) to steam until serving.",
     "Meanwhile, boil a kettle.",
-    "Heat a large, wide-based pan (preferably non-stick) with 2 tbsp vegetable oil over a medium heat.",
+    "Heat a large, wide-based pan (preferably non-stick) with {2 tbsp} vegetable oil over a medium heat.",
     "Once hot, add the chopped ginger and cook for 3 min or until fragrant.",
     "Add the curry powder and flour and cook for 1 min.",
-    "Gradually whisk in 300ml boiled water and cook for 5-6 min or until thickened.",
+    "Gradually whisk in {300ml} boiled water and cook for 5-6 min or until thickened.",
     "Once the sauce has thickened, stir in the soy sauce and mango chutney.",
     "Serve the tofu katsu over the katsu sauce with the sticky rice and roasted Tenderstem broccoli."
   )

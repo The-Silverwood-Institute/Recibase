@@ -45,7 +45,7 @@ case object ChipotleMacNCheese extends Recipe {
     "Add the sliced onion to the pan with a pinch of salt and cook, covered, for a further 4-5 min.",
     "While the onion is cooking, add the macaroni to a pot of boiled water with a large pinch of salt and bring to the boil over a high heat.",
     "Cook for 7 min or until it's cooked with a slight bite.",
-    "Once done, drain the macaroni, reserving 250ml of the starchy pasta water.",
+    "Once done, drain the macaroni, reserving {250ml} of the starchy pasta water.",
     "Combine the panko breadcrumbs, smoked paprika, a pinch of salt and a generous drizzle of vegetable oil.",
     "Dissolve the vegetable stock cube in the reserved pasta water.",
     "Once the onion has softened, add the chipotle paste, tomato paste, drained macaroni, creme fraiche, grated cheddar and the starchy pasta stock.",

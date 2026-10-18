@@ -35,7 +35,7 @@ case object ParsnipGingerSoup extends Recipe {
   )
   val method = List(
     "Melt the butter in a large pan then stir in the parsnips, onion, flour, ginger and orange rind.",
-    "Dissolve the stock in 500ml - 1L of water then mix in and bring to the boil.",
+    "Dissolve the stock in {500ml} - {1L} of water then mix in and bring to the boil.",
     "Simmer for 20 minutes or so, until the parsnips are soft.",
     "Blend the mixture to your desired consistency.",
     "Stir in the orange juice and reheat, without boiling.",
