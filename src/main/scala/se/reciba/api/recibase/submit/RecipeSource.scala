@@ -41,11 +41,11 @@ object RecipeSource {
     "LocalDate"
   )
 
-  private val tagsByObjectName: Map[String, Tag] =
-    Tag.values.map { tag =>
-      val objectName = tag.getClass.getSimpleName.stripSuffix("$")
-      objectName -> tag
-    }.toMap
+  private val tagsByEntryName: Map[String, Tag] =
+    Tag.values.map(tag => tag.entryName -> tag).toMap
+
+  private def scalaObjectName(tag: Tag): String =
+    tag.getClass.getSimpleName.stripSuffix("$")
 
   def generate(
       submission: RecipeSubmission,
@@ -187,11 +187,11 @@ object RecipeSource {
           if (unsupported(tag, singleLine = true))
             invalid("A tag contains unsupported characters")
           else
-            tagsByObjectName.get(tag) match {
+            tagsByEntryName.get(tag) match {
               case Some(found) if found.category == TagCategory.Usage =>
                 invalid(s"Tag $tag is assigned automatically")
-              case Some(_) => Right(soFar :+ tag)
-              case None    =>
+              case Some(found) => Right(soFar :+ scalaObjectName(found))
+              case None        =>
                 val shown =
                   if (tag.length > 40) tag.take(40) + "..." else tag
                 invalid(s"Unknown tag: $shown")

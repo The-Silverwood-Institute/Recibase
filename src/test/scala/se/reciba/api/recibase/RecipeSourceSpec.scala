@@ -109,13 +109,13 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
       )
     }
 
-    "rejects tag display names" >> {
+    "rejects a Scala object name that is not the entry name" >> {
       val generated = RecipeSource.generate(
-        named("Phone Test Soup").copy(tags = List("Vegetarian-ish")),
+        named("Phone Test Soup").copy(tags = List("VegetarianIsh")),
         today,
         Seq.empty
       )
-      generated must beLeft(InvalidSubmission("Unknown tag: Vegetarian-ish"))
+      generated must beLeft(InvalidSubmission("Unknown tag: VegetarianIsh"))
     }
 
     "rejects a duplicate name" >> {
@@ -153,12 +153,11 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
     }
   }
 
-  "tag object names" >> {
-    "match the identifiers the generator emits" >> {
-      Tag.VeganIsh.getClass.getSimpleName.stripSuffix("$") must beEqualTo(
-        "VeganIsh"
-      )
-      Tag.New.getClass.getSimpleName.stripSuffix("$") must beEqualTo("New")
+  "tag entry names" >> {
+    "are the strings submissions accept" >> {
+      Tag.VeganIsh.entryName must beEqualTo("Vegan-ish")
+      Tag.GlutenFree.entryName must beEqualTo("Gluten-Free")
+      Tag.ColdWeather.entryName must beEqualTo("Cold Weather")
     }
   }
 
@@ -178,7 +177,7 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
     source = Some("Kit's Dad"),
     description = Some("A weeknight chilli."),
     notes = List("Better the next day."),
-    tags = List("VegetarianIsh", "Spicy", "Spicy"),
+    tags = List("Vegetarian-ish", "Spicy", "Spicy"),
     ingredients = List(
       IngredientSubmission("Mince", Some("500g"), None, None),
       IngredientSubmission("Honey", Some("1 tbsp"), None, Some("Optional")),

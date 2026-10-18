@@ -73,6 +73,7 @@ object MealDetail {
 
 final case class TagDoc(
     name: String,
+    entryName: String,
     description: Option[String],
     category: String,
     superset: Option[Tag],
@@ -88,6 +89,7 @@ object TagDoc {
 
   def from(tag: Tag): TagDoc =
     TagDoc(
+      tag.entryName,
       tag.entryName,
       tag.description,
       tag.category.entryName,

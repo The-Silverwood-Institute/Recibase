@@ -63,7 +63,8 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
       spec must contain("/recipes/{permalink}:")
       spec must contain("/recipe-submissions:")
       spec must contain("hasIngredient")
-      spec must contain("inherited_tags")
+      spec must contain("implied_tags")
+      spec must contain("entry_name")
       spec must contain("ingredients_blocks")
       spec must contain("source_url")
       spec must contain("cf-turnstile-response")
@@ -93,6 +94,7 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
       decode[TagCatalog](get("/tags")) must beRight.like { case catalog =>
         val vegan = catalog.tags.find(_.name == "Vegan")
         vegan must beSome.like { case tag =>
+          tag.entryName must beEqualTo("Vegan")
           tag.category must beEqualTo("diet")
           tag.superset must beEqualTo(Some(Tag.VeganIsh): Option[Tag])
           tag.impliedTags must beEqualTo(
@@ -106,6 +108,15 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
         }
         catalog.tags.find(_.name == "Popular").map(_.category) must beSome(
           "usage"
+        )
+        catalog.tags.find(_.entryName == "Vegan-ish").map(_.name) must beSome(
+          "Vegan-ish"
+        )
+        catalog.tags.find(_.entryName == "Gluten-Free").map(_.name) must beSome(
+          "Gluten-Free"
+        )
+        catalog.tags.find(_.entryName == "Cold Weather").map(_.name) must beSome(
+          "Cold Weather"
         )
       }
     }

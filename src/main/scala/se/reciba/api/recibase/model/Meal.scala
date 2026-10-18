@@ -55,7 +55,7 @@ object MealStubWithUsageData {
     Encoder.forProduct8(
       "name",
       "tags",
-      "inherited_tags",
+      "implied_tags",
       "source",
       "dated_notes",
       "last_eaten",

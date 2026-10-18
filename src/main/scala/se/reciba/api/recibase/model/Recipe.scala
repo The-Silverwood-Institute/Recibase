@@ -99,7 +99,7 @@ object RecipeWithUsageData {
       "notes",
       "dated_notes",
       "tags",
-      "inherited_tags",
+      "implied_tags",
       "image",
       "ingredients_blocks",
       "method"

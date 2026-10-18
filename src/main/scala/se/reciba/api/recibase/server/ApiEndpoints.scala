@@ -86,7 +86,7 @@ object ApiEndpoints {
       .tag("Meta")
       .summary("List tags")
       .description(
-        "Every tag, with its category, description, immediate superset, and the looser tags implied by following that chain. Usage tags are calculated by the server and are not written on recipes."
+        "Every tag, with its display name, entry name, category, description, immediate superset, and the looser tags implied by following that chain. Recipe submissions must send entry_name. Usage tags are calculated by the server and are not written on recipes."
       )
       .out(jsonBody[TagCatalog])
 
