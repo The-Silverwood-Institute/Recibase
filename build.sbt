@@ -1,4 +1,5 @@
 val Http4sVersion = "1.0.0-M49"
+val TapirVersion = "1.13.32"
 val Specs2Version = "4.23.0"
 val LogbackVersion = "1.6.5"
 val EnumeratumVersion = "1.9.8"
@@ -13,6 +14,8 @@ lazy val root = (project in file("."))
       "org.http4s" %% "http4s-ember-server" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
       "org.http4s" %% "http4s-dsl" % Http4sVersion,
+      "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % TapirVersion,
+      "com.softwaremill.sttp.tapir" %% "tapir-redoc-bundle" % TapirVersion,
       "io.circe" %% "circe-generic" % "0.14.17",
       "io.circe" %% "circe-generic-extras" % "0.14.4",
       "com.beachape" %% "enumeratum" % EnumeratumVersion,

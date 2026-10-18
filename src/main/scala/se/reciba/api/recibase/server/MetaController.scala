@@ -17,6 +17,7 @@ object MetaController {
       ).pure[F]
       override def docs: F[Map[String, String]] = Map(
         "docs" -> "/",
+        "api_docs" -> "/docs/",
         "recipes_list" -> "/recipes/?hasIngredient={ingredient_name}",
         "recipe" -> "/recipes/{recipe_permalink}",
         "meals_list" -> "/meals/",

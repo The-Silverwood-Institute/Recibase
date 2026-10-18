@@ -23,7 +23,8 @@ object RecibaseServer {
     val metaAlg = MetaController.impl[F]
     val routes =
       RecibaseRoutes.routes[F](recipesAlg, mealsAlg, metaAlg) <+>
-        RecipeSubmissionRoutes.routes[F]()
+        RecipeSubmissionRoutes.routes[F]() <+>
+        RedocRoutes.routes[F](ApiEndpoints.all)
     val port = scala.util.Properties.envOrElse("PORT", "8081").toInt
 
     for {
