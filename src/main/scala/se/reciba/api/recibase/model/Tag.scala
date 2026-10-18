@@ -82,13 +82,13 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
       )
   case object IncludeInMealPlanner
       extends Tag(
-        "Overrides logic and ensures recipe is included in meal planner",
+        "Ensures recipe is included in meal planner. Only use if necessary.",
         TagCategory.Meal,
         None
       )
   case object ExcludeFromMealPlanner
       extends Tag(
-        "Overrides logic and ensures recipe is excluded from meal planner",
+        "Ensures recipe is excluded from meal planner. Only use if necessary.",
         TagCategory.Meal,
         None
       )
