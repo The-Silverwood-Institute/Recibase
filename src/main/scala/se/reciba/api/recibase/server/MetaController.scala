@@ -6,7 +6,6 @@ import se.reciba.api.model.Manifest
 
 trait MetaController[F[_]] {
   def manifest: F[Manifest]
-  def docs: F[Map[String, String]]
 }
 
 object MetaController {
@@ -14,16 +13,6 @@ object MetaController {
     new MetaController[F] {
       override def manifest: F[Manifest] = Manifest(
         Manifest.deployedVersion()
-      ).pure[F]
-      override def docs: F[Map[String, String]] = Map(
-        "docs" -> "/",
-        "api_docs" -> "/docs/",
-        "recipes_list" -> "/recipes/?hasIngredient={ingredient_name}",
-        "recipe" -> "/recipes/{recipe_permalink}",
-        "meals_list" -> "/meals/",
-        "meal_names_text" -> "/meals/raw",
-        "service_info" -> "/manifest",
-        "health" -> "/health"
       ).pure[F]
     }
 }
