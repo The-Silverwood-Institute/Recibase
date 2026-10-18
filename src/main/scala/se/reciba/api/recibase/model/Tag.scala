@@ -17,7 +17,6 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
 
   val nonDinnerTags: Set[Tag] = Set(
     Pudding,
-    Lunch,
     Baking,
     NonMeal
   )
