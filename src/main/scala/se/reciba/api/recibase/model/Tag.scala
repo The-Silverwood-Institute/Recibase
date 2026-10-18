@@ -67,15 +67,17 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         "Include in Meal Planner",
         TagCategory.Meal
       ) {
-        override def description: Option[String] = "Ensures recipe is included in meal planner. Only use if necessary.".some
-      }
+    override def description: Option[String] =
+      "Ensures recipe is included in meal planner. Only use if necessary.".some
+  }
   case object ExcludeFromMealPlanner
       extends Tag(
         "Exclude from Meal Planner",
         TagCategory.Meal
       ) {
-        override def description: Option[String] = "Ensures recipe is excluded from meal planner. Only use if necessary.".some
-      }
+    override def description: Option[String] =
+      "Ensures recipe is excluded from meal planner. Only use if necessary.".some
+  }
   case object Soup extends Tag("Soup", TagCategory.Meal)
 
   // Dietary. Each tag's superset is the next, looser tag.
