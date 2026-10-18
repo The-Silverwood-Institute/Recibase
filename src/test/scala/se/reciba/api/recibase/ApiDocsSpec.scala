@@ -16,6 +16,7 @@ import se.reciba.api.server.{
   RecipeController,
   RecipeDetail,
   RecipeSubmissionDoc,
+  TagCatalog,
   RecibaseRoutes,
   RedocRoutes
 }
@@ -57,6 +58,7 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
         docs(Request[IO](Method.GET, uri"/docs/docs.yaml")).unsafeRunSync()
       response.status must beEqualTo(Status.Ok)
       val spec = body(response)
+      spec must contain("/tags:")
       spec must contain("/recipes/:")
       spec must contain("/recipes/{permalink}:")
       spec must contain("/recipe-submissions:")
@@ -85,6 +87,27 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
 
     "decode the manifest" >> {
       decode[ManifestDoc](get("/manifest")) must beRight
+    }
+
+    "decode tags" >> {
+      decode[TagCatalog](get("/tags")) must beRight.like { case catalog =>
+        val vegan = catalog.tags.find(_.name == "Vegan")
+        vegan must beSome.like { case tag =>
+          tag.category must beEqualTo("diet")
+          tag.implies must beEqualTo(List("Vegan-ish"))
+          tag.impliedTags must beEqualTo(
+            List(
+              "Vegan-ish",
+              "Vegetarian",
+              "Vegetarian-ish",
+              "Pescatarian"
+            )
+          )
+        }
+        catalog.tags.find(_.name == "Popular").map(_.category) must beSome(
+          "usage"
+        )
+      }
     }
 
     "decode a recipe submission" >> {

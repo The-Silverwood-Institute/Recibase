@@ -41,6 +41,8 @@ object RecibaseRoutes {
         Ok(J.mealNames)
       case GET -> Root / "manifest" =>
         Ok(M.manifest.map(_.asJson))
+      case GET -> Root / "tags" =>
+        Ok(M.tags.map(_.asJson))
       case GET -> Root / "health" =>
         Ok("ok")
     }

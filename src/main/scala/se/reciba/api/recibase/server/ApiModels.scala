@@ -7,6 +7,7 @@ import io.circe.generic.extras.semiauto.{
 import io.circe.{Decoder, Encoder}
 import se.reciba.api.model.Image
 import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Tag
 import se.reciba.api.recibase.model.DatedNote
 
 import java.time.LocalDate
@@ -68,6 +69,43 @@ object MealDetail {
 
   implicit val encodeMealDetail: Encoder[MealDetail] = deriveConfiguredEncoder
   implicit val decodeMealDetail: Decoder[MealDetail] = deriveConfiguredDecoder
+}
+
+final case class TagDoc(
+    name: String,
+    description: Option[String],
+    category: String,
+    implies: List[String],
+    impliedTags: List[String]
+)
+
+object TagDoc {
+  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
+    ApiModels.snakeCaseCirce
+
+  implicit val encodeTagDoc: Encoder[TagDoc] = deriveConfiguredEncoder
+  implicit val decodeTagDoc: Decoder[TagDoc] = deriveConfiguredDecoder
+
+  def from(tag: Tag): TagDoc =
+    TagDoc(
+      tag.entryName,
+      tag.description,
+      tag.category.entryName,
+      Tag.displayNames(tag.implies),
+      Tag.displayNames(tag.impliedTags)
+    )
+}
+
+final case class TagCatalog(tags: List[TagDoc])
+
+object TagCatalog {
+  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
+    ApiModels.snakeCaseCirce
+
+  implicit val encodeTagCatalog: Encoder[TagCatalog] = deriveConfiguredEncoder
+  implicit val decodeTagCatalog: Decoder[TagCatalog] = deriveConfiguredDecoder
+
+  def all: TagCatalog = TagCatalog(Tag.values.map(TagDoc.from).toList)
 }
 
 final case class ManifestDoc(

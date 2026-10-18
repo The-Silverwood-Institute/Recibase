@@ -1,7 +1,7 @@
 package se.reciba.api.submit
 
 import org.apache.commons.lang3.StringUtils
-import se.reciba.api.model.{Recipe, Tag}
+import se.reciba.api.model.{Recipe, Tag, TagCategory}
 
 import java.time.LocalDate
 import java.util.Locale
@@ -41,17 +41,10 @@ object RecipeSource {
     "LocalDate"
   )
 
-  private val automaticTags = Set(
-    "NeverEaten",
-    "Popular",
-    "Infrequent",
-    "New"
-  )
-
-  private val tagsByObjectName: Map[String, String] =
+  private val tagsByObjectName: Map[String, Tag] =
     Tag.values.map { tag =>
       val objectName = tag.getClass.getSimpleName.stripSuffix("$")
-      objectName -> objectName
+      objectName -> tag
     }.toMap
 
   def generate(
@@ -193,12 +186,12 @@ object RecipeSource {
         acc.flatMap { soFar =>
           if (unsupported(tag, singleLine = true))
             invalid("A tag contains unsupported characters")
-          else if (automaticTags.contains(tag))
-            invalid(s"Tag $tag is assigned automatically")
           else
             tagsByObjectName.get(tag) match {
-              case Some(objectName) => Right(soFar :+ objectName)
-              case None             =>
+              case Some(found) if found.category == TagCategory.Usage =>
+                invalid(s"Tag $tag is assigned automatically")
+              case Some(_) => Right(soFar :+ tag)
+              case None    =>
                 val shown =
                   if (tag.length > 40) tag.take(40) + "..." else tag
                 invalid(s"Unknown tag: $shown")

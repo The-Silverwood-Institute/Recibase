@@ -70,6 +70,16 @@ object ApiEndpoints {
       .summary("Build manifest")
       .out(jsonBody[ManifestDoc])
 
+  val tags: PublicEndpoint[Unit, Unit, TagCatalog, Any] =
+    endpoint.get
+      .in("tags")
+      .tag("Meta")
+      .summary("List tags")
+      .description(
+        "Every tag, with its category, description, and the tags it implies. Usage tags are calculated by the server and are not written on recipes."
+      )
+      .out(jsonBody[TagCatalog])
+
   val recipes: PublicEndpoint[Option[String], Unit, List[MenuEntry], Any] =
     endpoint.get
       .in("recipes")
@@ -136,6 +146,7 @@ object ApiEndpoints {
     index,
     health,
     manifest,
+    tags,
     recipes,
     recipe,
     meals,

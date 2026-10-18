@@ -64,10 +64,8 @@ object MealsController {
           case _ => Set.empty
         }
         val extraRecencyTags =
-          meal.createdAt.map(_.isAfter(LocalDate.now().minusMonths(12))) match {
-            case Some(true) => Set(Tag.New)
-            case _          => Set.empty
-          }
+          if (Tag.New.applies(meal.createdAt, LocalDate.now())) Set(Tag.New)
+          else Set.empty
         val mealFeatured = featuredMeals.get(meal.name)
 
         MealStubWithUsageData(
