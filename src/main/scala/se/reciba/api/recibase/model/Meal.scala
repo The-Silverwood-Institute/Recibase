@@ -12,7 +12,10 @@ trait Meal {
   def name: String
   def tags: Set[Tag]
 
-  def isDinner: Boolean = tags.intersect(Tag.nonDinnerTags).isEmpty
+  def includeinMealPlanner: Boolean = {
+    if (tags.contains(Tag.IncludeInMealPlanner)) true
+    else tags.intersect(Tag.excludeFromMealPlannerTags).isEmpty
+  }
 
   def inheritedTags: Set[Tag] = tags.flatMap(_.inheritedTags)
 }

@@ -10,7 +10,13 @@ case object CheeseScones extends Recipe {
     "Cheese Scones"
   val createdAt = LocalDate.of(2025, 2, 4)
 
-  val tags = Set(Tag.Vegetarian, Tag.HighEffort, Tag.Stodge)
+  val tags = Set(
+    Tag.Vegetarian,
+    Tag.HighEffort,
+    Tag.Stodge,
+    Tag.Baking,
+    Tag.IncludeInMealPlanner
+  )
 
   override val source = (
     "https://www.bbcgoodfood.com/user/896076/recipe/classic-cheese-scones"

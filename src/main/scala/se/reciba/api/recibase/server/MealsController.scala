@@ -33,7 +33,7 @@ object MealsController {
         mealStubsWithUsageData[F](usageData)
       override def mealNames: F[String] =
         MealDefinitions.mealStubs
-          .filter(_.isDinner)
+          .filter(_.includeinMealPlanner)
           .map(_.name)
           .toSeq
           .sorted
@@ -55,9 +55,9 @@ object MealsController {
         val mealTimesEaten = mealCount.getOrElse(meal.name, 0)
         val extraFrequencyTags = mealTimesEaten match {
           // Non-dinner items shouldn't be assigned usage tags because they are misleading
-          case _ if !meal.isDinner => Set.empty
-          case 0                   => Set(Tag.NeverEaten)
-          case count if count <= 2 =>
+          case _ if !meal.includeinMealPlanner => Set.empty
+          case 0                               => Set(Tag.NeverEaten)
+          case count if count <= 2             =>
             Set(Tag.Infrequent)
           case count if count >= 5 =>
             Set(Tag.Popular)

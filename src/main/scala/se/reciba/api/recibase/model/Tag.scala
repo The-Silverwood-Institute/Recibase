@@ -49,7 +49,7 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
   def displayNames(tags: Set[Tag]): List[String] =
     values.filter(tags.contains).map(_.entryName).toList
 
-  val nonDinnerTags: Set[Tag] = Set(
+  val excludeFromMealPlannerTags: Set[Tag] = Set(
     Pudding,
     Baking,
     ExcludeFromMealPlanner
@@ -80,9 +80,15 @@ object Tag extends Enum[Tag] with CirceEnum[Tag] {
         TagCategory.Meal,
         "A baked good like a cake".some
       )
+  case object IncludeInMealPlanner
+      extends Tag(
+        "Overrides logic and ensures recipe is included in meal planner",
+        TagCategory.Meal,
+        None
+      )
   case object ExcludeFromMealPlanner
       extends Tag(
-        "Exclude from Meal Planner",
+        "Overrides logic and ensures recipe is excluded from meal planner",
         TagCategory.Meal,
         None
       )
