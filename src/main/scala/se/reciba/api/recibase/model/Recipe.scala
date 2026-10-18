@@ -114,7 +114,7 @@ object RecipeWithUsageData {
         r.recipe.notes,
         r.datedNotes,
         r.recipe.tags,
-        r.recipe.inheritedTags,
+        r.recipe.impliedTags,
         r.recipe.image,
         r.recipe.ingredientsBlocks,
         r.recipe.method

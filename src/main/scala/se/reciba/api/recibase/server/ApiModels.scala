@@ -36,7 +36,7 @@ final case class RecipeDetail(
     notes: List[String],
     datedNotes: List[DatedNote],
     tags: List[String],
-    inheritedTags: List[String],
+    impliedTags: List[String],
     image: Option[Image],
     ingredientsBlocks: List[IngredientsBlock],
     method: List[String]
@@ -55,7 +55,7 @@ object RecipeDetail {
 final case class MealDetail(
     name: String,
     tags: List[String],
-    inheritedTags: List[String],
+    impliedTags: List[String],
     source: Option[MealSource],
     datedNotes: List[DatedNote],
     lastEaten: Option[LocalDate],
@@ -75,8 +75,8 @@ final case class TagDoc(
     name: String,
     description: Option[String],
     category: String,
-    inherits: List[String],
-    inheritedTags: List[String]
+    superset: Option[Tag],
+    impliedTags: Set[Tag]
 )
 
 object TagDoc {
@@ -91,8 +91,8 @@ object TagDoc {
       tag.entryName,
       tag.description,
       tag.category.entryName,
-      Tag.displayNames(tag.inherits),
-      Tag.displayNames(tag.inheritedTags)
+      tag.superset,
+      tag.impliedTags
     )
 }
 

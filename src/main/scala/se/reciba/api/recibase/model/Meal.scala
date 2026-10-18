@@ -17,7 +17,7 @@ trait Meal {
     else tags.intersect(Tag.excludeFromMealPlannerTags).isEmpty
   }
 
-  def inheritedTags: Set[Tag] = tags.flatMap(_.inheritedTags)
+  def impliedTags: Set[Tag] = tags.flatMap(_.impliedTags)
 }
 
 case class MealStub(
@@ -65,7 +65,7 @@ object MealStubWithUsageData {
       (
         mealStub.name,
         mealStub.tags,
-        mealStub.inheritedTags,
+        mealStub.impliedTags,
         mealStub.source,
         mealStub.datedNotes,
         mealStub.lastEaten,

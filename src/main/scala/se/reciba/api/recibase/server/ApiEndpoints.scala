@@ -1,6 +1,6 @@
 package se.reciba.api.server
 
-import se.reciba.api.model.MenuEntry
+import se.reciba.api.model.{MenuEntry, Tag}
 import sttp.model.StatusCode
 import sttp.tapir._
 import sttp.tapir.generic.auto._
@@ -11,6 +11,16 @@ object ApiEndpoints {
     sttp.tapir.generic.Configuration.default.withSnakeCaseMemberNames
       .withDiscriminator("type")
       .withSnakeCaseDiscriminatorValues
+
+  implicit val tagSchema: Schema[Tag] =
+    Schema
+      .string[Tag]
+      .validate(
+        Validator.enumeration(
+          Tag.values.toList,
+          (tag: Tag) => Some(tag.entryName)
+        )
+      )
 
   private val ingredientQuery = query[Option[String]]("hasIngredient")
     .description(
@@ -67,7 +77,7 @@ object ApiEndpoints {
     endpoint.get
       .in("manifest")
       .tag("Meta")
-      .summary("Build manifest")
+      .summary("Recibase API manifest, differentiates each Recibase instance")
       .out(jsonBody[ManifestDoc])
 
   val tags: PublicEndpoint[Unit, Unit, TagCatalog, Any] =
@@ -76,7 +86,7 @@ object ApiEndpoints {
       .tag("Meta")
       .summary("List tags")
       .description(
-        "Every tag, with its category, description, and the tags it inherits. Usage tags are calculated by the server and are not written on recipes."
+        "Every tag, with its category, description, immediate superset, and the looser tags implied by following that chain. Usage tags are calculated by the server and are not written on recipes."
       )
       .out(jsonBody[TagCatalog])
 
@@ -115,8 +125,8 @@ object ApiEndpoints {
     endpoint.get
       .in("meals" / "raw")
       .tag("Meals")
-      .summary("List dinner names")
-      .description("Dinner names, one per line, sorted.")
+      .summary("List meal names")
+      .description("CSV compatible list of meal names, excluding meals you wouldn't eat for dinner.")
       .out(stringBody)
 
   val submitRecipe: Endpoint[
@@ -136,7 +146,7 @@ object ApiEndpoints {
       .securityIn(
         auth
           .bearer[String]()
-          .description("Contribution passcode.")
+          .description("Contribution passcode. Only needed to submit recipes.")
       )
       .in(jsonBody[RecipeSubmissionDoc])
       .out(jsonBody[SubmissionAccepted])

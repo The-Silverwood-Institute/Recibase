@@ -6,7 +6,7 @@ import io.circe.jawn
 import org.http4s._
 import org.http4s.implicits._
 import org.typelevel.ci._
-import se.reciba.api.model.MenuEntry
+import se.reciba.api.model.{MenuEntry, Tag}
 import se.reciba.api.server.{
   ApiEndpoints,
   ManifestDoc,
@@ -94,13 +94,13 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
         val vegan = catalog.tags.find(_.name == "Vegan")
         vegan must beSome.like { case tag =>
           tag.category must beEqualTo("diet")
-          tag.inherits must beEqualTo(List("Vegan-ish"))
-          tag.inheritedTags must beEqualTo(
-            List(
-              "Vegan-ish",
-              "Vegetarian",
-              "Vegetarian-ish",
-              "Pescatarian"
+          tag.superset must beEqualTo(Some(Tag.VeganIsh): Option[Tag])
+          tag.impliedTags must beEqualTo(
+            Set(
+              Tag.VeganIsh,
+              Tag.Vegetarian,
+              Tag.VegetarianIsh,
+              Tag.Pescatarian
             )
           )
         }
