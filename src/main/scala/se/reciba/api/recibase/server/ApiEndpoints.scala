@@ -126,7 +126,9 @@ object ApiEndpoints {
       .in("meals" / "raw")
       .tag("Meals")
       .summary("List meal names")
-      .description("CSV compatible list of meal names, excluding meals you wouldn't eat for dinner.")
+      .description(
+        "CSV compatible list of meal names, excluding meals you wouldn't eat for dinner."
+      )
       .out(stringBody)
 
   val submitRecipe: Endpoint[

@@ -115,7 +115,9 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
         catalog.tags.find(_.entryName == "Gluten-Free").map(_.name) must beSome(
           "Gluten-Free"
         )
-        catalog.tags.find(_.entryName == "Cold Weather").map(_.name) must beSome(
+        catalog.tags
+          .find(_.entryName == "Cold Weather")
+          .map(_.name) must beSome(
           "Cold Weather"
         )
       }
