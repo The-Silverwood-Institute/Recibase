@@ -17,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         # The pull request ref is a merge commit, which cannot be pushed.
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: Setup JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v6
       with:
         distribution: temurin
         java-version: 25
