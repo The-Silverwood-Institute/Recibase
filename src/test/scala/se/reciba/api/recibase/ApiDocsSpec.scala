@@ -92,20 +92,18 @@ class ApiDocsSpec extends org.specs2.mutable.Specification {
 
     "decode tags" >> {
       decode[TagCatalog](get("/tags")) must beRight.like { case catalog =>
-        val vegan = catalog.tags.find(_.name == "Vegan")
-        vegan must beSome.like { case tag =>
-          tag.entryName must beEqualTo("Vegan")
-          tag.category must beEqualTo("diet")
-          tag.superset must beEqualTo(Some(Tag.VeganIsh): Option[Tag])
-          tag.impliedTags must beEqualTo(
-            Set(
-              Tag.VeganIsh,
-              Tag.Vegetarian,
-              Tag.VegetarianIsh,
-              Tag.Pescatarian
-            )
+        val tag = catalog.tags.find(_.name == "Vegan").get
+        tag.entryName must beEqualTo("Vegan")
+        tag.category must beEqualTo("diet")
+        tag.superset must beEqualTo(Some(Tag.VeganIsh): Option[Tag])
+        tag.impliedTags must beEqualTo(
+          Set(
+            Tag.VeganIsh,
+            Tag.Vegetarian,
+            Tag.VegetarianIsh,
+            Tag.Pescatarian
           )
-        }
+        )
         catalog.tags.find(_.name == "Popular").map(_.category) must beSome(
           "usage"
         )

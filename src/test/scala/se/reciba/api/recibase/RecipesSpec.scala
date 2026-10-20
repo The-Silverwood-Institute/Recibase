@@ -20,7 +20,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     }
 
     "return a link to each recipe" >> {
-      recipesQuery.as[String].unsafeRunSync() must contain(
+      body(recipesQuery) must contain(
         "{\"name\":\"Vegetable Primavera\",\"permalink\":\"vegetable-primavera\"}"
       )
     }
@@ -32,15 +32,15 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     }
 
     "returns a link to an ingredient containing thyme" >> {
-      filteredRecipesQuery.as[String].unsafeRunSync() must contain(
+      body(filteredRecipesQuery) must contain(
         "beetroot-risotto"
       )
     }
 
     "doesn't return a link to a recipe without thyme" >> {
-      filteredRecipesQuery
-        .as[String]
-        .unsafeRunSync() must not contain ("baked-rigatoni-aubergine")
+      body(filteredRecipesQuery) must not contain (
+        "baked-rigatoni-aubergine"
+      )
     }
   }
 
@@ -50,7 +50,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     }
 
     "return ok" >> {
-      healthQuery.as[String].unsafeRunSync() must beEqualTo("ok")
+      body(healthQuery) must beEqualTo("ok")
     }
   }
 
@@ -63,7 +63,7 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
       }
 
       "returns a useful error message" >> {
-        request.as[String].unsafeRunSync() must beEqualTo("Recipe not found")
+        body(request) must beEqualTo("Recipe not found")
       }
     }
 
@@ -75,12 +75,15 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
       }
 
       "returns the Recipe as JSON" >> {
-        request.as[String].unsafeRunSync() must /(
+        body(request) must /(
           "name" -> "Vegetable Primavera"
         )
       }
     }
   }
+
+  private def body(response: Response[IO]): String =
+    fs2.text.utf8.decode(response.body).compile.string.unsafeRunSync()
 
   private def recipeQuery(url: String): Response[IO] = {
     val getRecipe =

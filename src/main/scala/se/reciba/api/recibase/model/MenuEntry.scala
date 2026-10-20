@@ -1,6 +1,11 @@
 package se.reciba.api.model
 
-import io.circe.generic.JsonCodec
+import io.circe.{Decoder, Encoder}
+import io.circe.generic.semiauto._
 
-@JsonCodec
 case class MenuEntry(name: String, permalink: String)
+
+object MenuEntry {
+  implicit val encodeMenuEntry: Encoder[MenuEntry] = deriveEncoder
+  implicit val decodeMenuEntry: Decoder[MenuEntry] = deriveDecoder
+}

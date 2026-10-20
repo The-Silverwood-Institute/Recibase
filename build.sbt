@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     organization := "The Silverwood Institute",
     name := "Recibase",
     version := "0.2",
-    scalaVersion := "2.13.18",
+    scalaVersion := "3.3.6",
     libraryDependencies ++= Seq(
       "org.http4s" %% "http4s-ember-server" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
@@ -17,7 +17,6 @@ lazy val root = (project in file("."))
       "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % TapirVersion,
       "com.softwaremill.sttp.tapir" %% "tapir-redoc-bundle" % TapirVersion,
       "io.circe" %% "circe-generic" % "0.14.17",
-      "io.circe" %% "circe-generic-extras" % "0.14.4",
       "com.beachape" %% "enumeratum" % EnumeratumVersion,
       "com.beachape" %% "enumeratum-circe" % "1.9.8",
       "org.apache.commons" % "commons-lang3" % "3.21.0",
@@ -27,9 +26,7 @@ lazy val root = (project in file("."))
       "org.specs2" %% "specs2-matcher-extra" % Specs2Version % "test",
       "ch.qos.logback" % "logback-classic" % LogbackVersion,
       "org.typelevel" %% "log4cats-slf4j" % "2.8.0"
-    ),
-    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.10.3"),
-    addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
+    )
   )
 
 enablePlugins(JavaAppPackaging)
@@ -66,9 +63,7 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-encoding",
   "UTF-8",
-  "-language:higherKinds",
   "-language:postfixOps",
   "-feature",
-  "-Xfatal-warnings",
-  "-Ymacro-annotations"
+  "-Xfatal-warnings"
 )

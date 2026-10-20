@@ -1,9 +1,6 @@
 package se.reciba.api.server
 
-import io.circe.generic.extras.semiauto.{
-  deriveConfiguredDecoder,
-  deriveConfiguredEncoder
-}
+import io.circe.derivation.Configuration
 import io.circe.{Decoder, Encoder}
 import se.reciba.api.model.Image
 import se.reciba.api.model.IngredientsBlock
@@ -18,12 +15,14 @@ final case class Recibase(permalink: String) extends MealSource
 final case class GoogleDrive(id: String) extends MealSource
 
 object MealSource {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    io.circe.generic.extras.Configuration.default.withSnakeCaseConstructorNames
+  inline given Configuration =
+    Configuration.default.withSnakeCaseConstructorNames
       .withDiscriminator("type")
 
-  implicit val encodeMealSource: Encoder[MealSource] = deriveConfiguredEncoder
-  implicit val decodeMealSource: Decoder[MealSource] = deriveConfiguredDecoder
+  implicit val encodeMealSource: Encoder[MealSource] =
+    Encoder.AsObject.derivedConfigured
+  implicit val decodeMealSource: Decoder[MealSource] =
+    Decoder.derivedConfigured
 }
 
 final case class RecipeDetail(
@@ -43,13 +42,12 @@ final case class RecipeDetail(
 )
 
 object RecipeDetail {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    ApiModels.snakeCaseCirce
+  inline given Configuration = ApiModels.snakeCaseCirce
 
   implicit val encodeRecipeDetail: Encoder[RecipeDetail] =
-    deriveConfiguredEncoder
+    Encoder.AsObject.derivedConfigured
   implicit val decodeRecipeDetail: Decoder[RecipeDetail] =
-    deriveConfiguredDecoder
+    Decoder.derivedConfigured
 }
 
 final case class MealDetail(
@@ -64,11 +62,12 @@ final case class MealDetail(
 )
 
 object MealDetail {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    ApiModels.snakeCaseCirce
+  inline given Configuration = ApiModels.snakeCaseCirce
 
-  implicit val encodeMealDetail: Encoder[MealDetail] = deriveConfiguredEncoder
-  implicit val decodeMealDetail: Decoder[MealDetail] = deriveConfiguredDecoder
+  implicit val encodeMealDetail: Encoder[MealDetail] =
+    Encoder.AsObject.derivedConfigured
+  implicit val decodeMealDetail: Decoder[MealDetail] =
+    Decoder.derivedConfigured
 }
 
 final case class TagDoc(
@@ -81,11 +80,11 @@ final case class TagDoc(
 )
 
 object TagDoc {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    ApiModels.snakeCaseCirce
+  inline given Configuration = ApiModels.snakeCaseCirce
 
-  implicit val encodeTagDoc: Encoder[TagDoc] = deriveConfiguredEncoder
-  implicit val decodeTagDoc: Decoder[TagDoc] = deriveConfiguredDecoder
+  implicit val encodeTagDoc: Encoder[TagDoc] =
+    Encoder.AsObject.derivedConfigured
+  implicit val decodeTagDoc: Decoder[TagDoc] = Decoder.derivedConfigured
 
   def from(tag: Tag): TagDoc =
     TagDoc(
@@ -101,11 +100,11 @@ object TagDoc {
 final case class TagCatalog(tags: List[TagDoc])
 
 object TagCatalog {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    ApiModels.snakeCaseCirce
+  inline given Configuration = ApiModels.snakeCaseCirce
 
-  implicit val encodeTagCatalog: Encoder[TagCatalog] = deriveConfiguredEncoder
-  implicit val decodeTagCatalog: Decoder[TagCatalog] = deriveConfiguredDecoder
+  implicit val encodeTagCatalog: Encoder[TagCatalog] =
+    Encoder.AsObject.derivedConfigured
+  implicit val decodeTagCatalog: Decoder[TagCatalog] = Decoder.derivedConfigured
 
   def all: TagCatalog = TagCatalog(Tag.values.map(TagDoc.from).toList)
 }
@@ -118,11 +117,12 @@ final case class ManifestDoc(
 )
 
 object ManifestDoc {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    ApiModels.snakeCaseCirce
+  inline given Configuration = ApiModels.snakeCaseCirce
 
-  implicit val encodeManifestDoc: Encoder[ManifestDoc] = deriveConfiguredEncoder
-  implicit val decodeManifestDoc: Decoder[ManifestDoc] = deriveConfiguredDecoder
+  implicit val encodeManifestDoc: Encoder[ManifestDoc] =
+    Encoder.AsObject.derivedConfigured
+  implicit val decodeManifestDoc: Decoder[ManifestDoc] =
+    Decoder.derivedConfigured
 }
 
 final case class IngredientSubmissionDoc(
@@ -152,16 +152,16 @@ final case class RecipeSubmissionDoc(
 )
 
 object RecipeSubmissionDoc {
-  implicit val circeConfiguration: io.circe.generic.extras.Configuration =
-    io.circe.generic.extras.Configuration.default.copy(transformMemberNames = {
+  inline given Configuration =
+    Configuration.default.withTransformMemberNames {
       case "cfTurnstileResponse" => "cf-turnstile-response"
       case other                 => other
-    })
+    }
 
   implicit val encodeRecipeSubmissionDoc: Encoder[RecipeSubmissionDoc] =
-    deriveConfiguredEncoder
+    Encoder.AsObject.derivedConfigured
   implicit val decodeRecipeSubmissionDoc: Decoder[RecipeSubmissionDoc] =
-    deriveConfiguredDecoder
+    Decoder.derivedConfigured
 }
 
 final case class SubmissionAccepted(url: String)
@@ -183,6 +183,6 @@ object ApiError {
 }
 
 private object ApiModels {
-  val snakeCaseCirce: io.circe.generic.extras.Configuration =
-    io.circe.generic.extras.Configuration.default.withSnakeCaseMemberNames
+  inline def snakeCaseCirce: Configuration =
+    Configuration.default.withSnakeCaseMemberNames
 }

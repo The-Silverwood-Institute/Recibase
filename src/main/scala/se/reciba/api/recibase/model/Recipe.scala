@@ -3,16 +3,14 @@ package se.reciba.api.model
 import cats.syntax.all._
 import se.reciba.api.utils.StringUtils._
 import se.reciba.api.recipes._
-import io.circe.Encoder
-import io.circe.generic.JsonCodec
+import io.circe.{Decoder, Encoder}
+import io.circe.generic.semiauto._
 import org.reflections.Reflections
 
 import scala.reflect.classTag
-import scala.reflect.runtime.universe
 import se.reciba.api.recibase.model.DatedNote
 import java.time.LocalDate
 
-@JsonCodec
 case class Ingredient(
     name: String,
     quantity: Option[String] = None,
@@ -20,7 +18,6 @@ case class Ingredient(
     notes: Option[String] = None
 )
 
-@JsonCodec
 case class IngredientsBlock(
     name: Option[String],
     ingredients: List[Ingredient]
@@ -30,6 +27,9 @@ case class IngredientsBlock(
 }
 
 object IngredientsBlock {
+  implicit val encodeIngredientsBlock: Encoder[IngredientsBlock] = deriveEncoder
+  implicit val decodeIngredientsBlock: Decoder[IngredientsBlock] = deriveDecoder
+
   def apply(name: String, ingredients: List[Ingredient]): IngredientsBlock =
     IngredientsBlock(name.some, ingredients)
   def simple(ingredients: Ingredient*): List[IngredientsBlock] = List(
@@ -77,11 +77,7 @@ object Recipe {
   val recipes: Seq[Recipe] = new Reflections("se.reciba.api.recipes")
     .getSubTypesOf(classTag[Recipe].runtimeClass)
     .asScala
-    .map(cls => {
-      val mirror = universe.runtimeMirror(cls.getClassLoader)
-      val moduleSymbol = mirror.moduleSymbol(cls)
-      mirror.reflectModule(moduleSymbol).instance.asInstanceOf[Recipe]
-    })
+    .map(cls => cls.getField("MODULE$").get(null).asInstanceOf[Recipe])
     .toSeq
 }
 
@@ -121,6 +117,9 @@ object RecipeWithUsageData {
 }
 
 object Ingredient {
+  implicit val encodeIngredient: Encoder[Ingredient] = deriveEncoder
+  implicit val decodeIngredient: Decoder[Ingredient] = deriveDecoder
+
   def apply(name: String, quantity: String): Ingredient =
     new Ingredient(name, quantity.some)
 

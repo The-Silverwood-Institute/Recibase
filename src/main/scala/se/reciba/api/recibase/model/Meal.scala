@@ -2,8 +2,7 @@ package se.reciba.api.model
 
 import cats.syntax.option._
 import io.circe.Encoder
-import io.circe.generic.extras.Configuration
-import io.circe.generic.extras.semiauto.deriveConfiguredEncoder
+import io.circe.derivation.Configuration
 
 import java.time.LocalDate
 import se.reciba.api.recibase.model.DatedNote
@@ -81,9 +80,10 @@ final case class Recibase(permalink: String) extends Source
 final case class GoogleDrive(id: String) extends Source
 
 object Source {
-  implicit val genDevConfig: Configuration =
+  inline given Configuration =
     Configuration.default.withSnakeCaseConstructorNames.withDiscriminator(
       "type"
     )
-  implicit val sourceEncoder: Encoder[Source] = deriveConfiguredEncoder[Source]
+  implicit val sourceEncoder: Encoder[Source] =
+    Encoder.AsObject.derivedConfigured
 }
