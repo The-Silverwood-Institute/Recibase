@@ -34,7 +34,7 @@ case object ThaiYellowCurryNoodleSoup extends Recipe {
   val ingredientsBlocks = IngredientsBlock.simple(
     Ingredient(
       "Yellow Curry paste",
-      "4 TBSP".some,
+      "4 tbsp".some,
       None,
       "Please don't use sharwoods. Vegan/Veggie/Veggie-ish depending on choice here. Some contain shrimp depending on brand.".some
     ),
@@ -50,19 +50,19 @@ case object ThaiYellowCurryNoodleSoup extends Recipe {
     ),
     Ingredient(
       "Fresh coriander",
-      "50 grams of stemmed plant",
+      "50g of stemmed plant",
       "Chopped fine stems removed"
     ),
     Ingredient("Lime juice", "1 lime", "juiced"),
-    Ingredient("Garlic powder", "2 TBSP"),
-    Ingredient("Coriander seeds", "1 TBSP".some, None, "Optional".some),
+    Ingredient("Garlic powder", "2 tbsp"),
+    Ingredient("Coriander seeds", "1 tbsp".some, None, "Optional".some),
     Ingredient(
       "vegetable stock cubes",
       "2",
       "Diluted in 250ml of hot water",
       "Use Gluten free stock pots for gluten free option."
     ),
-    Ingredient("coconut milk + fat", "1.5lt"),
+    Ingredient("coconut milk + fat", "1.5l"),
     Ingredient("MSG", "To taste"),
     Ingredient(
       "Fresh ginger",
