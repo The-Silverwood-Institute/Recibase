@@ -24,7 +24,7 @@ case object ThaiYellowCurryNoodleSoup extends Recipe {
 
   val tags = Set(
     Tag.Soup,
-    Tag.VegetarianIsh,
+    Tag.VeganIsh,
     Tag.GlutenFree,
     Tag.ColdWeather,
     Tag.Spicy,
