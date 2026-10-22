@@ -27,7 +27,8 @@ case object CheeseScones extends Recipe {
 
   override val notes: List[String] = List(
     "Leave the milk out as it always needs more.",
-    "Don't roll the dough too thin or they won't rise properly."
+    "Don't roll the dough too thin or they won't rise properly.",
+    "1x recipe makes ~9 scones. Make 1.5x the recipe if you want leftovers."
   )
 
   override val image: Option[Image] = (
