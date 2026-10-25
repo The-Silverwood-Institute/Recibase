@@ -16,7 +16,9 @@ case object ScrambledEggs extends Recipe {
       |Paprika - add a generous amount of (smoked) paprika along with the salt/pepper.
       |Sriracha - mix in a dash of sriracha for a spicier dish. Can be combined with the paprika.
       |Stilton - crumble and melt blue stilton into the butter.
-      |Spring onions - lightly fry a sliced spring onion in the butter. Also works with garlic.""".stripMargin
+      |Spring onions - lightly fry a sliced spring onion in the butter. Also works with garlic.
+      |
+      |Tastes amazing if you use a mixture of cream and milk.""".stripMargin
   )
   val tags = Set(Tag.Lunch, Tag.Vegetarian, Tag.LowEffort, Tag.Quick)
 
