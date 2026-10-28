@@ -16,7 +16,8 @@ case object FrenchOnionPasta extends Recipe {
     "If the pan is not grill-safe, stir the Gruyère through off the heat instead."
   )
 
-  override val source: Option[String] = "https://www.instagram.com/reel/DVY80PpgsRQ".some
+  override val source: Option[String] =
+    "https://www.instagram.com/reel/DVY80PpgsRQ".some
 
   val tags = Set(Tag.AI, Tag.Stodge, Tag.ColdWeather, Tag.Slow, Tag.Scales)
 
