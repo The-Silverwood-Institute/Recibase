@@ -64,9 +64,11 @@ dockerCommands := {
       |apt-get update; \
       |apt-get install -y --no-install-recommends ca-certificates=20260816ubuntu0.26.04.1; \
       |rm -rf /var/lib/apt/lists/*; \
-      |aliases="$(keytool -list -cacerts -storepass changeit -v | awk '/^Alias name: / { alias=$3 } /emSign ECC Root CA - G3/ { print alias }')"; \
+      |aliases="$(keytool -list -cacerts -storepass changeit -v | awk '/^Alias name: / { alias = substr($0, 13) } /^Owner: CN=emSign ECC Root CA - G3,/ && !seen[alias]++ { print alias }')"; \
       |test -n "$aliases"; \
-      |for alias in $aliases; do keytool -delete -cacerts -storepass changeit -noprompt -alias "$alias"; done""".stripMargin
+      |while IFS= read -r alias; do keytool -delete -cacerts -storepass changeit -noprompt -alias "$alias"; done <<EOF
+      |$aliases
+      |EOF""".stripMargin
   )
   val cmds = dockerCommands.value
   cmds.head +: installPatchedCerts +: cmds.tail
