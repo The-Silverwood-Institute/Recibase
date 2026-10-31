@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     organization := "The Silverwood Institute",
     name := "Recibase",
     version := "0.2",
-    scalaVersion := "3.3.9",
+    scalaVersion := "3.9.0",
     libraryDependencies ++= Seq(
       "org.http4s" %% "http4s-ember-server" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
