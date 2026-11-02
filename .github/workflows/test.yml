@@ -32,7 +32,7 @@ jobs:
       uses: sbt/setup-sbt@v1
 
     - name: Format and test
-      run: sbt "scalafmtAll; test"
+      run: sbt "scalafmtAll; scalafixAll; test"
 
     - name: Push formatting fixes
       if: github.event.pull_request.head.repo.full_name == github.repository
@@ -65,7 +65,7 @@ jobs:
           "details_url": "${GITHUB_SERVER_URL}/${REPO}/actions/runs/${GITHUB_RUN_ID}",
           "output": {
             "title": "Tests passed on formatted sources",
-            "summary": "scalafmt fixed Scala formatting and pushed that commit. Tests ran against those formatted sources in this workflow run."
+            "summary": "scalafmt and Scalafix rewrote Scala sources and pushed that commit. Tests ran against those sources in this workflow run."
           }
         }
         EOF
@@ -78,6 +78,6 @@ jobs:
           echo "Scala sources are already formatted."
           exit 0
         fi
-        echo "Scala sources are not formatted. CI cannot push to a fork. Run 'sbt scalafmtAll' and update the pull request."
+        echo "Scala sources are not formatted. CI cannot push to a fork. Run 'sbt \"scalafmtAll; scalafixAll\"' and update the pull request."
         git status --porcelain
         exit 1

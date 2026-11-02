@@ -10,6 +10,8 @@ lazy val root = (project in file("."))
     name := "Recibase",
     version := "0.2",
     scalaVersion := "3.10.0",
+    // SemanticDB is built into Scala 3; semanticdbVersion is only for Scala 2.
+    semanticdbEnabled := true,
     libraryDependencies ++= Seq(
       "org.http4s" %% "http4s-ember-server" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
@@ -86,7 +88,9 @@ scalacOptions ++= Seq(
   "UTF-8",
   "-language:postfixOps",
   "-feature",
-  "-Werror"
+  "-Werror",
+  // Required by the RemoveUnused Scalafix rule.
+  "-Wunused:imports"
 )
 
 // Specs2 5 matchers are given Conversions. With -Xfatal-warnings that has to

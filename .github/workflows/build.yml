@@ -18,6 +18,8 @@ jobs:
       uses: sbt/setup-sbt@v1
     - name: scalafmtCheckAll
       run: sbt scalafmtCheckAll
+    - name: scalafixAll --check
+      run: sbt "scalafixAll --check"
     - name: Test
       run: sbt test
     - name: Build

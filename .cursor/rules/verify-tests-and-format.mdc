@@ -8,9 +8,10 @@ alwaysApply: true
 Before finishing any change to Scala sources, `build.sbt`, or test code, run both checks and fix failures. Do not treat the task as done on a compile-only run.
 
 ```bash
-sbt -batch "scalafmtCheckAll; testFull"
+sbt -batch "scalafmtCheckAll; scalafixAll --check; testFull"
 ```
 
 - `scalafmtCheckAll` is the formatting check. If it fails, run `sbt -batch scalafmtAll`, then run the checks again.
+- `scalafixAll --check` enforces the rules in `.scalafix.conf`. If it fails, run `sbt -batch scalafixAll`, then `sbt -batch scalafmtAll`, then run the checks again.
 - `testFull` runs every Specs2 example. Plain `sbt test` is incremental (`testQuick`) and can report success while skipping suites whose inputs sbt considers unchanged.
 - A cached or partial test run does not count. The final run must show `scalafmtCheckAll` passing and `Passed: Total …` from `testFull`.
