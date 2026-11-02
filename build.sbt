@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     organization := "The Silverwood Institute",
     name := "Recibase",
     version := "0.2",
-    scalaVersion := "3.3.9",
+    scalaVersion := "3.10.0",
     libraryDependencies ++= Seq(
       "org.http4s" %% "http4s-ember-server" % Http4sVersion,
       "org.http4s" %% "http4s-circe" % Http4sVersion,
@@ -86,7 +86,7 @@ scalacOptions ++= Seq(
   "UTF-8",
   "-language:postfixOps",
   "-feature",
-  "-Xfatal-warnings"
+  "-Werror"
 )
 
 // Specs2 5 matchers are given Conversions. With -Xfatal-warnings that has to
