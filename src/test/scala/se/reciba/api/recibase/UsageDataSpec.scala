@@ -1,10 +1,11 @@
 package se.reciba.api
 
 import cats.syntax.option._
-import se.reciba.api.usage.{MealLogEntry, UsageData}
+import se.reciba.api.recibase.model.DatedNote
+import se.reciba.api.usage.MealLogEntry
+import se.reciba.api.usage.UsageData
 
 import java.time.LocalDate
-import se.reciba.api.recibase.model.DatedNote
 
 class UsageDataSpec extends org.specs2.mutable.Specification {
   "date parser correctly parses date strings" >> {

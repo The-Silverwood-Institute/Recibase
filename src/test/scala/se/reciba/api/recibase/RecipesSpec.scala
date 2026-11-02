@@ -1,17 +1,15 @@
 package se.reciba.api
 
-import cats.effect.{IO, MonadCancel}
+import cats.effect.IO
 import cats.effect.unsafe.implicits.global
-import se.reciba.api.server.{
-  MealsController,
-  MetaController,
-  RecibaseRoutes,
-  RecipeController
-}
-import se.reciba.api.usage.UsageData
 import org.http4s._
 import org.http4s.implicits._
 import org.specs2.matcher.JsonMatchers
+import se.reciba.api.server.MealsController
+import se.reciba.api.server.MetaController
+import se.reciba.api.server.RecibaseRoutes
+import se.reciba.api.server.RecipeController
+import se.reciba.api.usage.UsageData
 
 class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
   "list" >> {

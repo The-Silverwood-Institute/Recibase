@@ -1,6 +1,7 @@
 package se.reciba.api.server
 
-import se.reciba.api.model.{MenuEntry, Tag}
+import se.reciba.api.model.MenuEntry
+import se.reciba.api.model.Tag
 import sttp.model.StatusCode
 import sttp.tapir._
 import sttp.tapir.generic.auto._

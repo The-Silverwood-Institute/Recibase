@@ -1,22 +1,13 @@
 package se.reciba.api.server
 
 import cats.Applicative
+import cats.effect.kernel.Sync
 import cats.implicits._
-import se.reciba.api.model.{
-  GoogleDrive,
-  Meal,
-  MealStub,
-  Online,
-  Recipe,
-  Source,
-  Tag,
-  MealStubWithUsageData
-}
+import se.reciba.api.MealDefinitions
+import se.reciba.api.model.MealStubWithUsageData
+import se.reciba.api.model.Tag
 import se.reciba.api.usage.UsageData
 
-import scala.collection.immutable
-import se.reciba.api.MealDefinitions
-import cats.effect.kernel.Sync
 import java.time.LocalDate
 
 trait MealsController[F[_]] {

@@ -1,10 +1,12 @@
 package se.reciba.api.server
 
 import cats.effect.Sync
+import org.http4s.HttpRoutes
+import org.http4s.MediaType
 import org.http4s.dsl.Http4sDsl
-import org.http4s.headers.{`Content-Type`, Location}
+import org.http4s.headers.Location
+import org.http4s.headers.`Content-Type`
 import org.http4s.implicits._
-import org.http4s.{HttpRoutes, MediaType}
 import sttp.apispec.openapi.circe.yaml._
 import sttp.tapir.AnyEndpoint
 import sttp.tapir.docs.openapi.OpenAPIDocsInterpreter

@@ -4,29 +4,31 @@ import cats.effect.Async
 import cats.syntax.all._
 import io.circe.Json
 import io.circe.jawn
+import org.http4s.HttpRoutes
+import org.http4s.Request
+import org.http4s.Response
+import org.http4s.Status
 import org.http4s.circe._
 import org.http4s.dsl.Http4sDsl
-import org.http4s.{HttpRoutes, Request, Response, Status}
 import org.typelevel.ci._
 import se.reciba.api.model.Recipe
-import se.reciba.api.submit.{
-  BranchAlreadyExists,
-  ConflictingSubmission,
-  GeneratedRecipe,
-  GithubClient,
-  GithubRejected,
-  InvalidSubmission,
-  Passcode,
-  RecipePullRequests,
-  RecipeSource,
-  CloudflareTurnstile,
-  RecipeSubmission,
-  RecipeSubmissionConfig,
-  Turnstile
-}
+import se.reciba.api.submit.BranchAlreadyExists
+import se.reciba.api.submit.CloudflareTurnstile
+import se.reciba.api.submit.ConflictingSubmission
+import se.reciba.api.submit.GeneratedRecipe
+import se.reciba.api.submit.GithubClient
+import se.reciba.api.submit.GithubRejected
+import se.reciba.api.submit.InvalidSubmission
+import se.reciba.api.submit.Passcode
+import se.reciba.api.submit.RecipePullRequests
+import se.reciba.api.submit.RecipeSource
+import se.reciba.api.submit.RecipeSubmission
+import se.reciba.api.submit.RecipeSubmissionConfig
+import se.reciba.api.submit.Turnstile
 
 import java.nio.charset.StandardCharsets
-import java.time.{LocalDate, ZoneId}
+import java.time.LocalDate
+import java.time.ZoneId
 
 object RecipeSubmissionRoutes {
   private val DefaultMaxBytes = 256 * 1024

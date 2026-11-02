@@ -1,22 +1,18 @@
 package se.reciba.api.usage
+import cats.effect.kernel.Async
+import cats.effect.std.AtomicCell
+import cats.implicits._
+import org.apache.commons.csv.CSVFormat
+import org.apache.commons.csv.CSVParser
+import se.reciba.api.recibase.model.DatedNote
 
-import org.typelevel.log4cats.Logger
-
+import java.time.Duration
+import java.time.Instant
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import scala.io.Source
-import scala.util.{Failure, Success, Try}
-import cats.implicits._
-import java.time.Instant
-import cats.FlatMap
-import java.time.temporal.TemporalUnit
-import java.time.temporal.ChronoUnit
-import java.time.Duration
-import cats.effect.std.AtomicCell
-import cats.effect.kernel.Async
-import org.apache.commons.csv.{CSVFormat, CSVParser}
 import scala.jdk.CollectionConverters._
-import se.reciba.api.recibase.model.DatedNote
+import scala.util.Try
 
 object UsageData {
   def apply[F[_]](implicit F: Async[F]): F[UsageData[F]] =

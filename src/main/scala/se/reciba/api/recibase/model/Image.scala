@@ -1,6 +1,7 @@
 package se.reciba.api.model
 
-import io.circe.{Decoder, Encoder}
+import io.circe.Decoder
+import io.circe.Encoder
 import io.circe.generic.semiauto._
 
 case class Image(src: String, width: Int = 1080, height: Int = 1080)

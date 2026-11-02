@@ -1,6 +1,7 @@
 package se.reciba.api
 
-import se.reciba.api.model.{Recipe, TagCategory}
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.TagCategory
 
 class UsageTagAssignmentSpec extends org.specs2.mutable.Specification {
   "recipes" >> {

@@ -7,18 +7,16 @@ import io.circe.jawn
 import org.http4s._
 import org.http4s.implicits._
 import se.reciba.api.recipes.ChilliConCarne
-import se.reciba.api.submit.{
-  BranchAlreadyExists,
-  GeneratedRecipe,
-  GithubRejected,
-  GithubSettings,
-  PullRequestFailure,
-  RecipePullRequests,
-  RecipeSubmissionConfig,
-  Turnstile,
-  TurnstileSettings
-}
 import se.reciba.api.server.RecipeSubmissionRoutes
+import se.reciba.api.submit.BranchAlreadyExists
+import se.reciba.api.submit.GeneratedRecipe
+import se.reciba.api.submit.GithubRejected
+import se.reciba.api.submit.GithubSettings
+import se.reciba.api.submit.PullRequestFailure
+import se.reciba.api.submit.RecipePullRequests
+import se.reciba.api.submit.RecipeSubmissionConfig
+import se.reciba.api.submit.Turnstile
+import se.reciba.api.submit.TurnstileSettings
 
 import java.time.LocalDate
 

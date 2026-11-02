@@ -2,21 +2,21 @@ package se.reciba.api
 
 import cats.effect.IO
 import cats.effect.unsafe.implicits.global
+import com.sun.net.httpserver.HttpExchange
+import com.sun.net.httpserver.HttpServer
 import io.circe.Json
 import io.circe.jawn
-import se.reciba.api.submit.{
-  BranchAlreadyExists,
-  GeneratedRecipe,
-  GithubClient,
-  GithubRejected,
-  GithubSettings
-}
+import se.reciba.api.submit.BranchAlreadyExists
+import se.reciba.api.submit.GeneratedRecipe
+import se.reciba.api.submit.GithubClient
+import se.reciba.api.submit.GithubRejected
+import se.reciba.api.submit.GithubSettings
 
 import java.net.InetSocketAddress
 import java.nio.charset.StandardCharsets
 import java.util.Base64
-import java.util.concurrent.{ConcurrentLinkedQueue, Executors}
-import com.sun.net.httpserver.{HttpExchange, HttpServer}
+import java.util.concurrent.ConcurrentLinkedQueue
+import java.util.concurrent.Executors
 import scala.jdk.CollectionConverters._
 
 class GithubClientSpec extends org.specs2.mutable.Specification {

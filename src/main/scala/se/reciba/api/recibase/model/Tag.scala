@@ -1,7 +1,9 @@
 package se.reciba.api.model
 
 import cats.syntax.option._
-import enumeratum.{CirceEnum, Enum, EnumEntry}
+import enumeratum.CirceEnum
+import enumeratum.Enum
+import enumeratum.EnumEntry
 
 import java.time.LocalDate
 

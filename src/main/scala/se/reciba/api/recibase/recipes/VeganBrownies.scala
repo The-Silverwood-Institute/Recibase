@@ -1,15 +1,14 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model.{
-  Image,
-  Ingredient,
-  Permalink,
-  Recipe,
-  Tag,
-  IngredientsBlock
-}
+import se.reciba.api.model.Image
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Permalink
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
 import se.reciba.api.utils.IntUtils.TemperatureUtils
+
 import java.time.LocalDate
 
 case object VeganBrownies extends Recipe {

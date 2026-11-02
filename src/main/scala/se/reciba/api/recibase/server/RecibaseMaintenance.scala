@@ -2,8 +2,9 @@ package se.reciba.api.recibase.server
 
 import cats.effect.Async
 import fs2._
-import scala.concurrent.duration._
 import se.reciba.api.usage.UsageData
+
+import scala.concurrent.duration._
 
 object RecibaseMaintenance {
   private val maintenanceInterval = 30 minutes

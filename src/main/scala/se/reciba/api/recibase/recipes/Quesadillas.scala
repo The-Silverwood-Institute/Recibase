@@ -1,8 +1,11 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model
-import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
+
 import java.time.LocalDate
 
 case object Quesadillas extends Recipe {

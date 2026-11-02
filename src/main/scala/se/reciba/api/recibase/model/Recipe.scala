@@ -1,15 +1,15 @@
 package se.reciba.api.model
 
 import cats.syntax.all._
-import se.reciba.api.utils.StringUtils._
-import se.reciba.api.recipes._
-import io.circe.{Decoder, Encoder}
+import io.circe.Decoder
+import io.circe.Encoder
 import io.circe.generic.semiauto._
 import org.reflections.Reflections
-
-import scala.reflect.classTag
 import se.reciba.api.recibase.model.DatedNote
+import se.reciba.api.utils.StringUtils._
+
 import java.time.LocalDate
+import scala.reflect.classTag
 
 case class Ingredient(
     name: String,

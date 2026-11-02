@@ -1,7 +1,8 @@
 package se.reciba.api.server
 
+import io.circe.Decoder
+import io.circe.Encoder
 import io.circe.derivation.Configuration
-import io.circe.{Decoder, Encoder}
 import se.reciba.api.model.Image
 import se.reciba.api.model.IngredientsBlock
 import se.reciba.api.model.Tag

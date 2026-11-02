@@ -1,13 +1,14 @@
 package se.reciba.api.server
 
 import cats.effect.Async
+import cats.syntax.all._
 import com.comcast.ip4s._
 import fs2.Stream
 import fs2.io.net.Network
 import org.http4s.ember.server.EmberServerBuilder
 import org.http4s.implicits._
-import cats.syntax.all._
-import org.http4s.server.middleware.{CORS, Logger}
+import org.http4s.server.middleware.CORS
+import org.http4s.server.middleware.Logger
 import org.typelevel.log4cats.LoggerFactory
 import org.typelevel.log4cats.slf4j.Slf4jFactory
 import se.reciba.api.usage.UsageData

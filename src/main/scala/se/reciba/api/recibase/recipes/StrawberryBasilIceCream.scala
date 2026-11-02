@@ -1,15 +1,13 @@
 package se.reciba.api.recipes
 
 import cats.implicits._
-import se.reciba.api.model.{
-  Image,
-  Ingredient,
-  Recipe,
-  Tag,
-  IngredientsBlock,
-  IceCream,
-  Permalink
-}
+import se.reciba.api.model.IceCream
+import se.reciba.api.model.Image
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.Permalink
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
+
 import java.time.LocalDate
 
 case object StrawberryBasilIceCream extends Recipe with IceCream {

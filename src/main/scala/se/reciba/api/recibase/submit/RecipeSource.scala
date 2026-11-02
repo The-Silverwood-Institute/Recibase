@@ -1,7 +1,9 @@
 package se.reciba.api.submit
 
 import org.apache.commons.lang3.StringUtils
-import se.reciba.api.model.{Recipe, Tag, TagCategory}
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
+import se.reciba.api.model.TagCategory
 
 import java.time.LocalDate
 import java.util.Locale

@@ -1,9 +1,13 @@
 package se.reciba.api.recipes
 
 import cats.syntax.all._
+import se.reciba.api.model.Image
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
 import se.reciba.api.utils.IntUtils.TemperatureUtils
 
-import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock, Image}
 import java.time.LocalDate
 
 case object DukatenCookies extends Recipe {

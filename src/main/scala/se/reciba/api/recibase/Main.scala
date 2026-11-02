@@ -1,9 +1,10 @@
 package se.reciba.api
 
-import cats.effect.{ExitCode, IO, IOApp}
-import cats.implicits._
-import se.reciba.api.server.RecibaseServer
+import cats.effect.ExitCode
+import cats.effect.IO
+import cats.effect.IOApp
 import se.reciba.api.recibase.server.RecibaseMaintenance
+import se.reciba.api.server.RecibaseServer
 import se.reciba.api.usage.UsageData
 
 object Main extends IOApp {

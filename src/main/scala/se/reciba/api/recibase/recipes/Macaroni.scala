@@ -1,6 +1,10 @@
 package se.reciba.api.recipes
 
-import se.reciba.api.model.{Ingredient, Recipe, Tag, IngredientsBlock}
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
+
 import java.time.LocalDate
 
 case object Macaroni extends Recipe {

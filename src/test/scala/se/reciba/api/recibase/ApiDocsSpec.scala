@@ -6,20 +6,19 @@ import io.circe.jawn
 import org.http4s._
 import org.http4s.implicits._
 import org.typelevel.ci._
-import se.reciba.api.model.{MenuEntry, Tag}
-import se.reciba.api.server.{
-  ApiEndpoints,
-  ManifestDoc,
-  MealDetail,
-  MealsController,
-  MetaController,
-  RecipeController,
-  RecipeDetail,
-  RecipeSubmissionDoc,
-  TagCatalog,
-  RecibaseRoutes,
-  RedocRoutes
-}
+import se.reciba.api.model.MenuEntry
+import se.reciba.api.model.Tag
+import se.reciba.api.server.ApiEndpoints
+import se.reciba.api.server.ManifestDoc
+import se.reciba.api.server.MealDetail
+import se.reciba.api.server.MealsController
+import se.reciba.api.server.MetaController
+import se.reciba.api.server.RecibaseRoutes
+import se.reciba.api.server.RecipeController
+import se.reciba.api.server.RecipeDetail
+import se.reciba.api.server.RecipeSubmissionDoc
+import se.reciba.api.server.RedocRoutes
+import se.reciba.api.server.TagCatalog
 import se.reciba.api.usage.UsageData
 
 class ApiDocsSpec extends org.specs2.mutable.Specification {

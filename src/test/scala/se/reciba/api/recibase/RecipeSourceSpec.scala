@@ -1,14 +1,13 @@
 package se.reciba.api
 
 import se.reciba.api.model.Tag
-import se.reciba.api.recipes.{ChilliConCarne, CrunchChocolateChipCoffeeCake}
-import se.reciba.api.submit.{
-  ConflictingSubmission,
-  IngredientSubmission,
-  InvalidSubmission,
-  RecipeSource,
-  RecipeSubmission
-}
+import se.reciba.api.recipes.ChilliConCarne
+import se.reciba.api.recipes.CrunchChocolateChipCoffeeCake
+import se.reciba.api.submit.ConflictingSubmission
+import se.reciba.api.submit.IngredientSubmission
+import se.reciba.api.submit.InvalidSubmission
+import se.reciba.api.submit.RecipeSource
+import se.reciba.api.submit.RecipeSubmission
 
 import java.time.LocalDate
 

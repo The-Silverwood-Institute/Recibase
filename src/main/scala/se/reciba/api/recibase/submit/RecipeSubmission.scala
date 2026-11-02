@@ -1,6 +1,7 @@
 package se.reciba.api.submit
 
-import io.circe.{Decoder, HCursor}
+import io.circe.Decoder
+import io.circe.HCursor
 
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest

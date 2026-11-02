@@ -1,13 +1,10 @@
 package se.reciba.api.recipes
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.IngredientsBlock
+import se.reciba.api.model.Permalink
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
 
-import cats.syntax.option._
-import se.reciba.api.model.{
-  Ingredient,
-  Permalink,
-  Recipe,
-  Tag,
-  IngredientsBlock
-}
 import java.time.LocalDate
 
 case object SquashGnocchiGratin extends Recipe {

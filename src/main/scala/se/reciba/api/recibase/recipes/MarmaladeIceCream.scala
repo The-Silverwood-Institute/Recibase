@@ -1,14 +1,12 @@
 package se.reciba.api.recipes
 
 import cats.syntax.option._
-import se.reciba.api.model.{
-  Image,
-  Ingredient,
-  Recipe,
-  Tag,
-  IngredientsBlock,
-  IceCream
-}
+import se.reciba.api.model.IceCream
+import se.reciba.api.model.Image
+import se.reciba.api.model.Ingredient
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
+
 import java.time.LocalDate
 
 case object MarmaladeIceCream extends Recipe with IceCream {

@@ -2,10 +2,12 @@ package se.reciba.api.server
 
 import cats.Applicative
 import cats.implicits._
-import se.reciba.api.model.{MenuEntry, Recipe, RecipeWithUsageData}
+import se.reciba.api.model.MenuEntry
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.RecipeWithUsageData
+import se.reciba.api.usage.UsageData
 
 import scala.language.implicitConversions
-import se.reciba.api.usage.UsageData
 
 trait RecipeController[F[_]] {
   def recipe(recipeUrl: String): F[Option[RecipeWithUsageData]]

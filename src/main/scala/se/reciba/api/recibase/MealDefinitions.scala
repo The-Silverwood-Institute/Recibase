@@ -1,14 +1,10 @@
 package se.reciba.api
 
-import se.reciba.api.model.{
-  GoogleDrive,
-  Meal,
-  MealStub,
-  Online,
-  Recipe,
-  Source,
-  Tag
-}
+import se.reciba.api.model.GoogleDrive
+import se.reciba.api.model.MealStub
+import se.reciba.api.model.Online
+import se.reciba.api.model.Recipe
+import se.reciba.api.model.Tag
 
 object MealDefinitions {
   val mealStubs: Set[MealStub] =

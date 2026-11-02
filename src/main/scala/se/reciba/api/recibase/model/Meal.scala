@@ -3,9 +3,9 @@ package se.reciba.api.model
 import cats.syntax.option._
 import io.circe.Encoder
 import io.circe.derivation.Configuration
+import se.reciba.api.recibase.model.DatedNote
 
 import java.time.LocalDate
-import se.reciba.api.recibase.model.DatedNote
 
 trait Meal {
   def name: String
