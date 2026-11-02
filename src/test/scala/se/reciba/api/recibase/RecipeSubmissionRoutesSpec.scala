@@ -113,7 +113,7 @@ class RecipeSubmissionRoutesSpec extends org.specs2.mutable.Specification {
       val source = client.opened.head.source
       source must contain("LocalDate.of(2026, 9, 7)")
       source must contain(se.reciba.api.submit.ScalaLiteral.quote(evil))
-      source must not contain "s3cret"
+      source must not(contain("s3cret"))
     }
 
     "reports an open submission" >> {

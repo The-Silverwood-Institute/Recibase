@@ -52,8 +52,8 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
         RecipeSource.generate(named("Phone Test Soup"), today, Seq.empty)
       generated must beRight.like { case recipe =>
         recipe.source must beEqualTo(expectedPlain)
-        recipe.source must not contain "s\""
-        recipe.source must not contain ".celsius"
+        recipe.source must not(contain("s\""))
+        recipe.source must not(contain(".celsius"))
       }
     }
 
@@ -76,7 +76,7 @@ class RecipeSourceSpec extends org.specs2.mutable.Specification {
       val generated = RecipeSource.generate(submission, today, Seq.empty)
       generated must beRight.like { case recipe =>
         recipe.source must contain("${180.celsius}.")
-        recipe.source must not contain "s\""
+        recipe.source must not(contain("s\""))
       }
     }
 

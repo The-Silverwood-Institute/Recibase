@@ -38,8 +38,8 @@ class RecipesSpec extends org.specs2.mutable.Specification with JsonMatchers {
     }
 
     "doesn't return a link to a recipe without thyme" >> {
-      body(filteredRecipesQuery) must not contain (
-        "baked-rigatoni-aubergine"
+      body(filteredRecipesQuery) must not(
+        contain("baked-rigatoni-aubergine")
       )
     }
   }

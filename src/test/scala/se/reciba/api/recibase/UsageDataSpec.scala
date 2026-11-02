@@ -24,10 +24,10 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
         MealLogEntry("Beyond Burgers", LocalDate.of(2022, 2, 18), None),
         MealLogEntry("Macaroni", LocalDate.of(2022, 2, 19), None)
       )
-    ) must_== Map(
+    ) must beEqualTo(Map(
       "Beyond Burgers" -> LocalDate.of(2022, 2, 18),
       "Macaroni" -> LocalDate.of(2022, 2, 19)
-    )
+    ))
   }
 
   "totals calculates how often meals have been eaten" >> {
@@ -37,10 +37,10 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
         MealLogEntry("Beyond Burgers", LocalDate.of(2022, 2, 18), None),
         MealLogEntry("Macaroni", LocalDate.of(2022, 2, 19), None)
       )
-    ) must_== Map(
+    ) must beEqualTo(Map(
       "Beyond Burgers" -> 1,
       "Macaroni" -> 2
-    )
+    ))
   }
 
   "featuredMeals returns the most recent featured date per meal" >> {
@@ -71,10 +71,10 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
           featured = false
         )
       )
-    ) must_== Map(
+    ) must beEqualTo(Map(
       "Macaroni" -> LocalDate.of(2022, 2, 19),
       "Beyond Burgers" -> LocalDate.of(2022, 2, 18)
-    )
+    ))
   }
 
   "MealLogEntry parses Feature column" >> {
@@ -132,7 +132,7 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
         ),
         MealLogEntry("Macaroni", LocalDate.of(2022, 2, 20), None)
       )
-    ) must_== Map(
+    ) must beEqualTo(Map(
       "Beyond Burgers" -> List.empty,
       "Macaroni" -> List(
         DatedNote(LocalDate.of(2022, 2, 17), "Add more cheese"),
@@ -141,6 +141,6 @@ class UsageDataSpec extends org.specs2.mutable.Specification {
           "Try paprika on top before grilling"
         )
       )
-    )
+    ))
   }
 }
