@@ -54,27 +54,6 @@ Docker / version := "latest"
 dockerBaseImage := "eclipse-temurin:25"
 dockerExposedPorts := Seq(8081)
 dockerEnvVars += "GIT_COMMIT" -> gitCommitForDocker
-// Temurin keeps its own cacerts and does not use the OS bundle. Ubuntu
-// 20260816ubuntu0.26.04.1 drops emSign ECC Root CA - G3; the keytool step
-// removes that same root from the JDK store (CVE-2026-91403) until a Temurin
-// build that already omits it is published.
-dockerCommands := {
-  val installPatchedCerts = Cmd(
-    "RUN",
-    """set -eux; \
-      |export DEBIAN_FRONTEND=noninteractive; \
-      |apt-get update; \
-      |apt-get install -y --no-install-recommends ca-certificates=20260816ubuntu0.26.04.1; \
-      |rm -rf /var/lib/apt/lists/*; \
-      |aliases="$(keytool -list -cacerts -storepass changeit -v | awk '/^Alias name: / { alias = substr($0, 13) } /^Owner: CN=emSign ECC Root CA - G3,/ && !seen[alias]++ { print alias }')"; \
-      |test -n "$aliases"; \
-      |while IFS= read -r alias; do keytool -delete -cacerts -storepass changeit -noprompt -alias "$alias"; done <<EOF
-      |$aliases
-      |EOF""".stripMargin
-  )
-  val cmds = dockerCommands.value
-  cmds.head +: installPatchedCerts +: cmds.tail
-}
 dockerCommands ++= Seq(
   Cmd(
     "HEALTHCHECK",
