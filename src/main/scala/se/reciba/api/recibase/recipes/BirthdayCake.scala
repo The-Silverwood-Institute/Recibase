@@ -22,7 +22,8 @@ case object BirthdayCake extends Recipe {
   ).some
 
   override val notes: List[String] = List(
-    "You can optionally slice off the top of the cake, to provide a flat surface for easier decoration."
+    "You can optionally slice off the top of the cake, to provide a flat surface for easier decoration.",
+    "Using a single tin at 180C convection for 35 minutes caused the center to near-burn then collapse after covering. Try 160 convection for 40 minutes then check for burning, maybe cover and check in ever 5-7 minutes."
   )
 
   val tags = Set(Tag.Pudding, Tag.Baking)
