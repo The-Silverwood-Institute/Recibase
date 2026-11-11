@@ -9,7 +9,7 @@ lazy val root = (project in file("."))
     organization := "The Silverwood Institute",
     name := "Recibase",
     version := "0.2",
-    scalaVersion := "3.10.0",
+    scalaVersion := "3.10.1",
     // SemanticDB is built into Scala 3; semanticdbVersion is only for Scala 2.
     semanticdbEnabled := true,
     libraryDependencies ++= Seq(
