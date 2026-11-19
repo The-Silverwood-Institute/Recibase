@@ -58,7 +58,7 @@ case object ExampleRecipe extends Recipe {
 
 | Field | Notes |
 |-------|-------|
-| `name` | Display name; permalink is derived automatically (`beef-stroganoff`) |
+| `name` | Display name. If longer than 25 characters, also set an explicit short `permalink` |
 | `createdAt` | `LocalDate.of(year, month, day)` |
 | `tags` | `Set(Tag.…)` — see tag list below |
 | `ingredientsBlocks` | `List[IngredientsBlock]` |
@@ -71,7 +71,7 @@ case object ExampleRecipe extends Recipe {
 - `tagline` — one-liner
 - `notes` — `List[String]` of extra tips (HTML links allowed)
 - `image` — `Image("https://i.reciba.se/…").some`
-- `permalink` — override only when the auto slug is wrong (`Permalink("custom-slug")`)
+- `permalink` — set when `name` is longer than 25 characters, as a short kebab-case slug (`override val permalink = Permalink("coffee-cake")`). Also override when the auto slug would be wrong. Import `se.reciba.api.model.Permalink`.
 
 Ice cream recipes extend `Recipe with IceCream` and reuse shared ingredients/method from `IceCream.scala`.
 
