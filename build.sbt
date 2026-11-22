@@ -2,7 +2,7 @@ val Http4sVersion = "1.0.0-M49"
 val TapirVersion = "1.14.1"
 val Specs2Version = "5.11.0"
 val LogbackVersion = "1.6.8"
-val EnumeratumVersion = "1.9.8"
+val EnumeratumVersion = "1.9.9"
 
 lazy val root = (project in file("."))
   .settings(
@@ -20,7 +20,7 @@ lazy val root = (project in file("."))
       "com.softwaremill.sttp.tapir" %% "tapir-redoc-bundle" % TapirVersion,
       "io.circe" %% "circe-generic" % "0.14.17",
       "com.beachape" %% "enumeratum" % EnumeratumVersion,
-      "com.beachape" %% "enumeratum-circe" % "1.9.8",
+      "com.beachape" %% "enumeratum-circe" % "1.9.9",
       "org.apache.commons" % "commons-lang3" % "3.22.0",
       "org.reflections" % "reflections" % "0.10.2",
       "org.apache.commons" % "commons-csv" % "1.14.1",
